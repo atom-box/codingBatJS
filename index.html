@@ -14,7 +14,7 @@
         font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
         
     }
-    div {
+    .article {
         width: 600px;
         margin: 2rem auto;
         padding: 3rem;
@@ -27,8 +27,9 @@
     }
     .stripe {
         width: 11rem;
-        height: 1rem;
-        border: 0.1rem dashed silver;
+        height: 1.4rem;
+        border: 0.1rem solid silver;
+        border-radius:  0.7rem;
     }
 
     a:link, a:visited {
@@ -40,7 +41,7 @@
 </head>
 
 <body>
-<div>
+<div class="article">
     <h1>Actions to behold</h1>
     <p>Something soon.</p>
     <div class="stripe" onclick="greet()"></div>
