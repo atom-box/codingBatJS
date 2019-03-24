@@ -1,8 +1,6 @@
-document.body.onload =()=>{   
 /***********************************************/
 console.log("Script loaded for bear.");
 
-greet();
 
 var bFr = document.getElementById('button-frame');
 var buffoon = document.querySelector('button');
@@ -13,11 +11,11 @@ buffoon.onclick =()=> {
 bFr.setAttribute('background-color', 'red');
 
 /***********************************************/
-} 
 
 var greet =()=>{
 	console.log("Ben!  Ben Greenberg!");
 }
+greet();
 
 /*
 To do:
