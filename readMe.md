@@ -9,7 +9,7 @@ I solve these in the morning before I go to work.  Sometimes I solve them at lun
 1/3/2019:  Thanks Nick Parlante for recursion advice.  Thanks Dave Jenkins for real world recursion discussion.
 
 ## Future Ideas
-* Go back and re do a couple of these with edge cases.  Use it as a playground for learning Cocoa, et al.
+* Go back and re do a couple of these with crazier edge cases.  Put them into their own Testing repository with Cocoa or similar tester
 * Re do in Elm language
 * Shop in some Knuth for re-do.  Benchmark each!
 * Re do as excuse for a front end bootstrap, unsplash, CSS-Flexbox & Grid
