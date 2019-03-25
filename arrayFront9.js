@@ -3,12 +3,15 @@ morning warmup coding exercise
 @mistergenest
 */
 const arrayFront9 =(nums)=>{
-	let stop = nums.length < 4 ? nums.length : 4;
+	let stop = nums.length < 4 ? nums.length : 3;
 	let flag = false;
-	for (let i=0; i <= stop; i++){
+	for (let i=0; i <= stop  ; i++){
 		if (nums[i] !== 9){
+			console.log("Set the flag false.")
 			continue;
 		}
+		flag = true;
+		console.log("Set the flag true.")
 	}
 	return flag;
 }
@@ -21,7 +24,10 @@ const arrayFront9 =(nums)=>{
 console.log(arrayFront9([1, 2, 9, 3, 4])); // true
 console.log(arrayFront9([1, 2, 3, 4, 9])); // false
 console.log(arrayFront9([1, 2, 3, 4, 5])); // false
-
+console.log(arrayFront9([9])); // true
+console.log(arrayFront9([ 9, 9])); // true
+console.log(arrayFront9([1])); // false
+console.log(arrayFront9([])); // false
 
 
 /*
