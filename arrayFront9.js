@@ -2,15 +2,25 @@
 morning warmup coding exercise
 @mistergenest
 */
+const arrayFront9 =(nums)=>{
+	let stop = nums.length < 4 ? nums.length : 4;
+	let flag = false;
+	for (let i=0; i <= stop; i++){
+		if (nums[i] !== 9){
+			continue;
+		}
+	}
+	return flag;
+}
 
 
 
 
 
 // TESTS:
-arrayFront9([1, 2, 9, 3, 4]) → true
-arrayFront9([1, 2, 3, 4, 9]) → false
-arrayFront9([1, 2, 3, 4, 5]) → false
+console.log(arrayFront9([1, 2, 9, 3, 4])); // true
+console.log(arrayFront9([1, 2, 3, 4, 9])); // false
+console.log(arrayFront9([1, 2, 3, 4, 5])); // false
 
 
 
