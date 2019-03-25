@@ -7,11 +7,9 @@ const arrayFront9 =(nums)=>{
 	let flag = false;
 	for (let i=0; i <= stop  ; i++){
 		if (nums[i] !== 9){
-			console.log("Set the flag false.")
 			continue;
 		}
 		flag = true;
-		console.log("Set the flag true.")
 	}
 	return flag;
 }
