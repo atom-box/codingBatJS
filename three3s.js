@@ -1,10 +1,26 @@
 
 let haveThree =(nums)=>{
+	const alot = true; // three or more?  todo!
+	const touch = false; // adjacents?  todo!
+	let num = null;
 	let recur =(arr)=>{
-
+		if (arr.length > 0){
+			num = arr.shift();
+			console.log(num); 
+			recur(arr);
+		};
+	};
+	if (alot && !touch){
+		return true; // todo always returning now
+	} else if (
+		touch && !alot ||
+		touch && alot  ||
+		!touch && !alot
+		) {
+		return false
+	} else { 
+		return "errori maxi"
 	}
-	if recur(nums) >= 3
-	return false;
 }
 
 // strategy 1: If Recursive, A flag of noThrees  would have to be outside the global
@@ -12,6 +28,9 @@ let haveThree =(nums)=>{
 //   -CHECK FOR THREE OR MORE
 //   -ADD A NOADJACENTTHREES FLAG - or make it a loop bailer, for efficiency
 
+/*
+You could have blockscope flags, and underneath them drill through the array
+*/
 
 console.log(haveThree([3, 1, 3, 1, 3])) // true
 console.log(haveThree([3, 1, 3, 3])) // false
