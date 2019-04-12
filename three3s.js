@@ -1,7 +1,8 @@
 
 let haveThree =(nums)=>{
-	const alot = true; // three or more?  todo!
+	const inARow = 0; //   how many 3s todo!
 	const touch = false; // adjacents?  todo!
+	const alot = false;  // three or more?
 	let num = null;
 	let recur =(arr)=>{
 		if (arr.length > 0){
@@ -10,6 +11,8 @@ let haveThree =(nums)=>{
 			recur(arr);
 		};
 	};
+	// take tally and make a boolean
+	if (inARow >= 3){ alot = true}
 	if (alot && !touch){
 		return true; // todo always returning now
 	} else if (
