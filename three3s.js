@@ -22,17 +22,17 @@ let haveThree =(nums)=>{
 
 
 		if (n < 3){  // todo todo change back to if (n < nums.length - 1 )
-			if (
+			if (       // =========================== TOUCHING
 				nums[n] === WANTED &&
 				nums[neighbor] === WANTED
 			){
 				touch = true;
 				// console.log(`TOUCHING, THESE TOUCH ${nums[n]} and ${nums}`);
-			} else if (
+			} else if (          // =========================== NOT
 				nums[n] !== WANTED || 
 				nums[neighbor] !== WANTED
 			) { console.log(`No problem, these aren't touching [${nums[n]}] and [${nums[neighbor]}]`)
-			} else { 
+			} else {           // =========================== SNAFU LAND
 				console.log(`Never gets here I hope.`)}
 			}
 		}
@@ -56,15 +56,30 @@ let haveThree =(nums)=>{
 }
 
 
+let testArray = [3, 1, 3, 993];
+let pre = `Overall return for [${testArray}] is: `;
+console.log(pre + haveThree(testArray));
 
-console.log(haveThree([3, 1, 3, 993])) // false
-// console.log(haveThree([55,  , 55, 5, 900, 3, 3, 43,  12, 166, 300])) // false
-console.log(haveThree([3, 4, 3, 3, 4])) // false
-// console.log(haveThree([55, 72, 100, 3.0, 3, 3])) // false
-// console.log(haveThree([3, 4, 5, 3, 6, 6, 6, 6, 6, 88, 78987, 1.3, 3])) // true
-console.log(haveThree([3, 1, 3, 1, 3])) // true
-console.log(haveThree([3, 4, 5, 3, 6, 6, 6, 6, 6, 88, 78987, 1.3, 3])) // true
-// console.log(haveThree([3, 1, 3, 1, 3,6,3,6,3,6,3,6,3,6,3,6,3,6,3,6,3,6,3,1000])) // true
+testArray = [55,  , 55, 5, 900, 3, 3, 43,  12, 166, 300];
+console.log(pre + haveThree(testArray));
+console.log(`\n\n\n`);
+testArray = [3, 4, 5, 3, 6, 6, 6, 6, 6, 88, 78987, 1.3, 3];
+console.log(pre + haveThree(testArray));
+console.log(`\n\n\n`);
+testArray = [3, 1, 3, 1, 3,6,3,6,3,6,3,6,3,6,3,6,3,6,3,6,3,6,3,1000];
+console.log(pre + haveThree(testArray));
+console.log(`\n\n\n`);
+testArray = [3, 1, 3, 1, 3, 3, 0, ,];
+console.log(pre + haveThree(testArray));
+
+/*
+Should return:
+false
+true
+true
+false
+*/
+
 
 //Given an array of ints, return true if the value 3 appears in the array exactly 3 times, and no 3's are neighbor to each other.
 // https://codingbat.com/prob/p109783
