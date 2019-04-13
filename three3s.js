@@ -9,32 +9,36 @@ let haveThree =(nums)=>{
 
 	console.log(`Array to compare ---> ${nums}`);
 	for (let n in nums){
+
+		// This tallyer must come before break statement
+		if (nums[n] === WANTED){
+			++occurances;
+		}
+
 		// don't eval final array spot; she has no neighbor!
 		if (n == nums.length - 1){
 			console.log('Declining eval of final position');
 			break;
 		}
-		if (nums[n] === WANTED){
-			++occurances;
-		}
 		neighbor = neighbor + 1;
 		console.log(`Now comparing [${nums[n]}] and [${nums[neighbor]}]`);
 
 
-		if (n < 3){  // todo todo change back to if (n < nums.length - 1 )
+		// if (n < nums.length - 1 ){  // todo todo change back to if (n < nums.length - 1 )
 			if (       // =========================== TOUCHING
 				nums[n] === WANTED &&
 				nums[neighbor] === WANTED
 			){
-				touch = true;
-				// console.log(`TOUCHING, THESE TOUCH ${nums[n]} and ${nums}`);
+				touch = true; // set flag
+				console.log(`O--u--c--h, THESE TOUCH ${nums[n]} and ${nums[neighbor]}`);
 			} else if (          // =========================== NOT
 				nums[n] !== WANTED || 
 				nums[neighbor] !== WANTED
-			) { console.log(`No problem, these aren't touching [${nums[n]}] and [${nums[neighbor]}]`)
+			) {  
+				continue;
 			} else {           // =========================== SNAFU LAND
 				console.log(`Never gets here I hope.`)}
-			}
+			// }
 		}
 
 
@@ -56,28 +60,47 @@ let haveThree =(nums)=>{
 }
 
 
-let testArray = [3, 1, 3, 993];
+let testArray = [3, 3, 993];
 let pre = `Overall return for [${testArray}] is: `;
 console.log(pre + haveThree(testArray));
+console.log(`\n\n\n`);
 
-testArray = [55,  , 55, 5, 900, 3, 3, 43,  12, 166, 300];
+testArray = [3, 1, 3, 1,  3, 0, 3, 3];
+pre = `Overall return for [${testArray}] is: `;
 console.log(pre + haveThree(testArray));
 console.log(`\n\n\n`);
-testArray = [3, 4, 5, 3, 6, 6, 6, 6, 6, 88, 78987, 1.3, 3];
-console.log(pre + haveThree(testArray));
-console.log(`\n\n\n`);
-testArray = [3, 1, 3, 1, 3,6,3,6,3,6,3,6,3,6,3,6,3,6,3,6,3,6,3,1000];
-console.log(pre + haveThree(testArray));
-console.log(`\n\n\n`);
+
+
 testArray = [3, 1, 3, 1, 3, 3, 0, ,];
+pre = `Overall return for [${testArray}] is: `;
 console.log(pre + haveThree(testArray));
+console.log(`\n\n\n`);
+
+testArray = [3, 1, 3, 1, 3,6,3,6,3,6,3,6,3,6,3, 6,3,6,3,6,3,6,3,1000,3,3];
+pre = `Overall return for [${testArray}] is: `;
+console.log(pre + haveThree(testArray));
+console.log(`\n\n\n`);
+
+testArray = [2, 2, 3, 55, 2 , 55, 5, 900, 3, 43,  12, 166, 300,3 ,2];
+pre = `Overall return for [${testArray}] is: `;
+console.log(pre + haveThree(testArray));
+console.log(`\n\n\n`);
+
+testArray = [3, 4, 5, 3, 6, 6, 6, 6, 6, 88, 78987, 1.3, 3];
+pre = `Overall return for [${testArray}] is: `;
+console.log(pre + haveThree(testArray));
+console.log(`\n\n\n`);
+
+
 
 /*
 Should return:
 false
-true
-true
 false
+false
+false
+true
+true
 */
 
 
