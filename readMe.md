@@ -20,9 +20,8 @@ http://codingbat.com/
 <br/>
 There's no registration or anything required at all.<br/>
 A robot at Coding Bat gives you feedback, showing your graph of where you got stuck, at how many seconds.  It 
-shows you random graphs of stuck-time for anonymous peer users.  So cool and elegant!  It is from a 
-Stanford professor.
+shows you random graphs of stuck-time for anonymous peer users.  So cool and elegant!  
 
 ## Additional sources
-Lately I've been trying by the Fullstack Bootcamp in New York.  They published fizz-buzz-type exercises in this free pdf:  "The Code Challenge Book: How to Ace the Coding Bootcamp Technical Interview"   https://coderbyte.com/ebook <br/>
-I've been reading a used hardcover textbook, Algorithms by Robert Sedgewick, which has state-of-the-art practices, really professional-level stuff.  I haven't implemented any of it yet.  My copy is the 1st edition so it is state-of-the-art in 1980, but, a lot of this stuff, like Quicksort, isn't going away any time soon.  Bonus: the book is written in Pascal!
+Lately I've been enjoying a free drills-book by the Fullstack Bootcamp in New York.  They published fizz-buzz-type exercises in this free pdf:  "The Code Challenge Book: How to Ace the Coding Bootcamp Technical Interview"   https://coderbyte.com/ebook <br/>
+Next on deck might be Algorithms by Robert Sedgewick, which has state-of-the-art practices, really professional-level stuff.  My copy is the 1st edition so it is state-of-the-art in 1980, but, a lot of this stuff, like Quicksort, isn't going away any time soon. The book is so old that the pedagogical examples are written in Pascal.
