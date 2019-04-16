@@ -1,57 +1,62 @@
-
-let haveThree =(nums)=>{
-	let occurances  = null; //   how many 3s todo!
-	let touch = false; // adjacents?  todo!
-	let alot = false;  // three or more?
-	const WANTED = 3;
-	let neighbor = null;
-	// can refactor to map filter reduce TODO TODO TODO !
-
-	for (let n in nums){
-
-		// This tallyer must come before break statement
-		if (nums[n] === WANTED){
-			++occurances;
-		}
-
-		// don't eval final array spot; she has no neighbor!
-		if (n == nums.length - 1){
-			break;
-		}
-		neighbor = neighbor + 1;
+let haveThree =(a)=>{
+	const chaperone = true, alot = false;
+	if (!(chaperone) || alot){true} else {false}
+}
 
 
-		// if (n < nums.length - 1 ){  // todo todo change back to if (n < nums.length - 1 )
-			if (       // =========================== TOUCHING
-				nums[n] === WANTED &&
-				nums[neighbor] === WANTED
-			){
-				touch = true; // set flag
-			} else if (          // =========================== NOT
-				nums[n] !== WANTED || 
-				nums[neighbor] !== WANTED
-			) {  
-				continue;
-			} else {           // =========================== SNAFU LAND
-				console.log(`Never gets here I hope.`)}
-			// }
-		}
+// let haveThree =(nums)=>{
+// 	let occurances  = null; //   how many 3s todo!
+// 	let touch = false; // adjacents?  todo!
+// 	let alot = false;  // three or more?
+// 	const WANTED = 3;
+// 	let neighbor = null;
+// 	// can refactor to map filter reduce TODO TODO TODO !
+
+// 	for (let n in nums){
+
+// 		// This tallyer must come before break statement
+// 		if (nums[n] === WANTED){
+// 			++occurances;
+// 		}
+
+// 		// don't eval final array spot; she has no neighbor!
+// 		if (n == nums.length - 1){
+// 			break;
+// 		}
+// 		neighbor = neighbor + 1;
 
 
-	// take tally and make a boolean
-	if (occurances >= 3){ alot = true}
-	console.log(`Occurances ${occurances} Touch:${touch}  aLot${alot}   Array${nums}`);
-	if (alot && !touch){
-		return true; // todo always returning now
-	} else if (
-		touch && !alot ||
-		touch && alot  ||
-		!touch && !alot
-		) {
-		return false
-	} else { 
-		return "errori maxi"
-	}
+// 		// if (n < nums.length - 1 ){  // todo todo change back to if (n < nums.length - 1 )
+// 			if (       // =========================== TOUCHING
+// 				nums[n] === WANTED &&
+// 				nums[neighbor] === WANTED
+// 			){
+// 				touch = true; // set flag
+// 			} else if (          // =========================== NOT
+// 				nums[n] !== WANTED || 
+// 				nums[neighbor] !== WANTED
+// 			) {  
+// 				continue;
+// 			} else {           // =========================== SNAFU LAND
+// 				console.log(`Never gets here I hope.`)}
+// 			// }
+// 		}
+
+
+// 	// take tally and make a boolean
+// 	if (occurances >= 3){ alot = true}
+// 	console.log(`Occurances ${occurances} Touch:${touch}  aLot${alot}   Array${nums}`);
+// 	if (alot && !touch){
+// 		return true; // todo always returning now
+// 	} else if (
+// 		touch && !alot ||
+// 		touch && alot  ||
+// 		!touch && !alot
+// 		) {
+// 		return false
+// 	} else { 
+// 		return "errori maxi"
+// 	}
 }
 
 
@@ -104,3 +109,6 @@ true
 // not working, the referring to [next]
 // 1) try a for loop
 // 2) try printing multiple print statements
+
+// 4/16/2019 REFACTOR to use REDUCE
+// length before refactor: 55 lines of guts before call
