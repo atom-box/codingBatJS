@@ -1,6 +1,7 @@
 let haveThree =(a)=>{
-	const chaperone = true, alot = false;
-	if (!(chaperone) || alot){true} else {false}
+	const chaperoneFrown = undefined, alot = undefined;
+	
+	if (!(chaperoneFrown) || alot){return true} else {return false}
 }
 
 
@@ -57,7 +58,7 @@ let haveThree =(a)=>{
 // 	} else { 
 // 		return "errori maxi"
 // 	}
-}
+// }
 
 
 let testArray = [3, 3, 993];
