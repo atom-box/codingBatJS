@@ -7,21 +7,23 @@ Given two int values, return whichever value is larger. However if the two value
 
 
 let maxMod5 = (a, b)=>{
+	let modDiff = a % 5 - b % 5;
+	modDiff = Boolean(modDiff);
 	try {
 		if (a === b){
 			return 0;
-		} else if (){
-
-		} else if (){
-
+		} else if (!modDiff){
+			return [a, b].reduce(  (a, b)=>{return(a > b)? b : a});
+		} else if (modDiff){
+			return [a, b].reduce(  (a, b)=>{return(a > b)? a : b});
 		} else {
 			throw new Error("Should never see this.");
 		}
+	}
 	catch(e){
 		console.log(e);
 	}
 }
-
 
 
 
