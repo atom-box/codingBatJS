@@ -13,3 +13,4 @@ function noNeg(nums) {
 console.log(noNeg([1, -2])); // [1]
 console.log(noNeg([-3, -3, 3, 3])); // [3, 3]
 console.log(noNeg([-1, -1, -1])); // []
+console.log(noNeg([0, -1, null, NaN, -1, 0])); // []
