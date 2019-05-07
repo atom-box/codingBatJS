@@ -1,13 +1,21 @@
-let fixTeen =(n)=>{
+const fixTeen =(n)=>{
 	// TODO refactor to use the IN trick 
 	if (n > 12 && n < 15 || n > 16 && n < 20){ return 0} else if (n > 0){return n} else {return null};
 }
 
-let noTeenSum = 
 
-noTeenSum(1, 2, 3) → 6
-noTeenSum(2, 13, 1) → 3
-noTeenSum(2, 1, 14) → 3
+function noTeenSum(nums) {
+	// return x;
+	console.log(`The array is ${nums}`);
+	return nums.reduce((a,b)=> {return fixTeen(a)  + fixTeen(b)}, 0)
+}
+
+
+
+console.log(noTeenSum([1, 2, 3])); // 6
+console.log(noTeenSum([2, 13, 1])); // 3
+console.log(noTeenSum([15, 16, 14])); // 3
+
 
 /* 
 INSTRUCTIONS
