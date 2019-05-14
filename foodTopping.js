@@ -40,7 +40,7 @@ function showMenu(arrayOfObjects){
 
 // Menu: Array of objects.
 function vetTheToppings(menu) {
-	showMenu(menu);
+	return menu.map(fixIceCream);
 }
 
 
