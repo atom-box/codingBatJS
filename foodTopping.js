@@ -26,7 +26,7 @@ let fixIceCream =(o)=>{
 function breadAdder(arr){
 	// if (arr.some(obj => obj.bread === 'butter')){
 	// todo just trying to print for now
-	console.log(`Here are some things AA${arr}AA BB${arr[0]}BB CC${arr[0]['popcorn']}CC`);
+	// console.log(`Here are some things AA${arr}AA BB${arr[0]}BB CC${arr[0]['popcorn']}CC`);
 	if (true){
 		console.log('Now adding BREAD.')
 		return {'bread': 'butter'}
@@ -58,7 +58,7 @@ function vetTheToppings(menu1) {
 	let menu2 = [], menu3 = [];
 	menu2 = menu1.map(fixIceCream);
 	// menu3 = menu2.unshift(breadAdder(menu2));
-	menu2.unshift({'stretch pants': 'legs'});
+	menu2.unshift(breadAdder(menu2));
 	return menu2;
 }
 
