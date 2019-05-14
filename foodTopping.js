@@ -27,7 +27,7 @@ function breadAdder(arr){
 	// if (arr.some(obj => obj.bread === 'butter')){
 	// todo just trying to print for now
 	// console.log(`Here are some things AA${arr}AA BB${arr[0]}BB CC${arr[0]['popcorn']}CC`);
-	if (true){
+	if (arr[0]['popcorn'] === 'yeast'){
 		console.log('Now adding BREAD.')
 		return {'bread': 'butter'}
 	} else if (arr.length) {
