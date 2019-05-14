@@ -29,15 +29,17 @@ let fixIceCream =(o)=>{
 //  Takes an A of O
 // Prints them 1 at a time.
 function showMenu(arrayOfObjects){
+	console.log(`----`);
 	for (let i in arrayOfObjects){
-		console.log(Object.keys(arrayOfObjects[i]));
+		for (let k in arrayOfObjects[i]){
+			console.log(`${k} with ${arrayOfObjects[i][k]}`);
+		}
 	}
 }
 
 
 // Menu: Array of objects.
-function topping1(menu) {
-	console.log(`----`);
+function vetTheToppings(menu) {
 	showMenu(menu);
 }
 
@@ -46,9 +48,11 @@ let monday = [{'ice cream': 'peanuts'}, {'popcorn': 'yeast' }, {'ice cream': 'bu
 let tuesday = [{'apple': 'butter'}, {'ice cream': 'chives'}, {'pancake': 'syrup'}, {'bloody mary': 'slim jim'}];
 let wednesday = [{'potato': 'salt'}];
 let thursday = [{'coffee': 'oat milk'}, {'asparagus': 'soy sauce'}];
+let fixedMenu = [];
 
 showMenu(monday); //
-topping1(monday); 
+fixedMenu = vetTheToppings(monday); 
+showMenu(fixedMenu);
 showMenu(tuesday); // 
-topping1(tuesday); // 
-
+fixedMenu = vetTheToppings(tuesday); // 
+showMenu(fixedMenu);
