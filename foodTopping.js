@@ -27,9 +27,15 @@ function breadAdder(arr){
 	// if (arr.some(obj => obj.bread === 'butter')){
 	// todo just trying to print for now
 	// console.log(`Here are some things AA${arr}AA BB${arr[0]}BB CC${arr[0]['popcorn']}CC`);
-	if (arr[0]['popcorn'] === 'yeast'){
+	// if (arr[0]['popcorn'] === 'yeast'){
+	// if ( arr.includes =>           el['popcorn'] === 'yeast'){
+	let i = arr.length;
+	while (i--){
+		console.log(`I see ${arr[i]['bread']}.`)
 		console.log('Now adding BREAD.')
-		return {'bread': 'butter'}
+		return {'bread': 'butter'};
+	}
+	if (false) {// todo
 	} else if (arr.length) {
 		console.log('Found nought in the bread adder func.');
 		return {'kidney': 'pie'};
@@ -64,7 +70,7 @@ function vetTheToppings(menu1) {
 
 
 let monday = [{'popcorn': 'yeast' }, {'ice cream': 'butter'}, {'ice cream': 'peanuts'}, {'bread': 'cheese'}];
-let tuesday = [{'popcorn': 'yeast' },{'apple': 'butter'}, {'ice cream': 'chives'}, {'pancake': 'syrup'}, {'bloody mary': 'slim jim'}];
+let tuesday = [{'popcorn': 'yeast' },{'apple': 'butter'}, {'ice cream': 'chives'},  {'bloody mary': 'slim jim'}, {'bread': 'syrup'}];
 let wednesday = [{'potato': 'salt'}];
 let thursday = [{'coffee': 'oat milk'}, {'asparagus': 'soy sauce'}];
 let fixedMenu = [{a: 'b'}];
@@ -75,3 +81,6 @@ showMenu(fixedMenu);
 showMenu(tuesday); // 
 fixedMenu = vetTheToppings(tuesday) // 
 showMenu(fixedMenu);
+
+
+// dev notes:  This is just right for me.  The nested objects-in-an-array, combined with Array.map, Array.includes, Array.some is just right for me. 
