@@ -2,14 +2,32 @@
 Given a map of food keys and topping values, modify and return the map as follows: 
 "ice cream" can only have "cherry". 
 All meals must have "bread" with "butter".
-
+TODO: refactor to use the map function
 */
-let topping1 =(o)=>{
+let fixIceCream =()=>{
+	// this will be a mapping of the object
+	this["ice cream"] = "onions";
+}
+
+let ensureBreadPresence =()=>{
+	// todo write a conditional onto this
+	this.taco = "Tabasco";
+}
+
+
+
+
+
+let topping1 =(menu)=>{
 	console.log(`----`);
-	for (let i in o){
-		console.log(`${i}: ${o[i]}`);
+	// menu = ensureBreadPresence(menu);
+	// menu = fixIceCream(menu);
+	for (let i in menu){
+		// if (menu.hasOwnProperty(i)){
+			console.log(i + `: ` + menu[i] + ` in topping1`);
+		// }
 	}
-	return o["ice cream"] + ` is the topping.`;
+	return `Stars thar: ${menu}`;
 }
 
 
