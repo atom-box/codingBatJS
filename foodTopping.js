@@ -23,6 +23,15 @@ let fixIceCream =(o)=>{
 // Used inside of SOME()
 // This conditional returns boolean T/F 
 // if objectBREAD exists, and has butter
+/////////return HASBREADKEY  && BREADKEYPROPERTYISBUTTER
+/////////return 
+// Pass it an array-of-objects
+// It returns either nothing or single object: {bread: butter}
+// depeninding on whether the latter is absent
+// TODO right now it always always adds bread object
+function breadAdder(arr){
+	return {"pork-roll-egg": "cheese"}
+} 
 
 
 //  Used whenever you need to show the array of objects
@@ -39,8 +48,12 @@ function showMenu(arrayOfObjects){
 
 
 // Menu: Array of objects.
-function vetTheToppings(menu) {
-	return menu.map(fixIceCream);
+function vetTheToppings(menu1) {
+	let menu2 = [], menu3 = [];
+	menu2 = menu1.map(fixIceCream);
+	// menu3 = menu2.unshift(breadAdder(menu2));
+	menu2.unshift(breadAdder(menu2));
+	return menu2;
 }
 
 
