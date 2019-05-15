@@ -15,6 +15,7 @@ Long term goal,
 * Go back and re do a couple of these with crazier edge cases.  Put them into their own Testing repository with Cocoa or similar tester
 * Re do as excuse for a front end bootstrap, unsplash, CSS-Flexbox & Grid
 * Start accumulating implementations of the old Algorithms by Robert Sedgewick; the book (c)1980 is written in Pascal.
+* Edit commenting to YUI format
 ## Loose ends
 * stayPositive.js
 * foodTopping.js
