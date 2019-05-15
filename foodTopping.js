@@ -5,9 +5,13 @@ All meals must have "bread" with "butter".
 TODO: refactor to use the map function
 */
 
-// Used inside of MAP
-// Takes one object
-// If IC present, sets to Cherry, w/o checking
+/**
+* Sits in MAPfunc, confirms cherry is the icecream topping
+*
+* @method fixIceCream
+* @param {object} 
+* @return {object} 
+*/
 let fixIceCream =(o)=>{
 	if (o.hasOwnProperty('ice cream')){
 			o['ice cream'] = 'onions';
@@ -20,15 +24,15 @@ let fixIceCream =(o)=>{
 	}
 };
 
-// Pass it an array-of-objects
-// It returns either nothing or single object: {bread: butter}
-// depeninding on whether the latter is absent
+/**
+* Appends a bread for meals that lack bread.
+*
+* @method breadAdder
+* @parameter {array} Array of food objects
+* @return {object} But should return nothing sometimes
+*
+*/
 function breadAdder(arr){
-	// if (arr.some(obj => obj.bread === 'butter')){
-	// todo just trying to print for now
-	// console.log(`Here are some things AA${arr}AA BB${arr[0]}BB CC${arr[0]['popcorn']}CC`);
-	// if (arr[0]['popcorn'] === 'yeast'){
-	// if ( arr.includes =>           el['popcorn'] === 'yeast'){
 	let i = arr.length;
 	while (i--){
 		console.log(`I see ${arr[i]['bread']}.`)
@@ -45,9 +49,13 @@ function breadAdder(arr){
 } 
 
 
-//  Used whenever you need to show the array of objects
-//  Takes an A of O
-// Prints them 1 at a time.
+/**
+* Used whenever you need to show the array of objects
+* ...prints them one at a time
+* @method showMenu
+* @parameter {array: objects}
+*	@return void
+*/
 function showMenu(arrayOfObjects){
 	console.log(`----`);
 	var i = arrayOfObjects.length;
@@ -59,7 +67,15 @@ function showMenu(arrayOfObjects){
 }
 
 
-// Menu: Array of objects.
+/**
+*  Rectifies the menu. 
+*	
+* @method vetTheToppings
+* @parameter {array: objects}
+* @return {array: objects}
+*	@helpers FIXICECREAM, BREADADDER
+*
+*/
 function vetTheToppings(menu1) {
 	let menu2 = [], menu3 = [];
 	menu2 = menu1.map(fixIceCream);
