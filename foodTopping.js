@@ -14,8 +14,7 @@ TODO: refactor to use the map function
 */
 let fixIceCream =(o)=>{
 	if (o.hasOwnProperty('ice cream')){
-			o['ice cream'] = 'onions';
-			console.log('Found onions!');
+			o['ice cream'] = 'cherry';
 			return o;
 	} else if (o) {
 		return o;
@@ -23,6 +22,29 @@ let fixIceCream =(o)=>{
 		return null;
 	}
 };
+
+
+/**
+* Returns the bread;butter count
+*
+*	@method breadCount
+*	@parameter {array: objects}
+* @return {integer}
+*/
+function breadCount(arr) {
+	let last = arr.length;
+	while (last -= 1){
+		console.log(`  ______________  ${arr[last]}`);
+		for(let i in arr[last]){
+			if (arr[last].hasOwnProperty[i]){
+				console.log(`||||||||I see ${arr[last]}`);
+			} else {
+				console.log(`:::uh-oh:::${i} ${arr[last][i]}`);
+			}
+	}
+	}
+	
+}
 
 /**
 * Appends a bread for meals that lack bread.
@@ -33,10 +55,11 @@ let fixIceCream =(o)=>{
 *
 */
 function breadAdder(arr){
+
 	let i = arr.length;
 	while (i--){
-		console.log(`I see ${arr[i]['bread']}.`)
-		console.log('Now adding BREAD.')
+		console.log(`---I see ${arr[i]['bread']}.`)
+		console.log('---Now adding BREAD.')
 		return {'bread': 'butter'};
 	}
 	if (false) {// todo
@@ -57,7 +80,6 @@ function breadAdder(arr){
 *	@return void
 */
 function showMenu(arrayOfObjects){
-	console.log(`----`);
 	var i = arrayOfObjects.length;
 	while (i--){
 		for (let k in arrayOfObjects[i]){
@@ -86,17 +108,22 @@ function vetTheToppings(menu1) {
 
 
 let monday = [{'popcorn': 'yeast' }, {'ice cream': 'butter'}, {'ice cream': 'peanuts'}, {'bread': 'cheese'}];
-let tuesday = [{'popcorn': 'yeast' },{'apple': 'butter'}, {'ice cream': 'chives'},  {'bloody mary': 'slim jim'}, {'bread': 'syrup'}];
+let tuesday = [{'popcorn': 'yeast' }, {'bread': 'butter'}, {'apple': 'butter'}, {'ice cream': 'chives'},  {'bloody mary': 'slim jim'}, {'bread': 'syrup'}];
 let wednesday = [{'potato': 'salt'}];
 let thursday = [{'coffee': 'oat milk'}, {'asparagus': 'soy sauce'}];
 let fixedMenu = [{a: 'b'}];
 
+console.log('-----BEFORE:-----');
 showMenu(monday); //
 fixedMenu = vetTheToppings(monday); 
+console.log('-----AFTER:-----');
 showMenu(fixedMenu);
+console.log('-----BEFORE:-----');
 showMenu(tuesday); // 
 fixedMenu = vetTheToppings(tuesday) // 
+console.log('-----AFTER:-----');
 showMenu(fixedMenu);
 
+breadCount([{'popcorn': 'yeast' }, {'bread': 'butter'}, {'apple': 'butter'}, {'ice cream': 'chives'},  {'bloody mary': 'slim jim'}, {'bread': 'syrup'}])
 
 // dev notes:  This is just right for me.  The nested objects-in-an-array, combined with Array.map, Array.includes, Array.some is just right for me. 
