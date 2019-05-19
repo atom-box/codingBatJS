@@ -32,30 +32,29 @@ let fixIceCream =(o)=>{
 * @return {integer}
 */
 function breadCount(arr) {
-	let last = arr.length;
-	while (last -= 1){
-		console.log(`  ______________  ${arr[last]}`);
-		for(let i in arr[last]){
-			if (arr[last].hasOwnProperty[i]){
-				console.log(`||||||||I see ${arr[last]}`);
-			} else {
-				console.log(`:::uh-oh:::${i} ${arr[last][i]}`);
-			}
-	}
-	}
-	
+	return 88;
+	// let last = arr.length;
+	// while (last -= 1){
+	// 	console.log(`  ______________  ${arr[last]}`);
+	// 	for(let i in arr[last]){
+	// 		if (arr[last].hasOwnProperty[i]){
+	// 			console.log(`|||||||| COUNT OWN ${arr[last]}`);
+	// 		} else {
+	// 			console.log(`:::COUNT NOT OWN in bCount:::${i} ${arr[last][i]}`);
+	// 		}
+	// }
+	// }
 }
 
 /**
 * Appends a bread for meals that lack bread.
 *
-* @method breadAdder
+* @method breadAdd
 * @parameter {array} Array of food objects
 * @return {object} But should return nothing sometimes
 *
 */
-function breadAdder(arr){
-
+function breadAdd(arr){
 	let i = arr.length;
 	while (i--){
 		console.log(`---I see ${arr[i]['bread']}.`)
@@ -95,14 +94,26 @@ function showMenu(arrayOfObjects){
 * @method vetTheToppings
 * @parameter {array: objects}
 * @return {array: objects}
-*	@helpers FIXICECREAM, BREADADDER
+*	@helpers FIXICECREAM, BREADADD
 *
+* THIS IS MAIN.  FIRST fixicecreamfunction MAPS THE ARRAY TO DETECT ICE CREAM THAT ISNT CHERRIED,RETURNS IMPROVED ARRAY.
+* THEN 
 */
 function vetTheToppings(menu1) {
 	let menu2 = [], menu3 = [];
 	menu2 = menu1.map(fixIceCream);
-	// menu3 = menu2.unshift(breadAdder(menu2));
-	menu2.unshift(breadAdder(menu2));
+	// menu3 = menu2.unshift(breadAdd(menu2));
+	// COUNT B&B
+	console.log(`Before counting bread we have menu2 length ${menu2.length} and looking like this`);
+	showMenu(menu2);
+	if (breadCount(menu2) === 0){
+		console.log('Truly, this was a menu that lacked B&B:');
+	} else if (breadCount(menu2) > 0) {
+		console.log('There needs no loaf hereabouts.');
+	} else {
+		console.log('SHOULD NEVER SEE THIS.');
+	}
+	// IF NO B&B UNSHIFT A B&Bad
 	return menu2;
 }
 
@@ -127,3 +138,5 @@ showMenu(fixedMenu);
 breadCount([{'popcorn': 'yeast' }, {'bread': 'butter'}, {'apple': 'butter'}, {'ice cream': 'chives'},  {'bloody mary': 'slim jim'}, {'bread': 'syrup'}])
 
 // dev notes:  This is just right for me.  The nested objects-in-an-array, combined with Array.map, Array.includes, Array.some is just right for me. 
+
+// TODO make bread / butter not add itself if there is already, exactly b and b
