@@ -16,9 +16,11 @@ let fixIceCream =(o)=>{
 	if (o.main === 'ice cream'){
 			o.condiment = 'cherry';
 			return o;
-	} else if (o.length) {
+	} else if (o.main) {
+		console.log('aint cream')
 		return o;
 	} else {
+		console.log(`${o.main} IC FIXER ${o.condiment} is a little weird.  something went wrong`)
 		return 99;
 	}
 };
@@ -34,18 +36,19 @@ let fixIceCream =(o)=>{
 function breadCount(arr) {
 	let i = arr.length,
 	tallyOfBB = 0; 
-	while (i -= 1){  // loop array
-		console.log(`  ______________  ${i}`);
+	while (i--){  // loop array
+		console.log(`  _________ checking  ${arr[i].main} and we find it to be...`);
 		if ( arr[i].main === 'bread' && arr[i].condiment === 'butter'){
-			console.log(`Found bread & butter.`);
+			console.log(`bread & butter.`);
 			tallyOfBB += 1;
 		} else if ( arr[i].main ){
-			console.log (`Checked ${Object.keys(arr[i])}, this item is not bread.`);
+			console.log (` not bread.`);
 		} else {
 			console.log ('SNST!');
 		}
-		return tallyOfBB;
 	}
+	console.log(`Up in the BREADCOUNTER, we are about to return ${tallyOfBB}.`);
+	return tallyOfBB;
 }
 
 
