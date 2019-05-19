@@ -32,18 +32,26 @@ let fixIceCream =(o)=>{
 * @return {integer}
 */
 function breadCount(arr) {
-	return 88;
-	// let last = arr.length;
-	// while (last -= 1){
-	// 	console.log(`  ______________  ${arr[last]}`);
-	// 	for(let i in arr[last]){
-	// 		if (arr[last].hasOwnProperty[i]){
-	// 			console.log(`|||||||| COUNT OWN ${arr[last]}`);
-	// 		} else {
-	// 			console.log(`:::COUNT NOT OWN in bCount:::${i} ${arr[last][i]}`);
-	// 		}
-	// }
-	// }
+	let last = arr.length; 
+	while (last -= 1){  // loop array
+		console.log(`  ______________  ${arr[last]}`);
+		if (arr[last].bread === 'butter'){
+			console.log(`Found bread & butter.`)
+		} else if (   ){
+			console.log (`Checked ${Object.keys(arr[last])}, this item is not bread.`);
+		} else {
+			console.log ('SNST!');
+		}
+		// note CORRECTLY PRINTS THE KEY BREAD: ${Object.keys(arr[last])}
+
+		for(let i in arr[last]){   
+			if (arr[last].hasOwnProperty[i]){
+				console.log(`|||||||| COUNT OWN ${arr[last]}`);
+			} else {
+				console.log(`:::COUNT NOT OWN in bCount:::${i} ${arr[last][i]}`);
+			}
+		}
+	}
 }
 
 /**
