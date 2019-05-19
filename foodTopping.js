@@ -13,13 +13,13 @@ TODO: refactor to use the map function
 * @return {object} 
 */
 let fixIceCream =(o)=>{
-	if (o.hasOwnProperty('ice cream')){
-			o['ice cream'] = 'cherry';
+	if (o.main === 'ice cream'){
+			o.condiment = 'cherry';
 			return o;
-	} else if (o) {
+	} else if (o.length) {
 		return o;
 	} else {
-		return null;
+		return 99;
 	}
 };
 
@@ -32,51 +32,22 @@ let fixIceCream =(o)=>{
 * @return {integer}
 */
 function breadCount(arr) {
-	let last = arr.length; 
-	while (last -= 1){  // loop array
-		console.log(`  ______________  ${arr[last]}`);
-		if (arr[last].bread === 'butter'){
-			console.log(`Found bread & butter.`)
-		} else if (   ){
-			console.log (`Checked ${Object.keys(arr[last])}, this item is not bread.`);
+	let i = arr.length,
+	tallyOfBB = 0; 
+	while (i -= 1){  // loop array
+		console.log(`  ______________  ${i}`);
+		if ( arr[i].main === 'bread' && arr[i].condiment === 'butter'){
+			console.log(`Found bread & butter.`);
+			tallyOfBB += 1;
+		} else if ( arr[i].main ){
+			console.log (`Checked ${Object.keys(arr[i])}, this item is not bread.`);
 		} else {
 			console.log ('SNST!');
 		}
-		// note CORRECTLY PRINTS THE KEY BREAD: ${Object.keys(arr[last])}
-
-		for(let i in arr[last]){   
-			if (arr[last].hasOwnProperty[i]){
-				console.log(`|||||||| COUNT OWN ${arr[last]}`);
-			} else {
-				console.log(`:::COUNT NOT OWN in bCount:::${i} ${arr[last][i]}`);
-			}
-		}
+		return tallyOfBB;
 	}
 }
 
-/**
-* Appends a bread for meals that lack bread.
-*
-* @method breadAdd
-* @parameter {array} Array of food objects
-* @return {object} But should return nothing sometimes
-*
-*/
-function breadAdd(arr){
-	let i = arr.length;
-	while (i--){
-		console.log(`---I see ${arr[i]['bread']}.`)
-		console.log('---Now adding BREAD.')
-		return {'bread': 'butter'};
-	}
-	if (false) {// todo
-	} else if (arr.length) {
-		console.log('Found nought in the bread adder func.');
-		return {'kidney': 'pie'};
-	} else {
-		return {"something went": "wrong"}
-	}
-} 
 
 
 /**
@@ -86,14 +57,13 @@ function breadAdd(arr){
 * @parameter {array: objects}
 *	@return void
 */
-function showMenu(arrayOfObjects){
-	var i = arrayOfObjects.length;
+function showMenu(arr){
+	var i = arr.length;
 	while (i--){
-		for (let k in arrayOfObjects[i]){
-			console.log(`${k} with ${arrayOfObjects[i][k]}`);
-		}
+			console.log(`${arr[i].main} with ${arr[i].condiment}`);
 	}
 }
+
 
 
 /**
@@ -109,13 +79,10 @@ function showMenu(arrayOfObjects){
 */
 function vetTheToppings(menu1) {
 	let menu2 = [], menu3 = [];
-	menu2 = menu1.map(fixIceCream);
-	// menu3 = menu2.unshift(breadAdd(menu2));
-	// COUNT B&B
-	console.log(`Before counting bread we have menu2 length ${menu2.length} and looking like this`);
-	showMenu(menu2);
+	menu2 = menu1.map(fixIceCream); // add cherry
 	if (breadCount(menu2) === 0){
 		console.log('Truly, this was a menu that lacked B&B:');
+		menu2.unshift({main: 'bread', condiment: 'butter'});
 	} else if (breadCount(menu2) > 0) {
 		console.log('There needs no loaf hereabouts.');
 	} else {
