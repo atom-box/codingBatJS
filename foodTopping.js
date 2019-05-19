@@ -126,10 +126,11 @@ function vetTheToppings(menu1) {
 }
 
 
-let monday = [{'popcorn': 'yeast' }, {'ice cream': 'butter'}, {'ice cream': 'peanuts'}, {'bread': 'cheese'}];
-let tuesday = [{'popcorn': 'yeast' }, {'bread': 'butter'}, {'apple': 'butter'}, {'ice cream': 'chives'},  {'bloody mary': 'slim jim'}, {'bread': 'syrup'}];
-let wednesday = [{'potato': 'salt'}];
-let thursday = [{'coffee': 'oat milk'}, {'asparagus': 'soy sauce'}];
+let monday = [{main: 'popcorn', condiment: 'yeast' }, {main: 'ice cream', condiment: 'butter'}, {main: 'ice cream', condiment: 'peanuts'}, {main: 'bread', condiment: 'cheese'}];
+
+let tuesday = [{main: 'popcorn', condiment: 'yeast' }, {main: 'bread', condiment: 'butter'}, {main: 'apple', condiment: 'butter'}, {main: 'ice cream', condiment: 'chives'},  {main: 'bloody mary', condiment: 'slim jim'}, {main: 'bread', condiment: 'syrup'}];
+let wednesday = [{main: 'potato', condiment: 'salt'}];
+let thursday = [{main: 'coffee', condiment: 'oat milk'}, {main: 'asparagus', condiment: 'soy sauce'}];
 let fixedMenu = [{a: 'b'}];
 
 console.log('-----BEFORE:-----');
@@ -143,7 +144,7 @@ fixedMenu = vetTheToppings(tuesday) //
 console.log('-----AFTER:-----');
 showMenu(fixedMenu);
 
-breadCount([{'popcorn': 'yeast' }, {'bread': 'butter'}, {'apple': 'butter'}, {'ice cream': 'chives'},  {'bloody mary': 'slim jim'}, {'bread': 'syrup'}])
+breadCount([{main: 'popcorn', condiment: 'yeast' }, {main: 'bread', condiment: 'butter'}, {main: 'apple', condiment: 'butter'}, {main: 'ice cream', condiment: 'chives'},  {main: 'bloody mary', condiment: 'slim jim'}, {main: 'bread', condiment: 'syrup'}])
 
 // dev notes:  This is just right for me.  The nested objects-in-an-array, combined with Array.map, Array.includes, Array.some is just right for me. 
 
