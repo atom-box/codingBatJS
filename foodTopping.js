@@ -17,40 +17,13 @@ let fixIceCream =(o)=>{
 			o.condiment = 'cherry';
 			return o;
 	} else if (o.main) {
-		console.log('aint cream')
+		// console.log('aint cream')
 		return o;
 	} else {
-		console.log(`${o.main} IC FIXER ${o.condiment} is a little weird.  something went wrong`)
+		// console.log(`${o.main} IC FIXER ${o.condiment} is a little weird.  something went wrong`)
 		return 99;
 	}
 };
-
-
-/**
-* Returns the bread;butter count
-*
-*	@method breadCount
-*	@parameter {array: objects}
-* @return {integer}
-*/
-function breadCount(arr) {
-	let i = arr.length,
-	tallyOfBB = 0; 
-	while (i--){  // loop array
-		console.log(`  _________ checking  ${arr[i].main} and we find it to be...`);
-		if ( arr[i].main === 'bread' && arr[i].condiment === 'butter'){
-			console.log(`bread & butter.`);
-			tallyOfBB += 1;
-		} else if ( arr[i].main ){
-			console.log (` not bread.`);
-		} else {
-			console.log ('SNST!');
-		}
-	}
-	console.log(`Up in the BREADCOUNTER, we are about to return ${tallyOfBB}.`);
-	return tallyOfBB;
-}
-
 
 
 /**
@@ -83,15 +56,12 @@ function showMenu(arr){
 function vetTheToppings(menu1) {
 	let menu2 = [], menu3 = [];
 	menu2 = menu1.map(fixIceCream); // add cherry
-	if (breadCount(menu2) === 0){
+
+	// IF NO B&B UNSHIFT A B&Bad
+	if (!menu2.some((item)=>{return item.main === 'bread' && item.condiment === 'butter'})){
 		console.log('Truly, this was a menu that lacked B&B:');
 		menu2.unshift({main: 'bread', condiment: 'butter'});
-	} else if (breadCount(menu2) > 0) {
-		console.log('There needs no loaf hereabouts.');
-	} else {
-		console.log('SHOULD NEVER SEE THIS.');
-	}
-	// IF NO B&B UNSHIFT A B&Bad
+	} 
 	return menu2;
 }
 
@@ -114,7 +84,7 @@ fixedMenu = vetTheToppings(tuesday) //
 console.log('-----AFTER:-----');
 showMenu(fixedMenu);
 
-breadCount([{main: 'popcorn', condiment: 'yeast' }, {main: 'bread', condiment: 'butter'}, {main: 'apple', condiment: 'butter'}, {main: 'ice cream', condiment: 'chives'},  {main: 'bloody mary', condiment: 'slim jim'}, {main: 'bread', condiment: 'syrup'}])
+// breadCount([{main: 'popcorn', condiment: 'yeast' }, {main: 'bread', condiment: 'butter'}, {main: 'apple', condiment: 'butter'}, {main: 'ice cream', condiment: 'chives'},  {main: 'bloody mary', condiment: 'slim jim'}, {main: 'bread', condiment: 'syrup'}])
 
 // dev notes:  This is just right for me.  The nested objects-in-an-array, combined with Array.map, Array.includes, Array.some is just right for me. 
 
