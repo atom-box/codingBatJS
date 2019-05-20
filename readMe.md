@@ -1,9 +1,56 @@
-# Coding Bat Exercises
+# Coding Challenges, some from codingbat.com
 
 ## The programs
 Every file above is a standalone js file that can be run in node.js
 
-## Coding Bat
+## Contents
+* aliceServer
+* arrayFront9.js
+* arrayInArray.js
+* arraysFirst.js
+* bunnyEars.js
+* do.js
+* drill-typeof-ch1.js
+* elloOrld.js
+* endsSameArray.js
+* exercise1.elm
+* exercise2.elm
+* fewTeens.js
+* fizzBuzz.js
+* foodTopping.js
+* implementMap&Filter.js
+* index.html
+* isEverywhere.js
+* lightBulbs.js
+* lucky8s-recursive.js
+* makeBricks.js
+* maxMod5.js
+* may2019.sublime-project
+* may2019.sublime-workspace
+* meritRegex.js
+* mixStrings.js
+* nouns.js
+* parens.js
+* readMe.md
+* scoresClumped.js
+* shortestLoopEver.js
+* sleepIn.js
+* stayPositive.js
+* stayPositive_BACKUP_79641.js
+* stayPositive_BASE_79641.js
+* stayPositive_LOCAL_79641.js
+* stayPositive_REMOTE_79641.js
+* sumArrays.js
+* sumDouble.js
+* temp.csv
+* temptemptemp.js
+* thisSummer.js
+* three3s.js
+* xindex.html
+* zipZap.js
+
+
+## Source
 Half of these are from Stanford University site <br/>
 http://codingbat.com/
 <br/>
