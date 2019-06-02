@@ -4,7 +4,6 @@
 Every file above is a standalone js file that can be run in node.js
 
 ## Contents
-* aliceServer
 * arrayFront9.js
 * arrayInArray.js
 * arraysFirst.js
@@ -56,8 +55,7 @@ http://codingbat.com/
 <br/>
 There's no registration or anything required at all. 
 The graphs of anonymized user data at that site are cool.<br/>
-Good too, this free pdf:  "The Code Challenge Book: How to Ace the Coding Bootcamp Technical Interview"   https://coderbyte.com/ebook <br/>
-Long term goal, 
+Good too, this free pdf:  "The Code Challenge Book: How to Ace the Coding Bootcamp Technical Interview"   https://coderbyte.com/ebook <br/> 
 ## Future Ideas
 * Go back and re do a couple of these with crazier edge cases.  Put them into their own Testing repository with Cocoa or similar tester
 * Re do as excuse for a front end bootstrap, unsplash, CSS-Flexbox & Grid
