@@ -8,9 +8,10 @@ function checkChar(s, c){
   // check only first letter
   // Accepts a string and char to check for.
   // Returns 0 or 1
-  if (typeof s !== String || 
-      typeof c !== String ||
-        s[0] !== c ){
+  if (typeof s !== 'string' || 
+      typeof c !== 'string' ){
+    return typeof s + ' & ' + typeof c + ' are not what I was expecting';
+  } else if (s[0] !== c ){
     return 0;
   } else {
     return 1;
@@ -30,7 +31,7 @@ function countX(s){
 
 
 
-console.log(checkChar('t', 't')); // 1
+console.log(checkChar(null, undefined)); // 1
 console.log(checkChar('Z', 'Zorro')); // 0
 console.log(checkChar('Zorro', 'Z')); // 1
 
