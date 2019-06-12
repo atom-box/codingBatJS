@@ -3,51 +3,52 @@
 ## The programs
 Every file above is a standalone js file that can be run in node.js
 
-## Contents
-* arrayFront9.js
-* arrayInArray.js
+## Contents (chronological order, from 11/2018) 
+* sleepIn.js
+* sumDouble.js
 * arraysFirst.js
-* bunnyEars.js
-* do.js
-* drill-typeof-ch1.js
-* elloOrld.js
-* endsSameArray.js
-* exercise1.elm
-* exercise2.elm
-* fewTeens.js
 * fizzBuzz.js
-* foodTopping.js
+* sumArrays.js
+* endsSameArray.js
+* mixStrings.js
 * implementMap&Filter.js
-* index.html
+* makeBricks.js
+* arrayInArray.js
+* bunnyEars.js
+* lucky8s-recursive.js
+* parens.js
 * isEverywhere.js
 * lightBulbs.js
-* lucky8s-recursive.js
-* makeBricks.js
-* maxMod5.js
-* may2019.sublime-project
-* may2019.sublime-workspace
-* meritRegex.js
-* mixStrings.js
-* nouns.js
-* parens.js
-* readMe.md
+* zipZap.js
+* drill-typeof-ch1.js
 * scoresClumped.js
+* meritRegex.js
+* exercise1.elm
+* xindex.html
+* exercise2.elm
+* aliceServer
+* nouns.js
+* index.html
+* do.js
+* arrayFront9.js
+* elloOrld.js
+* temptemptemp.js
+* three3s.js
+* maxMod5.js
 * shortestLoopEver.js
-* sleepIn.js
-* stayPositive.js
+* fewTeens.js
 * stayPositive_BACKUP_79641.js
 * stayPositive_BASE_79641.js
 * stayPositive_LOCAL_79641.js
 * stayPositive_REMOTE_79641.js
-* sumArrays.js
-* sumDouble.js
-* temp.csv
-* temptemptemp.js
+* stayPositive.js
 * thisSummer.js
-* three3s.js
-* xindex.html
-* zipZap.js
-
+* temp.csv
+* foreignMap.js
+* foodTopping.js
+* may2019.sublime-project
+* may2019.sublime-workspace
+* recursiveTriangle.js
 
 ## Source
 Half of these are from Stanford University site <br/>
