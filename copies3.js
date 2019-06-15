@@ -19,7 +19,7 @@ let multify = (sum, item) =>{
 function copies3 (items){
 	// Accept an array.
 	// Return an array where each item was tripled.
-	return ['a', 'b', 'c'];
+	return items.reduce(multify, [])
 }
 
 console.log(multify('', 'carter'));
