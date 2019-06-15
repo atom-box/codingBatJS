@@ -5,27 +5,25 @@
  */
 "use strict";
 
-let multify = (sum, item) =>{
+let multify = (item) =>{
 // Accept a string.
 // Return a string that is 3x the first)
 	const FACTOR = 3;
+	let tripledWord = '';
 	for (let i = FACTOR; i > 0; i--){
-		sum += item;
+		tripledWord += item;
 	};
-	return sum;
+	return tripledWord;
 }
 
 
-function copies3 (items){
+function copies3 (inItems){
 	// Accept an array.
 	// Return an array where each item was tripled.
-	return items.reduce(multify, [])
+	let outItems = [];
+	outItems = inItems.map(multify);
+	return outItems;
 }
-
-console.log(multify('', 'carter'));
-console.log(multify('', 'z'));
-console.log(multify('', 'leek'));
-
 
 console.log(copies3(["a", "bb", "ccc"])); // ["aaa", "bbbbbb", "ccccccccc"]
 console.log(copies3(["24", "a", ""])); // ["242424", "aaa", ""]
