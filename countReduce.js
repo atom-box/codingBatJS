@@ -9,20 +9,12 @@ function countX(s){
 	let SOUGHT = 'x';
 	let letters = Array.from(s);
 	let count = letters.reduce(
-		function(sum, c){
-			if ( c === SOUGHT){
-				console.log( `${c} is ${SOUGHT}`)
-				return 1;
-			} else {
-				console.log( `${c} is not ${SOUGHT}`)
-				return 0;
+		function(sum, item){
+				return sum + ((item === SOUGHT)? 1 : 0);
 			}
-		}
 		, 0)
 	return (count);
 }
-
-
 
 
 console.log(countX("xxhiXxax"));     // 3
