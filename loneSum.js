@@ -18,18 +18,14 @@ function hasPeer(index, arr){
 	let occurances = 0, hit = 0; 
 	occurances = arr.reduce( (acc, v, i) => {
 			hit = (arr[i] == cipher)? 1 : 0;
-			console.log(`Checking ${cipher} versus ${arr[i]}. Result: ${hit}`);			
+			// console.log(`Checking ${cipher} versus ${arr[i]}. Result: ${hit}`);			
 			return acc + hit;
 			}, 0);
-	console.log(`Occurances is ${occurances}`);
+	// console.log(`Occurances is ${occurances}`);
 	return (occurances > 1)? true : false;
 	// note: occurances will always have at least one occurance of self
 }
 
-function isEven(index, arr){
-	arr = [];
-	return true;
-}
 
 function loneSum(){
 	let nums = Array.from(arguments);
@@ -44,7 +40,8 @@ function loneSum(){
 		// console.log(`Value, index, acc, and arr[i]: ${v}, ${i}, ${acc}, and ${arr[i]}.`);
 
 // CONSIDER PASSING A COPY INSTEAD
-		return acc + (hasPeer(i, arr))? v : 0;  
+		if (!hasPeer(i, arr)) {console.log(`${arr[i]} is peerless.`); acc += arr[i]} 
+		return acc; 
 	}, 0);
 	return result;
 }  
@@ -56,7 +53,7 @@ console.log(hasPeer(3 , [13, 33, 9, 44, 9, 55, 13])); // FALSE
 
 console.log('======================');
 
-console.log(loneSum(222, 2, 0, 44, 44, 0, 2, 1)); // 12 (actual 45)
+console.log(loneSum(222, 2, 0, 100, 44, 44, 0, 2, 1)); // 12 (actual 45)
 // console.log(loneSum(3, 2, 3)); // 2 (actual 3)
 // console.log(loneSum(3, 3, 3)); // 0 (actual 0)
 
