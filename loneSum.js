@@ -6,31 +6,39 @@
 function hasPeer(index, arr){
 	// remove that item
 	console.log(`Passed into peerchecker: index ${index} and length of array: ${arr.length}.`)
-	let localNums = arr;
-	var cipher = localNums.splice(index, 1);
+	var cipher = arr.splice(index, 1);
 	cipher = Number(cipher);  // THIS SYNTAX WORKS.
-	return localNums.some((element)=>{
-		return (element == cipher);
+	return arr.some((element)=>{
+		return (element === cipher);
 	});
+}
+
+function isEven(index, arr){
+	arr = [];
+	return true;
 }
 
 function loneSum(){
 	let nums = Array.from(arguments);
-	nums = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19];
-	let result = nums.reduce((acc, item, index, arr)=>{
-		// console.log(`Array length is ${nums.length}. Initial condition, acc holds ${acc}. Comparing value: ${item} at position ${index} whose val is ${arr[index]}.  Has [peer? ${hasPeer(index, arr)}!`);
-		console.log(`Lengths of Nums: ${nums.length} Vars: ${arr.length}`)
-		return acc + (hasPeer(index, arr))? 0 : 1 ;  
+	let result = nums.reduce((acc, v, i, arr)=>{
+		// console.log(`Array length is ${nums.length}. Initial condition, acc holds ${acc}. Comparing value: ${v} at position ${index} whose val is ${arr[index]}.  Has [peer? ${hasPeer(index, arr)}!`);
+		// console.log(`Array length is ${nums.length}. Initial condition, acc holds ${acc}. Does ${v} have a peer: ${hasPeer(i, nums)}. `);
+
+		// console.log(`Lengths of Nums: ${nums.length} Vars: ${arr.length}`)
+		console.log(`Lengths of Nums, arr: ${nums.length}, ${arr.length} , value, index, acc, and valatthatindexofarray: ${v}, ${i}, ${acc}, and ${arr[i]} `)
+		return acc + v;  
 	}, 0);
 	return result;
 }  
 
-console.log(hasPeer(0 , [33, 9, 44, 9, 55])); // 2
-console.log(hasPeer(1 , [33, 9, 44, 9, 55])); // 2
-console.log(hasPeer(3 , [33, 9, 44, 9, 55])); // 2
+console.log(hasPeer(0 , [13, 33, 9, 44, 9, 55, 13])); //  TRUE
+console.log(hasPeer(1 , [13, 33, 9, 44, 9, 55, 13])); // FALSE
+console.log(hasPeer(2 , [13, 33, 9, 44, 9, 55, 13])); // TRUE
+console.log(hasPeer(3 , [13, 33, 9, 44, 9, 55, 13])); // FALSE
+
 console.log('======================');
 
-console.log(loneSum(1, 2, 3, 44, 44)); // 6 (actual 45)
+console.log(loneSum(1, 2, 0, 44, 44, 0, 2, 1)); // 12 (actual 45)
 // console.log(loneSum(3, 2, 3)); // 2 (actual 3)
 // console.log(loneSum(3, 3, 3)); // 0 (actual 0)
 
