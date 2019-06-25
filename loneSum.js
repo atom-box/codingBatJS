@@ -20,12 +20,17 @@ function isEven(index, arr){
 
 function loneSum(){
 	let nums = Array.from(arguments);
+	let foo = 0;
 	let result = nums.reduce((acc, v, i, arr)=>{
 		// console.log(`Array length is ${nums.length}. Initial condition, acc holds ${acc}. Comparing value: ${v} at position ${index} whose val is ${arr[index]}.  Has [peer? ${hasPeer(index, arr)}!`);
-		// console.log(`Array length is ${nums.length}. Initial condition, acc holds ${acc}. Does ${v} have a peer: ${hasPeer(i, nums)}. `);
+		// console.log(`Lengths of Nums, arr: ${nums.length}, ${arr.length} , value, index, acc, and arr[i]: ${v}, ${i}, ${acc}, and ${arr[i]} `);
+		console.log(`Before subfunc`);
+		console.log(`Value, index, acc, and arr[i]: ${v}, ${i}, ${acc}, and ${arr[i]}.`);
+		foo = hasPeer(i, arr ); // NOT PASSED AS COPY?
+		console.log(`After subfunc`);
+		console.log(`Value, index, acc, and arr[i]: ${v}, ${i}, ${acc}, and ${arr[i]}.`);
 
-		// console.log(`Lengths of Nums: ${nums.length} Vars: ${arr.length}`)
-		console.log(`Lengths of Nums, arr: ${nums.length}, ${arr.length} , value, index, acc, and valatthatindexofarray: ${v}, ${i}, ${acc}, and ${arr[i]} `)
+// CONSIDER PASSING A COPY INSTEAD
 		return acc + v;  
 	}, 0);
 	return result;
@@ -42,4 +47,4 @@ console.log(loneSum(1, 2, 0, 44, 44, 0, 2, 1)); // 12 (actual 45)
 // console.log(loneSum(3, 2, 3)); // 2 (actual 3)
 // console.log(loneSum(3, 3, 3)); // 0 (actual 0)
 
-
+// Meg shell.             Meg shell.
