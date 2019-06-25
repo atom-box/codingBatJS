@@ -31,30 +31,16 @@ function loneSum(){
 	let nums = Array.from(arguments);
 	let foo = 0;
 	let result = nums.reduce((acc, v, i, arr)=>{
-		console.log(`Array length is ${nums.length}. Initial condition, acc holds ${acc}. Comparing value: ${v} at position ${i} whose val is ${arr[i]}.  Has [peer? ${hasPeer(i, arr)}!`);
-		// console.log(`Lengths of Nums, arr: ${nums.length}, ${arr.length} , value, index, acc, and arr[i]: ${v}, ${i}, ${acc}, and ${arr[i]} `);
-		// console.log(`Before subfunc`);
-		// console.log(`Value, index, acc, and arr[i]: ${v}, ${i}, ${acc}, and ${arr[i]}.`);
-		// foo = hasPeer(i, arr ); // NOW PASS AS COPY! This fixed the shrinking array BUG!
-		// console.log(`After subfunc`);
-		// console.log(`Value, index, acc, and arr[i]: ${v}, ${i}, ${acc}, and ${arr[i]}.`);
-
-// CONSIDER PASSING A COPY INSTEAD
 		if (!hasPeer(i, arr)) {console.log(`${arr[i]} is peerless.`); acc += arr[i]} 
 		return acc; 
 	}, 0);
 	return result;
 }  
 
-console.log(hasPeer(0 , [13, 33, 9, 44, 9, 55, 13])); //  TRUE
-console.log(hasPeer(1 , [13, 33, 9, 44, 9, 55, 13])); // FALSE
-console.log(hasPeer(2 , [13, 33, 9, 44, 9, 55, 13])); // TRUE
 console.log(hasPeer(3 , [13, 33, 9, 44, 9, 55, 13])); // FALSE
 
 console.log('======================');
 
 console.log(loneSum(222, 2, 0, 100, 44, 44, 0, 2, 1)); // 12 (actual 45)
-// console.log(loneSum(3, 2, 3)); // 2 (actual 3)
-// console.log(loneSum(3, 3, 3)); // 0 (actual 0)
 
 // Meg shell.             Meg shell.
