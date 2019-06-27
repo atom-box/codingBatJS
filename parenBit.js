@@ -25,11 +25,14 @@ function parenBit(zab){
 	}
 
 	return afterParens(zab);
+
+
 }
 
 console.log(parenBit("xyz(abc)123")); // "(abc)"
 console.log(parenBit("x(hello)")); // "(hello)"
 console.log(parenBit("(xy)1")); // "(xy)"
+
 
 
 	// try{
@@ -39,3 +42,5 @@ console.log(parenBit("(xy)1")); // "(xy)"
 	// 	let now = new Date();
 	// 	console.log(e + ` at ${now}`);
 	// } 
+	return afterParens(zab);
+
