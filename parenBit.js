@@ -14,19 +14,23 @@ function parenBit(zab){
 		// Whatever is passed in, will come back with the part after the ')' missing
 		// @Parameter STRING '(a)b'
 		// @Return STRING 'a)'
+
 		ab = ab.slice(1);
 		let i = 0, stop = ab.length;
 		while (ab[i] !== ')' && i < stop ){
 			i++;
 		}
-		i++;
-		ab = ab.slice(0, i);
+		// "++i" b/c slice syntax for b in (a, b)
+		ab = ab.slice(0, ++i); 
 		return ab;
 	}
 
-	return afterParens(zab);
-
-
+	if (zab[0] === '(' || zab.length < 2){
+		return '(' + afterParens(zab);
+	} else if (typeof zab === 'string'){
+		zab = zab.slice(1);
+		return parenBit(zab);
+	}
 }
 
 console.log(parenBit("xyz(abc)123")); // "(abc)"
@@ -42,5 +46,4 @@ console.log(parenBit("(xy)1")); // "(xy)"
 	// 	let now = new Date();
 	// 	console.log(e + ` at ${now}`);
 	// } 
-	return afterParens(zab);
 
