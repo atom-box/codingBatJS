@@ -24,6 +24,14 @@ function parenBit(zab){
 		return ab;
 	}
 
+	return afterParens(zab);
+}
+
+console.log(parenBit("xyz(abc)123")); // "(abc)"
+console.log(parenBit("x(hello)")); // "(hello)"
+console.log(parenBit("(xy)1")); // "(xy)"
+
+
 	// try{
 	// } else {
 	// }
@@ -31,9 +39,3 @@ function parenBit(zab){
 	// 	let now = new Date();
 	// 	console.log(e + ` at ${now}`);
 	// } 
-	return afterParens(zab);
-}
-
-console.log(parenBit("xyz(abc)123")); // "(abc)"
-console.log(parenBit("x(hello)")); // "(hello)"
-console.log(parenBit("(xy)1")); // "(xy)"
