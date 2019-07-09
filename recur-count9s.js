@@ -3,14 +3,25 @@
 
 function arrayCount9(nums){
 	var sum = 0,
-	num = 0;
+	piece = null,
+	isNine = false;
 
-	while (nums.length > 0){
-		num = nums.shift();
-		sum += (num == 9)? num : 0;
-		console.log(`Length of array is ${nums.length}`);	
+	// checks digit for nine-ness
+	function isNine(n) {
+		if (n === 9){return true;} else {return false;}
 	}
-	return sum;
+	if (typeof nums == 'string'){
+		return -2;
+	}
+	if (nums.length < 1){
+		return 0;
+	} else if (nums.length > 0){
+		piece = nums.shift();
+		console.log(piece);
+		return 1 + arrayCount9(nums);
+	} else {
+		return -1;
+	}
 }
 
 
