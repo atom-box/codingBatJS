@@ -98,17 +98,25 @@ body {
 </style>
 
 <script type="text/javascript">
-    console.log("Madam I am here.");
+    console.log("Sir, I am here.");
     function burp(){
         console.log("rreerrrrp!")
     }
     function burp2(){
+        var now = new Date();
         var e2 = document.getElementById("pen2");
-        e2.innerHTML = "rerererereeep...";
+        e2.innerHTML = "rerererereeep..." + now;
+    }
+
+    function showRichard (){
+        var e = document.createElement("p");
+        var t = document.createTextNode("Richard Linkletter");
+        e.appendChild(t);
+        document.getElementById("pen2").appendChild(t);
     }
     var b = document.getElementById("photo-button");
     b.addEventListener("click", burp);
-    b.addEventListener("click", burp2);
+    b.addEventListener("click", showRichard);
 
 </script>
 
