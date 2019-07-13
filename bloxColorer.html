@@ -1,0 +1,85 @@
+<!-- Goal:
+1) DOM: grab nodes
+2) Change their style, 
+3) Use a THIS function
+4) CSS color vars
+Inspired by: p.65 Stoyan Stefanov  
+This is an all-in-one HTML with JS & CSS page.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Evan Genest">
+    <title>Node Styler | Stoyan Stefanov p.65</title>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+
+
+        <div class="column-flex-container">
+            <div class="marque">Evan Genest</div>
+            <div class="band">2</div>
+            <div class="band">3</div>
+        </div>
+
+    <link type="text/css" href="styles/bootstrap-litera.min.css" rel="stylesheet">
+    <link type="text/css" href="styles/buttercup.css" rel="stylesheet">
+<style type="text/css">
+
+.marque  {
+  font-family: "Fredericka the Great", monospace;
+  font-size: 1.8rem;
+  color: white;
+  font-weight: 500;
+  width: 18rem;
+  margin-left: 2rem;
+}
+
+:root {
+  --main-bg-color: coral;
+  --main-txt-color: blue;
+  --main-padding: 15px;
+}
+
+#div1 {
+  background-color: var(--main-bg-color);
+  color: var(--main-txt-color);
+  padding: var(--main-padding);
+}
+
+2   11  35  deep purple
+245 171 0   yellowish
+229 0   136  pink hot
+
+
+.column-flex-container {
+  display: flex;
+  background-color: dodgerblue;
+  height: 600px;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.column-flex-container > div {
+  text-align: center;
+  height: 75px;
+  font-size: 30px;
+  border-style: dashed;
+}
+.band {
+  background-color: rgba(180, 10, 1, 0.3);
+
+}
+
+
+
+</style>
+</body>
+
+</html>
