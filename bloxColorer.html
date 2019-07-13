@@ -25,8 +25,8 @@ This is an all-in-one HTML with JS & CSS page.
         <div class="column-flex-container">
             <div class="marque-container"><h2 class="marque-text">Evan Genest</h2></div>
             <div class="butn" id="photo-button">+photo</div>
-            <div class="band" id="pen2">2</div>
-            <div class="band" id="pen3">3</div>
+            <div class="band-container" id="pen2">2</div>
+            <div class="band-container" id="pen3">3</div>
         </div>
 
     <link type="text/css" href="styles/bootstrap-litera.min.css" rel="stylesheet">
@@ -59,7 +59,9 @@ body {
 .column-flex-container {
   display: flex;
   background-color: var(--bg-color);
-  height: 600px;
+  height: 34rem;
+  width: 85%;
+  margin: 10% auto;
   flex-direction: column;
   justify-content: space-around;
 }
@@ -72,8 +74,12 @@ body {
   border-color: var(--contrast1-color);
   color: var(--contrast2-color)
 }
-.band {
-  background-color: rgba(33, 33, 33, 0.3);
+
+.band-container {
+  width: 85%;
+  height: 1.6rem; 
+  padding: 0.2rem 0.2rem 0.2rem 0.2rem;
+  margin: 0 auto 0 auto;    
 }
 
 .column-flex-container>.butn {
