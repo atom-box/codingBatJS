@@ -24,8 +24,9 @@ This is an all-in-one HTML with JS & CSS page.
 
         <div class="column-flex-container">
             <div class="marque">Evan Genest</div>
-            <div class="band">2</div>
-            <div class="band">3</div>
+            <div class="butn">+photo</div>
+            <div class="band" id="pen2">2</div>
+            <div class="band" id="pen3">3</div>
         </div>
 
     <link type="text/css" href="styles/bootstrap-litera.min.css" rel="stylesheet">
@@ -41,26 +42,17 @@ This is an all-in-one HTML with JS & CSS page.
   margin-left: 2rem;
 }
 
-:root {
-  --main-bg-color: coral;
-  --main-txt-color: blue;
+body {
+  --bg-color: rgb(2, 11, 35 ); 
+  --contrast1-color: rgb(245, 171, 0) ;
+  --contrast2-color: rgb(229, 0, 136) ;
   --main-padding: 15px;
 }
-
-#div1 {
-  background-color: var(--main-bg-color);
-  color: var(--main-txt-color);
-  padding: var(--main-padding);
-}
-
-2   11  35  deep purple
-245 171 0   yellowish
-229 0   136  pink hot
 
 
 .column-flex-container {
   display: flex;
-  background-color: dodgerblue;
+  background-color: var(--bg-color);
   height: 600px;
   flex-direction: column;
   justify-content: space-around;
@@ -71,13 +63,31 @@ This is an all-in-one HTML with JS & CSS page.
   height: 75px;
   font-size: 30px;
   border-style: dashed;
+  border-color: var(--contrast1-color);
+  color: var(--contrast2-color)
 }
 .band {
-  background-color: rgba(180, 10, 1, 0.3);
-
+  background-color: rgba(33, 33, 33, 0.3);
 }
 
+.column-flex-container>.butn {
+  border-radius: 2rem;
+  text-align: center;
+  width: 6rem;
+  height: 2rem;
+  font-family: Arial;
+  background-color: var(--bg-color);
+  color: white;
+  font-size: 1.4rem;
+  padding: 10px 20px 10px 20px;
+  border: solid var(--contrast2-color) 3px;
+  text-decoration: none;
+}
 
+.butn:hover {
+  background: #3cb0fd;
+  text-decoration: none;
+}
 
 </style>
 </body>
