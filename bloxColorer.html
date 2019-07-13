@@ -23,8 +23,8 @@ This is an all-in-one HTML with JS & CSS page.
 
 
         <div class="column-flex-container">
-            <div class="marque">Evan Genest</div>
-            <div class="butn">+photo</div>
+            <div class="marque-container"><h2 class="marque-text">Evan Genest</h2></div>
+            <div class="butn" id="photo-button">+photo</div>
             <div class="band" id="pen2">2</div>
             <div class="band" id="pen3">3</div>
         </div>
@@ -33,20 +33,26 @@ This is an all-in-one HTML with JS & CSS page.
     <link type="text/css" href="styles/buttercup.css" rel="stylesheet">
 <style type="text/css">
 
-.marque  {
-  font-family: "Fredericka the Great", monospace;
-  font-size: 1.8rem;
-  color: white;
-  font-weight: 500;
-  width: 18rem;
-  margin-left: 2rem;
-}
-
 body {
+  font-family: arial, monospace;
   --bg-color: rgb(2, 11, 35 ); 
   --contrast1-color: rgb(245, 171, 0) ;
   --contrast2-color: rgb(229, 0, 136) ;
   --main-padding: 15px;
+}
+
+
+
+.marque-container {
+  width: 12rem;
+  height: 1.6rem; 
+  padding: 0.2rem 0.2rem 0.2rem 0.2rem;
+  margin: 0 0 0 2.4rem;    
+}
+
+.marque-text  {
+  font-size: 1.4rem;
+  color: white;
 }
 
 
@@ -80,16 +86,32 @@ body {
   color: white;
   font-size: 1.4rem;
   padding: 10px 20px 10px 20px;
+  margin: 0 0 0 2.4rem;    
   border: solid var(--contrast2-color) 3px;
   text-decoration: none;
 }
 
 .butn:hover {
-  background: #3cb0fd;
+  background: var(--contrast2-color);
   text-decoration: none;
 }
-
 </style>
+
+<script type="text/javascript">
+    console.log("Madam I am here.");
+    function burp(){
+        console.log("rreerrrrp!")
+    }
+    function burp2(){
+        var e2 = document.getElementById("pen2");
+        e2.innerHTML = "rerererereeep...";
+    }
+    var b = document.getElementById("photo-button");
+    b.addEventListener("click", burp);
+    b.addEventListener("click", burp2);
+
+</script>
+
 </body>
 
 </html>
