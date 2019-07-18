@@ -1,9 +1,7 @@
 # Coding Challenges
-* some from codingbat.com
-* DOM challenges are from [Burdwan](https://www.w3resource.com/javascript-exercises/javascript-dom-exercises.php), WestBengal, India
 
 ## The programs
-Every file above is a standalone js file that can be run in node.js
+Every file above is a standalone Javascript file that can be run in node.js or in the browser as html
 
 ## Contents (chronological order, from 11/2018) 
 * sleepIn.js
@@ -68,13 +66,11 @@ http://codingbat.com/
 There's no registration or anything required at all. 
 The graphs of anonymized user data at that site are cool.<br/>
 Good too, this free pdf:  "The Code Challenge Book: How to Ace the Coding Bootcamp Technical Interview"   https://coderbyte.com/ebook <br/> 
+* DOM challenges are from [Burdwan](https://www.w3resource.com/javascript-exercises/javascript-dom-exercises.php), WestBengal, India
 ## Future Ideas
 * Go back and re do a couple of these with crazier edge cases.  Put them into their own Testing repository with Cocoa or similar tester
 * Re do as excuse for a front end bootstrap, unsplash, CSS-Flexbox & Grid
 * Start accumulating implementations of the old Algorithms by Robert Sedgewick; the book (c)1980 is written in Pascal.
 * Edit commenting to YUI format
-## Loose ends
-* stayPositive.js
-* foodTopping.js
-* thisSummer.js
+
 
