@@ -1,4 +1,6 @@
-# Coding Challenges, some from codingbat.com
+# Coding Challenges
+* some from codingbat.com
+* DOM challenges are from [Burdwan](https://www.w3resource.com/javascript-exercises/javascript-dom-exercises.php), WestBengal, India
 
 ## The programs
 Every file above is a standalone js file that can be run in node.js
@@ -66,3 +68,4 @@ Good too, this free pdf:  "The Code Challenge Book: How to Ace the Coding Bootca
 * stayPositive.js
 * foodTopping.js
 * thisSummer.js
+
