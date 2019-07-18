@@ -39,18 +39,27 @@ Every file above is a standalone js file that can be run in node.js
 * maxMod5.js
 * shortestLoopEver.js
 * fewTeens.js
-* stayPositive_BACKUP_79641.js
-* stayPositive_BASE_79641.js
-* stayPositive_LOCAL_79641.js
-* stayPositive_REMOTE_79641.js
 * stayPositive.js
 * thisSummer.js
-* temp.csv
 * foreignMap.js
 * foodTopping.js
 * may2019.sublime-project
 * may2019.sublime-workspace
 * recursiveTriangle.js
+* countX.js
+* colander/
+* countReduce.js
+* copies3.js
+* bigDiff.js
+* loneSum.js
+* hermione.js
+* apiWikipediaParser.js
+* parenBit.js
+* red-count9s.js
+* recur-count9s.js
+* button-changes-style.html
+* bloxColorer.html
+* firstHalf.js
 
 ## Source
 Half of these are from Stanford University site <br/>
