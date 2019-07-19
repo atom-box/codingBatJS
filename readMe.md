@@ -3,6 +3,9 @@
 ## The programs
 Every file above is a standalone Javascript file that can be run in node.js or in the browser as html
 
+## What's going on here
+The ideas, to quote Nick Parlante (Stanford), is to be "practiced and quick with these little bits of code. Skill with the little code allows students to concentrate on the larger parts of the problem. Or put another other way, someone who struggles with the loops, logic, etc. does not have time for the big picture. "
+
 ## Contents (chronological order, from 11/2018) 
 * sleepIn.js
 * sumDouble.js
