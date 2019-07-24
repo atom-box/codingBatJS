@@ -23,3 +23,5 @@ function check2(){
 console.log(s);
 console.log(check1()());
 console.log(check2());
+console.log(check1());  // works.   just says FUNCTION -- SAYSCOPE
+// console.log(check2()());  // NONSENSICAL! ERROR.
