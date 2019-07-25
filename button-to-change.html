@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta charset=utf-8 />
+<title>DOM Exercise 1 | W3Resource</title>
+</head> 
+<body>
+<div class="container">
+<p id ='text'>JavaScript Exercises - w3resource</p> 
+<div>
+<button class="btn btn-primary" id="jsstyle"
+onclick="press()">Style</button>
+</div>
+</div>
+<script type="text/javascript">
+	el1 = document.getElementById('text');
+	function press(){
+		var s = el1.innerHTML;
+		s += '---Mouse on Mars';
+		el1.innerHTML = s;
+	}
+</script>
+</body>
+</html>
