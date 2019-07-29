@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Long string: split u up into DIV's</title>
+	<link rel="stylesheet" type="text/css" href="shadow-gray.css">
+</head>
+<body>
+<h1 class="title__hoegarden">Knight's Tale:</h1>
+<div id="placeToPut" class="elShadow" ></div>
+</body>
+
+
+<script type="text/javascript">
+
+/*
+Use slice splce join string.split*/
+
+
+var knightsTale = `A Knyght ther was, and that a worthy man,
+That fro the tyme that he first bigan
+To riden out, he loved chivalrie,
+Trouthe and honóur, fredom and curteisie.
+Ful worthy was he in his lordes werre,
+And thereto hadde he riden, no man ferre,
+As wel in cristendom as in hethenesse,
+And evere honóured for his worthynesse.
+At Alisaundre he was whan it was wonne;
+Ful ofte tyme he hadde the bord bigonne
+Aboven alle nacions in Pruce.
+In Lettow hadde he reysed and in Ruce,—
+No cristen man so ofte of his degree.
+In Gernade at the seege eek hadde he be
+Of Algezir, and riden in Belmarye.
+At Lyeys was he, and at Satalye,
+Whan they were wonne; and in the Grete See
+At many a noble armee hadde he be.
+
+At mortal batailles hadde he been fiftene,
+And foughten for oure feith at Tramyssene
+In lyste thries, and ay slayn his foo.
+This ilke worthy knyght hadde been also
+Somtyme with the lord of Palatye
+Agayn another hethen in Turkye;
+And evermoore he hadde a sovereyn prys.
+And though that he were worthy, he was wys,
+And of his port as meeke as is a mayde.
+He nevere yet no vileynye ne sayde,
+In al his lyf, unto no maner wight.
+He was a verray, parfit, gentil knyght.
+
+But for to tellen yow of his array,
+His hors weren goode, but he was nat gay;
+Of fustian he wered a gypon
+Al bismótered with his habergeon;
+For he was late y-come from his viage,
+And wente for to doon his pilgrymage.`;
+
+var el3 = document.getElementById('placeToPut')
+el3.innerHTML = '<p class="dashboard">' + knightsTale +'</p>'
+
+</script>
+</html>
