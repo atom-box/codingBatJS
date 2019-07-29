@@ -1,0 +1,93 @@
+       :root { 
+            --lightGray: rgb(239, 239, 244); 
+            --darkGray: rgb(76, 77, 75);
+            --skyColor: rgb(124, 172, 255);
+            --palerSky: rgb(165, 220, 255 );
+            --infieldGreen: rgb(52, 147, 28);
+            --tigersNavy: rgb(7, 23, 53);
+        }
+        
+        button {
+          margin-left: 3rem;
+          height: 4rem;
+          width: 4rem;
+          background-color: white;
+          color: white;
+          border-radius: 2rem;
+          border-color: black;
+          border-width: 0.4rem;
+        }
+        img {
+          width: 98%;
+        }
+        .title__hoegarden {
+          text-shadow: 1px 1px 2px black, 0 0 25px gray, 0 0 5px black;
+          font-family: monospace;
+          color: white;
+          font-weight: 500;
+        }
+        
+        .title__skinny {
+          font-weight: 100;
+          text-indent: 2.5rem;
+          line-height: 2.6rem;
+        }
+        .title__explain {
+            padding: 0.4rem 2rem;
+        }
+        .elShadow {
+          box-shadow: 0 7px 7px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          border: 0.1rem hidden;
+          border-radius: 0.3rem;
+        }
+
+        
+        .dashboard {
+          border: 2px  white;
+          margin: 0.5rem 2rem;
+          background-color: #444;
+          color:  var(--lightGray) ;
+          padding: 0.5rem;
+        }
+        
+        .dashboard__text {
+          margin: 0.3rem 1.5rem;
+          color: white;
+        }
+        
+        .dashboard__data-noneditable {
+          color: black;
+          background-color: #777;
+        }
+        
+        .codeboard {
+          border: 5px dashed #bbb;
+          margin: 0.5rem 2rem;
+          background-color: #222;
+          padding: 0.5rem;
+        }
+        
+        .codeboard__code {
+          color: #aaf;
+          margin: 0.3rem 1.5rem 0.3rem 1.9rem;
+
+
+        }
+        .block {
+          background-color:  var(--lightGray)       ;
+          margin: 1rem;
+          padding: 2rem;
+        }
+
+        .navyBackground {
+          background-color:  var(--tigersNavy);
+          xcolor: white;
+        }
+
+        .greenBackground {
+              background-color:  var(--infieldGreen);
+              border-radius: 0.6rem;
+              padding: 0.1rem 0.3rem;
+        }
+
+    
