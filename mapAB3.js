@@ -1,11 +1,21 @@
 // https://codingbat.com/prob/p115012
 // Modify and return the given map as follows: if exactly one of the keys "a" or "b" has a value in the map (but not both), set the other to have that same value in the map.
 
+
+
 function mapAB3(o){
-	return Object.keys(o);
+	let tt = {};
+	// Flag flips once to true when one case found, back to false if second case is found
+	// Initialize the toggle to false.
+	tt.toggle = false;
+	for (k in o) {
+		console.log(`${k} contains ${o[k]}.`);
+	}
+	return 'Cafe Hollander.'
 }
 
-
+// IT'S AN OBJECT. WE'RE GOING TO NOT USE MAP, SINCE THAT IS A METHOD FOR ARRAYS.  
+// CYCLE THROUGH THE OBJECT WITH FOR x IN y.
 
 
 console.log(mapAB3({"a": "aaa", "c": "cake"})); // {"a": "aaa", "b": "aaa", "c": "cake"}
