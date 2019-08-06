@@ -9,9 +9,12 @@ function mapAB3(o){
 	// Initialize the toggle to false.
 	tt.toggle = false;
 	for (k in o) {
-		console.log(`${k} contains ${o[k]}.`);
+		if (k ==='a' && o[k] === 'aaa' ||
+		k ==='b' && o[k] === 'bbb'){
+			tt.toggle = !tt.toggle;
+		} 
 	}
-	return 'Cafe Hollander.'
+	return `Toggle says ${tt.toggle}`;
 }
 
 // IT'S AN OBJECT. WE'RE GOING TO NOT USE MAP, SINCE THAT IS A METHOD FOR ARRAYS.  
