@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gradient Text Clock</title>
+	<!-- see also   -->
+	<style>
+		.box {
+			font-family: arial sans-serif;
+			border: solid green 0.3em;
+			border-radius: 0.3em;
+			font-family: "Gill Sans", sans-serif;
+			padding: 1.3rem;
+			width: 40%;
+			margin: 2em auto;
+			color: white;
+			background-color: black
+		}
+
+		.box__clock {
+			font: bold 5em sans-serif;
+			background: linear-gradient(0deg, blue, black, blue, black, blue);
+			xbackground-clip: text
+		}
+	</style>
+</head>
+<body>
+<div class="box">
+	<h1>Clock</h1>
+	<p>An example of timeout (JS), <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-clip">background-clip</a> (CSS), centered divs (CSS), and window.onload (JS)</p>
+</div>
+<div class="box box__clock" id="clock"></div>
+<script>
+function displayTime(){
+	// Set time in a var
+	let now = new Date().toLocaleTimeString();
+	// Grab the div
+	let el3 = document.getElementById('clock');
+	// Put 'er there, pardner
+	el3.innerHTML = now;
+	// Rinse-lather-repeat
+	setTimeout(displayTime , 1000);
+}
+
+window.onload = displayTime();
+// NOTICE THE syntax above is EQUALS, NOT PARENS
+</script>
+</body>
+</html>
+
+
+<!-- add a tooltip for onload -->
