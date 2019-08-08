@@ -4,36 +4,64 @@
 	<title>Gradient Text Clock</title>
 	<!-- see also   -->
 	<style>
-		html {
-			font-size: 20px;
-			/* REM is locked to this */
-			/* EM locks to local fonts */
-		}
+ html {
+     font-size: 20px;
+    /* REM is locked to this */
+    /* EM locks to local fonts */
+}
+ h1 {
+     font-size: 5rem;
+     padding: 0;
+     margin: 0;
+}
+ p{
+     padding: 0rem, auto;
+}
+img{
+	max-width: 70%;
+	background-color: white;
+}
 
-		.box {
-			font-family: arial sans-serif;
-			border: solid green 0.3rem;
-			border-radius: 0.3rem;
-			font-family: "Gill Sans", sans-serif;
-			padding: 1.3rem;
-			width: 40%;
-			margin: 2rem auto;
-			color: white;
-			background-color: black
-		}
-
-		.box__clock {
-			background: linear-gradient(0deg, blue, black, blue, black, blue);
-			font-size: 5rem;
-		}
+ .box {
+     font-family: arial sans-serif;
+     border: solid #99b 0.3rem;
+     border-radius: 0.3rem;
+     font-family: "Gill Sans", sans-serif;
+     text-align: center;
+     padding: 0.3rem 0rem;
+     width: 80%;
+     margin: 2rem auto;
+     color: white;
+     background-color: black 
+}
+ .box__clock {
+     background: linear-gradient(0deg, blue, black, blue, black, blue, black, blue, black, blue);
+     font-size: 5rem;
+     font-weight: 700;
+     background-clip: text;
+     -webkit-background-clip: text;
+     color: transparent;
+}
+ .box__brand {
+ 	background-color: white;
+ 	border: none;
+ }
 	</style>
 </head>
 <body>
 <div class="box">
-	<h1>Clock</h1>
-	<p>An example of timeout (JS), <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-clip">background-clip</a> (CSS), centered divs (CSS), and window.onload (JS)</p>
+	<h1>Eternal Now</h1>
+	<p>An example of </p>
+	<ul>
+		<li>timeout (JS)</li>
+		<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-clip">background-clip</a> (CSS)</li>
+		<li>centered divs (CSS)</li>
+		<li>window.onload (JS)</li>
+
+	</ul>
 </div>
 <div class="box box__clock" id="clock"></div>
+<div class="box box__brand"><a href="http://www.zenthinking.net/blog/the-eternal-now"> <img src="images/Zen-Thinking-Enso-Logo-200pxW-black-letters.png"></a> </div>
 <script>
 function displayTime(){
 	// Set time in a var
