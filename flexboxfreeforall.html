@@ -32,18 +32,59 @@
   justify-content: flex-end;
 }
 #three{
-
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 500px;
+  height: 400px;
+  align-content: space-between;
 }
 #four{
-
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 200px;
+}
+#four>*:first-child {
+    align-self: stretch;
+}
+#four>*:last-child   {
+    align-self: center;
+}
 }
 #five{
-
+  display: flex;
+  align-items: flex-start;
+  height: 200px;
+}
+.box>*:first-child {
+    align-self: stretch;
+}
+.box .selected {
+    align-self: center;
+}
 }
 
 	</style>
 </head>
 <body>
+
+
+<div class="outer-box" id="zero">
+justify-content:<br>
+	flex-start<br>
+	flex-end<br>
+	center<br>
+	space-between<br>
+	space-around<br>
+<br>
+align-items:<br>
+	flex-start<br>
+	flex-end<br>
+	baseline<br>
+	stretch<br>
+	center<br>
+</div>
 
 <div class="outer-box" id="one">			
 			border: solid black 0.3rem; <br>
@@ -64,24 +105,25 @@
 		<div>1</div><div>2</div><div>3</div>
 	</div>
 <div class="outer-box" id="three">			
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-		Justify content: flex-start
+  display: flex; <br>
+  flex-wrap: wrap; <br>
+  flex-direction: column; <br>
+  width: 500px; <br>
+  height: 400px; <br>
+  align-content: space-between; <br>
 		<div>1</div><div>2</div><div>3</div>
 	</div>
 <div class="outer-box" id="four">			
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-		Justify content: flex-start
+  display: flex; <br>
+  flex-direction: column; <br>
+  align-items: flex-start; <br>
+  width: 200px; <br>
 		<div>1</div><div>2</div><div>3</div>
 	</div>
 <div class="outer-box" id="five">			
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-		Justify content: flex-start
+  display: flex;<br>
+  align-items: flex-start;<br>
+  height: 200px;<br>
 		<div>1</div><div>2</div><div>3</div>
 	</div>
 <!-- .  .  .  .  .  -->
@@ -91,6 +133,8 @@
             <div  class="my-name my-name__first"> E</div><div  class="my-name my-name__first">v</div><div  class="my-name my-name__first">a</div><div  class="my-name my-name__first">n</div><div class="my-name my-name__last"> </div>  <div class="my-name my-name__last">G</div> <div class="my-name my-name__last">e</div> <div class="my-name my-name__last">n</div> <div class="my-name my-name__last">e</div> <div class="my-name my-name__last">s</div> <div class="my-name my-name__last">t</div>
         </div>
 </div>    
+<script type="text/javascript">
 
+</script>
 </body>
 </html>
