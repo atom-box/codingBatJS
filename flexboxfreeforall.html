@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Flexbox Syntax Reference</title>
+	<style type="text/css">
+		body {
+			background-color: #a3c166;
+			font-size: 32px;
+			font-family: "Gilman sans", arial, sans-serif ;
+		}
+		.outer-box {
+			border: solid black 0.3rem;
+			border-radius: 1.2rem;
+
+			margin: 1rem;
+			width: 80%;
+			height: 30rem;
+		}
+		div.outer-box div {
+			background-color: #92c;
+			font-family: monospace;
+		}
+		#one {
+			display: flex;
+		  flex-direction: column;
+		  justify-content: space-between;
+			align-items: center;
+		}
+#two {
+  direction: rtl;
+  display: flex;
+  justify-content: flex-end;
+}
+#three{
+
+}
+#four{
+
+}
+#five{
+
+}
+
+	</style>
+</head>
+<body>
+
+<div class="outer-box" id="one">			
+			border: solid black 0.3rem; <br>
+			border-radius: 1.2rem; <br>
+			display: flex; <br>
+		  flex-direction: column; <br>
+		  justify-content: space-between; <br>
+			margin: 1rem; <br>
+			width: 80%; <br>
+			height: 30rem; <br>
+		<div>1</div><div>2</div><div>3</div>
+	</div>
+
+<div class="outer-box" id="two">			
+  direction: rtl; <br>
+  display: flex; <br>
+  justify-content: flex-end; <br>
+		<div>1</div><div>2</div><div>3</div>
+	</div>
+<div class="outer-box" id="three">			
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		Justify content: flex-start
+		<div>1</div><div>2</div><div>3</div>
+	</div>
+<div class="outer-box" id="four">			
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		Justify content: flex-start
+		<div>1</div><div>2</div><div>3</div>
+	</div>
+<div class="outer-box" id="five">			
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		Justify content: flex-start
+		<div>1</div><div>2</div><div>3</div>
+	</div>
+<!-- .  .  .  .  .  -->
+
+<div class="box">
+        <div class="row">
+            <div  class="my-name my-name__first"> E</div><div  class="my-name my-name__first">v</div><div  class="my-name my-name__first">a</div><div  class="my-name my-name__first">n</div><div class="my-name my-name__last"> </div>  <div class="my-name my-name__last">G</div> <div class="my-name my-name__last">e</div> <div class="my-name my-name__last">n</div> <div class="my-name my-name__last">e</div> <div class="my-name my-name__last">s</div> <div class="my-name my-name__last">t</div>
+        </div>
+</div>    
+
+</body>
+</html>
