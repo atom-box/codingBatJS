@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset=utf-8 />
+<title>Return first and last name from a form - w3resource</title>
+</head><body>
+<form id="form1" onsubmit="getFormvalue()">
+First name: <input type="text" name="fname" value="David"><br>
+Last name: <input type="text" name="lname" value="Beckham"><br>
+<input type="submit" value="Submit">
+</form>
+<div id="confirm" ></div>
+<script type="text/javascript">
+	/*
+		Write a JavaScript function to get the values of First and Last name of the form.
+	*/
+	var customer = {};
+	customer.first = "Bobby";
+	customer.last = "Fuller";
+	var el3 = document.getElementById('confirm');
+	el3.innerHTML = `You entered first name ${customer.first.toUpperCase()} and last name ${customer.last.toUpperCase()}.  Is this correct?`;
+
+
+</script>
+</body>
+</html>
