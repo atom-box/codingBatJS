@@ -1,4 +1,4 @@
-<!--  -->
+<!--  
 /*****************************************/ 
 // This is a frame for running snippets of JSX. // Try to name those snippets with an r(eact) at the front! 
 /*****************************************/
@@ -17,16 +17,45 @@
 
 
     <script type="text/babel">
-        console.log ('astonish'); // Given a list of strings, return a list where each string has "*" added at its end. function AddStar(cintas) { var pprint = (s)=>{ console.log(s); } cintas.map(pprint); } addStar(["a", "bb", "ccc"]) // ["a*", "bb*", "ccc*"]
-        addStar(["hello", "there"]) // ["hello*", "there*"] addStar(["*"]) // ["**"] ReactDOM.render( , document.getElementById('frogman') );
+
+    // Given a list of strings, return a list where each string has "*" added at its end. 
+
+    // addStar(["a", "bb", "ccc"]) → ["a*", "bb*", "ccc*"]
+    // addStar(["hello", "there"]) → ["hello*", "there*"]
+    // addStar(["*"]) → ["**"]
+
+// import React, { useState } from 'react';
+
+// function Butter() {
+   // const [spit, eat] = useState(98);
+    // const handleClick = () => {eat(spit + 1)}
+    // return <button onClick={handleClick}> plus </button>
+// }
 
 
 
+function Star(props) {
+    return (
+        <h1> We think highly of the number: {props.tally}. </h1>
+    )
+}
+
+
+
+
+ReactDOM.render(
+    <div>
+        <Star  tally={101}  />
+        <Star  tally={500}  />
+        <Star  tally={3}  />
+    </div> 
+    , document.getElementById('mountNode') 
+    );
     </script>
 </head>
 
 <body>
-    <div id="frogman"></div>
+    <div id="mountNode"></div>
 </body>
 
 </html>
