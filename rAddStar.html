@@ -36,18 +36,29 @@
 
 function Star(props) {
     return (
-        <h1> We think highly of the number: {props.tally}. </h1>
+        <h1> We think highly of the number: {props.tally[1]}. </h1>
     )
 }
 
+function Show(props) {
+    let backAtcha = "";
+    while  (props.tally.length > 0){
+        backAtcha = backAtcha + " " + props.tally[0];
+        props.tally.shift();
+    }
+    console.log(backAtcha);
+    return <h2> {backAtcha }</h2>;
+}
 
 
 
 ReactDOM.render(
     <div>
-        <Star  tally={101}  />
-        <Star  tally={500}  />
-        <Star  tally={3}  />
+        <Show  tally={["a", "bb", "ccc"]}  />
+        <Show  tally={["hello", "there"]}  />
+        <Show  tally={[101, 102, 103]}  />
+        <Show  tally={["*"]}  />
+
     </div> 
     , document.getElementById('mountNode') 
     );
