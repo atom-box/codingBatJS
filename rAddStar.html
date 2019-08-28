@@ -43,7 +43,7 @@ function Star(props) {
 function Show(props) {
     let backAtcha = "";
     while  (props.tally.length > 0){
-        backAtcha = backAtcha + " " + props.tally[0];
+        backAtcha = backAtcha + props.tally[0] + "* ";
         props.tally.shift();
     }
     console.log(backAtcha);
