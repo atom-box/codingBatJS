@@ -2,6 +2,14 @@
 /*****************************************/ 
 // This is a frame for running snippets of JSX. // Try to name those snippets with an r(eact) at the front! 
 /*****************************************/
+
+    // Given a list of strings, return a list in React where each string has "*" added at its end. 
+
+    // addStar(["a", "bb", "ccc"]) → ["a*", "bb*", "ccc*"]
+    // addStar(["hello", "there"]) → ["hello*", "there*"]
+    // addStar(["*"]) → ["**"]
+
+
  -->
 
 <!DOCTYPE html>
@@ -12,26 +20,7 @@
     <script src="https://unpkg.com/react@15.6.2/dist/react.js"></script>
     <script src="https://unpkg.com/react-dom@15.6.2/dist/react-dom.js"></script>
     <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
-
-
-
-
     <script type="text/babel">
-
-    // Given a list of strings, return a list where each string has "*" added at its end. 
-
-    // addStar(["a", "bb", "ccc"]) → ["a*", "bb*", "ccc*"]
-    // addStar(["hello", "there"]) → ["hello*", "there*"]
-    // addStar(["*"]) → ["**"]
-
-// import React, { useState } from 'react';
-
-// function Butter() {
-   // const [spit, eat] = useState(98);
-    // const handleClick = () => {eat(spit + 1)}
-    // return <button onClick={handleClick}> plus </button>
-// }
-
 
 
 function Star(props) {
