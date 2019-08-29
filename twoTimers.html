@@ -9,21 +9,32 @@
 <script  src="https://unpkg.com/react-dom@15.6.2/dist/react-dom.js"  ></script>
 <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js" ></script>
 <script type="text/babel" >
-function Clock(){
+function Clock1(){
 	return <h3> Not a clock.</h3>
 }
 
+function Clock2() {
+	let now = new Date();
+	now = now.toLocaleTimeString();
+	return <h3> {now} </h3>;
+}
 
 	ReactDOM.render( 
-	<Clock />
-	,document.getElementById('mountApp'));
+	<div>
+		<div >
+			<Clock1 />
+		</div>
+		<div >--:--:--:--:--:--:</div>
+		<div >
+			<Clock2 />
+		</div>
+	</div>
+	, document.getElementById('mountApp'));
 </script>
 </head>
 <body >
 <div class="App-header ">	
-	<div >w</div>
-	<div class="outlined" id="mountApp">e</div>
-	<div>rr</div>
+	<div class="outlined" id="mountApp"    >e</div>
 </div>
 </body>
 </html>
