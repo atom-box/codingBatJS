@@ -10,32 +10,64 @@ function chopBard(s){
 
 // (dirties: array of words, verb: function to do to all words) -> {cleans: array of words}
 function washingMachine(dirties, verb){
+	let word = "",
+	cleans = [];
 	while (dirties.length > 0){
-		console.log(dirties.shift());
+		word = dirties.shift();
+		word = verb(word);
+		cleans.push(word);
 	}
-	return ['ha', 'he', 'ho'];
+	return cleans;
 }
 
 
 let list1 = chopBard(shakespeare);
-washingMachine(list1 , null);
 
+// (puncd: string) -> {noPunc: string}
+// Only remove punctuation from first & last char position of W
+function dePunctuate(w) {
+	noPunc = "";
+	if (w.length < 1) return w;
+	if(!w.slice(-1).match(/[A-z]/)){
+		w = w.slice(0, -1);
+	}
+}
+
+
+list1 = washingMachine(list1 , (w)=>{return String(w)});
 console.log(list1.length);
 console.log(list1[66]);
 console.log(list1[76]);
-console.log(list1[723]);
-console.log(list1[667]);
+console.log(list1[1010]);
+console.log(list1[666]);
 console.log(list1[2000]);
+
+let list2 = washingMachine(list1 , (w)=>{return w.toLowerCase()});
+console.log(list2.length);
+console.log(list2[66]);
+console.log(list2[76]);
+console.log(list2[1010]);
+console.log(list2[666]);
+console.log(list2[2000]);
+
+
+
+let list3 = washingMachine(list2 , dePunctuate);
+console.log(list3.length);
+console.log(list3[66]);
+console.log(list3[76]);
+console.log(list3[1010]);
+console.log(list3[666]);
+console.log(list3[2000]);
+
+
+
 
 
 function localObject() {
-
 return `The Tragedie of Macbeth
-
 Actus Primus. Scoena Prima.
-
 Thunder and Lightning. Enter three Witches.
-
   1. When shall we three meet againe?
 In Thunder, Lightning, or in Raine?
   2. When the Hurley-burley's done,
