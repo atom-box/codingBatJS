@@ -1,21 +1,31 @@
 // Given a string, return a list of alphabetized words.
 
 var shakespeare = localObject();
-console.log(shakespeare.length);
 
 // (s: string) -> {words: array}
 function chopBard(s){
-	const words = s.match(/\w\w\w/g);
+	const words = s.match(/\S+/g);
 	return words;
 }
 
+// (dirties: array of words, verb: function to do to all words) -> {cleans: array of words}
+function washingMachine(dirties, verb){
+	while (dirties.length > 0){
+		console.log(dirties.shift());
+	}
+	return ['ha', 'he', 'ho'];
+}
+
+
 let list1 = chopBard(shakespeare);
+washingMachine(list1 , null);
+
 console.log(list1.length);
-console.log(list1[13]);
-console.log(list1[8]);
-console.log(list1[100]);
-console.log(list1[123]);
-console.log(list1[-99]);
+console.log(list1[66]);
+console.log(list1[76]);
+console.log(list1[723]);
+console.log(list1[667]);
+console.log(list1[2000]);
 
 
 function localObject() {
