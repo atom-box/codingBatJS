@@ -5,12 +5,24 @@
 	<meta charset="utf-8">
 	<meta name="Description" content="Display the countdown in two ways, to see if they are both accurate." >
 <link rel="stylesheet" type="text/css" href="styles/react.css">
+<script   src="https://unpkg.com/react@15.6.2/dist/react.js"  ></script>
+<script  src="https://unpkg.com/react-dom@15.6.2/dist/react-dom.js"  ></script>
+<script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js" ></script>
+<script type="text/babel" >
+function Clock(){
+	return <h3> Not a clock.</h3>
+}
 
+
+	ReactDOM.render( 
+	<Clock />
+	,document.getElementById('mountApp'));
+</script>
 </head>
 <body >
 <div class="App-header ">	
 	<div >w</div>
-	<div class="outlined">e</div>
+	<div class="outlined" id="mountApp">e</div>
 	<div>rr</div>
 </div>
 </body>
