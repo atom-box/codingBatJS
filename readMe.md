@@ -1,7 +1,9 @@
 # Coding Challenges
 
 ## The programs
-Every file above is a standalone Javascript file that can be run in node.js or in the browser as html
+Files ending in .js can be run using node:   NODE FILENAME
+Files ending in .html will open in a browser.
+Files starting with R use React and will open in the browser using the React CDW at https://unpkg.com 
 
 ## What's going on here
 The idea, to quote Nick Parlante (Stanford), is to be "practiced and quick with these little bits of code. Skill with the little code allows students to concentrate on the larger parts of the problem. Or put another other way, someone who struggles with the loops, logic, etc. does not have time for the big picture. "<br>
