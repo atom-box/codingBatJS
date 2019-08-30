@@ -1,13 +1,15 @@
 # Coding Challenges
 
 ## The programs
-Files ending in .js can be run using node:   NODE FILENAME
-Files ending in .html will open in a browser.
-Files starting with R use React and will open in the browser using the React CDW at https://unpkg.com 
+* Files ending in .js can be run using node:   NODE FILENAME
+* Files ending in .html will open in a browser.
+* Files starting with R use React and will open in the browser (They will load the React library on their own using the React CDW at https://unpkg.com ).
+* The files in _/styles_ are for playing around with CSS ideas
 
 ## What's going on here
-The idea, to quote Nick Parlante (Stanford), is to be "practiced and quick with these little bits of code. Skill with the little code allows students to concentrate on the larger parts of the problem. Or put another other way, someone who struggles with the loops, logic, etc. does not have time for the big picture. "<br>
-My focus for awhile shifted towards becoming facile with the functional parts of JS, since they save time but are also more maintainable, especially <i>reduce, map, and some</i>.  Lately I am trying to become fast with DOM events/selectors.  
+The idea, to quote Nick Parlante (Stanford), is to be "practiced and quick with these little bits of code. Skill with the little code allows students to concentrate on the larger parts of the problem. Or put another other way, someone who struggles with the loops, logic, etc. does not have time for the big picture. "<br><br>
+My focus for awhile shifted towards becoming facile with the functional parts of JS, since they save time but are also more maintainable, especially <i>reduce, map, and some</i>.<br><br>  
+Lately I am at a point where I am pulling it all together.  I can intuitively fiddle with the CSS and fun stuff while implementing React.js DOM events/selectors and still solving the Fizz Buzz types of questions.  
 
 ## Contents (chronological order, from 11/2018) 
 * sleepIn.js
