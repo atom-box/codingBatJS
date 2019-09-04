@@ -44,9 +44,17 @@ pairStar("aaaa") → "a*a*a*a"
           -moz-osx-font-smoothing: grayscale;
     }
 
+    .holding{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
     .title {
          background-color: var(--vivid1);
-         color: var(--light1) ;
+         color: white ;
+
     }
      .title__hoegarden {
          text-shadow: 1px 1px 2px black, 0 0 25px gray, 0 0 5px black;
@@ -54,33 +62,40 @@ pairStar("aaaa") → "a*a*a*a"
          color: white;
          font-weight: 500;
     }
-    }
      .title__skinny {
          font-weight: 100;
          text-indent: 2.5rem;
          line-height: 2.6rem;
     }
+    .bpm {
+        margin: 0.5rem 2rem;
+        padding: 0.5rem; 
+        text-align: center;
+        max-width: 40%;
+        border: 0.1rem hidden;
+        border-radius: 0.3rem;
+    }
+
       .elShadow {
          box-shadow: 0 7px 7px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-         border: 0.1rem hidden;
-         border-radius: 0.3rem;
+
     }
-     .dashboard {
-         border: 2px white;
-         margin: 0.5rem 2rem;
+     .dashboard {        
          background-color: var(--vivid2);
          color: var(--lightGray) ;
-         padding: 0.5rem;
+
     }
 
 </style>
 
 </head>
 
-<body>
-    <h1>compute recursive STARS... </h1>
-    <h2>...between redundant chars</h2>
-    <div class=   id="mountNode"></div>
+<body >
+    <div class="holding">
+    <h1 class="title title__skinny elShadow bpm">compute recursive STARS... </h1>
+    <h2 class="title elShadow bpm">...between redundant chars</h2>
+    <div class="dashboard elShadow bpm"   id="mountNode"></div>
+    </div>
 </body>
 
 </html>
