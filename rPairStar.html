@@ -28,11 +28,11 @@ let cards = [];
 let card = {before: "", id: 0};
 cards = [
     {
-        before: "hello",
+        before: "xxyy",
         id: 0
     },
     {
-        before: "xxyy",
+        before: "hello",
         id: 1
     },
     {
@@ -41,12 +41,26 @@ cards = [
     }
 ]
 
-function pairStar(s) {
-    return "an answer in the desert!";
+function pairStar(s1) {
+    let s2 = '';
+    let a1 = s1.split('');
+    let c1 ='', c2 ='';
+    while (a1.length > 0){
+        s2 += a1.shift();
+        // Final char on growing string
+        c1 = s2[s2.length -1];
+        // Next char on shrinking string
+        c2 = a1[0];
+        if (c1 === c2){
+            s2 += '*';
+        }
+    }
+    return s2;
 }
 
     const testDivs = (
     <div className="mv2 flex flex-column">
+
     <div className="mv2 " >
         <h2>Before:</h2>
         <h2>{cards[0].before}</h2>
@@ -54,9 +68,7 @@ function pairStar(s) {
         <h2>{pairStar(cards[0].before)}</h2>
 
     </div>
-    <div >
-        <h2 className="bg-dark-red" >you mock me!</h2>
-    </div>
+
     </div>
     );
     ReactDOM.render(testDivs, document.getElementById('mountNode'));
