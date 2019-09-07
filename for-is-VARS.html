@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Do Math, IN HTML!</title>
+<meta charset="UTF-8"><meta>
+
+<script type="text/babel">
+
+</script>
+
+<style type="text/css">
+     :root {
+        /* from https://creativexcorner.wordpress.com/2018/03/07/jean-michel-basquiat-one-of-the-last-natural-born-artists/ */
+     --vivid3: rgb(227, 191, 39);  
+     --vivid1: rgb(29, 60, 171); 
+     --vivid2: rgb(213, 90, 34 );
+     --dark1: rgb(7, 23, 53);
+     --light1: rgb(197, 190, 170); 
+     --light2: rgb(222, 223, 223); 
+}
+ body {
+      color: white;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+        "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+        sans-serif;
+        font-weight: 100;
+}
+
+form {
+  margin: auto 5rem;
+}
+
+.monde {
+  /*==f=i=l=l==s=c=r=e=e=n==================*/
+background-color: var(--vivid1);
+  min-height: 100%;
+  xmin-width: 1024px; 
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+  /* Set up positioning */
+  position: fixed;
+  /*==f=i=l=l==s=c=r=e=e=n==END============*/
+    display: flex;          /*(1)VERT*/
+    flex-direction: row;    /*(1)VERT*/
+    align-items: center;    /*(1)VERT*/
+    justify-content: center;  /*(2)HORIZ*/
+}
+
+.square-large {
+    border-radius: 2rem;
+    border: solid 0.4rem var(--vivid2);
+    height: 28rem;
+    xwidth: 28rem;
+        display: flex;          /*(1)VERT*/
+    flex-direction: row;    /*(1)VERT*/
+    align-items: center;    /*(1)VERT*/
+    justify-content: center;  /*(2)HORIZ*/
+}
+
+.square-small {
+    border-radius: 2rem;
+    border: solid 0.4rem var(--vivid3);
+    margin: auto 5rem;
+    height: 12rem;
+    xwidth: 12rem;
+    display: flex;          /*(1)VERT*/
+    flex-direction: row;    /*(1)VERT*/
+    align-items: center;    /*(1)VERT*/
+    justify-content: center;  /*(2)HORIZ*/
+    text-align: center;
+}
+
+.core {
+    color: #f66;
+    text-align: center;
+}
+
+
+
+</style>
+
+</head>
+
+<body >
+<div class="monde">
+
+<div class="square-large">
+    <div class="square-small">
+      <form oninput="x.value = parseInt(seeds.value) * parseInt(crate.value)">
+        Seeds Per Fruit:<br>0
+        <input type="range" name="seeds" label="seeds" value="50"/>100  
+           
+        <br>Fruits Per Crate: 
+        <input type="textarea" value="33" label="crate" name="crate"/>
+<!-- /*==============================*/ -->
+
+<!-- /*==============================*/ -->
+        <br>Total Seeds:<br>
+        <output name="x"></output>
+      </form>
+    </div>
+</div>
+
+
+</div>
+</body>
+
+</html>
