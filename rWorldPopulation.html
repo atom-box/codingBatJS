@@ -20,15 +20,15 @@ Show some nested divs with growing population.
 function World(props){
     let t = props.time;
     t -= 1567700000000;
-    t = (t -(t%100))/100  ;
-    let baleans = t, zees = t;
+    let zees = (t -(t%100))/100  ;
+    let baleans = (t -(t%1234))/1234  ;
     return (
         <div class="App-header">
             <h2>World</h2>
-            <p>Population: </p>
+            <p>Population: {zees *308 + baleans}</p>
             <div class="App-header">
-                <h2>Asia</h2>
-                <p>Population: </p>
+                <h2>Africa</h2>
+                <p>Population: {zees * 307}</p>
                 </div>
             <div class="App-header">
                 <h2>Oceana</h2>
