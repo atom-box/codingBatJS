@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>I love your company</title>
+	<meta charset="utf-8">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(
+console.log('jquery says "ready!"')
+);
+
+let flip = function(){
+	console.log("Here comes beef.");
+	document.getElementById("one").classList.toggle("is-active");
+}
+
+
+
+	// $('.card').on('click', function() {
+	// 	console.log('weeee');
+ //    $(this).toggleClass('is-active');
+	// })
+
+
+console.log("after jquery line");
+
+   // var element = document.getElementById("myDIV");
+   // element.classList.toggle("mystyle");
+
+
+
+</script>
+
+
+
+
+<link rel="stylesheet" type="text/css" >
+<link>
+
+<style type="text/css">
+body {
+  background-color: #1d1f20;
+  -webkit-transform: translate3d(0, 0, 0);
+}
+.cards {
+  width: 100%;
+  height: 100vh;
+  font-size: 0;
+}
+.cards:hover .card {
+  opacity: 0.3;
+  filter: grayscale(100%);
+}
+.cards:hover .card:hover, .cards:hover .card.is-active {
+  opacity: 1;
+  filter: none;
+}
+.card {
+  display: inline-block;
+  vertical-align: middle;
+  position: absolute;
+  overflow: hidden;
+  width: 33.33333%;
+  height: 33.33333%;
+  cursor: pointer;
+  transition: all 300ms linear, opacity 300ms linear, filter 300ms linear;
+}
+.card.is-active {
+  z-index: 1;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  transform: rotateY(180deg);
+  filter: none;
+}
+.card.is-active .card-front {
+  opacity: 0;
+  filter: none;
+}
+.card.is-active .card-back, .card.is-active .card-back-wrapper {
+  opacity: 1;
+}
+.card.is-active .card-back-wrapper {
+  transition: opacity 300ms 300ms linear;
+}
+.card-front, .card-back {
+  width: 100%;
+  height: 100%;
+  transition: all 0ms 150ms linear;
+}
+.card-front {
+  background-position: center;
+  background-size: cover;
+}
+.card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background-color: #111213;
+}
+.card-back p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 0;
+  font-size: 24px;
+  color: #fff;
+  transform: translate(-50%, -50%);
+}
+.card-back-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 100ms 0ms;
+  transform: rotateY(180deg);
+}
+.card:nth-child(1) {
+  top: 0%;
+}
+.card:nth-child(1) + .card {
+  top: 0%;
+}
+.card:nth-child(1) + .card+ .card {
+  top: 0%;
+}
+.card:nth-child(1) {
+  left: 0%;
+}
+.card:nth-child(1) .card-front {
+  background-image: url(http://lorempixel.com/600/800/nature);
+}
+.card:nth-child(2) {
+  left: 33.33333%;
+}
+.card:nth-child(2) .card-front {
+  background-image: url(http://lorempixel.com/600/800/sports);
+}
+.card:nth-child(3) {
+  left: 66.66667%;
+}
+.card:nth-child(3) .card-front {
+  background-image: url(http://lorempixel.com/600/800/city);
+}
+.card:nth-child(4) {
+  top: 33.33333%;
+}
+.card:nth-child(4) + .card {
+  top: 33.33333%;
+}
+.card:nth-child(4) + .card+ .card {
+  top: 33.33333%;
+}
+.card:nth-child(4) {
+  left: 0%;
+}
+.card:nth-child(4) .card-front {
+  background-image: url(http://lorempixel.com/600/800/business);
+}
+.card:nth-child(5) {
+  left: 33.33333%;
+}
+.card:nth-child(5) .card-front {
+  background-image: url(http://lorempixel.com/600/800/technics);
+}
+.card:nth-child(6) {
+  left: 66.66667%;
+}
+.card:nth-child(6) .card-front {
+  background-image: url(http://lorempixel.com/620/800/city);
+}
+.card:nth-child(7) {
+  top: 66.66667%;
+}
+.card:nth-child(7) + .card {
+  top: 66.66667%;
+}
+.card:nth-child(7) + .card+ .card {
+  top: 66.66667%;
+}
+.card:nth-child(7) {
+  left: 0%;
+}
+.card:nth-child(7) .card-front {
+  background-image: url(http://lorempixel.com/620/800/nature);
+}
+.card:nth-child(8) {
+  left: 33.33333%;
+}
+.card:nth-child(8) .card-front {
+  background-image: url(http://lorempixel.com/620/800/business);
+}
+.card:nth-child(9) {
+  left: 66.66667%;
+}
+.card:nth-child(9) .card-front {
+  background-image: url(http://lorempixel.com/620/800/sports);
+}
+
+
+</style>
+
+</head>
+<body>
+
+<div class="cards">
+
+	<div class="card" id="one" onclick="flip()">
+		<div class="card-front" ><button onclick="flip">rr</button></div>
+		<div class="card-back"><div class="card-back-wrapper"><p>cc</p></div></div>
+	</div>
+	<div class="card" id="">
+		<div class="card-front" ><h2 class="card-title">ff</h2></div>
+		<div class="card-back"><div class="card-back-wrapper"><p>cc</p></div></div>
+	</div>	<div class="card" id="">
+		<div class="card-front" ><h2 class="card-title">ff</h2></div>
+		<div class="card-back"><div class="card-back-wrapper"><p>cc</p></div></div>
+	</div>	<div class="card" id="">
+		<div class="card-front" ><h2 class="card-title">ff</h2></div>
+		<div class="card-back"><div class="card-back-wrapper"><p>cc</p></div></div>
+	</div>	<div class="card" id="">
+		<div class="card-front" ><h2 class="card-title">ff</h2></div>
+		<div class="card-back"><div class="card-back-wrapper"><p>cc</p></div></div>
+	</div>	<div class="card" id="">
+		<div class="card-front" ><h2 class="card-title">ff</h2></div>
+		<div class="card-back"><div class="card-back-wrapper"><p>cc</p></div></div>
+	</div>	<div class="card" id="">
+		<div class="card-front" ><h2 class="card-title">ff</h2></div>
+		<div class="card-back"><div class="card-back-wrapper"><p>cc</p></div></div>
+	</div>	<div class="card" id="">
+		<div class="card-front" ><h2 class="card-title">ff</h2></div>
+		<div class="card-back"><div class="card-back-wrapper"><p>cc</p></div></div>
+	</div>	<div class="card" id="">
+		<div class="card-front" ><h2 class="card-title">ff</h2></div>
+		<div class="card-back"><div class="card-back-wrapper"><p>cc</p></div></div>
+	</div>
+
+</div>
+
+</body>
+</html>
