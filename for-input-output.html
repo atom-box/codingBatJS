@@ -76,6 +76,12 @@ background-color: var(--light2);
     text-align: center;
 }
 
+.stripe {
+  min-height: 1rem;
+  min-width: 5rem;
+  background-color: var(--light1);
+  border: solid #005 0.1rem;
+}
 
 
 </style>
@@ -84,6 +90,7 @@ background-color: var(--light2);
     let now = new Date();
     now = now.toLocaleString();
     console.log(`At {now} here is: {str1}`);
+    return s + "-" + s;
   } 
 </script>
 </head>
@@ -95,9 +102,9 @@ background-color: var(--light2);
     <div class="square-small">
      
 <!-- /*==============================*/ -->
-<form oninput="grub(str1)">
+<form  oninput="out1.value = grub(str1.value)">
   <input type="textarea" name="str1" />
-  <output name="out1">void</output>
+  <output class="core stripe" name="out1" for="str1">void</output>
 </form>
 <!-- /*==============================*/ -->
 
