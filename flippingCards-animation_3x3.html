@@ -11,24 +11,10 @@ $(document).ready(
 console.log('jquery says "ready!"')
 );
 
-let flip = function(){
+let flip = function(s){
 	console.log("Here comes beef.");
-	document.getElementById("one").classList.toggle("is-active");
+	document.getElementById(s).classList.toggle("is-active");
 }
-
-
-
-	$('#two').on('click', function() {
-		console.log('weeee');
-	})
-
-
-console.log("after jquery line");
-
-   // var element = document.getElementById("myDIV");
-   // element.classList.toggle("mystyle");
-
-
 
 </script>
 
@@ -39,10 +25,29 @@ console.log("after jquery line");
 <link>
 
 <style type="text/css">
+
+     :root {
+        /* from https://creativexcorner.wordpress.com/2018/03/07/jean-michel-basquiat-one-of-the-last-natural-born-artists/ */
+     --vivid3: rgb(227, 191, 39);  
+     --vivid1: rgb(29, 60, 171); 
+     --vivid2: rgb(213, 90, 34 );
+     --text1: rgb(35,	113,	183	);
+     --text2: rgb(239,	211,	0	); 
+     --button1: rgb(239,	147,	0	);  
+     --button2: rgb(34,	110,	178	) ;
+}
+
 body {
   background-color: #1d1f20;
   -webkit-transform: translate3d(0, 0, 0);
 }
+
+img {
+/*	written for 620x800  h/w size*/
+height: 620px;
+width: 800px;
+}
+
 .cards {
   width: 100%;
   height: 100vh;
@@ -211,32 +216,32 @@ body {
 
 <div class="cards">
 
-	<div class="card" id="one" onclick="flip()">
+	<div class="card" id="one" onclick="flip('one')">
 		<div class="card-front" ></div>
 		<div class="card-back"><div class="card-back-wrapper"><p>cc</p></div></div>
 	</div>
-	<div class="card" id="two">
+	<div class="card" id="two" onclick="flip('two')">
 		<div class="card-front" ><h2 class="card-title">ff</h2></div>
 		<div class="card-back"><div class="card-back-wrapper"><p>cc</p></div></div>
-	</div>	<div class="card" id="">
+	</div>	<div class="card" id="three" onclick="flip('three')">
 		<div class="card-front" ><h2 class="card-title">ff</h2></div>
 		<div class="card-back"><div class="card-back-wrapper"><p>cc</p></div></div>
-	</div>	<div class="card" id="">
+	</div>	<div class="card" id="four" onclick="flip('four')">
 		<div class="card-front" ><h2 class="card-title">ff</h2></div>
 		<div class="card-back"><div class="card-back-wrapper"><p>cc</p></div></div>
-	</div>	<div class="card" id="">
+	</div>	<div class="card" id="five" onclick="flip('five')">
 		<div class="card-front" ><h2 class="card-title">ff</h2></div>
 		<div class="card-back"><div class="card-back-wrapper"><p>cc</p></div></div>
-	</div>	<div class="card" id="">
+	</div>	<div class="card" id="six" onclick="flip('six')">
 		<div class="card-front" ><h2 class="card-title">ff</h2></div>
 		<div class="card-back"><div class="card-back-wrapper"><p>cc</p></div></div>
-	</div>	<div class="card" id="">
+	</div>	<div class="card" id="seven" onclick="flip('seven')">
 		<div class="card-front" ><h2 class="card-title">ff</h2></div>
 		<div class="card-back"><div class="card-back-wrapper"><p>cc</p></div></div>
-	</div>	<div class="card" id="">
+	</div>	<div class="card" id="eight" onclick="flip('eight')">
 		<div class="card-front" ><h2 class="card-title">ff</h2></div>
 		<div class="card-back"><div class="card-back-wrapper"><p>cc</p></div></div>
-	</div>	<div class="card" id="">
+	</div>	<div class="card" id="nine" onclick="flip('nine')">
 		<div class="card-front" ><h2 class="card-title">ff</h2></div>
 		<div class="card-back"><div class="card-back-wrapper"><p>cc</p></div></div>
 	</div>
