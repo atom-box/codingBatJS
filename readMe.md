@@ -1,18 +1,18 @@
 # Coding Challenges
 
 ## The programs
-* Files ending in .js can be run using node:   NODE FILENAME
-* Files ending in .html will open in a browser.
 * Files starting with R use React and will open in the browser (They will load the React library on their own using the React CDW at https://unpkg.com ).
+* Files ending in .js can be run using node.  So in your terminal:   NODE FILENAME
+* Files ending in .html will open in a browser.
 * The files in _/styles_ are for playing around with CSS ideas
 
 ## What's going on here
 The idea, to quote Nick Parlante (Stanford), is to be "practiced and quick with these little bits of code. Skill with the little code allows students to concentrate on the larger parts of the problem. Or put another other way, someone who struggles with the loops, logic, etc. does not have time for the big picture. "<br><br>
 My focus for awhile shifted towards becoming facile with the functional parts of JS, since they save time but are also more maintainable, especially <i>reduce, map, and some</i>.<br><br>  
-Lately I am at a point where I am pulling it all together.  I can intuitively fiddle with the CSS and fun stuff while implementing React.js DOM events/selectors and still solving the Fizz Buzz types of questions.  
+Lately I am at a point where I am having fun pulling it all together.  I can intuitively implement React and CSS around these Fizz Buzz types of questions.  
 
-## Contents (chronological order, from 11/2018) 
-* sleepIn.js
+## Contents (chronological order, oldest first) 
+* sleepIn.js (September 2018)
 * sumDouble.js
 * arraysFirst.js
 * fizzBuzz.js
@@ -66,15 +66,49 @@ Lately I am at a point where I am pulling it all together.  I can intuitively fi
 * button-changes-style.html
 * bloxColorer.html
 * firstHalf.js
+* slocure.js
+* shadow-gray.css
+* knightDivers.html alias
+* knightDivers.html
+* button-to-change.html
+* countX.js
+* do.js
+* hermione.js
+* red-count9s.js
+* sameEnd.js
+* redCenteredDivs.html
+* button-changes-style.html
+* logo-jumble.html
+* centering-old.html
+* tempbuffer.butter
+* rAddStar.html
+* twoTimers.html
+* wordsFromString.js
+* styles
+* images
+* rLoremIpsumGenerator.html
+* readMe.md
+* cardOverAbe.html
+* rReactNodeMakerNOJSX.html
+* center.html
+* rWorldPopulation.html
+* for-is-VARS.html
+* for-input-output.html
+* nameFromForm.html
+* rPairStar.html
+* flippingCards-animation_3x3.html
+* longestPrefix.html (September 10, 2019)
+
 
 ## Source
-* At first I just took exercises straight from Stanford U's [CodingBat](http://codingbat.com) but now when I go to that site I try to remix their challenge with whatever book I'm studying, like the Crockett, Flanagan, Duckett, or Nicholas Zakas Javascript books for example.
-* Good too, this free pdf:  [The Code Challenge Book: How to Ace the Coding Bootcamp Technical Interview](   https://coderbyte.com/ebook)
+* Many are from Stanford U's [CodingBat](http://codingbat.com) which now has recursive and _functional_ problems.
+* Also, this free pdf:  [The Code Challenge Book: How to Ace the Coding Bootcamp Technical Interview](   https://coderbyte.com/ebook).  This is not the same as the premium-but-worth-it Cracking the Coding Interview.  
 * Some of the DOM challenges are from [Burdwan](https://www.w3resource.com/javascript-exercises/javascript-dom-exercises.php), WestBengal, India
+* [Leet Code](https://leetcode.com/problemset/all/) which now has added some exercises with concurrency.
 ## Possible future ideas
 * Go back and write unit tests for these with edge cases in Selenium, Cocoa or similar
 * Write javascript implementations of the old (Pascal) Algorithms by Robert Sedgewick; the book (c)1980.
-* Sol LeWitt [wall drawing implementations](https://solvingsol.com/solutions/)
-* [Rosetta Code](http://rosettacode.org/wiki/Rosetta_Code)
+* [Sol LeWitt](https://solvingsol.com/solutions/) drawing implementations.  In Canvas?
+* [Rosetta Code](http://rosettacode.org/wiki/Rosetta_Code) is one of those funky "write it in many languages" sites.
 
 
