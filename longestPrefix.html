@@ -1,15 +1,20 @@
 <!--  
+REUSABLE:
+store previous style
+set style
+DOM event load listener
+
 /*****************************************/ 
 // This is a frame for running snippets of JSX. // Try to name those snippets with an r(eact) at the front! 
 /*****************************************/
+Goal:
+https://leetcode.com/problems/longest-common-prefix/ says
 Write a function to find the longest common prefix string amongst an array of strings.
-
 If there is no common prefix, return an empty string "".
 
 Example 1:
 Input: ["flower","flow","flight"]
 Output: "fl"
-
 Example 2:
 Input: ["dog","racecar","car"]
 Output: ""
@@ -65,11 +70,11 @@ function goDad() {
   let el3 = document.getElementById("exposed1")
   restore.textColor = el3.style.color;
   restore.backgroundColor = el3.style.background;
-  el3.style.color = "blue";
-  el3.style.background = "#b66";
+  el3.style.color = "faa";
+  el3.style.background = "#00d";
 }
 
-function goMono() {
+function goContrast() {
   let el3 = document.getElementById("exposed1")
   restore.textColor = el3.style.color;
   restore.backgroundColor = el3.style.background;
@@ -85,6 +90,8 @@ function goPrev() {
 
 function goOrig() {
   let el3 = document.getElementById("exposed1")
+  restore.textColor = el3.style.color;
+  restore.backgroundColor = el3.style.background;
   el3.style.color = original.textColor;
   el3.style.background = original.backgroundColor;    
 }
@@ -141,7 +148,39 @@ background-color: #444;
     justify-content: center;  /*(2)HORIZ*/
 }
 
+.flex-column {
+    display: flex;         
+    flex-direction: column;    /*(1)VERT*/
+    xalign-items: center;    /*(1)VERT*/
+    justify-content: center;  /*(2)HORIZ*/
+}
 
+.flex-row {
+    display: flex;
+    flex-direction:row;
+}
+
+/*====r=e=s=p=o=n=s=i=b=i=l=i=t=y===========*/
+/* For desktop: */
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class*="col-"] {
+    width: 100%;
+  }
+}
 
 /*=====f=o=n=t===&====t=e=x=t===============*/
 
@@ -176,21 +215,23 @@ background-color: #444;
         margin: 0.5rem 2rem;
         padding: 0.5rem; 
         text-align: center;
-        max-width: 40%;
-        border: 0.1rem hidden;
-        border-radius: 0.3rem;
+        max-width: 80%;
     }
 
       .elShadow {
-         box-shadow: 0 7px 7px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        box-shadow: 0 7px 7px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        border: 0.1rem hidden;
+        border-radius: 0.3rem;
 
     }
+    .
+
      .dashboard {        
-         background-color: var(--vivid2);
-         color: white;
 
     }
     .output {
+        background-color: var(--vivid2);
+        color: white;
         border: dashed var(--vivid3) 0.2rem;
     }
 
@@ -199,18 +240,38 @@ background-color: #444;
 
 <body>
     <div class="monde">
-        <div class="title title__skinny elShadow bpm sidewalk" id="exposed1">
-            <h1>longest<span class="title__hoegarden "> prefix</span> in common </h1>
-            <p class="title elShadow bpm sidewalk">Prefix here is defined as a string of consonants at the start of a word. For the list of words, find the longest prefix that is common to two or more words.</p>
-        <div class="dashboard output elShadow bpm  hover-grow" id="mountNode">h e r e</div>        </div>
+
+
+        <div class="flex-row  elShadow " id="exposed1">
+        <div class="col-6 elShadow title bpm">
+                <h1 class="title title__skinny">longest<span class="title__hoegarden "> prefix</span> in common </h1>
+                <p >Prefix here is defined as a string of consonants at the start of a word. For the list of words, find the longest prefix that is common to two or more words.</p>
+        </div><!-- left column end -->
+        <div class="col-6">
+            <div class="flex-column">
+                <div class=" output elShadow bpm  hover-grow" id="mountNode">h e r e</div><!-- out1 end -->
+                <div class=" output elShadow bpm  hover-grow" id="mountNode">h e r e</div><!-- out2 end -->
+            </div><!--  -->
+        </div><!-- right column end -->
+    </div><!-- ROW END and blue block end -->
+
+
+
+
+
+
+
 
         <ul>
             <li type="button" onclick="goOrig()"><p>Original Colors</p></li>            
             <li type="button" onclick="goDad()"><p>Dad Colors</p></li>
-            <li type="button" onclick="goMono()"><p>Mono Colors</p></li>
+            <li type="button" onclick="goContrast()"><p>Vision Impaired Colors</p></li>
             <li type="button" onclick="goPrev()"><p>Previous Colors</p></li>
         </ul>
 
-    </div>
+
+
+
+</div><!-- world end -->
 </body>
 </html>
