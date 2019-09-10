@@ -3,8 +3,7 @@ console.log('barracuda');
 // object to hold colors whenever new color scheme button is clicked
 let restore = {};
 // object to hold original colors when page first loads
-let original = {}
-
+let original = {};
 
 
 document.addEventListener('DOMContentLoaded', storeOrigs);
@@ -51,8 +50,13 @@ function goOrig() {
   el3.style.background = original.backgroundColor;    
 }
 
-
-function timeStamper(s) {
+let words = [];
+let wordCount = 22;
+function munch(s) {
 	let now = new Date().toLocaleTimeString();
-	return s + now + s
+	dummy = 'tre aa oops base';
+	words = s.split(' ');
+
+	wordCount = words.length;
+	return `Array len is ${wordCount} last word is ` + words[wordCount -1];
 }
