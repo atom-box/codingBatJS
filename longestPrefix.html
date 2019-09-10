@@ -31,71 +31,15 @@ All given inputs are in lowercase letters a-z.
 <head>
 <title>compute recursive STARS between redundant chars</title>
 <meta charset="UTF-8"><meta>
-<script src="https://unpkg.com/react@15.6.2/dist/react.js"></script>
-<script src="https://unpkg.com/react-dom@15.6.2/dist/react-dom.js"></script>
-<script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
-<link src="https://unpkg.com/tachyons@4.8.0/css/tachyons.min.css
+<xscript src="https://unpkg.com/react@15.6.2/dist/react.js"></script>
+<xscript src="https://unpkg.com/react-dom@15.6.2/dist/react-dom.js"></script>
+<xscript src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
 " rel="stylesheet" ></link>
 <script type="text/babel">
 // make array of objects to display
 </script>
+<script src="scripts/form__prefixes.js" ></script>
 <script>
-
-// object to hold colors whenever new color scheme button is clicked
-let restore = {};
-// object to hold original colors when page first loads
-let original = {}
-
-
-
-document.addEventListener('DOMContentLoaded', sayHi);
-document.addEventListener('DOMContentLoaded', storeOrigs);
-
-function sayHi() {
-  console.log("line 44...");
-}
-
-console.log("line 46...");
-
-// store original colors, so less revision hassle
-function storeOrigs() {
-  let el3 = document.getElementById("exposed1")
-  console.log("...stored origs");
-  original.textColor = el3.style.color;
-  original.backgroundColor = el3.style.background;    
-}
-
-
-function goDad() {
-  let el3 = document.getElementById("exposed1")
-  restore.textColor = el3.style.color;
-  restore.backgroundColor = el3.style.background;
-  el3.style.color = "#ff0";
-  el3.style.background = "#FF69B4";
-}
-
-function goContrast() {
-  let el3 = document.getElementById("exposed1")
-  restore.textColor = el3.style.color;
-  restore.backgroundColor = el3.style.background;
-  el3.style.color = "black";
-  el3.style.background = "white";
-}
-
-function goPrev() {
-  let el3 = document.getElementById("exposed1")
-  el3.style.color = restore.textColor;
-  el3.style.background = restore.backgroundColor;    
-}
-
-function goOrig() {
-  let el3 = document.getElementById("exposed1")
-  restore.textColor = el3.style.color;
-  restore.backgroundColor = el3.style.background;
-  el3.style.color = original.textColor;
-  el3.style.background = original.backgroundColor;    
-}
-
 
 </script>
 
@@ -180,6 +124,10 @@ background-color: #444;
   [class*="col-"] {
     width: 100%;
   }
+  .flex-row {
+    display: relative;
+    float: left;
+  }
 }
 
 /*=====f=o=n=t===&====t=e=x=t===============*/
@@ -249,11 +197,6 @@ background-color: #444;
                 <div class=" output elShadow bpm  hover-grow" id="mountNode">h e r e</div><!-- out2 end -->
         </form><!-- right column end -->
     </div><!-- ROW END and blue block end -->
-
-
-
-
-
 
 
 
