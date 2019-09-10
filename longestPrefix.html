@@ -39,16 +39,25 @@ let restore = {};
 
 function goDad() {
   let el3 = document.getElementById("exposed1")
+  restore.textColor = el3.style.color;
+  restore.backgroundColor = el3.style.background;
   el3.style.color = "blue";
   el3.style.background = "#b66";
 }
 
 function goMono() {
   let el3 = document.getElementById("exposed1")
+  restore.textColor = el3.style.color;
+  restore.backgroundColor = el3.style.background;
   el3.style.color = "black";
   el3.style.background = "white";
 }
 
+function goPrev() {
+  let el3 = document.getElementById("exposed1")
+  el3.style.color = restore.textColor;
+  el3.style.background = restore.backgroundColor;    
+}
 
 
 </script>
@@ -168,6 +177,7 @@ background-color: #444;
         <ul>
             <li type="button" onclick="goDad()"><p>Dad Colors</p></li>
             <li type="button" onclick="goMono()"><p>Mono Colors</p></li>
+            <li type="button" onclick="goPrev()"><p>Previous Colors</p></li>
         </ul>
 
     </div>
