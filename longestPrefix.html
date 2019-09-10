@@ -35,7 +35,19 @@ All given inputs are in lowercase letters a-z.
 // make array of objects to display
 </script>
 <script>
+
+// object to hold colors whenever new color scheme button is clicked
 let restore = {};
+// object to hold original colors when page first loads
+let original = {}
+  console.log("started...");
+
+// store original colors, so less revision hassle
+  let el3 = document.getElementById("exposed1")
+  console.log("...stored origs");
+  original.textColor = el3.style.color;
+  original.backgroundColor = el3.style.background;
+
 
 function goDad() {
   let el3 = document.getElementById("exposed1")
@@ -57,6 +69,12 @@ function goPrev() {
   let el3 = document.getElementById("exposed1")
   el3.style.color = restore.textColor;
   el3.style.background = restore.backgroundColor;    
+}
+
+function goOrig() {
+  let el3 = document.getElementById("exposed1")
+  el3.style.color = original.textColor;
+  el3.style.background = original.backgroundColor;    
 }
 
 
@@ -175,6 +193,7 @@ background-color: #444;
         <div class="dashboard output elShadow bpm  hover-grow" id="mountNode">h e r e</div>        </div>
 
         <ul>
+            <li type="button" onclick="goOrig()"><p>Original Colors</p></li>            
             <li type="button" onclick="goDad()"><p>Dad Colors</p></li>
             <li type="button" onclick="goMono()"><p>Mono Colors</p></li>
             <li type="button" onclick="goPrev()"><p>Previous Colors</p></li>
