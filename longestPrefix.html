@@ -70,8 +70,8 @@ function goDad() {
   let el3 = document.getElementById("exposed1")
   restore.textColor = el3.style.color;
   restore.backgroundColor = el3.style.background;
-  el3.style.color = "faa";
-  el3.style.background = "#00d";
+  el3.style.color = "#ff0";
+  el3.style.background = "#FF69B4";
 }
 
 function goContrast() {
@@ -184,10 +184,6 @@ background-color: #444;
 
 /*=====f=o=n=t===&====t=e=x=t===============*/
 
-    .title {
-     background-color: var(--vivid1);
-     color: white ;
-    }
 
     .hover-grow:hover, .grow:focus {
       transform: scale(1.35);
@@ -218,17 +214,17 @@ background-color: #444;
         max-width: 80%;
     }
 
+.jumbo {
+     background-color: var(--vivid1);
+     color: white ;
+}
+
       .elShadow {
         box-shadow: 0 7px 7px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         border: 0.1rem hidden;
         border-radius: 0.3rem;
-
     }
-    .
 
-     .dashboard {        
-
-    }
     .output {
         background-color: var(--vivid2);
         color: white;
@@ -242,17 +238,16 @@ background-color: #444;
     <div class="monde">
 
 
-        <div class="flex-row  elShadow " id="exposed1">
-        <div class="col-6 elShadow title bpm">
-                <h1 class="title title__skinny">longest<span class="title__hoegarden "> prefix</span> in common </h1>
+        <div class="flex-row jumbo elShadow " id="exposed1">
+        <div class="col-6 elShadow  bpm">
+                <h1 class="title__skinny">longest<span class="title__hoegarden "> prefix</span> in common </h1>
                 <p >Prefix here is defined as a string of consonants at the start of a word. For the list of words, find the longest prefix that is common to two or more words.</p>
         </div><!-- left column end -->
-        <div class="col-6">
-            <div class="flex-column">
+        <form class="col-6 lex-column">
+                <div class="elShadow bpm jumbo ">Type words into the first box.</div>
                 <div class=" output elShadow bpm  hover-grow" id="mountNode">h e r e</div><!-- out1 end -->
                 <div class=" output elShadow bpm  hover-grow" id="mountNode">h e r e</div><!-- out2 end -->
-            </div><!--  -->
-        </div><!-- right column end -->
+        </form><!-- right column end -->
     </div><!-- ROW END and blue block end -->
 
 
