@@ -191,11 +191,19 @@ background-color: #444;
                 <h1 class="title__skinny">longest<span class="title__hoegarden "> prefix</span> in common </h1>
                 <p >Prefix here is defined as a string of consonants at the start of a word. For the list of words, find the longest prefix that is common to two or more words.</p>
         </div><!-- left column end -->
-        <form class="col-6 lex-column">
+
+
+
+        <form class="col-6 flex-column" oninput="bottomOrange.value = timeStamper(topOrange.value)">
                 <div class="elShadow bpm jumbo ">Type words into the first box.</div>
-                <div class=" output elShadow bpm  hover-grow" id="mountNode">h e r e</div><!-- out1 end -->
-                <div class=" output elShadow bpm  hover-grow" id="mountNode">h e r e</div><!-- out2 end -->
+                <input class=" output elShadow bpm  hover-grow" id="topOrange" type="textarea"></input><!-- out1 end -->
+                <output class=" output elShadow bpm  hover-grow" name="bottomOrange" for="topOrange">h e r e</output><!-- out2 end -->
         </form><!-- right column end -->
+
+
+
+
+
     </div><!-- ROW END and blue block end -->
 
 

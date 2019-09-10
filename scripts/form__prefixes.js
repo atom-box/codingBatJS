@@ -7,19 +7,15 @@ let original = {}
 
 
 
-document.addEventListener('DOMContentLoaded', sayHi);
 document.addEventListener('DOMContentLoaded', storeOrigs);
 
-function sayHi() {
-  console.log("line 44...");
-}
 
 console.log("line 46...");
 
 // store original colors, so less revision hassle
 function storeOrigs() {
   let el3 = document.getElementById("exposed1")
-  console.log("...stored origs");
+  console.log("...stored orig colors succesfully.");
   original.textColor = el3.style.color;
   original.backgroundColor = el3.style.background;    
 }
@@ -55,3 +51,8 @@ function goOrig() {
   el3.style.background = original.backgroundColor;    
 }
 
+
+function timeStamper(s) {
+	let now = new Date().toLocaleTimeString();
+	return s + now + s
+}
