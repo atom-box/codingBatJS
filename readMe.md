@@ -1,4 +1,7 @@
 # Coding Challenges
+## What's going on here
+This repository contains dozens of snippets I have written.  When I solve a simple coding challenge (from Leetcode, CodingBat, et al) I store my answer in this repository.  I have written all of the code in this repository. Here is an example of a recent coding challenge I solved: <br>
+[Sort the inputted text](index.html)
 
 ## The programs
 * Files starting with R use React and will open in the browser (They will load the React library on their own using the React CDW at https://unpkg.com ).
@@ -6,7 +9,7 @@
 * Files ending in .html will open in a browser.
 * The files in _/styles_ are for playing around with CSS ideas
 
-## What's going on here
+## Diary
 The idea, to quote Nick Parlante (Stanford), is to be "practiced and quick with these little bits of code. Skill with the little code allows students to concentrate on the larger parts of the problem. Or put another other way, someone who struggles with the loops, logic, etc. does not have time for the big picture. "<br><br>
 My focus for awhile shifted towards becoming facile with the functional parts of JS, since they save time but are also more maintainable, especially <i>reduce, map, and some</i>.<br><br>  
 Lately I am at a point where I am having fun pulling it all together.  I can intuitively implement React and CSS around these Fizz Buzz types of questions.  
