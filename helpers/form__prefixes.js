@@ -77,8 +77,5 @@ function munch(s) {
 	return `First is ${words.lowered[0]} last  is ` + words.lowered[words.count -1];
 }
 
-// trim
-// return a new shorter array, via reduce, that lacks the "" entries
-// lowercase
-// sort
+
 
