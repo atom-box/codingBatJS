@@ -1,7 +1,7 @@
 # Coding Challenges
 ## What's going on here
 This repository contains dozens of snippets I have written.  When I solve a simple coding challenge (from Leetcode, CodingBat, et al) I store my answer in this repository.  I have written all of the code in this repository. Here is an example of a recent coding challenge I solved: <br>
-![button for more info](https://github.com/atom-box/codingBatJS/blob/master/demo-button.png)
+[![button for more info](https://github.com/atom-box/codingBatJS/blob/master/demo-button.png)](https://atom-box.github.io/codingBatJS/)
 
 ## The programs
 * Files starting with R use React and will open in the browser (They will load the React library on their own using the React CDW at https://unpkg.com ).
