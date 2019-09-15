@@ -74,7 +74,7 @@ function munch(s) {
   console.log('collapsed array is here: ' + words.collapsed);
   words.lowered.sort();
 	words.count = words.lowered.length;
-	return `First is ${words.lowered[0]} last  is ` + words.lowered[words.count -1];
+	return `First is [${words.lowered[0]}]. Last is [${words.lowered[words.count -1]}].`;
 }
 
 
