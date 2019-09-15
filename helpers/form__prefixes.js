@@ -57,11 +57,22 @@ function munch(s) {
 	let now = new Date().toLocaleTimeString();
 	dummy = 'tre aa oops base';
 	words.dirty = s.split(' '); // returns array of raw words
-  words.trimmed = words.dirty.map((w)=>{w.trim()} ); //returns array of trimmed words
-  words.fewer = ["dummy", "and", "dummier", "chula", "vi", "sta", " mush"];
-  // words.trimmed.reduce((acc, curr)=>{ acc + "---" + curr})  // returns shorter array, with empty strings removed
-	words.count = words.fewer.length;
-	return `First is ${words.fewer[0]} last  is ` + words.fewer[words.count -1];
+  words.trimmed = words.dirty.map((w)=>{return w.trim()} ); //returns array of trimmed words
+  console.log('Trimmed array is here: ' + words.trimmed);
+
+  // Remove empty array members
+  words.collapsed = words.trimmed.reduce( 
+    (x,y)=> {
+      if (y.length > 0){
+        x.push("+" + y + "-"); 
+      }
+      return x;
+    }
+    , [])   ;
+  console.log('collapsed array is here: ' + words.collapsed);
+
+	words.count = words.collapsed.length;
+	return `First is ${words.collapsed[0]} last  is ` + words.collapsed[words.count -1];
 }
 
 // trim
