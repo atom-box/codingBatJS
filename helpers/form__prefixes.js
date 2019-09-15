@@ -53,6 +53,7 @@ function goOrig() {
 
 let words = {};
 words.count = 0;
+// The vibe of the following is very FUNCTIONAL: no mutating of arrays.
 function munch(s) {
 	let now = new Date().toLocaleTimeString();
 	dummy = 'tre aa oops base';
@@ -64,15 +65,16 @@ function munch(s) {
   words.collapsed = words.trimmed.reduce( 
     (x,y)=> {
       if (y.length > 0){
-        x.push("+" + y + "-"); 
+        x.push(y); 
       }
       return x;
     }
-    , [])   ;
+    , [])
+  words.lowered = words.collapsed.map( (x)=>{return x.toLowerCase()} )  ;
   console.log('collapsed array is here: ' + words.collapsed);
-
-	words.count = words.collapsed.length;
-	return `First is ${words.collapsed[0]} last  is ` + words.collapsed[words.count -1];
+  words.lowered.sort();
+	words.count = words.lowered.length;
+	return `First is ${words.lowered[0]} last  is ` + words.lowered[words.count -1];
 }
 
 // trim
