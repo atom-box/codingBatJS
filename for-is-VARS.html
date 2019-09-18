@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Do Math, IN HTML!</title>
+<title>Seed Calculator</title>
 <meta charset="UTF-8"><meta>
 
 <script type="text/babel">
@@ -32,7 +32,7 @@ form {
 
 .monde {
   /*==f=i=l=l==s=c=r=e=e=n==================*/
-background-color: var(--vivid1);
+background-color: rgb(32, 110, 0);
   min-height: 100%;
   xmin-width: 1024px; 
   /* Set up proportionate scaling */
@@ -49,18 +49,18 @@ background-color: var(--vivid1);
 
 .square-large {
     border-radius: 2rem;
-    border: solid 0.4rem var(--vivid2);
+    border: solid 0.4rem rgb(255, 255, 0);
     height: 28rem;
     xwidth: 28rem;
         display: flex;          /*(1)VERT*/
-    flex-direction: row;    /*(1)VERT*/
+    flex-direction: column;    /*(1)VERT*/
     align-items: center;    /*(1)VERT*/
     justify-content: center;  /*(2)HORIZ*/
 }
 
 .square-small {
     border-radius: 2rem;
-    border: solid 0.4rem var(--vivid3);
+    border: solid 0.4rem rgb(255, 255, 0);
     margin: auto 5rem;
     height: 12rem;
     xwidth: 12rem;
@@ -76,7 +76,11 @@ background-color: var(--vivid1);
     text-align: center;
 }
 
-
+.brand {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+}
 
 </style>
 
@@ -84,8 +88,9 @@ background-color: var(--vivid1);
 
 <body >
 <div class="monde">
-
+<div class="brand"><a href="https://en.wikipedia.org/wiki/John_deere"><img src="images/deere.png"></a></div>
 <div class="square-large">
+  <h1>Time to buy seeds!</h1>
     <div class="square-small">
       <form oninput="x.value = parseInt(seeds.value) * parseInt(crate.value)">
         Seeds Per Fruit:<br>0
