@@ -103,10 +103,31 @@ setInterval(Booming, 300);
   margin: 0.5rem 0.5rem 0.5rem 3rem;
 }
 
+.monde {
+  /*==f=i=l=l==s=c=r=e=e=n==================*/
+background-color: #000;
+  xmin-height: 100%;
+  xmin-width: 1024px; 
+  /* Set up proportionate scaling */
+  width: 100%;
+  xheight: auto;
+  /* Set up positioning */
+  xposition: fixed;
+  /*==f=i=l=l==s=c=r=e=e=n==END============*/
+    display: flex;          /*(1)VERT*/
+    flex-direction: row;    /*(1)VERT*/
+    align-items: center;    /*(1)VERT*/
+    justify-content: center;  /*(2)HORIZ*/
+}
+
+    .title {
+     background-color: var(--vivid2);
+
+    }
 
      .title__hoegarden {
         color:  var(--vivid1);
-         text-shadow: 1px 1px 2px white, 0 0 25px gray, 0 0 5px white;
+         text-shadow: 1px 1px 2px white, 0 0 2px gray, 0 0 2px white;
          font-weight: 500;
          font-variant: small-caps;
          font-weight: bolder;
@@ -116,41 +137,53 @@ setInterval(Booming, 300);
     }
      .title__skinny {
          font-weight: 100;
-         text-indent: 2.5rem;
          line-height: 2.6rem;
     }
     .bpm {
         margin: 0.5rem 2rem;
         padding: 0.5rem; 
         text-align: center;
-        max-width: 40%;
+        xmax-width: 40%;
         border: 0.1rem hidden;
         border-radius: 0.3rem;
     }
 
       .elShadow {
-         box-shadow: 0 7px 7px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+         box-shadow: 0 3px 3px 0 white, 0 3px 10px 0 white;
 
     }
      .dashboard {        
          background-color: var(--vivid2);
          color: white;
+         min-width: 15rem;
 
     }
-    .holding {
-        height: 22rem;
-        width: 22rem;
-    }
 
-    .output {
-        border: dashed var(--vivid3) 0.2rem;
-        
-    }
 .vertical-center {
   justify-content: center;
   align-items: center;
+}
+.row {
+    display: flex;          /*(1)VERT*/
+    flex-direction: row;
+    justify-content: space-around;  /*(2)HORIZ*/
+    min-width: 100%;
 
 }
+
+.hold {
+        display: flex;          /*(1)VERT*/
+    flex-direction: row;    /*(1)VERT*/
+    align-items: center;    /*(1)VERT*/
+    justify-content: center;  /*(2)HORIZ*/
+}
+
+.bpm {
+    margin: 2rem;
+    padding: 2rem;
+}
+
+
 
 
 
@@ -159,14 +192,23 @@ setInterval(Booming, 300);
 </head>
 
 <body >
-    <div class="vertical-center">
-    <div class="holding output">
-        <div >
-    <h1 class="title title__skinny elShadow bpm grow"><span class="title__hoegarden"> Node</span> m a k e r... </h1>
-    <div class="dashboard  elShadow bpm"   id="popular"></div>
-        </div>
+    <div class="monde">
+    <div class="row test-outline">
+
+    <div class="hold bpm">
+    <h1 class="title title__skinny elShadow"><span class="title__hoegarden">All the Lonely People</span></h1>
     </div>
-</div>
+
+    <div class="dashboard  elShadow bpm"   id="popular"></div>
+
+    <div class="hold bpm">
+    <div >
+        <a href="https://unsplash.com/photos/hzp_aT02R48"><img  src="images/globe_220x220.jpg"></a> 
+        <!-- image from Unsplash: Louis Reed @_louisreed -->
+    </div>
+    </div>
+</div> <!----e-n-d--r-o-w---------->
+</div><!----e-n-d--m-o-n-d-e------------->
 </body>
 
 </html>
