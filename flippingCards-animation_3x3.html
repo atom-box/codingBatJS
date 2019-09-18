@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>I love your company</title>
+          <title>Inspired by iNetWeb | Evan Genest</title>
 	<meta charset="utf-8">
-  <meta name="description" content="I modified this significantly but the original CSS was forked from LeFoy (only name given) at https://codepen.io/lefoy/details/rVqQvB#forks ">
-
+  <meta name="description" content="Credit where due: I modified this significantly but the original CSS was forked from LeFoy (only name given) at https://codepen.io/lefoy/details/rVqQvB#forks. I had to rewrite the SASS and Pug as CSS and HTML and the main JQuery part was not working after the fork so I wrote the Javascript toggle myself in JS.">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 <script type="text/javascript">
@@ -101,6 +100,12 @@ width: 800px;
   background-position: center;
   background-size: cover;
 }
+.card-title {
+  color: yellow;
+  z-index: 22;
+}
+
+
 .card-back {
   position: absolute;
   top: 0;
@@ -140,19 +145,19 @@ width: 800px;
   left: 0%;
 }
 .card:nth-child(1) .card-front {
-  background-image: url(http://lorempixel.com/600/800/nature);
+  background-image: url("./images/fish.png"); 
 }
 .card:nth-child(2) {
   left: 33.33333%;
 }
 .card:nth-child(2) .card-front {
-  background-image: url(http://lorempixel.com/600/800/sports);
+  background-image: url("./images/mcc1.png");
 }
 .card:nth-child(3) {
   left: 66.66667%;
 }
 .card:nth-child(3) .card-front {
-  background-image: url(http://lorempixel.com/600/800/city);
+  background-image: url("./images/saucers.png");
 }
 .card:nth-child(4) {
   top: 33.33333%;
@@ -167,19 +172,19 @@ width: 800px;
   left: 0%;
 }
 .card:nth-child(4) .card-front {
-  background-image: url(http://lorempixel.com/600/800/business);
+  background-image: url("./images/thatKey.jpg");
 }
 .card:nth-child(5) {
   left: 33.33333%;
 }
 .card:nth-child(5) .card-front {
-  background-image: url(http://lorempixel.com/600/800/technics);
+  background-image: url("./images/wall.png");
 }
 .card:nth-child(6) {
   left: 66.66667%;
 }
 .card:nth-child(6) .card-front {
-  background-image: url(http://lorempixel.com/620/800/city);
+  background-image: url("./images/gitYears.png");
 }
 .card:nth-child(7) {
   top: 66.66667%;
@@ -194,19 +199,19 @@ width: 800px;
   left: 0%;
 }
 .card:nth-child(7) .card-front {
-  background-image: url(http://lorempixel.com/620/800/nature);
+  background-image: url("./images/sprint.png");
 }
 .card:nth-child(8) {
   left: 33.33333%;
 }
 .card:nth-child(8) .card-front {
-  background-image: url(http://lorempixel.com/620/800/business);
+  background-image: url("./images/kris-evan-brett.jpg");
 }
 .card:nth-child(9) {
   left: 66.66667%;
 }
 .card:nth-child(9) .card-front {
-  background-image: url(http://lorempixel.com/620/800/sports);
+  background-image: url("./images/gitbook.png");
 }
 
 
@@ -218,33 +223,34 @@ width: 800px;
 <div class="cards">
 
 	<div class="card" id="one" onclick="flip('one')">
-		<div class="card-front" ></div>
-		<div class="card-back"><div class="card-back-wrapper"><p>cc</p></div></div>
+		<div class="card-front" ><h2 class="card-title">f a  f ads f asdf f</h2></div>
+		<div class="card-back"><div class="card-back-wrapper"><p>Flash Marketing<br><br>I painted my chest for a marketing firm in New York.</p></div></div>
 	</div>
 	<div class="card" id="two" onclick="flip('two')">
 		<div class="card-front" ><h2 class="card-title">ff</h2></div>
-		<div class="card-back"><div class="card-back-wrapper"><p>cc</p></div></div>
+		<div class="card-back"><div class="card-back-wrapper"><p><br>Giving conference talks<br><p></div></div>
 	</div>	<div class="card" id="three" onclick="flip('three')">
-		<div class="card-front" ><h2 class="card-title">ff</h2></div>
-		<div class="card-back"><div class="card-back-wrapper"><p>cc</p></div></div>
+		<div class="card-front" ><h2 class="card-title"></h2></div>
+		<div class="card-back"><div class="card-back-wrapper"><p>Maintaining the <a href="https://twitter.com/ScooterSoftware/status/1105493482406363137"> Flying Saucers</a> on Scooter Software's Social Media<br><br><p></div></div>
 	</div>	<div class="card" id="four" onclick="flip('four')">
 		<div class="card-front" ><h2 class="card-title">ff</h2></div>
-		<div class="card-back"><div class="card-back-wrapper"><p>cc</p></div></div>
+		<div class="card-back"><div class="card-back-wrapper"><p>Repping my company at shows, like "THAT" 2018, 2019<br><br><p></div></div>
 	</div>	<div class="card" id="five" onclick="flip('five')">
 		<div class="card-front" ><h2 class="card-title">ff</h2></div>
-		<div class="card-back"><div class="card-back-wrapper"><p>cc</p></div></div>
+		<div class="card-back"><div class="card-back-wrapper"><p><a href="https://twitter.com/ScooterSoftware/status/1120801086120574976"> Making marketing movies</a> with Camtasia<br><br><p></div></div>
 	</div>	<div class="card" id="six" onclick="flip('six')">
 		<div class="card-front" ><h2 class="card-title">ff</h2></div>
-		<div class="card-back"><div class="card-back-wrapper"><p>cc</p></div></div>
+		<div class="card-back"><div class="card-back-wrapper"><p>Working hard<br><br><p></div></div>
 	</div>	<div class="card" id="seven" onclick="flip('seven')">
 		<div class="card-front" ><h2 class="card-title">ff</h2></div>
-		<div class="card-back"><div class="card-back-wrapper"><p>cc</p></div></div>
+		<div class="card-back"><div class="card-back-wrapper"><p>Design 
+      Sprints<br><br><p></div></div>
 	</div>	<div class="card" id="eight" onclick="flip('eight')">
 		<div class="card-front" ><h2 class="card-title">ff</h2></div>
-		<div class="card-back"><div class="card-back-wrapper"><p>cc</p></div></div>
+		<div class="card-back"><div class="card-back-wrapper"><p>Playing vinyl<br><br><p></div></div>
 	</div>	<div class="card" id="nine" onclick="flip('nine')">
 		<div class="card-front" ><h2 class="card-title">ff</h2></div>
-		<div class="card-back"><div class="card-back-wrapper"><p>cc</p></div></div>
+		<div class="card-back"><div class="card-back-wrapper"><p>Documenting code<br><br><p></div></div>
 	</div>
 
 </div>
