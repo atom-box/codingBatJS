@@ -3,10 +3,9 @@
 <head>
   <title>Modern Javascript | Evan Genest</title>
   <meta charset="utf-8">
-</head>
-<body>
+  <script src="https://kit.fontawesome.com/c0497ccda4.js"></script>
 
-<body>
+
 <style type="text/css">
   *,
 *::before,
@@ -16,35 +15,7 @@
   box-sizing: border-box;
 }
 
-button.arrow {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  outline: none;
-}
 
-.button-2 {
-  background-color:#768d87;
-  -moz-border-radius:35px;
-  -webkit-border-radius:35px;
-  border-radius:35px;
-  border:7px solid #566963;
-  display:inline-block;
-  cursor:pointer;
-  color:#ffffff;
-  font-family:Trebuchet MS;
-  font-size:17px;
-  padding:23px 12px;
-  text-decoration:none;
-  text-shadow:1px 2px 4px #2b665e;
-}
-.button-2:hover {
-  background-color:#6c7c7c;
-}
-.button-2:active {
-  position:relative;
-  top:1px;
-}
 
 
 body {
@@ -53,13 +24,26 @@ body {
   color: #fff;
 }
 
+a:link {
+  color: white;
+}
+a:hover {
+  color: yellow;
+}
+a:visited {
+  color: white;
+}
+
+h1 a:hover {
+  color: yellow;
+}
 
 /* .section SECTION
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 .section {
   background: #F45B69;
-  padding: 50px 0;
+  padding: 1.1rem 0;
 }
 
 .section .container {
@@ -173,8 +157,18 @@ body {
 }
 
 
-/* TIMELINE ARROWS
+/*  ARROWS and BUTTONS
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+button.arrow {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  font-size: 2rem;
+}
+button.arrow:hover {
+  color: yellow;
+}
 
 .timeline .arrows {
   display: flex;
@@ -193,6 +187,32 @@ body {
 .timeline .arrows img {
   width: 45px;
   height: 45px;
+}
+
+
+.button-2 {
+  background-color:#F45B69;
+  -moz-border-radius:35px;
+  -webkit-border-radius:35px;
+  border-radius:15px;
+  border:3px solid white;
+  display:inline-block;
+  cursor:pointer;
+  color:white;
+  font-family:"Trebuchet MS", monospace;
+  font-size:17px;
+  padding:5px 12px;
+  text-decoration:none;
+  text-shadow:1px 2px 4px #2b665e;
+  margin: 12px;
+}
+.button-2:hover {
+  background-color:#456990;
+  color: yellow;
+}
+.button-2:active {
+  position:relative;
+  top:1px;
 }
 
 
@@ -258,9 +278,21 @@ body {
 
 
 
-<section class="section intro">
+</head>
+
+
+<body>
+<section class="section">
   <div class="container">
-    <h1><a href="https://webapplog.com/es6/"> Top Ten ES6 Features</a> &rarr;</h1>
+    <h1><a href="https://webapplog.com/es6/"> Top Ten ES6 Features</a></h1>
+    <div class="arrows">
+    <button class="arrow  disabled" disabled>
+      <i class="fas fa-arrow-circle-left"></i>
+    </button>
+    <button class="arrow arrow__next">
+      <i class="fas fa-arrow-circle-right"></i>
+    </button>
+  </div>
   </div>
 </section>
 
@@ -329,20 +361,13 @@ body {
     <li></li>
   </ol>
   
-  <div class="arrows">
-    <button class="arrow arrow__prev disabled" disabled>
-      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/arrow_prev.svg" alt="prev timeline arrow">
-    </button>
-    <button class="arrow arrow__next">
-      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/arrow_next.svg" alt="next timeline arrow">
-    </button>
+
 
 
     <a href="https://webapplog.com/es6/" class="button-2">thanks Azat!</a>
     <a href="https://webdesign.tutsplus.com/tutorials/building-a-horizontal-timeline-with-css-and-javascript--cms-28378" class="button-2">thanks Envato!</a>
 
 
-  </div>
 </section>
 
 
