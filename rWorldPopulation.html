@@ -31,7 +31,7 @@ function World(props){
                 <p>Population: {zees * 307}</p>
                 </div>
             <div class="App-header">
-                <h2>Oceana</h2>
+                <h2>Oceania</h2>
                 <p>Population: {zees + baleans}</p>
                 <div class="App-header">
                 <h2>New Zealand</h2>
@@ -46,7 +46,7 @@ function World(props){
     )
 }
 
-function Booming(){
+function booming(){
     let epoch = new Date().getTime();
     ReactDOM.render(<World time={epoch}/>, document.getElementById('popular'))
 }
@@ -54,7 +54,7 @@ function Booming(){
 
 
 
-setInterval(Booming, 300);
+setInterval(booming, 300);
 
 
 
@@ -106,13 +106,12 @@ setInterval(Booming, 300);
 .monde {
   /*==f=i=l=l==s=c=r=e=e=n==================*/
 background-color: #000;
-  xmin-height: 100%;
   xmin-width: 1024px; 
   /* Set up proportionate scaling */
   width: 100%;
-  xheight: auto;
+  height: 100%;
   /* Set up positioning */
-  xposition: fixed;
+  position: fixed;
   /*==f=i=l=l==s=c=r=e=e=n==END============*/
     display: flex;          /*(1)VERT*/
     flex-direction: row;    /*(1)VERT*/
@@ -122,6 +121,7 @@ background-color: #000;
 
     .title {
      background-color: var(--vivid2);
+     margin: 2 rem;
 
     }
 
@@ -139,17 +139,10 @@ background-color: #000;
          font-weight: 100;
          line-height: 2.6rem;
     }
-    .bpm {
-        margin: 0.5rem 2rem;
-        padding: 0.5rem; 
-        text-align: center;
-        xmax-width: 40%;
-        border: 0.1rem hidden;
-        border-radius: 0.3rem;
-    }
+
 
       .elShadow {
-         box-shadow: 0 3px 3px 0 white, 0 3px 10px 0 white;
+         box-shadow: 0 3px 3px 0 #bbf, 0 3px 10px 0 white;
 
     }
      .dashboard {        
@@ -179,8 +172,12 @@ background-color: #000;
 }
 
 .bpm {
-    margin: 2rem;
-    padding: 2rem;
+    margin: 0.5rem 2rem;
+    padding: 0.5rem; 
+    text-align: center;
+    xmax-width: 40%;
+    border: 0.1rem hidden;
+    border-radius: 0.3rem;
 }
 
 
@@ -196,7 +193,7 @@ background-color: #000;
     <div class="row test-outline">
 
     <div class="hold bpm">
-    <h1 class="title title__skinny elShadow"><span class="title__hoegarden">All the Lonely People</span></h1>
+    <h1 class="title title__skinny elShadow bpm"><span class="title__hoegarden">All the Lonely People</span></h1>
     </div>
 
     <div class="dashboard  elShadow bpm"   id="popular"></div>
