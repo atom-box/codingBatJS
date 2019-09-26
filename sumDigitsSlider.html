@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>90 Minute Project | Evan Genest</title>
+	<meta charset="utf-8">
+
+<style type="text/css">
+	.line {
+		display: inline;
+	}
+
+</style>
+
+
+<script type="text/javascript">
+	/*
+		Given a non-negative int n, return the sum of its digits recursively (no loops). Note that mod (%) by 10 yields the rightmost digit (126 % 10 is 6), while divide (/) by 10 removes the rightmost digit (126 / 10 is 12).
+						sumDigits(126) → 9
+						sumDigits(49) → 13
+						sumDigits(12) → 
+	*/
+
+function adder(n) {
+	return n * n;
+}
+
+function putNumber() {
+	const el3 = document.getElementById('numberRequested');
+
+}
+
+</script>
+</head>
+<body>
+            <form  oninput="result.value=adder(b.value)">
+                <label>Range: </label>
+                <input type="range" onchange="putNumber" name="b" value="10000" /> +
+                <label>b.value `</label>
+                <p class="line">You put in </p>
+                <div class="line" id="numberRequested"></div>
+                <p class="line"> this number.</p>
+                <output name="result">60</output>
+            </form>
+
+
+</body>
+</html>
