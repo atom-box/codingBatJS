@@ -39,11 +39,11 @@ function summit(n) {
 	console.log(typeof s);
 	let numChars = s.split('');
 	console.log(numChars);
-	console.log(typeof numChars);
+	console.log(`Adding first two array CHARS gives ${Number(numChars[0]) + Number(numChars[1])}...`);
 	let sum = numChars.reduce((accum, char)=>{ 
 		console.log(char);
 		return accum + Number(char); 
-	}, 2000);
+	}, 0);
 	return sum;
 }
 
