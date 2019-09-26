@@ -36,7 +36,10 @@ function summit(n) {
 // Could write as recursive instead of array. probably computationally faster,
 // ...but strategy below is easier to write and read.
 	let s = n.toString();
-	let numChars = s.split();
+	console.log(typeof s);
+	let numChars = s.split('');
+	console.log(numChars);
+	console.log(typeof numChars);
 	let sum = numChars.reduce((accum, char)=>{ 
 		console.log(char);
 		return accum + Number(char); 
