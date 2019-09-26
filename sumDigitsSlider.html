@@ -26,20 +26,19 @@ function adder(n) {
 
 function putNumber() {
 	const el3 = document.getElementById('numberRequested');
-
+	el3.innerHTML = "13";
 }
 
 </script>
 </head>
 <body>
-            <form  oninput="result.value=adder(b.value)">
+            <form  oninput="y.value=b.value">
                 <label>Range: </label>
-                <input type="range" onchange="putNumber" name="b" value="10000" /> +
-                <label>b.value `</label>
-                <p class="line">You put in </p>
-                <div class="line" id="numberRequested"></div>
-                <p class="line"> this number.</p>
-                <output name="result">60</output>
+                <input type="range" onchange="putNumber()" name="b" value="10000" />
+                <p class="line">You requested </p>
+                <output class="line" name="y" >null</output>
+                <p class="line"> Teslas.</p>
+                
             </form>
 
 
