@@ -3,6 +3,7 @@
 <head>
 	<title>90 Minute Project | Evan Genest</title>
 	<meta charset="utf-8">
+<link rel="icon" href="./images/dryer.png" type="image/x-icon">
 
 <style type="text/css">
 	.line {
@@ -29,18 +30,34 @@ function putNumber() {
 	el3.innerHTML = "13";
 }
 
+
+function summit(n) {
+// Get it?  "Some It" ?
+// Could write as recursive instead of array. probably computationally faster,
+// ...but strategy below is easier to write and read.
+	let s = n.toString();
+	let numChars = s.split();
+	let sum = numChars.reduce((accum, char)=>{ 
+		console.log(char);
+		return accum + Number(char); 
+	}, 2000);
+	return sum;
+}
+
+
 </script>
 </head>
 <body>
-            <form  oninput="y.value=b.value">
+            <form  oninput="y.value=summit(b.value)">
                 <label>Range: </label>
-                <input type="range" onchange="putNumber()" name="b" value="10000" />
-                <p class="line">You requested </p>
-                <output class="line" name="y" >null</output>
-                <p class="line"> Teslas.</p>
+                <input type="range"  name="b" value="70" />
+
+                <output class="line" name="y" for="b" >null</output>
                 
             </form>
 
 
 </body>
 </html>
+
+
