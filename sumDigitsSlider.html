@@ -31,6 +31,21 @@ function putNumber() {
 }
 
 
+function sayHey(){
+	// for testing
+	let now = new Date();
+	console.log('hubba hubba at ' + now);
+	let el3 = document.getElementById('slider-1');
+	console.log(el3.value + "is a slider value");
+
+	// send the slider number to the summit function, get an object back
+	let results = summit(el3.value);
+	let el2 = document.getElementById('before-panel');
+	el2.innerHTML = el3.value;
+	let el4 = document.getElementById('after-panel');
+	el4.innerHTML = summit(el3.value).after;
+}
+
 function summit(n) {
 // Get it?  "Some It" ?
 // Could write as recursive instead of array. probably computationally faster,
@@ -55,17 +70,17 @@ function summit(n) {
 </script>
 </head>
 <body>
-            <form  oninput="y.value=summit(b.value)">
+            <form >
                 <label>Range: </label>
-                <output class="line" name="x" for="b"></output>
-                <input type="range"  name="b" value="70" />
+                <output class="line" id="before-panel"></output>
+                <input type="range"  id="slider-1" onchange="sayHey()" value="70" />
 
-                <output class="line" name="y" for="b" >null</output>
+                <output class="line" id="after-panel">null</output>
                 
             </form>
 
 
 </body>
 </html>
-FOO
+
 
