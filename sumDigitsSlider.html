@@ -35,16 +35,20 @@ function summit(n) {
 // Get it?  "Some It" ?
 // Could write as recursive instead of array. probably computationally faster,
 // ...but strategy below is easier to write and read.
-	let s = n.toString();
-	console.log(typeof s);
-	let numChars = s.split('');
+	let stringNum = n.toString();
+	console.log(typeof stringNum);
+	let numChars = stringNum.split('');
 	console.log(numChars);
 	console.log(`Adding first two array CHARS gives ${Number(numChars[0]) + Number(numChars[1])}...`);
 	let sum = numChars.reduce((accum, char)=>{ 
 		console.log(char);
 		return accum + Number(char); 
 	}, 0);
-	return sum;
+		// return an object
+	return {
+		"before": stringNum,
+		"after": sum
+	};
 }
 
 
@@ -53,6 +57,7 @@ function summit(n) {
 <body>
             <form  oninput="y.value=summit(b.value)">
                 <label>Range: </label>
+                <output class="line" name="x" for="b"></output>
                 <input type="range"  name="b" value="70" />
 
                 <output class="line" name="y" for="b" >null</output>
@@ -62,5 +67,5 @@ function summit(n) {
 
 </body>
 </html>
-
+FOO
 
