@@ -27,6 +27,14 @@
 		border: solid black 0.2rem ;
 		text-align: center;
 	}
+	#slider-1 {
+		height: 9rem;
+		width: 2rem; 
+	}
+	input.vertical {
+	-webkit-appearance: slider-vertical;
+	writing-mode: bt-lr;
+}
 </style>
 
 
@@ -101,7 +109,7 @@ console.log('one');
 <body>
             <form >
             		<label class="line">Slide this:</label>
-                <input class="line" type="range"  id="slider-1" onchange="showSumOfDigits()" value="7" min="0" max="10000"  />
+                <input class="line vertical" orient="vertical" type="range"  id="slider-1" onchange="showSumOfDigits()" value="7" min="0" max="10000"  />
                 <label class="line inverse">If you add up the digits in: </label>
                 <output class="line skinny inverse" id="before-panel"></output>
                 <label class="line inverse"> you get this sum: </label>
