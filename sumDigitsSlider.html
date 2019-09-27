@@ -31,13 +31,9 @@ function putNumber() {
 }
 
 
-function sayHey(){
-	// for testing
-	let now = new Date();
-	console.log('hubba hubba at ' + now);
-	let el3 = document.getElementById('slider-1');
+function showSumOfDigits(){
+	let el3 = document.getElementById('slider-1');    // removed LET
 	console.log(el3.value + "is a slider value");
-
 	// send the slider number to the summit function, get an object back
 	let results = summit(el3.value);
 	let el2 = document.getElementById('before-panel');
@@ -50,6 +46,11 @@ function summit(n) {
 // Get it?  "Some It" ?
 // Could write as recursive instead of array. probably computationally faster,
 // ...but strategy below is easier to write and read.
+
+// Handle case where only single digit input
+	if (n < 10 ){
+		return { "before": n.toString(), "after": n};
+	}
 	let stringNum = n.toString();
 	console.log(typeof stringNum);
 	let numChars = stringNum.split('');
@@ -67,14 +68,25 @@ function summit(n) {
 }
 
 
+// Initialize the slider and fire the output script once
+document.addEventListener('DOMContentLoaded', (event)=>{
+	console.log("hie");
+	let el3 = document.getElementById('slider-1');
+	el3.value = 13;
+	showSumOfDigits();
+})
+
+
+
+console.log('one');
 </script>
 </head>
 <body>
             <form >
-                <label>Range: </label>
+                <label>If you add up the digits in: </label>
                 <output class="line" id="before-panel"></output>
-                <input type="range"  id="slider-1" onchange="sayHey()" value="70" />
-
+                <input type="range"  id="slider-1" onchange="showSumOfDigits()" value="7" />
+                <label> you get this sum: </label>
                 <output class="line" id="after-panel">null</output>
                 
             </form>
@@ -82,5 +94,4 @@ function summit(n) {
 
 </body>
 </html>
-
 
