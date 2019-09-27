@@ -6,8 +6,29 @@
 <link rel="icon" href="./images/dryer.png" type="image/x-icon">
 
 <style type="text/css">
-	body {
-		font-family: Helvetica, Arial;
+@font-face {
+  font-family: Gin;
+  src: url(./fonts/gin.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: OPTIFirminDidot;
+  src: url(./fonts/OPTIFirminDidot.otf);
+}
+
+	.letters  {
+		font-family: Gin;
+		padding-top: 0.2rem !important;
+		padding-bottom: 0.2rem !important;
+
+	}
+
+
+	.numbers {
+		font-family: OPTIFirminDidot, Helvetica, Arial;
+		padding-top: 0.28rem !important;
+		padding-bottom: 0rem !important;
+		/* day after the interview, I find a case where !important required*/
 	}
 	.line {
 		display: inline-block;
@@ -108,12 +129,12 @@ console.log('one');
 </head>
 <body>
             <form >
-            		<label class="line">Slide this:</label>
+            		<label class="line letters">Slide this:</label>
                 <input class="line vertical" orient="vertical" type="range"  id="slider-1" onchange="showSumOfDigits()" value="7" min="0" max="10000"  />
-                <label class="line inverse">If you add up the digits in: </label>
-                <output class="line skinny inverse" id="before-panel"></output>
-                <label class="line inverse"> you get this sum: </label>
-                <output class="line skinny inverse" id="after-panel">null</output>
+                <label class="line inverse letters">If you add up the digits in: </label>
+                <output class="line skinny inverse numbers" id="before-panel"></output>
+                <label class="line inverse letters"> you get this sum: </label>
+                <output class="line skinny inverse numbers" id="after-panel">null</output>
                 
             </form>
 
