@@ -13,13 +13,20 @@
 
 @font-face {
   font-family: OPTIFirminDidot;
-  src: url(./fonts/OPTIFirminDidot.otf);
+  src: url(./fonts/OPTIFirminDidot.otf); 
 }
 
-body {
-	background-image: url("./images/crissy-jarvis-cHhbULJbPwM-unsplash.jpg");
-
+html {
+	background: url(./images/abacus-crissy-jarvis-unsplash_1200x797.png)  no-repeat center center fixed; 
+	height:100%;
+	width: 100%;
+	-webkit-background-size: cover;
+	   -moz-background-size: cover;
+	     -o-background-size: cover;
+	        background-size: cover;
 }
+
+
 
 	.letters  {
 		font-family: Gin;
@@ -133,6 +140,7 @@ console.log('one');
 </script>
 </head>
 <body>
+
             <form >
             		<label class="line letters">Slide this:</label>
                 <input class="line vertical" orient="vertical" type="range"  id="slider-1" onchange="showSumOfDigits()" value="7" min="0" max="10000"  />
@@ -141,8 +149,8 @@ console.log('one');
                 <label class="line inverse letters"> you get this sum: </label>
                 <output class="line skinny inverse numbers" id="after-panel">null</output>
                 
-            </form>
 <a style="background-color:white;color:blue;text-decoration:none;padding:0;font-family:monospace;font-size:1px;line-height:1px;display:inline-block;border-radius:0" href="https://unsplash.com/@crissyjarvis?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Crissy Jarvis">Crissy Jarvis</span></a>
+            </form>
 
 </body>
 </html>
