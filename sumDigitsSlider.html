@@ -2,90 +2,129 @@
 <html>
 
 <head>
-    <title>90 Minute Project | Evan Genest</title>
+    <title>Digits Slider | Evan Genest</title>
     <meta charset="utf-8">
     <link rel="icon" href="./images/dryer.png" type="image/x-icon">
 
     <style type="text/css">
-        @font-face {
-          font-family: Gin;
-          src: url(./fonts/gin.ttf) format('truetype');
-        }
+@font-face {
+  font-family: Gin;
+  src: url(./fonts/gin.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: OPTIFirminDidot;
+  src: url(./fonts/OPTIFirminDidot.otf); 
+}
+
+:root {
+  --accent-r: rgb(156,   0,   17  ); 
+  --accent-b: rgb(23,    76,  116 ); 
+  --accent-g: rgb(25,    86,  39  ); 
+  --accent-w: rgb(242,   188, 133  ); 
+}
+
+html {
+	height:100%;
+	width: 100%;
+    color: var(--accent-w);
+}
+
+
+.letters  {
+	font-family: Gin;
+/*	padding-top: ;
+	padding-bottom: 0.2rem !important;
+*/
+}
+
+
+.numbers {
+	font-family: OPTIFirminDidot, Helvetica, Arial;
+/*	padding-top: 0.28rem !important;
+	padding-bottom: 0rem !important;
+*/	/* day after the interview, I find a case where !important required ! */
+	}
         
-        @font-face {
-          font-family: OPTIFirminDidot;
-          src: url(./fonts/OPTIFirminDidot.otf); 
-        }
-        
-        html {
-        	background: url(./images/abacus-crissy-jarvis-unsplash_1200x797.png)  no-repeat center center fixed; 
-        	height:100%;
-        	width: 100%;
-        	-webkit-background-size: cover;
-        	   -moz-background-size: cover;
-        	     -o-background-size: cover;
-        	        background-size: cover;
-        }
-        
-        
-        
-        	.letters  {
-        		font-family: Gin;
-        		padding-top: 0.2rem !important;
-        		padding-bottom: 0.2rem !important;
-        
-        	}
-        
-        
-        	.numbers {
-        		font-family: OPTIFirminDidot, Helvetica, Arial;
-        		padding-top: 0.28rem !important;
-        		padding-bottom: 0rem !important;
-        		/* day after the interview, I find a case where !important required*/
-        	}
-        
-        	.outer-holder {
-        		display: flex;
-        		justify-content: center;
-        	}
-        	.inner-holder {
-        		width: 30%;
-        		display: flex;
-        		flex-direction: column;
-        		align-items: stretch;
-        
-        	}
-        
-        	}
-        	.line {
-        		display: inline-block;
-        	}
-        
-        	.block {
-        		display: block;
-        	}
-        
-        	.wide {
-        		width: 8rem;		
-        	} 
-        	.skinny {
-        		width: 3rem;
-        	}
-        	.inverse {
-        		background-color: #850;
-        		color: white;
-        		padding: 0;
-        		margin-left: -0.3rem;
-        		xborder: solid black 0.2rem ;
-        		text-align: center;
-        	}
-        	#slider-1 {
-        		height: 9rem;
-        		width: 2rem; 
-        	}
-        	input.vertical {
-        	-webkit-appearance: slider-vertical;
-        	writing-mode: bt-lr;
+.monde {
+  /*==f=i=l=l==s=c=r=e=e=n==================*/
+  min-height: 100%;
+  xmin-width: 1024px; 
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+  /* Set up positioning */
+  position: fixed;
+  /*==f=i=l=l==s=c=r=e=e=n==END============*/
+    display: flex;          /*(1)VERT*/
+    flex-direction: row;    /*(1)VERT*/
+    align-items: center;    /*(1)VERT*/
+    justify-content: center;  /*(2)HORIZ*/
+}
+
+.square-large {
+    background: url(./images/abacus_397x528.png) no-repeat fixed center;
+    border-radius: 2rem;
+    border: solid var(--accent-b)  0.4rem;
+    height: 28rem;
+    width: 28rem;
+        display: flex;          /*(1)VERT*/
+    flex-direction: row;    /*(1)VERT*/
+    align-items: center;    /*(1)VERT*/
+    justify-content: center;  /*(2)HORIZ*/
+}
+
+.square-small {
+    border-radius: 1.2rem;
+    background-color: var(--accent-r);
+    margin: 1.8rem auto;
+    width: 55%;
+    display: flex;          /*(1)VERT*/
+    flex-direction: row;    /*(1)VERT*/
+    align-items: center;    /*(1)VERT*/
+    justify-content: center;  /*(2)HORIZ*/
+}
+
+
+.slider-holder {
+    background-color: var(--accent-b);
+    border-radius: 1.2rem;
+    margin-left: 3rem;
+    display: flex;
+    align-items:   center;
+    width: 4.5rem;
+    text-align: right;
+}
+
+	}
+	.line {
+		display: inline-block;
+	}
+
+	.block {
+		display: block;
+	}
+
+	.wide {
+		width: 8rem;		
+	} 
+
+	.skinny {
+		width: 3rem;
+	}
+	.inverse {
+		background-color: #850;
+		padding: 0;
+		margin-left: -0.3rem;
+		text-align: center;
+	}
+
+	input.vertical {
+	-webkit-appearance: slider-vertical;
+	writing-mode: bt-lr;
+    height: 9rem;
+    width: 2rem; 
+    cursor: pointer;
         }
     </style>
 
@@ -109,7 +148,7 @@
         
         
         function showSumOfDigits(){
-        	let 	el3 = document.getElementById('slider-1');    // removed LET
+        	let el3 = document.getElementById('slider-1');    // removed LET
         	console.log(el3.value + "is a slider value");
         	// send the slider number to the summit function, get an object back
         	let results = summit(el3.value);
@@ -161,22 +200,23 @@
 
 <body>
 
-    <form>
+<div class="monde">
 
-        <div class="outer-holder">
-            <label class="block letters">Slide this:</label>
-            <input class=" vertical" orient="vertical" type="range" id="slider-1" onchange="showSumOfDigits()" value="7" min="0" max="10000" />
+<div class="square-large">
+    <div class="slider-holder">
+        Slide this:
+        <input class=" vertical"  orient="vertical" type="range"  onchange="showSumOfDigits()" value="7" min="0" max="10000" />
+    </div>
+    <div class="square-small">
+        <p class="core">hotter interior</p>
+    </div>
 
-            <div class="inner-holder">
-                <label class="block inverse letters">If you add up the digits in: </label>
-                <output class="block skinny inverse numbers" id="before-panel"></output>
-                <label class="block inverse letters"> you get this sum: </label>
-                <output class="block skinny inverse numbers" id="after-panel">null</output>
-            </div>
-        </div>
-        <a style="background-color:white;color:blue;text-decoration:none;padding:0;font-family:monospace;font-size:1px;line-height:1px;display:inline-block;border-radius:0" href="https://unsplash.com/@crissyjarvis?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge"
+</div>
+
+            <a style="background-color:white; color:white;text-decoration:none;padding:0;font-family:monospace;font-size:1px;line-height:1px;display:inline-block;border-radius:0" href="https://unsplash.com/@crissyjarvis?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge"
         target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Crissy Jarvis">Crissy Jarvis</span></a>
-    </form>
+</div>
+
 
 </body>
 
