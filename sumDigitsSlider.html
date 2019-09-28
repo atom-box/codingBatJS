@@ -28,8 +28,8 @@ html {
 	height:100%;
 	width: 100%;
     color: var(--accent-w);
+    font-family: monospace;
 }
-
 
 .letters  {
 	font-family: Gin;
@@ -38,9 +38,10 @@ html {
 */
 }
 
-
 .numbers {
 	font-family: OPTIFirminDidot, Helvetica, Arial;
+    font-size: 3rem;
+    color: white;
 /*	padding-top: 0.28rem !important;
 	padding-bottom: 0rem !important;
 */	/* day after the interview, I find a case where !important required ! */
@@ -49,17 +50,14 @@ html {
 .monde {
   /*==f=i=l=l==s=c=r=e=e=n==================*/
   min-height: 100%;
-  xmin-width: 1024px; 
-  /* Set up proportionate scaling */
   width: 100%;
   height: auto;
   /* Set up positioning */
   position: fixed;
-  /*==f=i=l=l==s=c=r=e=e=n==END============*/
-    display: flex;          /*(1)VERT*/
-    flex-direction: row;    /*(1)VERT*/
-    align-items: center;    /*(1)VERT*/
-    justify-content: center;  /*(2)HORIZ*/
+display: flex;          /*(1)VERT*/
+flex-direction: column;    /*(1)VERT*/
+align-items: center;    /*(1)VERT*/
+justify-content: center;  /*(2)HORIZ*/
 }
 
 .square-large {
@@ -68,32 +66,38 @@ html {
     border: solid var(--accent-b)  0.4rem;
     height: 28rem;
     width: 28rem;
-        display: flex;          /*(1)VERT*/
-    flex-direction: row;    /*(1)VERT*/
-    align-items: center;    /*(1)VERT*/
-    justify-content: center;  /*(2)HORIZ*/
-}
-
-.square-small {
-    border-radius: 1.2rem;
-    background-color: var(--accent-r);
-    margin: 1.8rem auto;
-    width: 55%;
     display: flex;          /*(1)VERT*/
     flex-direction: row;    /*(1)VERT*/
     align-items: center;    /*(1)VERT*/
     justify-content: center;  /*(2)HORIZ*/
 }
 
+.square-small {
+    width: 55%;
+    display: flex;          /*(1)VERT*/
+    flex-direction: column;    /*(1)VERT*/
+    align-items: center;    /*(1)VERT*/
+}
+
+.out-stripe {
+    border-radius: 1.2rem;
+    background-color: var(--accent-g);
+    margin: 1.8rem 2.4rem;
+    padding: 1.6rem;
+    text-align: center;
+    opacity: 0.98;
+}
 
 .slider-holder {
     background-color: var(--accent-b);
+    opacity: 0.98;
     border-radius: 1.2rem;
-    margin-left: 3rem;
+    margin: 1.7rem;
     display: flex;
     align-items:   center;
     width: 4.5rem;
     text-align: right;
+    font-family: Gin;
 }
 
 	}
@@ -112,12 +116,7 @@ html {
 	.skinny {
 		width: 3rem;
 	}
-	.inverse {
-		background-color: #850;
-		padding: 0;
-		margin-left: -0.3rem;
-		text-align: center;
-	}
+
 
 	input.vertical {
 	-webkit-appearance: slider-vertical;
@@ -125,7 +124,7 @@ html {
     height: 9rem;
     width: 2rem; 
     cursor: pointer;
-        }
+    }
     </style>
 
 
@@ -199,25 +198,27 @@ html {
 </head>
 
 <body>
-
 <div class="monde">
-
+    <h1>d i g i t s    s l i d e r</h1>
 <div class="square-large">
     <div class="slider-holder">
         Slide this:
-        <input class=" vertical"  orient="vertical" type="range"  onchange="showSumOfDigits()" value="7" min="0" max="10000" />
+        <input class=" vertical" id="slider-1" orient="vertical" type="range"  onchange="showSumOfDigits()" value="7" min="0" max="10000" />
     </div>
     <div class="square-small">
-        <p class="core">hotter interior</p>
+        <div class="out-stripe">                <label class="block inverse letters">If you add up the digits in: </label>
+                <output class="block skinny inverse numbers" id="before-panel"></output></div>
+        <div class="out-stripe">
+            <label class="block inverse letters">You get this sum: </label>
+            <output class="block skinny inverse numbers" id="after-panel">null</output>
+        </div>
+
     </div>
 
 </div>
 
-            <a style="background-color:white; color:white;text-decoration:none;padding:0;font-family:monospace;font-size:1px;line-height:1px;display:inline-block;border-radius:0" href="https://unsplash.com/@crissyjarvis?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge"
-        target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Crissy Jarvis">Crissy Jarvis</span></a>
+<a style="background-color:white; color:white;text-decoration:none;padding:0;font-family:monospace;font-size:1px;line-height:1px;display:inline-block;border-radius:0" href="https://unsplash.com/@crissyjarvis?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Crissy Jarvis">Crissy Jarvis</span>
+</a>
 </div>
-
-
 </body>
-
 </html>
