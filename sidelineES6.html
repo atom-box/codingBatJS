@@ -10,7 +10,7 @@
   <script src="https://kit.fontawesome.com/c0497ccda4.js"></script>
 <script type="text/javascript">
 /*
-The JS for this is explained in a tutorial https://webdesign.tutsplus.com/tutorials/building-a-horizontal-timeline-with-css-and-javascript--cms-28378
+George Martsoukos does a patient job of explaining the JS for this  in a tutorial https://webdesign.tutsplus.com/tutorials/building-a-horizontal-timeline-with-css-and-javascript--cms-28378
 */
 
 
@@ -115,13 +115,6 @@ document.addEventListener( "DOMContentLoaded", (function(){
         counter++;
       });
     }
-  }
-
-  // ADD SWIPE SUPPORT FOR TOUCH DEVICES
-  function setSwipeFn(tl, prev, next) {
-    const hammer = new Hammer(tl);
-    hammer.on("swipeleft", () => next.click());
-    hammer.on("swiperight", () => prev.click());
   }
 
   // ADD BASIC KEYBOARD FUNCTIONALITY
