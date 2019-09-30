@@ -16,14 +16,16 @@ The JS for this is explained in a tutorial https://webdesign.tutsplus.com/tutori
 
 
 //  TEST   TODO
- (function() {
+
+document.addEventListener( "DOMContentLoaded", (function(){
+
+
+  console.log("BBBBB");
+
+(function() {
+
   // VARIABLES
-  const timeline = document.querySelector(".timeline ol");
-  console.log(`got this element: ${timeline.innerHTML}...`)
-})();
-
-
-   (function() {
+  const timeline = document.querySelector(".timeline ol"),
     elH = document.querySelectorAll(".timeline li > div"),
     arrows = document.querySelectorAll(".timeline .arrows .arrow"),
     arrowPrev = document.querySelector(".timeline .arrows .arrow__prev"),
@@ -39,7 +41,7 @@ The JS for this is explained in a tutorial https://webdesign.tutsplus.com/tutori
   function init() {
     setEqualHeights(elH);
     animateTl(xScrolling, arrows, timeline);
-    // setSwipeFn(timeline, arrowPrev, arrowNext);
+    setSwipeFn(timeline, arrowPrev, arrowNext);
     setKeyboardFn(arrowPrev, arrowNext);
   }
 
@@ -88,7 +90,6 @@ The JS for this is explained in a tutorial https://webdesign.tutsplus.com/tutori
     let counter = 0;
     for (let i = 0; i < el.length; i++) {
       el[i].addEventListener("click", function() {
-        console.log("CLICK");
         if (!arrowPrev.disabled) {
           arrowPrev.disabled = true;
         }
@@ -116,12 +117,12 @@ The JS for this is explained in a tutorial https://webdesign.tutsplus.com/tutori
     }
   }
 
-  // // ADD SWIPE SUPPORT FOR TOUCH DEVICES
-  // function setSwipeFn(tl, prev, next) {
-  //   const hammer = new Hammer(tl);
-  //   hammer.on("swipeleft", () => next.click());
-  //   hammer.on("swiperight", () => prev.click());
-  // }
+  // ADD SWIPE SUPPORT FOR TOUCH DEVICES
+  function setSwipeFn(tl, prev, next) {
+    const hammer = new Hammer(tl);
+    hammer.on("swipeleft", () => next.click());
+    hammer.on("swiperight", () => prev.click());
+  }
 
   // ADD BASIC KEYBOARD FUNCTIONALITY
   function setKeyboardFn(prev, next) {
@@ -141,12 +142,15 @@ The JS for this is explained in a tutorial https://webdesign.tutsplus.com/tutori
     });
   }
 
-})(); 
+})();
+
+} )()); 
 
 </script>
 
 <style type="text/css">
-  *,
+
+*,
 *::before,
 *::after {
   margin: 0;
@@ -427,20 +431,20 @@ button.arrow:hover {
 <body>
 <section class="section">
   <div class="container">
-    <h1><a href="https://webapplog.com/es6/"> Top Ten ES6 Features</a></h1>
+    <h1><a href="https://webapplog.com/es6/"  id="handle"> Top Ten ES6 Features</a></h1>
     <div class="arrows">
     <button class="arrow  disabled" disabled>
       <i class="fas fa-arrow-circle-left"></i>
     </button>
-    <button class="arrow arrow__next">
+    <button  class="arrow arrow__next">
       <i class="fas fa-arrow-circle-right"></i>
     </button>
   </div>
   </div>
 </section>
 
-<section class="timeline">
-  <ol>
+<section >
+  <ol class="timeline">
     <li>
       <div>
         <time>Default Parameters</time> These are written as EQUALS in the arguments.  So...<br>var link = function(height = 50, color = 'red', url = 'http://example.com') {  ... }
