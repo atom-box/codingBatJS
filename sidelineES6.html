@@ -4,6 +4,57 @@
 <!-- What I authored here:  The JS: (none) The CSS: 20% The text content: 90%  -->
 
 
+
+
+
+
+
+
+
+
+
+
+
+/****/
+
+What's next here:
+1) Troubleshoot 30 min or less or just go to 2
+2) Add content cards
+
+DeBugging: 
+I proved I can get MY ELEMENTs by printing their  A T T R I B U T E S
+But the elementgrab TIMELINE continues to be null.  
+EVENT LISTENER oneliner write? 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <head>
   <title>Modern Javascript | Evan Genest</title>
   <meta charset="utf-8">
@@ -21,7 +72,11 @@ George Martsoukos does a patient job of explaining the JS for this in a tutorial
 (function() {
 
   // VARIABLES
-  const timeline = document.querySelector(".timeline ol"),
+
+  //  TODO  put this back: timeline = document.querySelector(".timeline ol"),
+
+  const 
+    timeline = document.getElementById("123"),
     elH = document.querySelectorAll(".timeline li > div"),
     arrows = document.querySelectorAll(".timeline .arrows .arrow"),
     arrowPrev = document.querySelector(".timeline .arrows .arrow__prev"),
@@ -35,11 +90,18 @@ George Martsoukos does a patient job of explaining the JS for this in a tutorial
   window.addEventListener("DOMContentLoaded", init);
 
   function init() {
+    console.log( timeline.classList.length + " apple--->");
     setEqualHeights(elH);
     animateTl(xScrolling, arrows, timeline);
     setKeyboardFn(arrowPrev, arrowNext);
-
+    testProveElementGettable();
   }
+
+  function testProveElementGettable(){
+    const el3 = document.getElementById("handle");
+    console.log( el3.classList.length + " banana--->");
+  }
+
 
   // SET EQUAL HEIGHTS
   function setEqualHeights(el) {
@@ -426,7 +488,7 @@ button.arrow:hover {
 <body>
 <section class="section">
   <div class="container">
-    <h1><a href="https://webapplog.com/es6/"  id="handle"> Top Ten ES6 Features</a></h1>
+    <h1><a href="https://webapplog.com/es6/"  > Top Ten ES6 Features</a></h1>
     <div class="arrows">
     <button class="arrow  disabled" disabled>
       <i class="fas fa-arrow-circle-left"></i>
@@ -441,7 +503,7 @@ button.arrow:hover {
 
 
 <section class="timeline">
-  <ol>
+  <ol id="123">
     <li>
       <div>
         <time>Default Parameters</time> <p> These are written as EQUALS in the arguments.  So...<br>var link = function(height = 50, color = 'red', url = 'http://example.com') {  ... }
@@ -457,6 +519,16 @@ button.arrow:hover {
         <time>Multi-line strings</time> <p>The tic mark "`" can do multi-line quotes.  I have used this to put the whole text of MacBeth in a single string.
       </p></div>
     </li>
+
+
+
+    <li>
+      <div>
+        <img src="https://picsum.photos/250/140?grayscale&random=1">
+      </div>
+    </li>
+
+
     <li>
       <div>
         <time>Computed Property Name</time> <p> In React we can add a partial state to the setState() function. We do it succinctly: <br>this.setState({<br>
@@ -472,6 +544,13 @@ button.arrow:hover {
       <div>
         <time>1956</time> <p> In mattis elit vitae odio posuere, nec maximus massa varius. Suspendisse varius volutpat mattis. Vestibulum id magna est.
       </p></div>
+    </li>
+
+
+    <li>
+      <div>
+        <img src="https://picsum.photos/250/140?grayscale&random=2">
+      </div>
     </li>
     <li>
       <div>
@@ -511,7 +590,7 @@ button.arrow:hover {
 
     <a href="https://webapplog.com/es6/" class="button-2" title="Thanks for the list of favorite ES6 features!">thanks Azat!</a>
     <a href="https://webdesign.tutsplus.com/tutorials/building-a-horizontal-timeline-with-css-and-javascript--cms-28378" class="button-2" title="Thanks for 90% of the CSS and JS on this page!" >thanks Envato!</a>
-    <a href="https://heropatterns.com/" title="Thanks for the SVG background." class="button-2">thanks HeroPatterns!</a>
+    <a href="https://heropatterns.com/" id="handle" title="Thanks for the SVG background." class="button-2">thanks HeroPatterns!</a>
 
 
 
