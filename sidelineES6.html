@@ -27,9 +27,13 @@
 }
 
 
+
+:root{
+  --main-color: #F45B69;
+}
+
 body {
   font: normal 16px/1.5 "Helvetica Neue", sans-serif;
-  background-color: #F45B69;
 }
 
 a:link {
@@ -51,6 +55,7 @@ h1 a:hover {
 
 .section {
   padding: 1.1rem 0;
+  border-bottom: solid var(--main-color) 0.8rem;
 }
 
 .section .container {
@@ -64,17 +69,18 @@ h1 a:hover {
   font-size: 2.5rem;
 }
 
-.section h2 {
-  font-size: 1.3rem;
-}
 
-li div time, section div h1 {
-  font-family: Deibi;
-}
 
-li div time {
+ol li div h2 {
   color: white;
-  text-shadow: 2px 2px 8px #000000;
+  font-size: 3rem;
+}
+
+li div time, h1 {
+  font-family: Deibi;
+  color: white;
+  text-shadow: 2px 2px 18px #000000;
+
 }
 
 .lined {
@@ -96,7 +102,7 @@ li div time {
 .tiny-text {
   font-size: 0.8rem;
   xborder: solid black 0.2rem;
-  color: white;
+  color: black;
   margin: auto 2rem;
 }
 
@@ -147,7 +153,7 @@ li div time {
   height: 12px;
   transform: translateY(-50%);
   border-radius: 50%;
-  background: #F45B69;
+  background: var(--main-color);
 }
 
 .timeline ol li div {
@@ -202,6 +208,10 @@ li div time {
 
 /*  ARROWS and BUTTONS
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.arrow-style {
+  
+}
+
 button.arrow {
   background: transparent;
   border: none;
@@ -234,7 +244,7 @@ button.arrow:hover {
 
 
 .button-2 {
-  background-color:#F45B69;
+  background-color:var(--main-color);
   -moz-border-radius:35px;
   -webkit-border-radius:35px;
   border-radius:15px;
