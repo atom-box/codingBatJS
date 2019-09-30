@@ -15,27 +15,6 @@
 
 
 
-/****/
-
-What's next here:
-1) Troubleshoot 30 min or less or just go to 2
-2) Add content cards
-
-DeBugging: 
-I proved I can get MY ELEMENTs by printing their  A T T R I B U T E S
-But the elementgrab TIMELINE continues to be null.  
-EVENT LISTENER oneliner write? 
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -59,145 +38,7 @@ EVENT LISTENER oneliner write?
   <title>Modern Javascript | Evan Genest</title>
   <meta charset="utf-8">
   <script src="https://kit.fontawesome.com/c0497ccda4.js"></script>
-<script type="text/javascript">
-/*
-George Martsoukos does a patient job of explaining the JS for this in a tutorial https://webdesign.tutsplus.com/tutorials/building-a-horizontal-timeline-with-css-and-javascript--cms-28378
-*/
 
-
-
-//  TEST   TODO
-
-
-(function() {
-
-  // VARIABLES
-
-  //  TODO  put this back: timeline = document.querySelector(".timeline ol"),
-
-  const 
-    timeline = document.getElementById("123"),
-    elH = document.querySelectorAll(".timeline li > div"),
-    arrows = document.querySelectorAll(".timeline .arrows .arrow"),
-    arrowPrev = document.querySelector(".timeline .arrows .arrow__prev"),
-    arrowNext = document.querySelector(".timeline .arrows .arrow__next"),
-    firstItem = document.querySelector(".timeline li:first-child"),
-    lastItem = document.querySelector(".timeline li:last-child"),
-    xScrolling = 280,
-    disabledClass = "disabled";
-
-  // START
-  window.addEventListener("DOMContentLoaded", init);
-
-  function init() {
-    console.log( timeline.classList.length + " apple--->");
-    setEqualHeights(elH);
-    animateTl(xScrolling, arrows, timeline);
-    setKeyboardFn(arrowPrev, arrowNext);
-    testProveElementGettable();
-  }
-
-  function testProveElementGettable(){
-    const el3 = document.getElementById("handle");
-    console.log( el3.classList.length + " banana--->");
-  }
-
-
-  // SET EQUAL HEIGHTS
-  function setEqualHeights(el) {
-    let counter = 0;
-    for (let i = 0; i < el.length; i++) {
-      const singleHeight = el[i].offsetHeight;
-
-      if (counter < singleHeight) {
-        counter = singleHeight;
-      }
-    }
-
-    for (let i = 0; i < el.length; i++) {
-      el[i].style.height = `${counter}px`;
-    }
-  }
-
-  // CHECK IF AN ELEMENT IS IN VIEWPORT
-  // http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
-  function isElementInViewport(el) {
-    const rect = el.getBoundingClientRect();
-    return (
-      rect.top >= 0 &&
-      rect.left >= 0 &&
-      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-  }
-
-  // SET STATE OF PREV/NEXT ARROWS
-  function setBtnState(el, flag = true) {
-    if (flag) {
-      el.classList.add(disabledClass);
-    } else {
-      if (el.classList.contains(disabledClass)) {
-        el.classList.remove(disabledClass);
-      }
-      el.disabled = false;
-    }
-  }
-
-  // ANIMATE TIMELINE
-  function animateTl(scrolling, el, tl) {
-    let counter = 0;
-    for (let i = 0; i < el.length; i++) {
-      el[i].addEventListener("click", function() {
-        if (!arrowPrev.disabled) {
-          arrowPrev.disabled = true;
-        }
-        if (!arrowNext.disabled) {
-          arrowNext.disabled = true;
-        }
-        const sign = (this.classList.contains("arrow__prev")) ? "" : "-";
-        if (counter === 0) {
-          tl.style.transform = `translateX(-${scrolling}px)`;
-        } else {
-          const tlStyle = getComputedStyle(tl);
-          // add more browser prefixes if needed here
-          const tlTransform = tlStyle.getPropertyValue("-webkit-transform") || tlStyle.getPropertyValue("transform");
-          const values = parseInt(tlTransform.split(",")[4]) + parseInt(`${sign}${scrolling}`);
-          tl.style.transform = `translateX(${values}px)`;
-        }
-
-        setTimeout(() => {
-          isElementInViewport(firstItem) ? setBtnState(arrowPrev) : setBtnState(arrowPrev, false);
-          isElementInViewport(lastItem) ? setBtnState(arrowNext) : setBtnState(arrowNext, false);
-        }, 1100);
-
-        counter++;
-      });
-    }
-  }
-
-  // ADD BASIC KEYBOARD FUNCTIONALITY
-  function setKeyboardFn(prev, next) {
-    console.log("Works 122.");
-
-    document.addEventListener("keydown", (e) => {
-      if ((e.which === 37) || (e.which === 39)) {
-        const timelineOfTop = timeline.offsetTop;
-        const y = window.pageYOffset;
-        if (timelineOfTop !== y) {
-          window.scrollTo(0, timelineOfTop);
-        }
-        if (e.which === 37) {
-          prev.click();
-        } else if (e.which === 39) {
-          next.click();
-        }
-      }
-    });
-  }
-})();
-
-
-</script>
 
 <style type="text/css">
 
@@ -486,24 +327,19 @@ button.arrow:hover {
 
 
 <body>
-<section class="section">
+<section class="section" id="123">
   <div class="container">
-    <h1><a href="https://webapplog.com/es6/"  > Top Ten ES6 Features</a></h1>
-    <div class="arrows">
-    <button class="arrow  disabled" disabled>
-      <i class="fas fa-arrow-circle-left"></i>
-    </button>
-    <button  class="arrow arrow__next">
-      <i class="fas fa-arrow-circle-right"></i>
-    </button>
-  </div>
+    <h1  ><a href="https://webapplog.com/es6/"  > Top Ten ES6 Features</a></h1>
+
+
+
   </div>
 </section>
 
 
 
 <section class="timeline">
-  <ol id="123">
+  <ol>
     <li>
       <div>
         <time>Default Parameters</time> <p> These are written as EQUALS in the arguments.  So...<br>var link = function(height = 50, color = 'red', url = 'http://example.com') {  ... }
@@ -516,7 +352,7 @@ button.arrow:hover {
     </li>
     <li>
       <div>
-        <time>Multi-line strings</time> <p>The tic mark "`" can do multi-line quotes.  I have used this to put the whole text of MacBeth in a single string.
+        <time>Multi-line strings</time> <p id="slider-1">The tic mark "`" can do multi-line quotes.  I have used this to put the whole text of MacBeth in a single string.
       </p></div>
     </li>
 
@@ -591,12 +427,165 @@ button.arrow:hover {
     <a href="https://webapplog.com/es6/" class="button-2" title="Thanks for the list of favorite ES6 features!">thanks Azat!</a>
     <a href="https://webdesign.tutsplus.com/tutorials/building-a-horizontal-timeline-with-css-and-javascript--cms-28378" class="button-2" title="Thanks for 90% of the CSS and JS on this page!" >thanks Envato!</a>
     <a href="https://heropatterns.com/" id="handle" title="Thanks for the SVG background." class="button-2">thanks HeroPatterns!</a>
-
+  <div class="arrows">
+    <button class="arrow arrow__prev disabled" disabled>
+      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/arrow_prev.svg" alt="prev timeline arrow">
+    </button>
+    <button class="arrow arrow__next">
+      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/arrow_next.svg" alt="next timeline arrow">
+    </button>
+  </div>
 
 
 </section>
 
 
 
+    <script type="text/javascript">
+/*
+George Martsoukos does a patient job of explaining the JS for this in a tutorial https://webdesign.tutsplus.com/tutorials/building-a-horizontal-timeline-with-css-and-javascript--cms-28378
+*/
+
+
+
+//  TEST   TODO
+    // console.log( document.getElementsByTagName('div')[0].attributes.length + " apple--->");
+    // console.log(document.getElementById('slider-1').attributes.length);
+    // console.log(document.getElementsByTagName('ol')[0].childNodes); 
+
+
+
+
+
+
+(function() {
+
+  // VARIABLES
+
+  //  TODO  put this back: timeline = document.querySelector(".timeline ol"),
+
+  var 
+    timeline = document.getElementsByTagName('ol')[0],
+    elH = document.querySelectorAll(".timeline li > div"),
+    arrows = document.querySelectorAll(".timeline .arrows .arrow"),
+    arrowPrev = document.querySelector(".timeline .arrows .arrow__prev"),
+    arrowNext = document.querySelector(".timeline .arrows .arrow__next"),
+    firstItem = document.querySelector(".timeline li:first-child"),
+    lastItem = document.querySelector(".timeline li:last-child"),
+    xScrolling = 280,
+    disabledClass = "disabled";
+
+
+  // START
+  window.addEventListener("DOMContentLoaded", init);
+
+  function init() {
+    setEqualHeights(elH);
+    animateTl(xScrolling, arrows, timeline);
+    setKeyboardFn(arrowPrev, arrowNext);
+  }
+
+
+
+  // SET EQUAL HEIGHTS
+  function setEqualHeights(el) {
+    let counter = 0;
+    for (let i = 0; i < el.length; i++) {
+      const singleHeight = el[i].offsetHeight;
+
+      if (counter < singleHeight) {
+        counter = singleHeight;
+      }
+    }
+
+    for (let i = 0; i < el.length; i++) {
+      el[i].style.height = `${counter}px`;
+    }
+  }
+
+  // CHECK IF AN ELEMENT IS IN VIEWPORT
+  // http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
+  function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+  // SET STATE OF PREV/NEXT ARROWS
+  function setBtnState(el, flag = true) {
+    if (flag) {
+      el.classList.add(disabledClass);
+    } else {
+      if (el.classList.contains(disabledClass)) {
+        el.classList.remove(disabledClass);
+      }
+      el.disabled = false;
+    }
+  }
+
+  // ANIMATE TIMELINE
+  function animateTl(scrolling, el, tl) {
+    let counter = 0;
+    for (let i = 0; i < el.length; i++) {
+      el[i].addEventListener("click", function() {
+        if (!arrowPrev.disabled) {
+          arrowPrev.disabled = true;
+        }
+        if (!arrowNext.disabled) {
+          arrowNext.disabled = true;
+        }
+        const sign = (this.classList.contains("arrow__prev")) ? "" : "-";
+        if (counter === 0) {
+          tl.style.transform = `translateX(-${scrolling}px)`;
+        } else {
+          const tlStyle = getComputedStyle(tl);
+          // add more browser prefixes if needed here
+          const tlTransform = tlStyle.getPropertyValue("-webkit-transform") || tlStyle.getPropertyValue("transform");
+          const values = parseInt(tlTransform.split(",")[4]) + parseInt(`${sign}${scrolling}`);
+          tl.style.transform = `translateX(${values}px)`;
+        }
+
+        setTimeout(() => {
+          isElementInViewport(firstItem) ? setBtnState(arrowPrev) : setBtnState(arrowPrev, false);
+          isElementInViewport(lastItem) ? setBtnState(arrowNext) : setBtnState(arrowNext, false);
+        }, 1100);
+
+        counter++;
+      });
+    }
+  }
+
+  // ADD BASIC KEYBOARD FUNCTIONALITY
+  function setKeyboardFn(prev, next) {
+    // console.log("Works 122.");
+
+    document.addEventListener("keydown", (e) => {
+      if ((e.which === 37) || (e.which === 39)) {
+        const timelineOfTop = timeline.offsetTop;
+        const y = window.pageYOffset;
+        if (timelineOfTop !== y) {
+          window.scrollTo(0, timelineOfTop);
+        }
+        if (e.which === 37) {
+          prev.click();
+        } else if (e.which === 39) {
+          next.click();
+        }
+      }
+    });
+  }
+})();
+
+
+
+
+
+
+
+</script>
 </body>
 </html>
