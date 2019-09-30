@@ -102,6 +102,18 @@ li div time, section div h1 {
 }
 
 
+.lined {
+  float: left ;
+}
+
+.cleared {
+  clear: both;
+}
+
+.tiny-text {
+  font-size: 0.3rem;
+}
+
 /* TIMELINE
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
@@ -327,9 +339,11 @@ button.arrow:hover {
 
 
 <body>
-<section class="section" id="123">
+<section class="section" >
   <div class="container">
-    <h1  ><a href="https://webapplog.com/es6/"  > Top Ten ES6 Features</a></h1>
+    <h1  class="lined"><a href="https://webapplog.com/es6/"  > Top Ten ES6 Features</a></h1>
+    <div class="lined tiny-text"><p>lskdfjalksjdflkasjf  jasdfkjalksd lk;asjd</p></div>
+    <div class="cleared"></div>
 
 
 
@@ -424,10 +438,8 @@ button.arrow:hover {
 
 
 
-    <a href="https://webapplog.com/es6/" class="button-2" title="Thanks for the list of favorite ES6 features!">thanks Azat!</a>
-    <a href="https://webdesign.tutsplus.com/tutorials/building-a-horizontal-timeline-with-css-and-javascript--cms-28378" class="button-2" title="Thanks for 90% of the CSS and JS on this page!" >thanks Envato!</a>
-    <a href="https://heropatterns.com/" id="handle" title="Thanks for the SVG background." class="button-2">thanks HeroPatterns!</a>
-  <div class="arrows">
+
+  <div class="arrows lined">
     <button class="arrow arrow__prev disabled" disabled>
       <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/arrow_prev.svg" alt="prev timeline arrow">
     </button>
@@ -435,7 +447,9 @@ button.arrow:hover {
       <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/arrow_next.svg" alt="next timeline arrow">
     </button>
   </div>
-
+    <a href="https://webapplog.com/es6/" class="button-2 lined" title="Thanks for the list of favorite ES6 features!">thanks Azat!</a>
+    <a href="https://webdesign.tutsplus.com/tutorials/building-a-horizontal-timeline-with-css-and-javascript--cms-28378" class="button-2 lined" title="Thanks for 90% of the CSS and JS on this page!" >thanks Envato!</a>
+    <a href="https://heropatterns.com/" id="handle" title="Thanks for the SVG background." class="button-2 lined">thanks HeroPatterns!</a>
 
 </section>
 
@@ -443,6 +457,9 @@ button.arrow:hover {
 
     <script type="text/javascript">
 /*
+I was surprised how much CSS there was to this.  
+It does not look impressive but there is a bunch of CSS to make the divs go sideways.
+Then, there is a bunch of JS to make the animation and the arrows.
 George Martsoukos does a patient job of explaining the JS for this in a tutorial https://webdesign.tutsplus.com/tutorials/building-a-horizontal-timeline-with-css-and-javascript--cms-28378
 */
 
