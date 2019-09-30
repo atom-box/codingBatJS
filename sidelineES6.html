@@ -36,13 +36,13 @@ document.addEventListener( "DOMContentLoaded", (function(){
     disabledClass = "disabled";
 
   // START
-  window.addEventListener("load", init);
+  window.addEventListener("DOMContentLoaded", init);
 
   function init() {
     setEqualHeights(elH);
     animateTl(xScrolling, arrows, timeline);
-    setSwipeFn(timeline, arrowPrev, arrowNext);
     setKeyboardFn(arrowPrev, arrowNext);
+
   }
 
   // SET EQUAL HEIGHTS
@@ -119,6 +119,8 @@ document.addEventListener( "DOMContentLoaded", (function(){
 
   // ADD BASIC KEYBOARD FUNCTIONALITY
   function setKeyboardFn(prev, next) {
+    console.log("Works 122.");
+
     document.addEventListener("keydown", (e) => {
       if ((e.which === 37) || (e.which === 39)) {
         const timelineOfTop = timeline.offsetTop;
