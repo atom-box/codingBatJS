@@ -33,7 +33,7 @@
 }
 
 body {
-  font: normal 16px/1.5 "Helvetica Neue", sans-serif;
+  font-family: "Helvetica Neue", sans-serif;
 }
 
 a:link {
@@ -58,6 +58,8 @@ h1 a:hover {
   border-bottom: solid var(--main-color) 0.8rem;
 }
 
+
+
 .section .container {
   width: 90%;
   max-width: 1200px;
@@ -71,13 +73,15 @@ h1 a:hover {
 
 
 
-ol li div h2 {
-  color: white;
-  font-size: 3rem;
+section.timeline ol li div time {
+  color: var(--main-color);
+  font-size: 1.5rem; 
+  font-family: Deibi;
 }
 
-li div time, h1 {
+ section.section div.container h1 {
   font-family: Deibi;
+  font-size: 3rem;
   color: white;
   text-shadow: 2px 2px 18px #000000;
 
