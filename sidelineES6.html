@@ -134,7 +134,6 @@ document.addEventListener( "DOMContentLoaded", (function(){
       }
     });
   }
-
 })();
 
 } )()); 
@@ -436,8 +435,10 @@ button.arrow:hover {
   </div>
 </section>
 
-<section >
-  <ol class="timeline">
+
+
+<section class="timeline">
+  <ol>
     <li>
       <div>
         <time>Default Parameters</time> These are written as EQUALS in the arguments.  So...<br>var link = function(height = 50, color = 'red', url = 'http://example.com') {  ... }
@@ -456,8 +457,7 @@ button.arrow:hover {
     <li>
       <div>
         <time>Computed Property Name</time> In React we can add a partial state to the setState() function. We do it succinctly: <br>this.setState({<br>
-  [name]: value<br>
-});
+  [name]: value<br>});
       </div>
     </li>
     <li>
@@ -506,8 +506,10 @@ button.arrow:hover {
 
 
 
-    <a href="https://webapplog.com/es6/" class="button-2">thanks Azat!</a>
-    <a href="https://webdesign.tutsplus.com/tutorials/building-a-horizontal-timeline-with-css-and-javascript--cms-28378" class="button-2">thanks Envato!</a>
+    <a href="https://webapplog.com/es6/" class="button-2" title="Thanks for the list of favorite ES6 features!">thanks Azat!</a>
+    <a href="https://webdesign.tutsplus.com/tutorials/building-a-horizontal-timeline-with-css-and-javascript--cms-28378" class="button-2" title="Thanks for 90% of the CSS and JS on this page!" >thanks Envato!</a>
+    <a href="https://heropatterns.com/" title="Thanks for the SVG background." class="button-2">thanks HeroPatterns!</a>
+
 
 
 </section>
