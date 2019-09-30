@@ -150,7 +150,10 @@ document.addEventListener( "DOMContentLoaded", (function(){
   box-sizing: border-box;
 }
 
-
+@font-face {
+  font-family: Deibi;
+  src: url(./fonts/deibi.otf); 
+}
 
 
 body {
@@ -176,7 +179,6 @@ h1 a:hover {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 .section {
-  background-image: 
   padding: 1.1rem 0;
 }
 
@@ -193,6 +195,10 @@ h1 a:hover {
 
 .section h2 {
   font-size: 1.3rem;
+}
+
+li div time, section div h1 {
+  font-family: Deibi;
 }
 
 
@@ -441,64 +447,64 @@ button.arrow:hover {
   <ol>
     <li>
       <div>
-        <time>Default Parameters</time> These are written as EQUALS in the arguments.  So...<br>var link = function(height = 50, color = 'red', url = 'http://example.com') {  ... }
-      </div>
+        <time>Default Parameters</time> <p> These are written as EQUALS in the arguments.  So...<br>var link = function(height = 50, color = 'red', url = 'http://example.com') {  ... }
+      </p></div>
     </li>
     <li>
       <div>
-        <time>Template Literals</time>Instead of sticking the variable inside a 'string sandwich', you can use tic marks as quotes. e.g. let s = `Hello ${my-dude}.`
-      </div>
+        <time>Template Literals</time> <p>Instead of sticking the variable inside a 'string sandwich', you can use tic marks as quotes. e.g. let s = `Hello ${my-dude}.`
+      </p></div>
     </li>
     <li>
       <div>
-        <time>Multi-line strings</time>The tic mark "`" can do multi-line quotes.  I have used this to put the whole text of MacBeth in a single string.
-      </div>
+        <time>Multi-line strings</time> <p>The tic mark "`" can do multi-line quotes.  I have used this to put the whole text of MacBeth in a single string.
+      </p></div>
     </li>
     <li>
       <div>
-        <time>Computed Property Name</time> In React we can add a partial state to the setState() function. We do it succinctly: <br>this.setState({<br>
+        <time>Computed Property Name</time> <p> In React we can add a partial state to the setState() function. We do it succinctly: <br>this.setState({<br>
   [name]: value<br>});
-      </div>
+      </p></div>
     </li>
     <li>
       <div>
-        <time>"Class" !</time> You can make a class now.  React uses class.  Things can't be stateful unless they are a CLASS.
-      </div>
+        <time>"Class" !</time> <p> You can make a class now.  React uses class.  Things can't be stateful unless they are a CLASS.
+      </p></div>
     </li>
     <li>
       <div>
-        <time>1956</time> In mattis elit vitae odio posuere, nec maximus massa varius. Suspendisse varius volutpat mattis. Vestibulum id magna est.
-      </div>
+        <time>1956</time> <p> In mattis elit vitae odio posuere, nec maximus massa varius. Suspendisse varius volutpat mattis. Vestibulum id magna est.
+      </p></div>
     </li>
     <li>
       <div>
-        <time>1957</time> In mattis elit vitae odio posuere, nec maximus massa varius. Suspendisse varius volutpat mattis. Vestibulum id magna est.
-      </div>
+        <time>1957</time> <p> In mattis elit vitae odio posuere, nec maximus massa varius. Suspendisse varius volutpat mattis. Vestibulum id magna est.
+      </p></div>
     </li>
     <li>
       <div>
-        <time>1967</time> Aenean condimentum odio a bibendum rhoncus. Ut mauris felis, volutpat eget porta faucibus, euismod quis ante.
-      </div>
+        <time>1967</time> <p> Aenean condimentum odio a bibendum rhoncus. Ut mauris felis, volutpat eget porta faucibus, euismod quis ante.
+      </p></div>
     </li>
     <li>
       <div>
-        <time>1977</time> Vestibulum porttitor lorem sed pharetra dignissim. Nulla maximus, dui a tristique iaculis, quam dolor convallis enim, non dignissim ligula ipsum a turpis.
-      </div>
+        <time>1977</time> <p> Vestibulum porttitor lorem sed pharetra dignissim. Nulla maximus, dui a tristique iaculis, quam dolor convallis enim, non dignissim ligula ipsum a turpis.
+      </p></div>
     </li>
     <li>
       <div>
-        <time>1985</time> In mattis elit vitae odio posuere, nec maximus massa varius. Suspendisse varius volutpat mattis. Vestibulum id magna est.
-      </div>
+        <time>1985</time> <p> In mattis elit vitae odio posuere, nec maximus massa varius. Suspendisse varius volutpat mattis. Vestibulum id magna est.
+      </p></div>
     </li>
     <li>
       <div>
-        <time>2000</time> In mattis elit vitae odio posuere, nec maximus massa varius. Suspendisse varius volutpat mattis. Vestibulum id magna est.
-      </div>
+        <time>2000</time> <p> In mattis elit vitae odio posuere, nec maximus massa varius. Suspendisse varius volutpat mattis. Vestibulum id magna est.
+      </p></div>
     </li>
     <li>
       <div>
-        <time>2005</time> In mattis elit vitae odio posuere, nec maximus massa varius. Suspendisse varius volutpat mattis. Vestibulum id magna est.
-      </div>
+        <time>2005</time> <p> In mattis elit vitae odio posuere, nec maximus massa varius. Suspendisse varius volutpat mattis. Vestibulum id magna est.
+      </p></div>
     </li>
     <li></li>
   </ol>
