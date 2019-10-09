@@ -9,11 +9,10 @@ What's going on here:
 */
 
 // TODO Remember to implement a 100% same string to string as a first check
-
+// TODO Have mercy: show some development screenshots of the git logs
+// TODO add a flag so it can run in comments mode.  Just requires lots of ifs.  Or fork it and submit as two files.
 // Given two arrays of words, return total an object that has the number of orphans from each side.
 
-const wordsA = ['clip', 'any', 'coupons', 'or', 'scan', 'individual', 'barcodes'];
-const wordsB = ['cut', 'out', 'any', 'coupons', 'or', 'scan', 'individual', 'UPCs'];
 
 
 function oneDirectionOrphanCheck( array1, array2 ){
@@ -40,9 +39,20 @@ function oneDirectionOrphanCheck( array1, array2 ){
 	console.log(`Orphans from list B: ${array2.length}`);
 	console.log(array1);
 	console.log(array2);
+	// Return sum of orphans
+	return array1.length + array2.length;
 }
 
-oneDirectionOrphanCheck(wordsA, wordsB);
+
+let unlikeness = 0;
+let wordsA = ['clip', 'any', 'coupons', 'or', 'scan', 'individual', 'barcodes'];
+let wordsB = ['cut', 'out', 'any', 'coupons', 'or', 'scan', 'individual', 'UPCs'];
+unlikeness += oneDirectionOrphanCheck(wordsA, wordsB);
+wordsA = ['clip', 'any', 'coupons', 'or', 'scan', 'individual', 'barcodes'];
+wordsB = ['cut', 'out', 'any', 'coupons', 'or', 'scan', 'individual', 'UPCs'];
+unlikeness += oneDirectionOrphanCheck(wordsB, wordsA);
+console.log(`Total orphans after a two-way check: [${unlikeness}].`)
+
 console.log((new Date()).toLocaleTimeString());
 
 
