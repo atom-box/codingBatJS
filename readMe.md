@@ -2,6 +2,7 @@
 ## What's going on here
 I have written 95% of the code in this repository.<br><br>Check it out:<br>
 [![button for more info](https://github.com/atom-box/codingBatJS/blob/master/demo-button.png)](https://atom-box.github.io/codingBatJS/)
+[Run](https://atom-box.github.io/codingBatJS/)
 
 ## Diary
 The idea, to quote Nick Parlante (Stanford), is to be "practiced and quick with these little bits of code. Skill with the little code allows students to concentrate on the larger parts of the problem. Or put another other way, someone who struggles with the loops, logic, etc. does not have time for the big picture. "<br><br>
