@@ -19,7 +19,12 @@ let i = wordsA.length - 1, j = wordsB.length - 1;
 while(i >= 0){
 	while(j >= 0){
 			console.log(`left ${i} checked right ${j}: [${wordsA[i]}] and [${wordsB
-				[j]}]`)
+				[j]}]`);
+			if (wordsA[i] === wordsB
+				[j] ){
+				console.log('woof:' + wordsA[i] + wordsB
+				[j])
+			}
 		j -= 1;
 	}
 	j = wordsB.length - 1;
