@@ -15,22 +15,34 @@ What's going on here:
 const wordsA = ['clip', 'any', 'coupons', 'or', 'scan', 'individual', 'barcodes'];
 const wordsB = ['cut', 'out', 'any', 'coupons', 'or', 'scan', 'individual', 'UPCs'];
 
-let i = wordsA.length - 1, j = wordsB.length - 1;
-while(i >= 0){
-	while(j >= 0){
-			console.log(`left ${i} checked right ${j}: [${wordsA[i]}] and [${wordsB
-				[j]}]`);
-			if (wordsA[i] === wordsB
-				[j] ){
-				console.log('woof:' + wordsA[i] + wordsB
-				[j])
-			}
-		j -= 1;
-	}
-	j = wordsB.length - 1;
-	i -= 1; 
-} 
 
+function oneDirectionOrphanCheck( array1, array2 ){
+	console.log(array1);
+	console.log(array2);
+	let i = array1.length - 1, j = array2.length - 1;
+	while(i >= 0){
+		while(j >= 0){
+				/* TEST TEST TEST console.log(`left ${i} checked right ${j}: [${array1[i]}] and [${array2
+					[j]}]`);*/
+				if (array1[i] === array2
+					[j] ){
+					/* TEST TEST TEST console.log('woof:' + array1[i] + array2[j]);  */
+
+					// if match, must remove j's down to that point and, IMPORTANT, if counting up we would need to reset the j but remember, loop is counting high to low, so actually need not do anything about the j :)
+					array2.splice(j);
+				}
+			j -= 1;
+		}
+		j = array2.length - 1;
+		i -= 1; 
+	} 
+	console.log(`Orphans from list A: ${array1.length}`);
+	console.log(`Orphans from list B: ${array2.length}`);
+	console.log(array1);
+	console.log(array2);
+}
+
+oneDirectionOrphanCheck(wordsA, wordsB);
 console.log((new Date()).toLocaleTimeString());
 
 
