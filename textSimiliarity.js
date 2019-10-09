@@ -18,6 +18,7 @@ What's going on here:
 function oneDirectionOrphanCheck( array1, array2 ){
 	console.log(array1);
 	console.log(array2);
+	let maxTheoreticalOrphans = 2 * (array1.length + array2.length);
 	let i = array1.length - 1, j = array2.length - 1;
 	while(i >= 0){
 		while(j >= 0){
@@ -39,21 +40,26 @@ function oneDirectionOrphanCheck( array1, array2 ){
 	console.log(`Orphans from list B: ${array2.length}`);
 	console.log(array1);
 	console.log(array2);
-	// Return sum of orphans
-	return array1.length + array2.length;
+	// Return total2WayOrphans / maxTheoreticalOrphans
+	// ...lower score is better, range is zero (no matches) to one (texts are identical)
+	return (array1.length + array2.length) / maxTheoreticalOrphans;
 }
 
 
-let unlikeness = 0;
+// Meaningless timestamp.
+console.log((new Date()).toLocaleTimeString());
+
+
+let unlikeness1 = 0, unlikeness2 =0;
 let wordsA = ['clip', 'any', 'coupons', 'or', 'scan', 'individual', 'barcodes'];
 let wordsB = ['cut', 'out', 'any', 'coupons', 'or', 'scan', 'individual', 'UPCs'];
-unlikeness += oneDirectionOrphanCheck(wordsA, wordsB);
+unlikeness1 = ( oneDirectionOrphanCheck(wordsA, wordsB));
 wordsA = ['clip', 'any', 'coupons', 'or', 'scan', 'individual', 'barcodes'];
 wordsB = ['cut', 'out', 'any', 'coupons', 'or', 'scan', 'individual', 'UPCs'];
-unlikeness += oneDirectionOrphanCheck(wordsB, wordsA);
-console.log(`Total orphans after a two-way check: [${unlikeness}].`)
+unlikeness2 = ( oneDirectionOrphanCheck(wordsB, wordsA));
 
-console.log((new Date()).toLocaleTimeString());
+console.log(`Goodness of match after a two-way check: [${ 1 - (unlikeness1 + unlikeness2) / 2 }].`);
+
 
 
 
