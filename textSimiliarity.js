@@ -22,7 +22,9 @@ What's going on here:
 */
 
 // TODO Remember to implement a 100% same string to string as a first check
-// TODO Have mercy: show some development screenshots of the git logs
+// TODO Implement weighted scoring.  Serve as HTML would be best for my time constraints.
+// TODO Have mercy: take 5 minutes each to roll back, show output, 
+// Paste in the initial napkin sketch
 // TODO add a flag so it can run in comments mode.  Just requires lots of ifs.  Or fork it and submit as two files.
 // Given two arrays of words, return total an object that has the number of orphans from each side.
 
@@ -31,11 +33,11 @@ function alphaSanitize(s) {
 	let dirtyChars = s.split('');
 	const reggie = /[A-z]/
 	let onlyAlphas = dirtyChars.filter( c => reggie.test(c) );
-	return onlyAlphas.join('_');
+	return onlyAlphas.join('');
 }
 
 
-// (string s)->{ several arrays of words }
+// (string s)->{ several arrays of words, returns a final clean array of words }
 function toWords(s) {
 	const words = {};
 
@@ -59,10 +61,10 @@ function toWords(s) {
 	// 3. everyone lowercased
   words.lowered = words.collapsed.map( (x)=>{return x.toLowerCase()} )  ;
   console.log('collapsed array is here: ' + words.collapsed);
-  return words.lowered;
 	// 4. strip beginning and endings that are non-alpha but ignore interior no-alpha.
-	words.alphaPurified = words.lowered.map( item => alphaSanitize(item)  );
+	words.justAlpha = words.lowered.map( item => alphaSanitize(item)  );
   // TODO  TODO  TODO  TODO   toWords the ends
+  return words.justAlpha;
  }
 
 function weighted(s){
