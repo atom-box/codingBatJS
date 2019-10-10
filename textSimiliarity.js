@@ -69,7 +69,7 @@ function toWords(s) {
 	words.justAlpha = words.lowered.map( item => alphaSanitize(item)  );
   // TODO  TODO  TODO  TODO   toWords the ends
   return words.justAlpha;
- }
+}
 
 function scoreOneWord(s){
 	if (s.length < 3){
@@ -81,51 +81,18 @@ function scoreOneWord(s){
 	}
 }
 
-// Main logic.
-// (two arrays)->{integer: score as a fraction of 1}
-function onewayOrphanCheck( array1, array2 ){
-	const oneway = {}; // namespace
-	oneway.array1 = array1; oneway.array2 = array2;
-
-	// calculate worst possible number of orphans/mismaatches
-	oneway.maxOrphans = 2 * (oneway.array1.length + oneway.array2.length);
-
-	// nested loop will remove words in second array when it finds a match
-	// in the best case, it will remove ALL words from the second array, 
-	// resulting in NO orphans at all; a perfect score of ZERO will result
-	let i = oneway.array1.length - 1, j = oneway.array2.length - 1;
-	oneway.orphans = []; // store orphans for scoring at the end of this function
-	while(i >= 0){
-		while(j >= 0){
-				/* TEST TEST TEST console.log(`left ${i} checked right ${j}: [${oneway.array1[i]}] and [${oneway.array2
-					[j]}]`);*/
-				if (oneway.array1[i] !== oneway.array2[j]) {
-
-					// they mismatch, so remove but store them for later scoring
-					oneway.orphans.push(oneway.array2.splice(j));
-				} else if (oneway.array1[i] === oneway.array2[j]) {
-
-					// they match, so remove and discard without further consideration
-					oneway.array2.splice[j];
-				} else {
-					console.log('Error, should never see this. Match/Nomatch failed.')
-				}
-
-					/* TEST TEST TEST console.log('woof:' + oneway.array1[i] + oneway.array2[j]);  */
-				j -= 1;
-			}
-		j = oneway.array2.length - 1;
-		i -= 1; 
-	} 
-
-	console.log(`Number of scoreable orphans from list B: ${oneway.orphans.length}`);
-	console.log(`List of scoreable orphans contains: ` + oneway.orphans);
-
-	// make a score that is a fraction of orphans / maxorphans
-	oneway.score = null; // initialize score.  1 is worst, 0 is best
-	oneway.score = oneway.orphans.reduce( (accum, item)=> accum + scoreOneWord(item), 0    );
-	return  oneway.score / oneway.maxOrphans;
+function skidMark(n, c) {
+	let skid = '';
+	for(let i = 0; i < n; i++){
+		skid += c;
+	}
+	console.log(skid);
 }
+
+// Accepts: string of many words
+// Returns: array of only orphansl
+// Main logic.
+function oneWayScore
 
 
 // Meaningless timestamp.
@@ -133,20 +100,16 @@ console.log((new Date()).toLocaleTimeString());
 
 // remember: unlikeness is 1 for worst similarity, 0 for best similarity
 let unlikeness1 = 0, unlikeness2 =0;
-let wordsA =  toWords( 'c1op any coupons, or scan individual barcodes');
-let wordsB = toWords('coot out any coupons 0r scan individual UPCs!');
+let wordsA =  toWords( "Have a 2good day today.");
+
+
+/*   REAL DATA
+let wordsA =  toWords( "The easiest way to earn points with Fetch Rewards is to just shop for the products you already love. If you have any participating brands on your receipt, you'll get points based on the cost of the products. You don't need to clip any coupons or scan individual barcodes. Just scan each grocery receipt after you shop and we'll find the savings for you.");
+let wordsB = toWords("The easiest way to earn points with Fetch Rewards is to just shop for the items you already buy. If you have any eligible brands on your receipt, you will get points based on the total cost of the products. You do not need to cut out any coupons or scan individual UPCs. Just scan your receipt after you check out and we will find the savings for you.");
 unlikeness1 = ( onewayOrphanCheck(wordsA, wordsB));
-wordsA =  toWords( 'c1op any coupons, or scan individual barcodes');
-wordsB = toWords('coot out any coupons 0r scan individual UPCs!');
-unlikeness2 = ( onewayOrphanCheck(wordsB, wordsA));
-
-// Up until now, high number for unlikeness indicates unsimilarity.  Now we return as the INVERTED fraction 
-// because the convention is, low scores are bad.
-console.log(`Goodness of match after a two-way check: [${ 1 - (unlikeness1 + unlikeness2) / 2 }].`);
-
-
-
-
+wordsA =  toWords( "The easiest way to earn points with Fetch Rewards is to just shop for the products you already love. If you have any participating brands on your receipt, you'll get points based on the cost of the products. You don't need to clip any coupons or scan individual barcodes. Just scan each grocery receipt after you shop and we'll find the savings for you.");
+	wordsB = toWords("The easiest way to earn points with Fetch Rewards is to just shop for the items you already buy. If you have any eligible brands on your receipt, you will get points based on the total cost of the products. You do not need to cut out any coupons or scan individual UPCs. Just scan your receipt after you check out and we will find the savings for you.");
+*/
 
 
 
@@ -181,8 +144,7 @@ We are always looking for opportunities for you to earn more points, which is wh
 Bonus Points:
 Package this application as a web service that performs the comparison in response to a POST request containing the two texts in the body of the payload.  You may use external libraries (i.e., flask).
 Let’s take it a step further and package the web service in a Docker container that can be built and run locally or pulled down and run via Docker Hub.
-
-
-
-
 */
+
+
+
