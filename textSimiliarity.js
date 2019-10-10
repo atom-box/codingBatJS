@@ -1,4 +1,17 @@
 /*
+	Refactor so an array of orphans is returned.
+	That array goes into a scorer that returns a fraction of 1.
+	This gets repeated for the backwards.
+	Divide these by two and return the inverse.
+
+	Make the array builder to strip punctuation and casing and remove undefined.
+	Make a web page.
+	Make an API.
+*/
+
+
+
+/*
 To run this, if you have Node, type NODE TEXTSIMILARITY FILENAME1 FILENAME2
 */
 
@@ -14,6 +27,44 @@ What's going on here:
 // Given two arrays of words, return total an object that has the number of orphans from each side.
 
 
+
+// (string s)->{ several arrays of words }
+function munch(s) {
+	const words = {};
+
+	// 1. split the string to words on ' ' as a delimiter
+	words.dirty = s.split(' '); // returns array of raw words
+  words.trimmed = words.dirty.map((w)=>{return w.trim()} ); //returns array of trimmed words
+  console.log('Trimmed array is here: ' + words.trimmed);
+
+	// 2. create words.collapsed, an array that lacks any UNDEFINED array memebers
+  words.collapsed = words.trimmed.reduce( 
+    (x,y)=> {
+      if (y.length > 0){
+        x.push(y); 
+      }
+      return x;
+    }
+    , []);
+
+	// 3. everyone lowercased
+  words.lowered = words.collapsed.map( (x)=>{return x.toLowerCase()} )  ;
+  console.log('collapsed array is here: ' + words.collapsed);
+  return words.lowered;
+// 4. strip beginning and endings that are non-alpha but ignore interior no-alpha.
+  
+  // TODO  TODO  TODO  TODO   munch the ends
+ }
+
+function weighted(s){
+	if (s.length < 3){
+		return 0.6
+	} else if (s.length < 5) {
+		return 0.8 
+	} else {
+		return 1
+	}
+}
 
 function oneDirectionOrphanCheck( array1, array2 ){
 	console.log(array1);
