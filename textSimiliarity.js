@@ -25,7 +25,10 @@ What's going on here:
 // TODO Implement weighted scoring.  Serve as HTML would be best for my time constraints.
 // TODO Have mercy: take 5 minutes each to roll back, show output, 
 // Paste in the initial napkin sketch
-// TODO add a flag so it can run in comments mode.  Just requires lots of ifs.  Or fork it and submit as two files.
+// TODO fork it and submit as two files, one with more commenting.
+// lint it
+// remove comments or make AirBnB style
+
 // Given two arrays of words, return total an object that has the number of orphans from each side.
 
 // (string s) -> {string with no non-alpha chars}
@@ -35,6 +38,7 @@ function alphaSanitize(s) {
 	let onlyAlphas = dirtyChars.filter( c => reggie.test(c) );
 	return onlyAlphas.join('');
 }
+
 
 
 // (string s)->{ several arrays of words, returns a final clean array of words }
@@ -67,7 +71,7 @@ function toWords(s) {
   return words.justAlpha;
  }
 
-function weighted(s){
+function scoreOneWord(s){
 	if (s.length < 3){
 		return 0.6
 	} else if (s.length < 5) {
@@ -78,33 +82,34 @@ function weighted(s){
 }
 
 function oneDirectionOrphanCheck( array1, array2 ){
-	console.log(array1);
-	console.log(array2);
-	let maxTheoreticalOrphans = 2 * (array1.length + array2.length);
-	let i = array1.length - 1, j = array2.length - 1;
+	const oneway = {}; // namespace
+	oneway.array1 = array1; oneway.array2 = array2;
+	oneway.maxOrphans = 2 * (oneway.array1.length + oneway.array2.length);
+	let i = oneway.array1.length - 1, j = oneway.array2.length - 1;
 	while(i >= 0){
 		while(j >= 0){
-				/* TEST TEST TEST console.log(`left ${i} checked right ${j}: [${array1[i]}] and [${array2
+				/* TEST TEST TEST console.log(`left ${i} checked right ${j}: [${oneway.array1[i]}] and [${oneway.array2
 					[j]}]`);*/
-				if (array1[i] === array2
+				if (oneway.array1[i] === oneway.array2
 					[j] ){
-					/* TEST TEST TEST console.log('woof:' + array1[i] + array2[j]);  */
+					/* TEST TEST TEST console.log('woof:' + oneway.array1[i] + oneway.array2[j]);  */
 
 					// if match, must remove j's down to that point and, IMPORTANT, if counting up we would need to reset the j but remember, loop is counting high to low, so actually need not do anything about the j :)
-					array2.splice(j);
+					oneway.array2.splice(j);
 				}
 			j -= 1;
 		}
-		j = array2.length - 1;
+		j = oneway.array2.length - 1;
 		i -= 1; 
 	} 
-	console.log(`Orphans from list A: ${array1.length}`);
-	console.log(`Orphans from list B: ${array2.length}`);
-	console.log(array1);
-	console.log(array2);
-	// Return total2WayOrphans / maxTheoreticalOrphans
+	console.log(`Orphans from list A: ${oneway.array1.length}`);
+	console.log(`Orphans from list B: ${oneway.array2.length}`);
+	console.log(oneway.array1);
+	console.log(oneway.array2);
+	// Return total2WayOrphans / oneway.maxOrphans
 	// ...lower score is better, range is zero (no matches) to one (texts are identical)
-	return (array1.length + array2.length) / maxTheoreticalOrphans;
+
+	return (oneway.array1.length + array2.length) / oneway.maxOrphans;
 }
 
 
