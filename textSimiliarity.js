@@ -26,15 +26,24 @@ What's going on here:
 // TODO add a flag so it can run in comments mode.  Just requires lots of ifs.  Or fork it and submit as two files.
 // Given two arrays of words, return total an object that has the number of orphans from each side.
 
+// (string s) -> {string with no non-alpha chars}
+function alphaSanitize(s) {
+	let dirtyChars = s.split('');
+	const reggie = /[A-z]/
+	let onlyAlphas = dirtyChars.filter( c => reggie.test(c) );
+	return onlyAlphas.join('_');
+}
 
 
 // (string s)->{ several arrays of words }
-function munch(s) {
+function toWords(s) {
 	const words = {};
 
-	// 1. split the string to words on ' ' as a delimiter
+	// 1a. split the string to words on ' ' as a delimiter
 	words.dirty = s.split(' '); // returns array of raw words
-  words.trimmed = words.dirty.map((w)=>{return w.trim()} ); //returns array of trimmed words
+
+	// 1b. returns array with spaces removed from word boundaries
+  words.trimmed = words.dirty.map((w)=>{return w.trim()} ); 
   console.log('Trimmed array is here: ' + words.trimmed);
 
 	// 2. create words.collapsed, an array that lacks any UNDEFINED array memebers
@@ -51,9 +60,9 @@ function munch(s) {
   words.lowered = words.collapsed.map( (x)=>{return x.toLowerCase()} )  ;
   console.log('collapsed array is here: ' + words.collapsed);
   return words.lowered;
-// 4. strip beginning and endings that are non-alpha but ignore interior no-alpha.
-  
-  // TODO  TODO  TODO  TODO   munch the ends
+	// 4. strip beginning and endings that are non-alpha but ignore interior no-alpha.
+	words.alphaPurified = words.lowered.map( item => alphaSanitize(item)  );
+  // TODO  TODO  TODO  TODO   toWords the ends
  }
 
 function weighted(s){
@@ -102,11 +111,11 @@ console.log((new Date()).toLocaleTimeString());
 
 
 let unlikeness1 = 0, unlikeness2 =0;
-let wordsA = ['clip', 'any', 'coupons', 'or', 'scan', 'individual', 'barcodes'];
-let wordsB = ['cut', 'out', 'any', 'coupons', 'or', 'scan', 'individual', 'UPCs'];
+let wordsA =  toWords( 'clop any coupons or scan individual barcodes');
+let wordsB = toWords('coot out any coupons or scan individual UPCs');
 unlikeness1 = ( oneDirectionOrphanCheck(wordsA, wordsB));
-wordsA = ['clip', 'any', 'coupons', 'or', 'scan', 'individual', 'barcodes'];
-wordsB = ['cut', 'out', 'any', 'coupons', 'or', 'scan', 'individual', 'UPCs'];
+wordsA =  toWords( 'clop any coupons or scan individual barcodes');
+wordsB = toWords('coot out any coupons or scan individual UPCs');
 unlikeness2 = ( oneDirectionOrphanCheck(wordsB, wordsA));
 
 console.log(`Goodness of match after a two-way check: [${ 1 - (unlikeness1 + unlikeness2) / 2 }].`);
