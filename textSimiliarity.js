@@ -50,7 +50,7 @@ function toWords(s) {
 
 	// 1b. returns array with spaces removed from word boundaries
   words.trimmed = words.dirty.map((w)=>{return w.trim()} ); 
-  console.log('Trimmed array is here: ' + words.trimmed);
+  // console.log('Trimmed array is here: ' + words.trimmed);
 
 	// 2. create words.collapsed, an array that lacks any UNDEFINED array memebers
   words.collapsed = words.trimmed.reduce( 
@@ -64,7 +64,7 @@ function toWords(s) {
 
 	// 3. everyone lowercased
   words.lowered = words.collapsed.map( (x)=>{return x.toLowerCase()} )  ;
-  console.log('collapsed array is here: ' + words.collapsed);
+  // console.log('collapsed array is here: ' + words.collapsed);
 	// 4. strip beginning and endings that are non-alpha but ignore interior no-alpha.
 	words.justAlpha = words.lowered.map( item => alphaSanitize(item)  );
   // TODO  TODO  TODO  TODO   toWords the ends
@@ -73,58 +73,75 @@ function toWords(s) {
 
 function scoreOneWord(s){
 	if (s.length < 3){
-		return 0.6
+		return 1;
 	} else if (s.length < 5) {
-		return 0.8 
+		return 1; 
 	} else {
-		return 1
+		return 1;
 	}
 }
 
-function oneDirectionOrphanCheck( array1, array2 ){
+// Main logic.
+// (two arrays)->{integer: score as a fraction of 1}
+function onewayOrphanCheck( array1, array2 ){
 	const oneway = {}; // namespace
 	oneway.array1 = array1; oneway.array2 = array2;
+
+	// calculate worst possible number of orphans/mismaatches
 	oneway.maxOrphans = 2 * (oneway.array1.length + oneway.array2.length);
+
+	// nested loop will remove words in second array when it finds a match
+	// in the best case, it will remove ALL words from the second array, 
+	// resulting in NO orphans at all; a perfect score of ZERO will result
 	let i = oneway.array1.length - 1, j = oneway.array2.length - 1;
+	oneway.orphans = []; // store orphans for scoring at the end of this function
 	while(i >= 0){
 		while(j >= 0){
 				/* TEST TEST TEST console.log(`left ${i} checked right ${j}: [${oneway.array1[i]}] and [${oneway.array2
 					[j]}]`);*/
-				if (oneway.array1[i] === oneway.array2
-					[j] ){
-					/* TEST TEST TEST console.log('woof:' + oneway.array1[i] + oneway.array2[j]);  */
+				if (oneway.array1[i] !== oneway.array2[j]) {
 
-					// if match, must remove j's down to that point and, IMPORTANT, if counting up we would need to reset the j but remember, loop is counting high to low, so actually need not do anything about the j :)
-					oneway.array2.splice(j);
+					// they mismatch, so remove but store them for later scoring
+					oneway.orphans.push(oneway.array2.splice(j));
+				} else if (oneway.array1[i] === oneway.array2[j]) {
+
+					// they match, so remove and discard without further consideration
+					oneway.array2.splice[j];
+				} else {
+					console.log('Error, should never see this. Match/Nomatch failed.')
 				}
-			j -= 1;
-		}
+
+					/* TEST TEST TEST console.log('woof:' + oneway.array1[i] + oneway.array2[j]);  */
+				j -= 1;
+			}
 		j = oneway.array2.length - 1;
 		i -= 1; 
 	} 
-	console.log(`Orphans from list A: ${oneway.array1.length}`);
-	console.log(`Orphans from list B: ${oneway.array2.length}`);
-	console.log(oneway.array1);
-	console.log(oneway.array2);
-	// Return total2WayOrphans / oneway.maxOrphans
-	// ...lower score is better, range is zero (no matches) to one (texts are identical)
 
-	return (oneway.array1.length + array2.length) / oneway.maxOrphans;
+	console.log(`Number of scoreable orphans from list B: ${oneway.orphans.length}`);
+	console.log(`List of scoreable orphans contains: ` + oneway.orphans);
+
+	// make a score that is a fraction of orphans / maxorphans
+	oneway.score = null; // initialize score.  1 is worst, 0 is best
+	oneway.score = oneway.orphans.reduce( (accum, item)=> accum + scoreOneWord(item), 0    );
+	return  oneway.score / oneway.maxOrphans;
 }
 
 
 // Meaningless timestamp.
 console.log((new Date()).toLocaleTimeString());
 
-
+// remember: unlikeness is 1 for worst similarity, 0 for best similarity
 let unlikeness1 = 0, unlikeness2 =0;
-let wordsA =  toWords( 'clop any coupons or scan individual barcodes');
-let wordsB = toWords('coot out any coupons or scan individual UPCs');
-unlikeness1 = ( oneDirectionOrphanCheck(wordsA, wordsB));
-wordsA =  toWords( 'clop any coupons or scan individual barcodes');
-wordsB = toWords('coot out any coupons or scan individual UPCs');
-unlikeness2 = ( oneDirectionOrphanCheck(wordsB, wordsA));
+let wordsA =  toWords( 'c1op any coupons, or scan individual barcodes');
+let wordsB = toWords('coot out any coupons 0r scan individual UPCs!');
+unlikeness1 = ( onewayOrphanCheck(wordsA, wordsB));
+wordsA =  toWords( 'c1op any coupons, or scan individual barcodes');
+wordsB = toWords('coot out any coupons 0r scan individual UPCs!');
+unlikeness2 = ( onewayOrphanCheck(wordsB, wordsA));
 
+// Up until now, high number for unlikeness indicates unsimilarity.  Now we return as the INVERTED fraction 
+// because the convention is, low scores are bad.
 console.log(`Goodness of match after a two-way check: [${ 1 - (unlikeness1 + unlikeness2) / 2 }].`);
 
 
