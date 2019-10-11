@@ -81,10 +81,15 @@ function scoreOneWord(s){
 	}
 }
 
-function showKeys(o) {
-	for (k in Object.keys(this)){
-		console.log(k + '---' + this[k]);
-	}
+// Accepts an array
+// Returns a copied-by-value array
+function makeLocal(a) {
+	let newArray = [];
+	const stop = a.length;
+	for (let i = 0; i < stop; i++) {
+		newArray.push(a[i]);
+	} 
+	return newArray;
 }
 
 function skidMark(n, c) {
@@ -98,24 +103,27 @@ function skidMark(n, c) {
 // Accepts: string of many words
 // Returns: array of only orphansl
 // Main logic.
-function oneWayScore(both){
+function oneWayScore(list1, list2){
 	// local copy
-	var oneWay = Object.assign({}, both);
-	oneWay.list1 = temp1;
-	oneWay.list2 = temp2;
+	const oneWay = {};
+
+	oneWay.wordsI = makeLocal(list1);
+	oneWay.wordsJ = makeLocal(list2);
+
+
+
 	oneWay.orphans = [];
 	oneWay.founds = [];
-	console.log(`There are [${oneWay.orphans.length} orphans] [${oneWay.list1.length} list1] [${oneWay.list2.length} list2]`);
-	showKeys(temp1);
+	console.log(`There are [${oneWay.orphans.length} orphans] [${oneWay.wordsI.length} list1] [${oneWay.wordsJ.length} list2]`);
 
-	for(let i = 0; i < oneWay.list1.length; i++){
-		for(let j=0; j < oneWay.list2.length; j++){
-		skidMark(oneWay.list1.length, '|'); // debugger
-		skidMark(oneWay.list2.length, '_'); // debugger
-			if(oneWay.list1[i] === oneWay.list2[j]){
-				oneWay.founds.push( oneWay.list2.splice(j,1) );
+	for(let i = 0; i < oneWay.wordsI.length; i++){
+		for(let j=0; j < oneWay.wordsJ.length; j++){
+		skidMark(oneWay.wordsI.length, '|'); // debugger
+		skidMark(oneWay.wordsJ.length, '_'); // debugger
+			if(oneWay.wordsI[i] === oneWay.wordsJ[j]){
+				oneWay.founds.push( oneWay.wordsJ.splice(j,1) );
 				if(j > 1){
-					oneWay.orphans.push( oneWay.list2.splice(0, j-1));
+					oneWay.orphans.push( oneWay.wordsJ.splice(0, j-1));
 				}
 				break;
 			}
@@ -124,14 +132,23 @@ function oneWayScore(both){
 		console.log(`Orphans: ${oneWay.orphans}`);
 		console.log(`Founds: ${oneWay.founds}`);
 
-	// console.log(`There are [${oneWay.orphans.length} orphans] [${oneWay.list1.length} list1] [${oneWay.list2.length} list2]`);
+	// console.log(`There are [${oneWay.orphans.length} orphans] [${oneWay.wordsI.length} list1] [${oneWay.wordsJ.length} list2]`);
 }
 
-let wordsI = toWords("a b c d e f");
-let wordsJ = toWords("x x x x x x x x x x a b c d x x x e x x x f x x x");
-oneWayScore({wordsI, wordsJ});
+let words1 = toWords("a b c d e f");
+let words2 = toWords("x x x x x x x x x x a b c d x x x e x x x f x x x");
+console.log('1 words I downstairs: ' + words1);
+console.log('1 words J downstairs: ' + words2);
+
+
+oneWayScore(words1, words2);
 console.log('oooooooooooooOOooOoOOOoOoOooooooooooooo');
-oneWayScore(wordsJ, wordsI);
+console.log('2 words I downstairs: ' + words1);
+console.log('2 words J downstairs: ' + words2);
+
+oneWayScore(words2, words1);
+console.log('3 words I downstairs: ' + words1);
+console.log('3 words J downstairs: ' + words2);
 
 
 
