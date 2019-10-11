@@ -81,6 +81,12 @@ function scoreOneWord(s){
 	}
 }
 
+function showKeys(o) {
+	for (k in Object.keys(this)){
+		console.log(k + '---' + this[k]);
+	}
+}
+
 function skidMark(n, c) {
 	let skid = '';
 	for(let i = 0; i < n; i++){
@@ -92,12 +98,16 @@ function skidMark(n, c) {
 // Accepts: string of many words
 // Returns: array of only orphansl
 // Main logic.
-function oneWayScore(list1, list2){
-	const oneWay = {};
-	oneWay.list1 = list1;
-	oneWay.list2 = list2;
+function oneWayScore(both){
+	// local copy
+	var oneWay = Object.assign({}, both);
+	oneWay.list1 = temp1;
+	oneWay.list2 = temp2;
 	oneWay.orphans = [];
 	oneWay.founds = [];
+	console.log(`There are [${oneWay.orphans.length} orphans] [${oneWay.list1.length} list1] [${oneWay.list2.length} list2]`);
+	showKeys(temp1);
+
 	for(let i = 0; i < oneWay.list1.length; i++){
 		for(let j=0; j < oneWay.list2.length; j++){
 		skidMark(oneWay.list1.length, '|'); // debugger
@@ -114,17 +124,13 @@ function oneWayScore(list1, list2){
 		console.log(`Orphans: ${oneWay.orphans}`);
 		console.log(`Founds: ${oneWay.founds}`);
 
-
-
 	// console.log(`There are [${oneWay.orphans.length} orphans] [${oneWay.list1.length} list1] [${oneWay.list2.length} list2]`);
 }
 
 let wordsI = toWords("a b c d e f");
 let wordsJ = toWords("x x x x x x x x x x a b c d x x x e x x x f x x x");
-oneWayScore(wordsI, wordsJ);
+oneWayScore({wordsI, wordsJ});
 console.log('oooooooooooooOOooOoOOOoOoOooooooooooooo');
-wordsI = toWords("a b c d e f");
-wordsJ = toWords("x x x x x x x x x x a b c d x x x e x x x f x x x");
 oneWayScore(wordsJ, wordsI);
 
 
