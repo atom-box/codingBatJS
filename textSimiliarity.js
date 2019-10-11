@@ -92,7 +92,31 @@ function skidMark(n, c) {
 // Accepts: string of many words
 // Returns: array of only orphansl
 // Main logic.
-function oneWayScore
+function oneWayScore(list1, list2){
+	const oneWay = {};
+	oneWay.list1 = list1;
+	oneWay.list2 = list2;
+	oneWay.orphans = [];
+	while (oneWay.list2.length > 0){
+		if (oneWay.list1[0] === oneWay.list2[0]){
+			oneWay.list2.shift();
+			oneWay.list1.shift();
+		} else {
+			oneWay.orphans.push(oneWay.list2.shift());
+		}
+		skidMark(oneWay.list1.length, '|');
+		skidMark(oneWay.list2.length, '_');
+	}
+	console.log('exited J loop now');
+	console.log(`There are [${oneWay.orphans.length} orphans] [${oneWay.list1.length} list1] [${oneWay.list2.length} list2]`);
+}
+
+let wordsI = toWords("a b c d e f");
+let wordsJ = toWords("x x x x x x x x x x a b c d x x x e x x x f x x x");
+oneWayScore(wordsI, wordsJ);
+wordsI = toWords("a b c d e f");
+wordsJ = toWords("x x x x x x x x x x a b c d x x x e x x x f x x x");oneWayScore(wordsJ, wordsI);
+
 
 
 // Meaningless timestamp.
