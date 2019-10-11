@@ -97,25 +97,35 @@ function oneWayScore(list1, list2){
 	oneWay.list1 = list1;
 	oneWay.list2 = list2;
 	oneWay.orphans = [];
-	while (oneWay.list2.length > 0){
-		if (oneWay.list1[0] === oneWay.list2[0]){
-			oneWay.list2.shift();
-			oneWay.list1.shift();
-		} else {
-			oneWay.orphans.push(oneWay.list2.shift());
+	oneWay.founds = [];
+	for(let i = 0; i < oneWay.list1.length; i++){
+		for(let j=0; j < oneWay.list2.length; j++){
+		skidMark(oneWay.list1.length, '|'); // debugger
+		skidMark(oneWay.list2.length, '_'); // debugger
+			if(oneWay.list1[i] === oneWay.list2[j]){
+				oneWay.founds.push( oneWay.list2.splice(j,1) );
+				if(j > 1){
+					oneWay.orphans.push( oneWay.list2.splice(0, j-1));
+				}
+				break;
+			}
 		}
-		skidMark(oneWay.list1.length, '|');
-		skidMark(oneWay.list2.length, '_');
 	}
-	console.log('exited J loop now');
-	console.log(`There are [${oneWay.orphans.length} orphans] [${oneWay.list1.length} list1] [${oneWay.list2.length} list2]`);
+		console.log(`Orphans: ${oneWay.orphans}`);
+		console.log(`Founds: ${oneWay.founds}`);
+
+
+
+	// console.log(`There are [${oneWay.orphans.length} orphans] [${oneWay.list1.length} list1] [${oneWay.list2.length} list2]`);
 }
 
 let wordsI = toWords("a b c d e f");
 let wordsJ = toWords("x x x x x x x x x x a b c d x x x e x x x f x x x");
 oneWayScore(wordsI, wordsJ);
+console.log('oooooooooooooOOooOoOOOoOoOooooooooooooo');
 wordsI = toWords("a b c d e f");
-wordsJ = toWords("x x x x x x x x x x a b c d x x x e x x x f x x x");oneWayScore(wordsJ, wordsI);
+wordsJ = toWords("x x x x x x x x x x a b c d x x x e x x x f x x x");
+oneWayScore(wordsJ, wordsI);
 
 
 
