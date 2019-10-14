@@ -211,34 +211,48 @@ id
 id
 id*/
 
+/*
+** Function to create content in the HTML layout.
+**  Accepts two strings as input data.
+**  Accepts two div IDs for showing the input data
+**  and one div ID for outputting the result.
+*/
+
 function main(str1, str2, id1, id2, id3) {
-    // get the three HTML elements
-    // 
-    const el1 = document.getElementById(id1);
-    el1.innerHTML = 'fooo.ooo.ooo.ooo.ooooooo'
-}
-
-console.log('Oh...');
-main(null, null, '1x' ,null, null);
-console.log('...yeah.');
-
-// remember: unlikeness is 1 for worst similarity, 0 for best similarity
-let unlikeness1 = 0,
+    // remember: unlikeness is 1 for worst similarity, 0 for best similarity
+    let unlikeness1 = 0,
     unlikeness2 = 0,
     totalUnlikeness = 0;
-let words1 = toWords(" a  b c d      e f");
-let words2 = toWords("xa xb xc xd xe xf xg xh xi xj a b c d xk xl xm e xn xo xp f xq xr xs");
-unlikeness1 = oneWayScore(words1, words2);
-unlikeness2 = oneWayScore(words2, words1);
-totalUnlikeness = (unlikeness1 + unlikeness2) / 2;
-let likeness = 1 - totalUnlikeness;
-// Meaningless timestamp.
-console.log(`On a scale of 0 to 1, the similarity of these two texts is ${likeness}`);
+    let words1 = toWords(str1);
+    let words2 = toWords(str2);
+    unlikeness1 = oneWayScore(words1, words2);
+    unlikeness2 = oneWayScore(words2, words1);
 
-console.log((new Date()).toLocaleTimeString());
-console.log('Oh...');
-main(null, null, '1x' ,null, null);
-console.log('...yeah.');
+    // get the three HTML elements
+    const el1 = document.getElementById(id1);
+    const el2 = document.getElementById(id2);
+    const el3 = document.getElementById(id3);
+    totalUnlikeness = (unlikeness1 + unlikeness2) / 2;
+    let likeness = 1 - totalUnlikeness;
+
+    // Meaningless timestamp.
+    console.log(`On a scale of 0 to 1, the similarity of these two texts is ${likeness}`);
+    console.log((new Date()).toLocaleTimeString());
+
+    el1.innerHTML = str1;
+    el2.innerHTML = str2;
+    el3.innerHTML = likeness;
+    return;
+}
+
+main(`If you have any  get points `, `If you have any participating brands on your receipt, you'll get points `, '1x', '1y', '1answer');
+main(`If you have any  receipt, you'll get points `, `If you have any participating brands on your receipt, you'll get points `, '2x', '2y', '2answer');
+main(`brands on your receipt, you'll get points `, `If you have any participating brands on your receipt, you'll get points `, '3x', '3y', '3answer');
+
+
+
+
+
 
 
 
