@@ -21,13 +21,13 @@ What's going on here:
 "Write a program that takes as inputs two file paths and uses a metric to determine how similar they are" The result is an integer, a score from 0 (no words in common) to 1 (identical) 
 */
 
+// TODO Serve as HTML would be best for my time constraints. Bootstrap budget <15 minutes 
 // TODO Remember to implement a 100% same string to string as a first check
-// TODO Implement weighted scoring.  Serve as HTML would be best for my time constraints.
-// TODO Have mercy: take 5 minutes each to roll back, show output, 
 // Paste in the initial napkin sketch
 // TODO fork it and submit as two files, one with more commenting.
 // lint it
-// remove comments or make AirBnB style
+// edit comments to AirBnB style guide
+// TODO Have mercy: take 5 minutes each to roll back, show output, 
 
 
 
@@ -40,7 +40,7 @@ What's going on here:
 // () -> {}
 function thingsShow(arr) {
     let many = arr.length;
-    console.log(`Array has the following ${many} things:`);
+    console.log(`${many}:`);
     while (many > 0) {
         many -= 1;
         console.log(`!${arr[many]}!`);
@@ -171,14 +171,16 @@ function oneWayScore(list1, list2) {
     thingsShow(oneWay.wordsI);
     console.log('Here are list 2: ');
     thingsShow(oneWay.wordsJ);
-    for (let i = 0; i < oneWay.wordsI.length; i++) {
-        for (let j = 0; j < oneWay.wordsJ.length; j++) {
-            skidMark(oneWay.wordsI.length, '|'); // debugger
-            skidMark(oneWay.wordsJ.length, '_'); // debugger
+    for (let i = 0, stop = oneWay.wordsI.length ; i < stop; i++) {
+        for (let j = 0, stop = oneWay.wordsJ.length ; j < stop; j++) {
+            // skidMark(oneWay.wordsI.length, '|'); // debugger
+            // skidMark(oneWay.wordsJ.length, '_'); // debugger
             if (oneWay.wordsI[i] === oneWay.wordsJ[j]) {
                 oneWay.founds.push(oneWay.wordsJ.splice(j, 1));
-                if (j > 1) {
-                    oneWay.orphans.concat(oneWay.wordsJ.splice(0, j - 1));
+                if (j > 0) {    // this on monday
+                    console.log('w o o f ' + oneWay.wordsJ.splice(0, j - 1).length + ' me ow');
+                    oneWay.orphans.concat(99, 101);
+                    // 
                 }
                 break;
             }
