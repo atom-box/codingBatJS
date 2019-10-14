@@ -236,20 +236,20 @@
         <div class="col-md-9 outblock block elShadow">
           <h2>Explanation</h2>
             <p>I was given the following challenge: <span><code>write a program that takes as inputs two file paths and uses a metric to determine how similar they are.  Documents that are exactly the same should get a score of 1, and documents that don’t have any words in common should get a score of 0.</code></span></p>
-            <p>My first back of the envelope solution is this:</p>
+            <p>The results above are obtained by this logic.  To see the code in detail, check out its repository.  To see the code run, open the console of your browser and reload this page.   The logic is just Javascript and is my naive back of the envelope solution, without using the established algorithms (see below).  My naive strategy is:</p>
             <ol>
                 <li>Take the two input strings, remove punctuation, spaces, and any non alpha chars, to create a pair of word arrays</li>
                 <li>Tally any members of List 1 that do not occur in list 2.</li>
                 <li>Repeat the orphan tally but in the reverse direction, tallying any members of List 1 that do not occur in list 2.</li>
                 <li>Return a similiarity score: take the inverse of the average of orphans/allwords. So on a scale of 0 to 1, 1 represents utter disimilarity and 0 represents complete identity.</li>
-                <li>Use the crudest imaginable weighting in the score, considering words of less than 5 letters to count as less important in the scoring. So misaligned cases of <span><code>of, the, and 'a'</code></span>are penalized less than <span><code>smooth, pelican, and coelecanth</code></span>. This is not great, since strange members like <span><code>gnat, gnu, and ax</code></span> now become deemphasized content in the text.</li>
             </ol>
         </div>
         <div class="col-md-9 outblock block elShadow">
-          <h2>To do</h2>
+          <h2>Discussion</h2>
           <p>Some fun improvements to this project could include the following:</p>
           <ul>
-            <li>rewrite the logic to follow <a href="https://binf.snipcademy.com/lessons/pairwise-alignment/global-needleman-wunsch">Needleman-Wunsch</a>, from gene alignment + BLAST</li>
+            <li>rewrite the logic to follow the <a href="https://binf.snipcademy.com/lessons/pairwise-alignment/global-needleman-wunsch">Needleman-Wunsch</a> algorithm, common in gene alignment + BLAST</li>
+            <li>Use a weighting in the score, considering words of less than 5 letters to count as less important in the scoring. So misaligned cases of <span><code>of, the, and 'a'</code></span>are penalized less than <span><code>smooth, pelican, and coelecanth</code></span>. This is not great, since strange members like <span><code>gnat, gnu, and ax</code></span> now become deemphasized content in the text.</li>
             <li>use some sort of library in the weighting, not word length</li>
             <li>add buttons to choose from possible texts to align.</li>
             <li>sanitize inputs; allow user-pasted or uploaded text</li>
