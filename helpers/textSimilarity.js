@@ -78,7 +78,6 @@ function toWords(s) {
 
     // 1b. returns array with spaces removed from word boundaries
     words.trimmed = words.dirty.map((w) => { return w.trim() });
-    // console.log('Trimmed array is here: ' + words.trimmed);
 
     // 2. create words.collapsed, an array that lacks any UNDEFINED array memebers
     words.collapsed = words.trimmed.reduce(
@@ -91,10 +90,9 @@ function toWords(s) {
 
     // 3. everyone lowercased
     words.lowered = words.collapsed.map((x) => { return x.toLowerCase() });
-    // console.log('collapsed array is here: ' + words.collapsed);
+
     // 4. strip beginning and endings that are non-alpha but ignore interior no-alpha.
     words.justAlpha = words.lowered.map(item => alphaSanitize(item));
-    // TODO  TODO  TODO  TODO   toWords the ends
 
     return words.justAlpha;
 }
@@ -162,16 +160,14 @@ function skidMark(n, c) {
  */
 
 function oneWayScore(list1, list2) {
+    let tempString1 = list1.toString(), tempString2 = list2;
+    if (tempString1 === tempString2) return 1;
     // local copy
     const oneWay = {};
     oneWay.wordsI = makeLocal(list1);
     oneWay.wordsJ = makeLocal(list2);
     oneWay.orphans = [];
     oneWay.founds = [];
-    console.log('Here are list 1: ');
-    thingsShow(oneWay.wordsI);
-    console.log('Here are list 2: ');
-    thingsShow(oneWay.wordsJ);
     for (let i = 0, stop = oneWay.wordsI.length ; i < stop; i++) {
         for (let j = 0, stop = oneWay.wordsJ.length ; j < stop; j++) {
             // skidMark(oneWay.wordsI.length, '|'); // debugger
@@ -198,15 +194,33 @@ function oneWayScore(list1, list2) {
     thingsShow(oneWay.founds);
     console.log(`Here are the orphans: `);
     thingsShow(oneWay.orphans);
-    console.log(`math: ${oneWay.orphans.length} / (${oneWay.orphans.length} + ${oneWay.founds.length})`);
     const localScore = oneWay.orphans.length / (oneWay.orphans.length + oneWay.founds.length);
-    console.log(`About to return ${localScore} as local score.`);
     return localScore;
 }
 
 
 
 /*-----------M-A-I-N---------------------*/
+
+
+/* 
+accepts five args 
+str
+str
+id
+id
+id*/
+
+function main(str1, str2, id1, id2, id3) {
+    // get the three HTML elements
+    // 
+    const el1 = document.getElementById(id1);
+    el1.innerHTML = 'fooo.ooo.ooo.ooo.ooooooo'
+}
+
+console.log('Oh...');
+main(null, null, '1x' ,null, null);
+console.log('...yeah.');
 
 // remember: unlikeness is 1 for worst similarity, 0 for best similarity
 let unlikeness1 = 0,
@@ -215,8 +229,6 @@ let unlikeness1 = 0,
 let words1 = toWords(" a  b c d      e f");
 let words2 = toWords("xa xb xc xd xe xf xg xh xi xj a b c d xk xl xm e xn xo xp f xq xr xs");
 unlikeness1 = oneWayScore(words1, words2);
-console.log('\noooooooooooooOOooOoOOOoOoOooooooooooooo\n');
-console.log('oooooooooooooOOooOoOOOoOoOooooooooooooo\n');
 unlikeness2 = oneWayScore(words2, words1);
 totalUnlikeness = (unlikeness1 + unlikeness2) / 2;
 let likeness = 1 - totalUnlikeness;
@@ -224,18 +236,9 @@ let likeness = 1 - totalUnlikeness;
 console.log(`On a scale of 0 to 1, the similarity of these two texts is ${likeness}`);
 
 console.log((new Date()).toLocaleTimeString());
-
-
-
-
-/*   REAL DATA
-let wordsA =  toWords( "The easiest way to earn points with Fetch Rewards is to just shop for the products you already love. If you have any participating brands on your receipt, you'll get points based on the cost of the products. You don't need to clip any coupons or scan individual barcodes. Just scan each grocery receipt after you shop and we'll find the savings for you.");
-let wordsB = toWords("The easiest way to earn points with Fetch Rewards is to just shop for the items you already buy. If you have any eligible brands on your receipt, you will get points based on the total cost of the products. You do not need to cut out any coupons or scan individual UPCs. Just scan your receipt after you check out and we will find the savings for you.");
-unlikeness1 = ( onewayOrphanCheck(wordsA, wordsB));
-wordsA =  toWords( "The easiest way to earn points with Fetch Rewards is to just shop for the products you already love. If you have any participating brands on your receipt, you'll get points based on the cost of the products. You don't need to clip any coupons or scan individual barcodes. Just scan each grocery receipt after you shop and we'll find the savings for you.");
-	wordsB = toWords("The easiest way to earn points with Fetch Rewards is to just shop for the items you already buy. If you have any eligible brands on your receipt, you will get points based on the total cost of the products. You do not need to cut out any coupons or scan individual UPCs. Just scan your receipt after you check out and we will find the savings for you.");
-*/
-
+console.log('Oh...');
+main(null, null, '1x' ,null, null);
+console.log('...yeah.');
 
 
 
