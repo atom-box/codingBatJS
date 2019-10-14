@@ -8,203 +8,182 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
     <style type="text/css">
-    /*
-    I meant this page as a pure CSS learning exercise BUT it has BS. I'm mostly
-    using Bootstrap as a style reset.  TODO: write by hand a re-set.
-    */
-
-        :root { 
-            --lightGray: rgb(239, 239, 244); 
-            --darkGray: rgb(76, 77, 75);
-            --skyColor: rgb(124, 172, 255);
-            --palerSky: rgb(165, 220, 255 );
-            --infieldGreen: rgb(52, 147, 28);
-            --tigersNavy: rgb(7, 23, 53);
-        }
-        
-        button {
-          margin-left: 3rem;
-          height: 4rem;
-          width: 4rem;
-          background-color: white;
-          color: white;
-          border-radius: 2rem;
-          border-color: black;
-          border-width: 0.4rem;
-        }
-        img {
-          width: 98%;
-        }
-        .title__hoegarden {
-          text-shadow: 1px 1px 2px black, 0 0 25px gray, 0 0 5px black;
-          font-family: monospace;
-          color: white;
-          font-weight: 500;
-        }
-        
-        .title__skinny {
-          font-weight: 100;
-          text-indent: 2.5rem;
-          line-height: 2.6rem;
-        }
-        .title__explain {
-            padding: 0.4rem 2rem;
-        }
-        .elShadow {
-          box-shadow: 0 7px 7px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-          border: 0.1rem hidden;
-          border-radius: 0.3rem;
-        }
-
-        
-        .dashboard {
-          border: 2px  white;
-          margin: 0.5rem 2rem;
-          background-color: #444;
-          color:  var(--lightGray) ;
-          padding: 0.5rem;
-        }
-        
-        .dashboard__text {
-          margin: 0.3rem 1.5rem;
-          color: white;
-        }
-        
-        .dashboard__data-noneditable {
-          color: black;
-          background-color: #777;
-        }
-        
-        .codeboard {
-          border: 5px dashed #bbb;
-          margin: 0.5rem 2rem;
-          background-color: #222;
-          padding: 0.5rem;
-        }
-        
-        .codeboard__code {
-          color: #aaf;
-          margin: 0.3rem 1.5rem 0.3rem 1.9rem;
-
-
-        }
-        .block {
-          background-color:  var(--lightGray)       ;
-          margin: 1rem;
-          padding: 2rem;
-        }
-
-        .navyBackground {
-          background-color:  var(--tigersNavy);
-          xcolor: white;
-        }
-
-        .greenBackground {
-              background-color:  var(--infieldGreen);
-              border-radius: 0.6rem;
-              padding: 0.1rem 0.3rem;
-        }
-
+        /*
+        I meant this page as a pure CSS learning exercise BUT it has BS. I'm mostly
+        using Bootstrap as a style reset.  TODO: write by hand a re-set.
+        */
+    
+            :root { 
+                --lightGray: rgb(239, 239, 244); 
+                --darkGray: rgb(76, 77, 75);
+                --skyColor: rgb(124, 172, 255);
+                --palerSky: rgb(165, 220, 255 );
+                --infieldGreen: rgb(52, 147, 28);
+                --tigersNavy: rgb(7, 23, 53);
+            }
+            
+            button {
+              margin-left: 3rem;
+              height: 4rem;
+              width: 4rem;
+              background-color: white;
+              color: white;
+              border-radius: 2rem;
+              border-color: black;
+              border-width: 0.4rem;
+            }
+            img {
+              width: 98%;
+            }
+            h2 {
+              font-size: 1.45rem;
+            }
+            .title__hoegarden {
+              text-shadow: 1px 1px 2px black, 0 0 25px gray, 0 0 5px black;
+              font-family: monospace;
+              color: white;
+              font-weight: 500;
+            }
+            
+            .title__skinny {
+              font-weight: 100;
+              text-indent: 2.5rem;
+              line-height: 2.6rem;
+            }
+            .title__explain {
+                padding: 0.4rem 2rem;
+            }
+            .elShadow {
+              box-shadow: 0 7px 7px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+              border: 0.1rem hidden;
+              border-radius: 0.3rem;
+            }
+    
+            
+            .dashboard {
+              border: 2px  white;
+              margin: 0.5rem 2rem;
+              background-color: #444;
+              color:  var(--lightGray) ;
+              padding: 0.5rem;
+            }
+            
+            .dashboard__text {
+              margin: 0.3rem 1.5rem;
+              color: white;
+            }
+            
+            .dashboard__data-noneditable {
+              color: black;
+              background-color: #777;
+            }
+            
+            .codeboard {
+              border: 5px dashed #bbb;
+              margin: 0.5rem 2rem;
+              background-color: #222;
+              padding: 0.5rem;
+            }
+            
+            .codeboard__code {
+              color: #aaf;
+              margin: 0.3rem 1.5rem 0.3rem 1.9rem;
+    
+    
+            }
+            .block {
+              background-color:  var(--lightGray)       ;
+              margin: 1rem;
+              padding: 2rem;
+            }
+    
+            .navyBackground {
+              background-color:  var(--tigersNavy);
+              xcolor: white;
+            }
+    
+            .greenBackground {
+                  background-color:  var(--infieldGreen);
+                  border-radius: 0.6rem;
+                  padding: 0.1rem 0.3rem;
+            }
     </style>
 
 
 </head>
 
 <body>
+<header>
+        <h1 class="title__hoegarden float-left">Similarity</h1>
+        <h1 class="title__skinny">Analyze a pair of text samples</h1>
+</header>
 
-    <header>
-        <h2 class="title__hoegarden float-left">
-    Functional Javascript
-  </h2>
-        <h3 class="title__skinny">
-    for web-page reliability
-  </h3>
-      <div class="col-md-9 outblock block elShadow">
-        <p>I really want to build robust websites.</p>
-    <ul>
-        <li>In my imagination I dream of making my sites in <a href="https://elm-lang.org/">Elm</a> .</li>
-        <li>What is more likely this year is learning<a href="https://www.typescriptlang.org/">Typescript</a> .</li>
-        <li>What I've done so far: I'm using as much of the the existing <strong>Functional</strong> options within JS as I can.</li>
-    </ul> 
-      <p class="title__explain">"Pure functions are easier to reason about. Testing is easier, and pure functions lend themselves well to techniques like property-based testing. Debugging is easier. Programs are more bulletproof. " - <a href="https://alvinalexander.com/scala/fp-book/benefits-of-functional-programming">  Alvin Alexander</a>.</p> 
-</div>
-      <div class="col-md-9 outblock block elShadow">
-      <p>This page is just a list of syntax examples that emphasize Functional programming. With just a three letter prompt, can you guess the Functional principle for each abbreviation here?</p>
-<!-     uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu  -->
-<div class="container-fluid">
-<!-- Navbar Menu -->
+<div class="col-md-9 outblock block elShadow" id="filter1">
+    <h2>Analyze:</h2>
 
-        <ul >
-            <button><a href="index.html#map" title="MAP the array">MAP</a></button>
-            <button><a href="https://example.com" title="REDuce the array to a single value, which can be a primitive or object">RED</a></button>
-            <button><a href="index.html#filter2" title="FILter the array">FIL</a></button>
-            <button><a href="index.html#concatenate" title="instead of mutating existing array memebers, conCATenate the arrays" >CAT</a></button>
-            <button><a href="https://example.com" title="Instead of for-loops, use RECursive functions">REC</a></button>
-            <button><a href="index.html#join" title="don't mutate members, JOIn to make new arrays">JOI</a></button>        </ul>
- 
-</div>
-</div>
-    </header>
+    <div class="dashboard output elShadow">
+        <h4 class="dashboard__text">Text 1</h4>
+        <p class="dashboard__data-noneditable dashboard__text" id='demo4__after'>12345
+        </p>
+    </div>        
 
-<!-     uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu  -->
-
-
-    <div class="col-md-9 outblock block elShadow" id="filter1">
-
-        <h3>Filter</h3><p>Remove any occurance of "never" from Lear's lament.</p>
-
-
-        <div class="dashboard given elShadow">
-            <h4 class="dashboard__text">If the array was this</h4>
-            <p class="dashboard__data-noneditable dashboard__text" id='demo4__before'>
-            </p>
-        </div>
-                <div class="codeboard elShadow">
-        <h4 class="dashboard__text">And this is the function</h4>
-            <p  class="codeboard__code" id="concatenate">
-let sansNever =(w)=>{<br>
-    if (w ==='never'){<br>
-        return false;<br>
-    } else if (w!=='never'){<br>
-        return true;<br>
-    } else {<br>
-        console.log('ERROR');<br>
-    }<br>
-}<br>
-
-<br>
-lear_tears = bardWords.filter(sansNever);
-
-            </p>
-        </div>
-        <div class="dashboard output elShadow">
-            <h4 class="dashboard__text">This will be returned</h4>
-            <p class="dashboard__data-noneditable dashboard__text" id='demo4__after'>
-            </p>
-        </div>
+    <div class="dashboard output elShadow">
+        <h4 class="dashboard__text">Text 2</h4>
+        <p class="dashboard__data-noneditable dashboard__text" id='demo4__after'>12345
+        </p>
     </div>
 
+    <div class="dashboard output elShadow">
+        <h4 class="dashboard__text">Similarity</h4>
+        <p class="dashboard__data-noneditable dashboard__text" id='demo4__after'>12345
+        </p>
+    </div>
+</div>
 
- 
+    <section>
+        <div class="col-md-9 outblock block elShadow">
+          <h2>Explanation</h2>
+            <p>I was given the following challenge: <span><code>write a program that takes as inputs two file paths and uses a metric to determine how similar they are.  Documents that are exactly the same should get a score of 1, and documents that don’t have any words in common should get a score of 0.</code></span></p>
+            <p>My first back of the envelope solution is this:</p>
+            <ol>
+                <li>Take the two input strings, remove punctuation, spaces, and any non alpha chars, to create a pair of word arrays</li>
+                <li>Tally any members of List 1 that do not occur in list 2.</li>
+                <li>Repeat the orphan tally but in the reverse direction, tallying any members of List 1 that do not occur in list 2.</li>
+                <li>Return a similiarity score: take the inverse of the average of orphans/allwords. So on a scale of 0 to 1, 1 represents utter disimilarity and 0 represents complete identity.</li>
+                <li>Use the crudest imaginable weighting in the score, considering words of less than 5 letters to count as less important in the scoring. So misaligned cases of <span><code>of, the, and 'a'</code></span>are penalized less than <span><code>smooth, pelican, and coelecanth</code></span>. This is not great, since strange members like <span><code>gnat, gnu, and ax</code></span> now become deemphasized content in the text.</li>
+            </ol>
+        </div>
+        <div class="col-md-9 outblock block elShadow">
+          <h2>To do</h2>
+          <p>Some fun improvements to this project could include the following:</p>
+          <ul>
+            <li>rewrite the logic to follow <a href="https://binf.snipcademy.com/lessons/pairwise-alignment/global-needleman-wunsch">Needleman-Wunsch</a>, from gene alignment + BLAST</li>
+            <li>use some sort of library in the weighting, not word length</li>
+            <li>add buttons to choose from possible texts to align.</li>
+            <li>sanitize inputs; allow user-pasted or uploaded text</li>
+            <li>deploy from a Node.js server</li>
+            <li>write with React.js</li>
+            <li>clean up the CSS borrowed from my old page</li>
+          </ul>
+        </div>
+    </section>
 
     <div class="col-md-9 outblock block elShadow">
         <footer>
             <div class="starboard">
-                <span>Evan Genest is on: </span>
+                <span>Reach Evan Genest at: </span>
                 <i class="fab fa-github"></i>
-                <a href="https://github.com/atom-box/">Github</a>
+                <a href="https://github.com/atom-box/"> Github </a>
                 <i class="fab fa-twitter"></i>
-                <a href="https://twitter.com/mistergenest">Twitter</a>
-                <i class="fab fa-linkedin"></i><a href="https://www.linkedin.com/in/evan-genest-b6648380">LinkedIn </a>
+                <a href="https://twitter.com/mistergenest"> Twitter </a>
+                <i class="fab fa-linkedin"></i><a href="https://www.linkedin.com/in/evan-genest-b6648380"> LinkedIn </a><i class="fas fa-address-card"></i><a href="http://littlefurnace.com"> Portfolio </a> 
             </div>
         </footer>
     </div>
 
-    <script  src="./helpers/textSimilarity.js"></script>
+    <script src="./helpers/textSimilarity.js"></script>
 </body>
 
-<!-- The following works IF you do type="text/javascript" then your problem is, it can't import from its module.  TOP.JS complains 'import declarations may only appear at top level of a module' no matter what you do.-->
-<!-- <script type="text/javascript" src="./js/top.js"></script>     -->
 
 
 
