@@ -21,14 +21,14 @@ What's going on here:
 // lint it
 // edit comments to AirBnB style guide
 // TODO Have mercy: take 5 minutes each to roll back, show output, 
-// Refactor so an array of orphans is returned.
-// That array goes into a scorer that returns a fraction of 1.
-// This gets repeated for the backwards.
-// Divide these by two and return the inverse.
+// TODO Refactor so an array of orphans is returned.
+// TODO That array goes into a scorer that returns a fraction of 1.
+// TODO This gets repeated for the backwards.
+// TODO Divide these by two and return the inverse.
 
-// Make the array builder to strip punctuation and casing and remove undefined.
-// Make a web page.
-// Make an API.
+// TODO Make the array builder to strip punctuation and casing and remove undefined.
+// TODO Make a web page.
+// TODO Make an API.
 
 
 
