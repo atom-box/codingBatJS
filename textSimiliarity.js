@@ -1,12 +1,5 @@
 /*
-	Refactor so an array of orphans is returned.
-	That array goes into a scorer that returns a fraction of 1.
-	This gets repeated for the backwards.
-	Divide these by two and return the inverse.
 
-	Make the array builder to strip punctuation and casing and remove undefined.
-	Make a web page.
-	Make an API.
 */
 
 
@@ -28,6 +21,14 @@ What's going on here:
 // lint it
 // edit comments to AirBnB style guide
 // TODO Have mercy: take 5 minutes each to roll back, show output, 
+// Refactor so an array of orphans is returned.
+// That array goes into a scorer that returns a fraction of 1.
+// This gets repeated for the backwards.
+// Divide these by two and return the inverse.
+
+// Make the array builder to strip punctuation and casing and remove undefined.
+// Make a web page.
+// Make an API.
 
 
 
@@ -176,16 +177,23 @@ function oneWayScore(list1, list2) {
             // skidMark(oneWay.wordsI.length, '|'); // debugger
             // skidMark(oneWay.wordsJ.length, '_'); // debugger
             if (oneWay.wordsI[i] === oneWay.wordsJ[j]) {
+
+                //remove the found word and append to FOUNDS
                 oneWay.founds.push(oneWay.wordsJ.splice(j, 1));
-                if (j > 0) {    // this on monday
-                    console.log('w o o f ' + oneWay.wordsJ.splice(0, j - 1).length + ' me ow');
-                    oneWay.orphans.concat(99, 101);
-                    // 
+                if (j > 0) {
+                    let a = oneWay.orphans.concat( oneWay.wordsJ.splice(0, j) );
+                    oneWay.orphans = a;
                 }
                 break;
             }
         }
+
     }
+
+    // Reverse now, only because it makes the splice in the nested loop more readable
+    oneWay.orphans.reverse();
+    oneWay.orphans.concat(0,0,'after nested loop', 'after nested lop');
+
     console.log(`Here are the founds: `);
     thingsShow(oneWay.founds);
     console.log(`Here are the orphans: `);
@@ -204,15 +212,17 @@ function oneWayScore(list1, list2) {
 let unlikeness1 = 0,
     unlikeness2 = 0,
     totalUnlikeness = 0;
-let words1 = toWords("a b c d e f");
-let words2 = toWords("x x x x x x x x x x a b c d x x x e x x x f x x x");
+let words1 = toWords(" a  b c d      e f");
+let words2 = toWords("xa xb xc xd xe xf xg xh xi xj a b c d xk xl xm e xn xo xp f xq xr xs");
 unlikeness1 = oneWayScore(words1, words2);
 console.log('\noooooooooooooOOooOoOOOoOoOooooooooooooo\n');
 console.log('oooooooooooooOOooOoOOOoOoOooooooooooooo\n');
 unlikeness2 = oneWayScore(words2, words1);
 totalUnlikeness = (unlikeness1 + unlikeness2) / 2;
+let likeness = 1 - totalUnlikeness;
 // Meaningless timestamp.
-console.log(`On a scale of 0 to 1, the badness of these two texts is ${totalUnlikeness}`)
+console.log(`On a scale of 0 to 1, the similarity of these two texts is ${likeness}`);
+
 console.log((new Date()).toLocaleTimeString());
 
 
