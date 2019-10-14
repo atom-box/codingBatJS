@@ -234,6 +234,9 @@ function main(str1, str2, id1, id2, id3) {
     const el3 = document.getElementById(id3);
     totalUnlikeness = (unlikeness1 + unlikeness2) / 2;
     let likeness = 1 - totalUnlikeness;
+    likeness *= 100;
+    likeness = Math.round(likeness);
+    likeness /=100;
 
     // Meaningless timestamp.
     console.log(`On a scale of 0 to 1, the similarity of these two texts is ${likeness}`);
@@ -245,9 +248,20 @@ function main(str1, str2, id1, id2, id3) {
     return;
 }
 
-main(`If you have any  get points `, `If you have any participating brands on your receipt, you'll get points `, '1x', '1y', '1answer');
-main(`If you have any  receipt, you'll get points `, `If you have any participating brands on your receipt, you'll get points `, '2x', '2y', '2answer');
-main(`brands on your receipt, you'll get points `, `If you have any participating brands on your receipt, you'll get points `, '3x', '3y', '3answer');
+
+const textA = `The easiest way to earn points with Fetch Rewards is to just shop for the products you already love. If you have any participating brands on your receipt, you'll get points based on the cost of the products. You don't need to clip any coupons or scan individual barcodes. Just scan each grocery receipt after you shop and we'll find the savings for you.`;
+const textB = `The easiest way to earn points with Fetch Rewards is to just shop for the items you already buy. If you have any eligible brands on your receipt, you will get points based on the total cost of the products. You do not need to cut out any coupons or scan individual UPCs. Just scan your receipt after you check out and we will find the savings for you.`;
+const textC = `We are always looking for opportunities for you to earn more points, which is why we also give you a selection of Special Offers. These Special Offers are opportunities to earn bonus points on top of the regular points you earn every time you purchase a participating brand. No need to pre-select these offers, we'll give you the points whether or not you knew about the offer. We just think it is easier that way.`;
+const textX = 'FOO BAR BAZ';
+
+
+
+
+main(textA, textB, '1x', '1y', '1answer');
+main(textB, textC, '2x', '2y', '2answer');
+main(textA, textC, '3x', '3y', '3answer');
+main(textC, textC, '4x', '4y', '4answer');
+main(textA, textX, '5x', '5y', '5answer');
 
 
 
