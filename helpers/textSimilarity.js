@@ -190,32 +190,26 @@ function oneWayScore(list1, list2) {
     oneWay.orphans.reverse();
     oneWay.orphans.concat(0,0,'after nested loop', 'after nested lop');
 
-    console.log(`Here are the founds: `);
+    // Checks for "none found"; without this, "none found" returns NaN. 
+    if(oneWay.founds < 1){ return 1 }
+
+    console.log(`Here are ${oneWay.founds.length} founds: `);
     thingsShow(oneWay.founds);
-    console.log(`Here are the orphans: `);
+    console.log(`Here are ${oneWay.orphans.length} orphans: `);
     thingsShow(oneWay.orphans);
     const localScore = oneWay.orphans.length / (oneWay.orphans.length + oneWay.founds.length);
+    console.log(`Conclusion of function ONEWAYSCORE is that the score is ${localScore}`)
     return localScore;
 }
 
 
 
 /*-----------M-A-I-N---------------------*/
-
-
-/* 
-accepts five args 
-str
-str
-id
-id
-id*/
-
 /*
 ** Function to create content in the HTML layout.
 **  Accepts two strings as input data.
-**  Accepts two div IDs for showing the input data
-**  and one div ID for outputting the result.
+**  Accepts two div IDs for showing the input data.
+**  Accepts one div ID for outputting the result.
 */
 
 function main(str1, str2, id1, id2, id3) {
@@ -234,14 +228,19 @@ function main(str1, str2, id1, id2, id3) {
     const el3 = document.getElementById(id3);
     totalUnlikeness = (unlikeness1 + unlikeness2) / 2;
     let likeness = 1 - totalUnlikeness;
+    console.log(likeness);
     likeness *= 100;
+    console.log(likeness);
     likeness = Math.round(likeness);
+    console.log(likeness);
     likeness /=100;
+    console.log(likeness);
 
     // Meaningless timestamp.
     console.log(`On a scale of 0 to 1, the similarity of these two texts is ${likeness}`);
     console.log((new Date()).toLocaleTimeString());
 
+    // Write the results to the HTML page
     el1.innerHTML = str1;
     el2.innerHTML = str2;
     el3.innerHTML = likeness;
