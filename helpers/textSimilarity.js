@@ -181,7 +181,10 @@ function oneWayScore(list1, list2) {
                     oneWay.orphans = a;
                 }
                 break;
+
             }
+            let a = oneWay.orphans.concat( oneWay.wordsJ.splice(0, j) );
+            oneWay.orphans = a;
         }
 
     }
@@ -252,7 +255,7 @@ const textA = `The easiest way to earn points with Fetch Rewards is to just shop
 const textB = `The easiest way to earn points with Fetch Rewards is to just shop for the items you already buy. If you have any eligible brands on your receipt, you will get points based on the total cost of the products. You do not need to cut out any coupons or scan individual UPCs. Just scan your receipt after you check out and we will find the savings for you.`;
 const textC = `We are always looking for opportunities for you to earn more points, which is why we also give you a selection of Special Offers. These Special Offers are opportunities to earn bonus points on top of the regular points you earn every time you purchase a participating brand. No need to pre-select these offers, we'll give you the points whether or not you knew about the offer. We just think it is easier that way.`;
 const textX = 'FOO BAR BAZ';
-
+const textY = 'foo foo foo';
 
 
 
@@ -261,6 +264,7 @@ main(textB, textC, '2x', '2y', '2answer');
 main(textA, textC, '3x', '3y', '3answer');
 main(textC, textC, '4x', '4y', '4answer');
 main(textA, textX, '5x', '5y', '5answer');
+main(textY, textX, '6x', '6y', '6answer');
 
 
 
