@@ -47,8 +47,11 @@
               text-decoration: none;
               border: solid transparent 0.2rem;
             }
+            h4 a {
+                   color: white;
+            }
             a:hover {
-              background-color:  var(--darkGray);
+              background-color:  var(--tigersNavy);
               text-decoration: none;
               color: white !important;
             }
@@ -152,7 +155,7 @@
     </div>
 
     <div class="dashboard output elShadow">
-        <h4 class="dashboard__text">Similarity <a  href="#explanation">?</a></h4>
+        <h4 class="dashboard__text"><a  href="#explanation">Similarity </a></h4>
         <p class="dashboard__data-noneditable dashboard__text" id='1answer'>12345
         </p>
         
@@ -176,7 +179,7 @@
     </div>
 
     <div class="dashboard output elShadow">
-        <h4 class="dashboard__text">Similarity <a  href="#explanation">?</a></h4>
+        <h4 class="dashboard__text"><a  href="#explanation">Similarity </a></h4>
         <p class="dashboard__data-noneditable dashboard__text" id='2answer'>12345
         </p>
         
@@ -199,7 +202,7 @@
     </div>
 
     <div class="dashboard output elShadow">
-        <h4 class="dashboard__text">Similarity <a  href="#explanation">?</a></h4>
+        <h4 class="dashboard__text"><a  href="#explanation">Similarity </a></h4>
         <p class="dashboard__data-noneditable dashboard__text" id='3answer'>12345
         </p>
       
@@ -222,7 +225,7 @@
     </div>
 
     <div class="dashboard output elShadow">
-        <h4 class="dashboard__text">Similarity <a  href="#explanation">?</a></h4>
+        <h4 class="dashboard__text"><a  href="#explanation">Similarity </a></h4>
         <p class="dashboard__data-noneditable dashboard__text" id='4answer'>12345
         </p>
         
@@ -249,8 +252,31 @@
     </div>
 
     <div class="dashboard output elShadow">
-        <h4 class="dashboard__text">Similarity <a  href="#explanation">?</a></h4>
+        <h4 class="dashboard__text"><a  href="#explanation">Similarity </a></h4>
         <p class="dashboard__data-noneditable dashboard__text" id='5answer'>12345
+        </p>
+        
+    </div>
+</div>
+
+<div class="col-md-9 outblock block elShadow" id="filter1">
+    <h2>Analyze "foo foo foo" versus "FOO BAR BAZ":</h2>
+
+    <div class="dashboard output elShadow">
+        <h4 class="dashboard__text">Text</h4>
+        <p class="dashboard__data-noneditable dashboard__text" id='6x'>12345
+        </p>
+    </div>        
+
+    <div class="dashboard output elShadow">
+        <h4 class="dashboard__text">Text</h4>
+        <p class="dashboard__data-noneditable dashboard__text" id='6y'>12345
+        </p>
+    </div>
+
+    <div class="dashboard output elShadow">
+        <h4 class="dashboard__text"><a  href="#explanation">Similarity </a></h4>
+        <p class="dashboard__data-noneditable dashboard__text" id='6answer'>12345
         </p>
         
     </div>
@@ -258,16 +284,16 @@
 
     <section>
         <div class="col-md-9 outblock block elShadow" id="explanation">
-          <h2>Explanation of the calculations performed above</h2>
+          <h2>How I calculated "similarity"</h2>
             <p>I was given the following challenge: <span><code> Write a program that takes as inputs two file paths and uses a metric to determine how similar they are.  Documents that are exactly the same should get a score of 1, and documents that don’t have any words in common should get a score of 0.</code></span></p>
-            <p>To see my solution in detail, check out <a href="https://github.com/atom-box/codingBatJS/blob/master/helpers/textSimilarity.js"> its repository</a>.  To see the code run, open the console of your browser and reload this page.</p>
-            <p>The logic I used is just Javascript.  It is my naive back of the envelope solution, avoiding established algorithms, especially the <a href="https://binf.snipcademy.com/lessons/pairwise-alignment/global-needleman-wunsch">Needleman-Wunsch</a> algorithm.  My naive strategy is this:</p>
+            <p>The logic I used is just Javascript. I avoided libraries or known algorithms and made a naive back of the envelope solution.  I especially avoided the main algorithm I know from DNA testing, the <a href="https://binf.snipcademy.com/lessons/pairwise-alignment/global-needleman-wunsch">Needleman-Wunsch</a> algorithm.  So my naive strategy is this:</p>
             <ol>
                 <li>Take the two input strings, remove punctuation, spaces, and any non alpha chars, to create a pair of word arrays</li>
                 <li>Tally any members of List 1 that do not occur in list 2.</li>
                 <li>Repeat the orphan tally but in the reverse direction, tallying any members of List 1 that do not occur in list 2.</li>
                 <li>Return a similiarity score: take the inverse of the average of orphans/allwords. So on a scale of 0 to 1, 1 represents utter disimilarity and 0 represents complete identity.</li>
             </ol>
+            <p>To see my solution in detail, check out <a href="https://github.com/atom-box/codingBatJS/blob/master/helpers/textSimilarity.js"> its repository</a>.  To see the code run, open the console of your browser and reload this page.</p>
         </div>
         <div class="col-md-9 outblock block elShadow">
           <h2>Discussion</h2>
