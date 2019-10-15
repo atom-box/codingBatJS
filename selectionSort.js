@@ -25,18 +25,31 @@ for j starting with j = i + 1
 **
 **
 */
-function makeArray(reps) {
-	let stringNum = "", newNums = [], allNums = [];
-	while(reps--){
-		stringNum += (Math.random() * 100000000000000000).toString();
+
+
+function makeArray(n) {
+	let allNums = [];
+	while(n--){
+		allNums.push(Math.round(Math.random() * 1000));
 	}
-	newNums = stringNum.split('');
-	allNums = newNums.map( val =>  Number(val) )
 	return allNums;
 }
+
+function insertSort(raws){
+	for( let i = 0, stop = raws.length; i < stop; i++){
+		for( let j = i + 1; j < stop; j++){
+			console.log(`[${raws[0]}] and [${raws[j]}]`);
+		}
+	}
+	return `Finished sorting ${raws.length} numbers at ${( new Date()).toLocaleTimeString()} `
+} 
+
 
 
 
 /*----M-A-I-N------------*/
-console.log( makeArray(22) );
+console.log( `Started at ${( new Date()).toLocaleTimeString()}`);
+let scores =  makeArray(22);
+console.log( insertSort(scores) );
+
 
