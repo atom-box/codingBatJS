@@ -21,16 +21,19 @@
                 --infieldGreen: rgb(52, 147, 28);
                 --tigersNavy: rgb(7, 23, 53);
             }
-            
-            button {
-              margin-left: 3rem;
-              height: 4rem;
-              width: 4rem;
-              background-color: white;
-              color: white;
-              border-radius: 2rem;
-              border-color: black;
-              border-width: 0.4rem;
+            header {
+              display: flex;
+              align-content: center;
+            }
+
+            h1 a.title__hoegarden {
+              border-radius: 1rem;
+              float: right;
+              margin-right: -4rem;
+            }
+            h1 a.title__hoegarden:hover  {
+              color: blue;
+              background-color: transparent;
             }
             img {
               width: 98%;
@@ -38,11 +41,22 @@
             h2 {
               font-size: 1.45rem;
             }
+
+            a {
+              color: var(--infieldGreen);
+              text-decoration: none;
+              border: solid transparent 0.2rem;
+            }
+            a:hover {
+              background-color:  yellow;
+              text-decoration: none;
+            }
             .title__hoegarden {
               text-shadow: 1px 1px 2px black, 0 0 25px gray, 0 0 5px black;
               font-family: monospace;
               color: white;
               font-weight: 500;
+              margin-left: 2rem;
             }
             
             .title__skinny {
@@ -110,12 +124,15 @@
     </style>
 
 
-</head>
+</head>                 
 
 <body>
 <header>
+
         <h1 class="title__hoegarden float-left">Similarity</h1>
-        <h1 class="title__skinny">Analyze a pair of text samples</h1>
+        <h1 class="title__skinny float-left">Analyze a pair of text samples</h1>
+
+        
 </header>
 
 <div class="col-md-9 outblock block elShadow" id="filter1">
@@ -137,7 +154,9 @@
         <h4 class="dashboard__text">Similarity</h4>
         <p class="dashboard__data-noneditable dashboard__text" id='1answer'>12345
         </p>
+        <h1><a class="title__hoegarden" href="#explanation">?</a><h1>
     </div>
+
 </div>
 
 <div class="col-md-9 outblock block elShadow" id="filter1">
@@ -159,6 +178,7 @@
         <h4 class="dashboard__text">Similarity</h4>
         <p class="dashboard__data-noneditable dashboard__text" id='2answer'>12345
         </p>
+        <h1><a class="title__hoegarden" href="#explanation">?</a><h1>
     </div>
 </div>
 
@@ -181,6 +201,7 @@
         <h4 class="dashboard__text">Similarity</h4>
         <p class="dashboard__data-noneditable dashboard__text" id='3answer'>12345
         </p>
+      <h1><a class="title__hoegarden" href="#explanation">?</a><h1>
     </div>
 </div>
 
@@ -203,6 +224,7 @@
         <h4 class="dashboard__text">Similarity</h4>
         <p class="dashboard__data-noneditable dashboard__text" id='4answer'>12345
         </p>
+        <h1><a class="title__hoegarden" href="#explanation">?</a><h1>
     </div>
 </div>
 
@@ -229,14 +251,16 @@
         <h4 class="dashboard__text">Similarity</h4>
         <p class="dashboard__data-noneditable dashboard__text" id='5answer'>12345
         </p>
+        <h1><a class="title__hoegarden" href="#explanation">?</a><h1>
     </div>
 </div>
 
     <section>
-        <div class="col-md-9 outblock block elShadow">
-          <h2>Explanation</h2>
-            <p>I was given the following challenge: <span><code>write a program that takes as inputs two file paths and uses a metric to determine how similar they are.  Documents that are exactly the same should get a score of 1, and documents that don’t have any words in common should get a score of 0.</code></span></p>
-            <p>The results above are obtained by this logic.  To see the code in detail, check out its repository.  To see the code run, open the console of your browser and reload this page.   The logic is just Javascript and is my naive back of the envelope solution, without using the established algorithms (see below).  My naive strategy is:</p>
+        <div class="col-md-9 outblock block elShadow" id="explanation">
+          <h2>Explanation of the calculations performed above</h2>
+            <p>I was given the following challenge: <span><code> Write a program that takes as inputs two file paths and uses a metric to determine how similar they are.  Documents that are exactly the same should get a score of 1, and documents that don’t have any words in common should get a score of 0.</code></span></p>
+            <p>To see my solution in detail, check out <a href="https://github.com/atom-box/codingBatJS/blob/master/helpers/textSimilarity.js"> its repository</a>.  To see the code run, open the console of your browser and reload this page.</p>
+            <p>The logic I used is just Javascript.  It is my naive back of the envelope solution, avoiding established algorithms, especially the <a href="https://binf.snipcademy.com/lessons/pairwise-alignment/global-needleman-wunsch">Needleman-Wunsch</a> algorithm.  My naive strategy is this:</p>
             <ol>
                 <li>Take the two input strings, remove punctuation, spaces, and any non alpha chars, to create a pair of word arrays</li>
                 <li>Tally any members of List 1 that do not occur in list 2.</li>
@@ -246,7 +270,7 @@
         </div>
         <div class="col-md-9 outblock block elShadow">
           <h2>Discussion</h2>
-          <p>Some fun improvements to this project could include the following:</p>
+          <p>Some satisfying improvements to this project could include the following:</p>
           <ul>
             <li>rewrite the logic to follow the <a href="https://binf.snipcademy.com/lessons/pairwise-alignment/global-needleman-wunsch">Needleman-Wunsch</a> algorithm, common in gene alignment + BLAST</li>
             <li>Use a weighting in the score, considering words of less than 5 letters to count as less important in the scoring. So misaligned cases of <span><code>of, the, and 'a'</code></span>are penalized less than <span><code>smooth, pelican, and coelecanth</code></span>. This is not great, since strange members like <span><code>gnat, gnu, and ax</code></span> now become deemphasized content in the text.</li>
@@ -263,7 +287,7 @@
     <div class="col-md-9 outblock block elShadow">
         <footer>
             <div class="starboard">
-                <span>Reach Evan Genest at: </span>
+                <span>Made by Evan Genest: </span>
                 <i class="fab fa-github"></i>
                 <a href="https://github.com/atom-box/"> Github </a>
                 <i class="fab fa-twitter"></i>
