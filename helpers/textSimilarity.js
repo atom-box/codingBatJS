@@ -232,11 +232,11 @@ function main(str1, str2, id1, id2, id3) {
     totalUnlikeness = (unlikeness1 + unlikeness2) / 2;
     let likeness = 1 - totalUnlikeness;
     console.log(likeness);
-    likeness *= 100;
+    likeness *= 1000;
     console.log(likeness);
     likeness = Math.round(likeness);
     console.log(likeness);
-    likeness /=100;
+    likeness /=1000;
     console.log(likeness);
 
     // Meaningless timestamp.
