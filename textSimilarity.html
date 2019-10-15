@@ -26,15 +26,20 @@
               align-content: center;
             }
 
-            h1 a.title__hoegarden {
+            h4.dashboard__text a {
               border-radius: 1rem;
-              float: right;
-              margin-right: -4rem;
+              text-decoration: underline;
+
             }
-            h1 a.title__hoegarden:hover  {
-              color: white;
-              background-color: transparent;
+            h4.dashboard__text a:hover  {
+              background-color: #444;
+              text-decoration: none;
+              margin-left: 0.15rem;
+              margin-bottom: 0.15rem;
+
+
             }
+
             img {
               width: 98%;
             }
@@ -126,17 +131,12 @@
                   padding: 0.1rem 0.3rem;
             }
     </style>
-
-
-</head>                 
+</head>
 
 <body>
 <header>
-
         <h1 class="title__hoegarden float-left">Similarity</h1>
         <h1 class="title__skinny float-left">Analyze a pair of text samples</h1>
-
-        
 </header>
 
 <div class="col-md-9 outblock block elShadow" id="filter1">
@@ -284,8 +284,8 @@
 
     <section>
         <div class="col-md-9 outblock block elShadow" id="explanation">
-          <h2>How I calculated "similarity"</h2>
-            <p>I was given the following challenge: <span><code> Write a program that takes as inputs two file paths and uses a metric to determine how similar they are.  Documents that are exactly the same should get a score of 1, and documents that don’t have any words in common should get a score of 0.</code></span></p>
+          <h2>Notes on the method</h2>
+            <p>I was given the following challenge: <br><span><code> Write a program that takes as inputs two file paths and uses a metric to determine how similar they are.  Documents that are exactly the same should get a score of 1, and documents that don’t have any words in common should get a score of 0.</code></span></p>
             <p>The logic I used is just Javascript. I avoided libraries or known algorithms and made a naive back of the envelope solution.  I especially avoided the main algorithm I know from DNA testing, the <a href="https://binf.snipcademy.com/lessons/pairwise-alignment/global-needleman-wunsch">Needleman-Wunsch</a> algorithm.  So my naive strategy is this:</p>
             <ol>
                 <li>Take the two input strings, remove punctuation, spaces, and any non alpha chars, to create a pair of word arrays</li>
