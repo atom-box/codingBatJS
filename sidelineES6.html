@@ -9,6 +9,7 @@
   <title>Modern Javascript | Evan Genest</title>
   <meta charset="utf-8">
   <script src="https://kit.fontawesome.com/c0497ccda4.js"></script>
+  <link rel="icon" type="image/png" href="images/9.png" />
 
 
 <style type="text/css">
@@ -440,10 +441,40 @@ button.arrow:hover {
     </li>
     <li>
       <div>
-        <time>2005</time> <p> In mattis elit vitae odio posuere, nec maximus massa varius. Suspendisse varius volutpat mattis. Vestibulum id magna est.
+        <time>LITERALS</time> <p> New object literal syntax
       </p></div>
     </li>
-    <li></li>
+    </li>
+    <li>
+      <div>
+        <time>SPREAD</time> <p> Rest  &  Spread
+      </p></div>
+    </li>    </li>
+    <li>
+      <div>
+        <time>CLASS</time> <p> "Use class in React components but avoid them otherwise, generally." -Samer Goba
+      </p></div>
+    </li>    </li>
+    <li>
+      <div>
+        <time>YABBA</time> <p> Yabba, Dabba, Do!
+      </p></div>
+    </li>    </li>
+    <li>
+      <div>
+        <time>YABBA</time> <p> Yabba, Dabba, Do!
+      </p></div>
+    </li>    </li>
+    <li>
+      <div>
+        <time>YABBA</time> <p> Yabba, Dabba, Do!
+      </p></div>
+    </li>    </li>
+    <li>
+      <div>
+        <time>YABBA</time> <p> Yabba, Dabba, Do!
+      </p></div>
+    </li>    <li></li>
   </ol>
   
 
@@ -504,7 +535,7 @@ George Martsoukos does a patient job of explaining the JS for this in a tutorial
     arrowNext = document.querySelector(".timeline .arrows .arrow__next"),
     firstItem = document.querySelector(".timeline li:first-child"),
     lastItem = document.querySelector(".timeline li:last-child"),
-    xScrolling = 280,
+    xScrolling = 560,
     disabledClass = "disabled";
 
 
@@ -584,7 +615,7 @@ George Martsoukos does a patient job of explaining the JS for this in a tutorial
         setTimeout(() => {
           isElementInViewport(firstItem) ? setBtnState(arrowPrev) : setBtnState(arrowPrev, false);
           isElementInViewport(lastItem) ? setBtnState(arrowNext) : setBtnState(arrowNext, false);
-        }, 1100);
+        }, 600);
 
         counter++;
       });
