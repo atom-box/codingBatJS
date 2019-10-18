@@ -1,3 +1,5 @@
+<!-- reusable: overlay style -->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,18 +13,31 @@
   			min-height: 16rem;
 
   		}
-  		.layover {
-  			position: absolute;
-  			top: 0px;
-  		}
   		span.text-info {
   			font-weight: 100;
+        background-color: rgba(0,0,0, 0,5); ;
   		}
 
   		article.card.text-center {
   			margin-bottom: 1rem;
   		}
 
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* Black see-through */
+    width: 100%;
+    font-size: 20px;
+    padding: 20px;
+    color: white;
+  }
+
+  address a {
+    color: yellow;
+  }
+  address a:hover {
+    color: white;
+  }
   </style>
 </head>
 <body>
@@ -210,11 +225,9 @@ null
 
 <footer class="card">
 	<img class="card-img-top" src="images/navajo_1193x238.png" />
-	<div class="container ">
-		<div class="">
-			<h2 class="text-right ">Making things in Madison, Wisconsin:       <span class="text-info"><a href="http://littlefurnace.com"> Evan Genest </a> </span> </h2>
+	<div class="overlay">
+			<address><h6 class="text-right ">Making things in Madison, Wisconsin:       <span class="text-info"><a href="http://littlefurnace.com"> Evan Genest </a> </span> </h6></address>
 		</div>
-	</div>
 </footer>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
