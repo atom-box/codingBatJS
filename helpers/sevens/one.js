@@ -38,6 +38,17 @@ dice.el = document.getElementById('diceout');
 dice.el.innerHTML = `<h3 style="color:transparent; font-family: serif;"> nada surf</h3>`
 
 
+// 3rd tab
+
+let code1El = document.getElementById('code1');
+code1El.innerHTML = `
+<div>
+<p>This took three tries; I'm glad there was more to this question than first assumed!</p>
+	<p>My <a href="https://github.com/atom-box/codingBatJS/blob/master/helpers/sevens/one.js"> solution</a> in javascript</p>
+</div>
+`;
+
+
 
 // MAKE THE CONTENT REACT SO YOU CAN USE JSX,  KEEP IT BASIC
 // THEN SOLVE TWO CODE CHALLENGES but don't deploy, debug just as node RePL.
