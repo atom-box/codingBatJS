@@ -1,12 +1,15 @@
 let dice = {};
 
 dice.roll5 = function() {
-	return Math.floor(5 * Math.random()) + 1;
+	return Math.ceil(5 * Math.random());
 }
 
 // Assignment: implement this as a modification of output from dice.roll5 = function
 dice.roll7 = function() {
-	return Math.round(7 * dice.roll5() / 7);
+	// 1.59... keeps it below 8 
+	dice.seven = (dice.roll5() - 1) * 1.39999999 + (dice.roll5() * (1.39999999/5));
+	dice.seven = Math.ceil(dice.seven);
+	return dice.seven;
 }
 
 dice.show5 = function() {
@@ -16,7 +19,7 @@ dice.show5 = function() {
 }
 
 dice.show7 = function() {
-	dice.el.innerHTML = `not straightfoward; still working on this`;
+	dice.el.innerHTML = dice.roll7();
 	dice.el.style = `color: red;`
 }
 
