@@ -9,33 +9,29 @@ dice.roll7 = function() {
 	return 7 * dice.roll5() / 7;
 }
 
-
 dice.show5 = function() {
-	dice.el5 = document.getElementById('diceout5');
+	// dice.el = document.getElementById('diceout');
 	console.log(dice.roll5());
 }
 
 dice.show7 = function() {
-	dice.el7 = document.getElementById('diceout7');
+	// dice.el = document.getElementById('diceout');
 	console.log(dice.roll7());
 }
 
-
-
-
 let sol1 = document.getElementById('solution1');
 sol1.innerHTML = `
-<form ><label>Gotta roll a dice with sides of </label><button type="button" onclick="dice.show5()"> five </button> 
-<p id="diceout5"></p>
-
-<label>Gotta roll a dice with sides of </label><button type="button" onclick="dice.show7()"> seven </button>
-<p id="diceout7"></p>
-</form>
+<h3>Roll a dice with sides of</h3>
+<div class="btn-group">
+    <button type="button" class="btn btn-primary btn-sm" onclick="dice.show5()" > five</button>
+    <button type="button" class="btn btn-primary btn-sm" onclick="dice.show7()" > seven</button>
+</div>
+<p id="diceout"></p>
 `;
 
 // take up some space
-dice.el5 = document.getElementById('diceout5');
-dice.el5.innerHTML = `<p style="color:transparent"> nada surf</p>`
+dice.el = document.getElementById('diceout');
+dice.el.innerHTML = `<p style="color:transparent"> nada surf</p>`
 
 
 
