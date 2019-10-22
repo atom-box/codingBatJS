@@ -83,9 +83,8 @@ function Node(phone, first){
 // takes Person object  
 linked.extend = function(p) {
 	linked.newborn = new Node(p.phone, p.first);
-	linked.list[linked.newborn.id] = 
-	linked.list.push(linked.newborn);
-	console.log(`SHOULD spew ${linked.list.length} divs.`);
+	linked.list[linked.newborn.id] = linked.newborn;
+	console.log(`Newborn:  ${linked.newborn.id} ${linked.newborn} ${linked.list}.`);
 }
 
 
@@ -114,8 +113,14 @@ function Person () {
 // sends a new PERSON object to EXTEND and then
 // calls SPEWDIVS to display the 
 //global LINKED LIST
-linked.main = function() {;
-	linked.extend( new Person() );
+linked.main = function() {
+	// for (a of linked.list){
+	// 	console.log( a + '  ' + linked.list[a]);
+	// }
+	console.log(`Main sees ${Object.keys(linked.list)}...`);
+	linked.temp =  new Person();
+	console.log(`...and ${linked.temp}.`);
+	linked.extend(linked.temp);
 	spewDivs();	
 }
 
