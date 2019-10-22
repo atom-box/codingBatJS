@@ -2,12 +2,34 @@
 Create a linked list.
 Try this without peeking at anything.
 */
-const linked = {};
+
+
+
+const linked = {}; // namespace for all the vars in this module
+linked.list = []; // an array of node objects
+
+// make a class.  in JS.  for the nodes
+function Node(){
+	this.phone; // int
+	this.first; // string PERSONNAME 
+	this.prev;  // point to key of prev node
+	this.next;  // point to key of next node
+}	
+
+
 
 linked.extend = function() {
 	console.log('coming soon!  TWO.JS logic!');
-
+	linked.list.push(303);
+	console.log(`First item in list is ${linked.list[0]}`);
 }
+
+
+
+
+// linked.extend = function() {
+//	console.log('coming soon!  TWO.JS logic!');
+// }
 
 let sol2 = document.getElementById('solution2');
 sol2.innerHTML = `
