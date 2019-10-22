@@ -9,19 +9,21 @@ const linked = {}; // namespace for all the vars in this module
 linked.list = []; // an array of node objects
 
 // make a class.  in JS.  for the nodes
-function Node(){
-	this.phone; // int
-	this.first; // string PERSONNAME 
-	this.prev;  // point to key of prev node
-	this.next;  // point to key of next node
+function Node(phone, first){
+	this.phone = phone || 5551212; // int
+	this.first = first || 'Andre'; // string PERSONNAME 
+	this.prev = null;  // point to key of prev node
+	this.next = null;  // point to key of next node
+	// TODO make non NULL
 }	
 
 
 
 linked.extend = function() {
 	console.log('coming soon!  TWO.JS logic!');
-	linked.list.push(303);
-	console.log(`First item in list is ${linked.list[0]}`);
+	linked.newborn = new Node(5);
+	linked.list.push(linked.newborn);
+	console.log(`First item in list is ${linked.list[0].first}`);
 }
 
 
