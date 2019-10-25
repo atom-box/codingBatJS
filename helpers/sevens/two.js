@@ -141,19 +141,25 @@ linked.main = function() {
                            
 */
 
+// content for before and after button push
+let listSpewage = `<h3>null 99<br><br></h3>`;
+
 let sol2 = document.getElementById('solution2');
 sol2.innerHTML = `
 <form oninput="console.log(33);">
 <h3>Add an element to a linked list:</h3>
     <button type="button" class="btn btn-danger btn-sm" onclick="spewDivs()" > spew</button>
 </div>
-<h3 id="linkedout" style="color:transparent">null 99<br><br></h3>
+<div class="outpanel" id="output2-outpanel" style="color:transparent">${listSpewage}</div>
 <form>
 `;
 
 // Create element of results
 function spewDivs() {
-	console.log('consider it spewed');
+	linked.outEl = document.getElementById('output2-outpanel');
+	let nit = `<h3 style="color:orange;"> sooooooooieeeeeee<br><br></h3>`
+	listSpewage += nit;
+	linked.outEl.innerHTML = listSpewage;
 
 }
 
