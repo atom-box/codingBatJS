@@ -8,8 +8,6 @@ I came up with 2 strategies for indicating the last object.
 Chose 'next is null ' and 'prev is null' as indicators of listends
 */
 
-console.log(`youuuuu twoooooooo`);
-
  //  _           _   _         
  // (_)         (_) | |        
  //  _   _ __    _  | |_   ___ 
@@ -148,7 +146,7 @@ let sol2 = document.getElementById('solution2');
 sol2.innerHTML = `
 <form oninput="console.log(33);">
 <h3>Add an element to a linked list:</h3>
-    <button type="button" class="btn btn-danger btn-sm" onclick="spewDivs()" > spew</button>
+    <button type="button" class="btn btn-danger btn-sm" onclick="linked.main()" > spew</button>
 </div>
 <div class="outpanel" id="output2-outpanel" style="color:transparent">${listSpewage}</div>
 <form>
@@ -157,7 +155,13 @@ sol2.innerHTML = `
 // Create element of results
 function spewDivs() {
 	linked.outEl = document.getElementById('output2-outpanel');
-	let nit = `<h3 style="color:orange;"> sooooooooieeeeeee<br><br></h3>`
+
+	console.log(`size of linkedlist is ${linked.list.length}`)
+	for (n in linked.list) {
+		console.log(`${n} is ${linked.list[n]}`);
+	}
+
+	let nit = `<p style="color:orange;">${new Date().toLocaleString()} </p>`
 	listSpewage += nit;
 	linked.outEl.innerHTML = listSpewage;
 
@@ -169,7 +173,7 @@ function spewDivs() {
 let code2El = document.getElementById('code2');
 code2El.innerHTML = `
 <div>
-<p>This is not very interesting to look at.  It was very straightforward to implement.</p>
+<p>This is not very interesting to look at.  The implementation in Node.js is 'nodeTwo.js'.  By the end of today I will integrate that to show correctly in this display.</p>
 	<p>My <a href="https://github.com/atom-box/codingBatJS/blob/master/helpers/sevens/two.js"> solution</a> in javascript</p>
 </div>
 `;
