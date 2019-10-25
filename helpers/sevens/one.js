@@ -43,7 +43,7 @@ dice.el.innerHTML = `<h3 style="color:transparent; font-family: serif;"> nada su
 let code1El = document.getElementById('code1');
 code1El.innerHTML = `
 <div>
-<p>This took three tries; I'm glad there was more to this question than first assumed!</p>
+<p>Turning the output of a rand5 into a rand7 worked on the second try.  My first solution was illogical: add 7 + 7 + 7 + 7 + 7 and divide by 5.  That creates a Gaussian curve.  I got better results when I divided 7 into five parts, rolled the rand5 die to find which part, then rolled the rand5 again to find how far along in the part.  That gave evenly distributed results.</p>
 	<p>My <a href="https://github.com/atom-box/codingBatJS/blob/master/helpers/sevens/one.js"> solution</a> in javascript</p>
 </div>
 `;
