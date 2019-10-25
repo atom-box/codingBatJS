@@ -8,6 +8,8 @@ I came up with 2 strategies for indicating the last object.
 Chose 'next is null ' and 'prev is null' as indicators of listends
 */
 
+console.log(`youuuuu twoooooooo`);
+
  //  _           _   _         
  // (_)         (_) | |        
  //  _   _ __    _  | |_   ___ 
@@ -141,16 +143,18 @@ linked.main = function() {
 
 let sol2 = document.getElementById('solution2');
 sol2.innerHTML = `
+<form oninput="console.log(33);">
 <h3>Add an element to a linked list:</h3>
-    <button type="button" class="btn btn-danger btn-sm" onclick="linked.main()" > add</button>
+    <button type="button" class="btn btn-danger btn-sm" onclick="spewDivs()" > spew</button>
 </div>
 <h3 id="linkedout" style="color:transparent">null 99<br><br></h3>
+<form>
 `;
 
 // Create element of results
 function spewDivs() {
-	linked.outEl = document.getElementById('linkedout');
-	linked.outEl.innerHTML = `<h3 style="color:orange; font-family: serif;"> nada surf<br>clash REBEL<br>SOUND SYSTEM</h3>`
+	console.log('consider it spewed');
+
 }
 
 
@@ -159,7 +163,7 @@ function spewDivs() {
 let code2El = document.getElementById('code2');
 code2El.innerHTML = `
 <div>
-<p>This took three tries; I'm glad there was more to this question than first assumed!</p>
-	<p>My <a href="https://github.com/atom-box/codingBatJS/blob/master/helpers/sevens/one.js"> solution</a> in javascript</p>
+<p>This is not very interesting to look at.  It was very straightforward to implement.</p>
+	<p>My <a href="https://github.com/atom-box/codingBatJS/blob/master/helpers/sevens/two.js"> solution</a> in javascript</p>
 </div>
 `;

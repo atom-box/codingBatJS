@@ -130,12 +130,6 @@ sol3.innerHTML = `
 </form>
 `;
 
-// Create element of results
-function spewDivs() {
-	linked.outEl = document.getElementById('linkedout');
-	linked.outEl.innerHTML = `<h3 style="color:orange; font-family: serif;"> nada surf<br>clash REBEL<br>SOUND SYSTEM</h3>`
-}
-
 
 
 
