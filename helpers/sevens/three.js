@@ -1,4 +1,4 @@
-
+console.log(`Script 3 succesfully loaded at ${new Date()}.`)
 
 
 /*_                   _        
@@ -143,7 +143,7 @@ function spewDivs() {
 let code3El = document.getElementById('code3');
 code3El.innerHTML = `
 <div>
-<p>This took three tries; I'm glad there was more to this question than first assumed!</p>
-	<p>My <a href="https://github.com/atom-box/codingBatJS/blob/master/helpers/sevens/one.js"> solution</a> in javascript</p>
+<p>Tested in Node.</p>
+	<p>My <a href="https://github.com/atom-box/codingBatJS/blob/master/helpers/sevens/three.js"> solution</a> in javascript</p>
 </div>
 `;
