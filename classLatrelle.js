@@ -14,6 +14,12 @@ Careful.  This is an experimental feature branch for running in the NODE REPL.  
  |_| |_| |_| |_|  \__| |___/
 */
 
+// Lowest node must be findable, so 
+// make its ID 000001
+let nodes = {},
+currentID = 1,
+soonID = null;
+
 
 
 /*_                   _        
@@ -26,11 +32,17 @@ Careful.  This is an experimental feature branch for running in the NODE REPL.  
               |___/            
 */
 
+
 class Node {
-	constructor(){
-		this.first = nameBestow();
-		this.phone = phoneGive();
-		this.instantiated = new Date(milliseconds); 
+	// arguments: c and s (currentID and soonID)
+	constructor(c, s){
+		let obj = {};
+		obj[c] = {
+			first: nameBestow(),
+			phone: phoneGive(),
+			instantiated: (new Date()).getMilliseconds(),
+			nextID: s
+		}
 	}
 }
 
@@ -56,6 +68,7 @@ function sayPhone(n) {console.log(`Simple phone is ${n}`)}
 function sayPersonsPhone(po) {`Phone, within person-object is ${po.phone}`}
 
 
+
  //                      _         
  //                     (_)        
  //  _ __ ___     __ _   _   _ __  
@@ -64,6 +77,7 @@ function sayPersonsPhone(po) {`Phone, within person-object is ${po.phone}`}
  // |_| |_| |_|  \__,_| |_| |_| |_|
                                                                
 sayPhone(  phoneGive()  );
+let n1 = new Node(currentID, soonID);
 
 
 /* 
