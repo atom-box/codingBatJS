@@ -82,7 +82,7 @@ function iDBestow(arr) {
 	let fiveDigit = 0,
 	notUnique = true;
 	while (notUnique) {
-		fiveDigit = Math.floor(Math.random() * 99999);
+		fiveDigit = Math.floor(Math.random() * 10);
 		if (arr !== undefined ){
 			// array exists.  check it.  if result comes back 
 			// TRUE, you've already used this number
