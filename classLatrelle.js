@@ -27,7 +27,7 @@ let config = {};
 config.nodes = {};
 config.currentID = 1,
 config.soonID = null,
-config.usedIDs = [0,1,2,3,4,5,6]; // stores to ensure unique new IDs
+config.usedIDs = []; // stores to ensure unique new IDs
 
 
 
@@ -46,13 +46,14 @@ config.usedIDs = [0,1,2,3,4,5,6]; // stores to ensure unique new IDs
 ** (previousID, currentID, entire
 ** obj,needed for checking whether 
 ** a nextID is already taken)
+** TODO Currently requires global: config.usedIDs; that seems sketchy.  Maybe make that internal/private.
 */
 class Node {
 	constructor(nextID){
 		this.first = nameBestow(),
 		this.phone = phoneBestow(),
 		this.instantiated = (new Date()).getMilliseconds(),
-		this.fwd = iDBestow();
+		this.fwd = idBestow(config.usedIDs);
 	}
 
 
@@ -78,11 +79,14 @@ function phoneBestow() {
 
 // stores created IDs in ARR
 // and accesses ARR to see if prior redundancy
-function iDBestow(arr) {
+function idBestow(arr) {
 	let fiveDigit = 0,
 	notUnique = true;
+		if (arr.length > 9999) {
+			return 'Maximum array size reached.  All 9999 numbers have been dealt.'
+		}
 	while (notUnique) {
-		fiveDigit = Math.floor(Math.random() * 10);
+		fiveDigit = Math.floor(Math.random() * 10000);
 		if (arr !== undefined ){
 			// array exists.  check it.  if result comes back 
 			// TRUE, you've already used this number
@@ -97,11 +101,11 @@ function iDBestow(arr) {
 	// return the newval
 	arr.push(fiveDigit);
 	return fiveDigit;
+	// todo For some reason this works great but also returns a superluous UNDEFINED at end, which is not a problem but is mysterious.
 }
 
 
 /*----T-E-S-T-E-R-S------------*/
-function sayPhone(n) {console.log(`Simple phone is ${n}`)}
 function sayPersonsPhone(po) {`Phone, within person-object is ${po.phone}`}
 
 
@@ -110,15 +114,28 @@ function testIDs(n) {
 	let i = 0,
 	IDs = [];
 	for (i = 0, stop = n; i < stop; i++ ){
-		let y = iDBestow()
+		let y = idBestow()
 		IDs.unshift(y);
 		console.log(y);
 	}
 	return IDs;
 }
 
+function showFiveIds() {
+	let i,
+	stop;
+	for (i = 0, stop = 5; i < stop; i++) {
+		console.log(idBestow(config.usedIDs));
+	}
+}
 
-// TODO SET 90% OF INITIAL IDS EXTANT WITH FIRST DIGIT LESS THAN 91
+// Where n is the next ID
+// Returns an object of type NODE
+function testNodeConstructor( n ) {
+	let obj = new Node(n);
+	return obj;
+}
+
 
 
  //                      _         
@@ -132,21 +149,25 @@ function testIDs(n) {
 // Test mode options when run as node
 if (process.argv[2] !== undefined) {
 	switch (process.argv[2]) {
-		case '13': 
-			console.log('string thirteen');
+		case 'node': 
+			let newNode = testNodeConstructor(config.soonID);
+			console.log(newNode.first);
+			console.log(newNode.phone);
+			console.log(`About to set next as ${newNode.fwd}`);
+			config.soonID = newNode.fwd;
 			break;
 		case 'id': 
-			console.log(iDBestow(config.usedIDs));
+			console.log(idBestow(config.usedIDs));
 			break;
-		case 9: 
-			console.log('nine');
+		case 'showfiveids': 
+			console.log(showFiveIds());
 			break;
 		default:
-			console.log('no args recognized');		
+			console.log('no optional args recognized');		
 	}
 }
 
-sayPhone(  phoneBestow()  );
+console.log(  phoneBestow()  );
 // let n1 = new Node(currentID, soonID);
 
 
