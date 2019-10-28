@@ -198,8 +198,14 @@ if (process.argv[2] !== undefined) {
 			let str2 = JSON.stringify(makeAny(config.soonID, process.argv[3]));
 			console.log(str2);
 			break;
-
-
+		case 'break':
+			let str3 = JSON.stringify(makeAny(config.soonID, process.argv[3]));
+			// TODO could use <br /> instead
+			str3 = str3.replace(/{/g , '</p><p>{ ');
+			str3 = str3.replace(/}/g , '}</p><p>');
+			str3 = '<p>' + str3 + '</p>'
+			console.log(str3);
+			break;
 		default:
 			console.log('no optional args recognized');		
 	}
