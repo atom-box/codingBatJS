@@ -1,14 +1,11 @@
-/* NEXT ACTION IS KEEP WRITING GIMME FIVE
-*/
-
-
-
-
 /*
 Create a linked list.
 */
+
 /*
-Careful.  This is an experimental feature branch for running in the NODE REPL.  Once it works it can be merged with the browser-based version of this program.
+This is an experimental feature branch for running in the NODE REPL. 
+It has testing flags down at the switch statement.
+ Once it works it can be merged with the browser-based version of this program.
 */
 
 /*
@@ -42,11 +39,17 @@ config.usedIDs = []; // stores to ensure unique new IDs
 */
 
 /*
-** argument: b, h, obj  
-** (previousID, currentID, entire
-** obj,needed for checking whether 
-** a nextID is already taken)
+** The two inputs in this process:
+** NODE CONSTRUCTOR only takes a NEXTID
+** But it contains a call to IDBESTOW which takes CONFIG.USEDIDS
+**
 ** TODO Currently requires global: config.usedIDs; that seems sketchy.  Maybe make that internal/private.
+*/
+
+
+/*
+** Just takes a nextid
+** returns an object of the Node CLASS
 */
 class Node {
 	constructor(nextID){
@@ -54,10 +57,12 @@ class Node {
 		this.phone = phoneBestow(),
 		this.instantiated = (new Date()).getMilliseconds(),
 		this.fwd = idBestow(config.usedIDs);
+		this.here = nextID;
 	}
 
-
-
+	/* This method is a getter to use immediately after 
+	 	a new node is made, to update the config.SOONID in the globals
+	*/
 	getNextID() {
 		return this.nextID();
 	}
@@ -106,21 +111,14 @@ function idBestow(arr) {
 
 
 /*----T-E-S-T-E-R-S------------*/
+// Accepts a person object.
+// Returns nothing.
+// Prints a phone number.
 function sayPersonsPhone(po) {`Phone, within person-object is ${po.phone}`}
 
 
-// returns an array of n unique ids, no initial ids
-function testIDs(n) {
-	let i = 0,
-	IDs = [];
-	for (i = 0, stop = n; i < stop; i++ ){
-		let y = idBestow()
-		IDs.unshift(y);
-		console.log(y);
-	}
-	return IDs;
-}
 
+// Tests the function 
 function showFiveIds() {
 	let i,
 	stop;
@@ -136,6 +134,20 @@ function testNodeConstructor( n ) {
 	return obj;
 }
 
+// Accepts the next ID number
+function make99(n) {
+	let i = 0,
+	stop = 99,
+	newNode = null,
+	nodeHoldingObject = {};
+	for (; i < stop; i++){
+		newNode = new Node(n);
+		console.log(`About to set next as ${newNode.fwd}`);
+		n = newNode.fwd;
+		nodeHoldingObject[newNode.here] = newNode
+	}
+	return nodeHoldingObject;
+}
 
 
  //                      _         
@@ -162,6 +174,9 @@ if (process.argv[2] !== undefined) {
 		case 'showfiveids': 
 			console.log(showFiveIds());
 			break;
+		case '99': 
+			console.log( make99(config.soonID));
+			break;
 		default:
 			console.log('no optional args recognized');		
 	}
@@ -169,11 +184,6 @@ if (process.argv[2] !== undefined) {
 
 console.log(  phoneBestow()  );
 // let n1 = new Node(currentID, soonID);
-
-
-// console.log(`Test eleven IDs:`);
-// console.log(testIDs(11));
-
 
 
 /* 
