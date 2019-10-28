@@ -131,15 +131,20 @@ function makeAny(n, stop) {
  // |_| |_| |_|  \__,_| |_| |_| |_|
                                                                
 
+function twoMain(){
+	let slider2El = document.getElementById('slider2');
+	let listies = slider2.value;
+	let out2El = document.getElementById('output2');
+	let slider2digitsEl = document.getElementById('slider2digits');
+	slider2digitsEl.innerHTML = slider2.value;
+	let str3 = JSON.stringify(makeAny(config.soonID, listies	));
+	// TODO could use <br /> instead
+	str3 = str3.replace(/{/g , '</p><p>{ ');
+	str3 = str3.replace(/}/g , '}</p><p>');
+	str3 = '<p style="font-family: monospace; color: orange;">' + str3 + '</p>';
+	out2El.innerHTML = str3;
 
-
- 			const LISTIES	 = 11;
-			let str3 = JSON.stringify(makeAny(config.soonID, LISTIES	));
-			// TODO could use <br /> instead
-			str3 = str3.replace(/{/g , '</p><p>{ ');
-			str3 = str3.replace(/}/g , '}</p><p>');
-			str3 = '<p>' + str3 + '</p>'
-
+}
 
 /*
  _____     ____    __  __ 
@@ -156,11 +161,17 @@ function makeAny(n, stop) {
 let sol2 = document.getElementById('solution2');
 sol2.innerHTML = `
 <form oninput="console.log(33);">
-<h3>Add an element to a linked list:</h3>
-    <button type="button" class="btn btn-danger btn-sm" onclick="linked.button()" > new</button>
-</div>
-<div class="outpanel" id="output2-outpanel" style="color:orange; font-family: monospace">${str3}</div>
+<h3>Generate a linked list:</h3>
+  <div class="form-group">
+    <label for="formControlRange">Slide controller for a list of <span id="slider2digits" style="width: 7rem"></span></label>
+    <input type="range" class="form-control-range" id="slider2"  onchange="twoMain()" value="7" min="3" max="500"    >
+
+  </div>
+  <output class="outpanel" id="output2"></output>
 <form>
+
+
+
 `;
 
 // Create element of results
