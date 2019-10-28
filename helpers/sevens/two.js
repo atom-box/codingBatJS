@@ -3,9 +3,9 @@ Create a linked list.
 Try this without peeking at anything.
 */
 /*
-Decisions...
-I came up with 2 strategies for indicating the last object.  
-Chose 'next is null ' and 'prev is null' as indicators of listends
+There is a linked list in Sedgewick's Algorithms that seems to use a recursive strategy: the node's last act of its initiation is to create...another node!  That could be implemented as an improvement here.
+
+I am uncomfortable with having an IDBestow function inside the Class constructor which refers to an external object.  For now not sure what the more clean coding pattern would be there.
 */
 
 console.log('Huey Morrison');
@@ -17,38 +17,14 @@ console.log('Huey Morrison');
  // | | | | | | | | | |_  \__ \
  // |_| |_| |_| |_|  \__| |___/
 
-const linked = {}; // namespace for all the vars in this module
+// Lowest node must be findable, so 
+// make its ID 000001
 
-/* linked.list structure:
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of c58fe3c... Implement ES6 CLASS for panel output with new, working code from classLatrelle.js
-
-		id: {
-			first: string
-			prev: number
-			phone: number
-		}
-
-<<<<<<< HEAD
-=======
-
-		id: {
-			first: string
-			prev: number
-			phone: number
-		}
-
->>>>>>> parent of c58fe3c... Implement ES6 CLASS for panel output with new, working code from classLatrelle.js
-=======
->>>>>>> parent of c58fe3c... Implement ES6 CLASS for panel output with new, working code from classLatrelle.js
-				where id is a unique 
-				five digit number
-*/
-linked.list = {}; // Obj of objs, each as described above
-linked.prevOndeck = null; // flags it as the first node
-linked.nextOndeck = Math.floor(Math.random() * 99999) ; // ids are 5 digit
+let config = {};
+config.nodes = {};
+config.currentID = 1,
+config.soonID = null,
+config.usedIDs = []; // stores to ensure unique new IDs
 
 
 /*_                   _        
@@ -61,101 +37,92 @@ linked.nextOndeck = Math.floor(Math.random() * 99999) ; // ids are 5 digit
               |___/            
 */
 
-// NODE CLASS
-// If given parent-object, phone-int and name-string, generates one node.
-// Set this in front of VAR X to get a single node.
-// Make a class.  in JS.  for the nodes
+
+/*
+** The two inputs in this process:
+** NODE CONSTRUCTOR only takes a NEXTID
+** But it contains a call to IDBESTOW which takes CONFIG.USEDIDS
+**
+** TODO Currently requires global: config.usedIDs; that seems sketchy.  Maybe make that internal/private.
+*/
+
+
+/*
+** Just takes a nextid
+** returns an object of the Node CLASS
+*/
 class Node {
-	constructor(parent, phone, first) {
-			// Keep random-ing until your id is not the key to an extant object in the global space of 
-			while (linked.list[linked.nextOndeck] !== undefined) { 
-				linked.nextOndeck = Math.floor(Math.random() * 99999) ;
-				console.log(`Avoided winter's bone.`)
-			}
-			let id = linked.id;
-			this[id] = {};
-			this[id].phone = phone || 5551212; // int
-			this[id].first = first || 'Andre'; // string PERSONNAME 
-
-			// id was gen'd below, during previous run of this function. Or, was set for the first time only, up top, when the vars were initialized 
-			this[id].first = first;
-			this[id].phone = phone;
-
-			// was initialized, above, or set during the most recent object creation event
-			this[id].prev = linked.prevOndeck;  // point to key of prev node
-
-			// prevOndeck usually must store, temporarily, the current node ID
-			linked.prevOndeck = this.id;
-
-
-
-			this[id].next = linked.nextOndeck;  // point to key of next node
-
-			// Here, we access the global LINKED.LIST. 
-			// TODO Not sure if that is an anti-pattern.
-			// Anyway, go back one link and un-null the 'next'.
-			// Skip only the first time; if .prev is NULL, we are at the first node, so don't try to go back!
-			if (typeof this[id].prev === 'number'){
-				let a = this[nextOndeck].prev;
-				linked.list.id[a].next = this.id;
-			}
+	constructor(nextID){
+		this.first = nameBestow(),
+		this.phone = phoneBestow(),
+		this.instantiated = (new Date()).getMilliseconds(),
+		this.fwd = idBestow(config.usedIDs);
+		this.here = nextID;
 	}
-	export() {
-		return {
-			id 
-			next
-			prev
-			phone
-			first
 
-		}
+	/* This method is a getter to use immediately after 
+	 	a new node is made, to update the config.SOONID in the globals
+	*/
+	getNextID() {
+		return this.nextID();
 	}
-}	// END OF NODE CLASS
-
-// TODO test
-let temp = new Node(1932, 'Gregor');
-console.log(`Yay, we made ${temp}`);
-console.log(`Yay, we made ${temp.first}`);
-
-// EXTEND
-// If given an object-person will act on global LINKED.LIST, to extend it
-// takes Person object  
-linked.extend = function(p) {
-	linked.newborn = new Node(p.phone, p.first);
-	linked.list[linked.newborn.id] = linked.newborn;
-	console.log(`Newborn:  ${linked.newborn.id} ${linked.newborn} ${linked.list}.`);
 }
 
-// NAMER
-// This function takes no args and
-// it returns a string name
-let person = {};
-const namer = function() {
+
+function nameBestow() {
 	const folks = ['Kisha', 'LaTrell', 'Tanifer', 'Terry', 'Moira', 'Grant', 'Ibrahim', 'Gump', 'Klondike', 'Treyvon', 'Eric', 'Sasha', 'Eleanor', 'Noah', 'Dolomite', 'Fernando', 'Caesar' ];
 	return folks[ Math.floor( 17 * Math.random()  )   ]
 }
 
-// PERSON CLASS
-function Person() {
-		this.first = namer();
-		this.phone = Math.floor( 9999999999 * Math.random() )
-}; 
-<<<<<<< HEAD
-<<<<<<< HEAD
+function phoneBestow() {
+	let ac = [212, 415, 313, 608, 708, 917],
+	theirNumber = 0,
+	which = Math.floor(Math.random() * 6);
+	return Math.floor(Math.random() * 9999999) + ac[which] * 10000000;
+}
+
+// stores created IDs in ARR
+// and accesses ARR to see if prior redundancy
+function idBestow(arr) {
+	let fiveDigit = 0,
+	notUnique = true;
+		if (arr.length > 9999) {
+			return 'Maximum array size reached.  All 9999 numbers have been dealt.'
+		}
+	while (notUnique) {
+		fiveDigit = Math.floor(Math.random() * 10000);
+		if (arr !== undefined ){
+			// array exists.  check it.  if result comes back 
+			// TRUE, you've already used this number
+			notUnique = arr.some( (item)=> (item === fiveDigit)? true : false   )
+		} else {
+			// Array of used IDs is empty, so...
+			notUnique = false
+		}
+	}
+
+	// store the new val
+	// return the newval
+	arr.push(fiveDigit);
+	return fiveDigit;
+	// todo For some reason this works great but also returns a superluous UNDEFINED at end, which is not a problem but is mysterious.
+}
 
 
-=======
+// Accepts the next ID number
+function makeAny(n, stop) {
+	let i = 0,
+	newNode = null,
+	nodeHoldingObject = {};
+	for (; i < stop; i++){
+		newNode = new Node(n);
+		console.log(`About to set next as ${newNode.fwd}`);
+		n = newNode.fwd;
+		nodeHoldingObject[newNode.here] = newNode
+	}
+	return nodeHoldingObject;
+}
 
->>>>>>> parent of c58fe3c... Implement ES6 CLASS for panel output with new, working code from classLatrelle.js
-
-=======
-
-<<<<<<< HEAD
-
-
->>>>>>> parent of c58fe3c... Implement ES6 CLASS for panel output with new, working code from classLatrelle.js
-=======
->>>>>>> parent of c58fe3c... Implement ES6 CLASS for panel output with new, working code from classLatrelle.js
  //                      _         
  //                     (_)        
  //  _ __ ___     __ _   _   _ __  
@@ -163,58 +130,16 @@ function Person() {
  // | | | | | | | (_| | | | | | | |
  // |_| |_| |_|  \__,_| |_| |_| |_|
                                                                
-// sends a new PERSON object to EXTEND and then
-// calls SPEWDIVS to display the 
-//global LINKED LIST
-linked.main = function() {
-	// for (a of linked.list){
-	// 	console.log( a + '  ' + linked.list[a]);
-	// }
-	console.log(`Main sees ${Object.keys(linked.list)}...`);
-	linked.temp =  new Person();
-	console.log(`...and ${linked.temp}.`);
-	linked.extend(linked.temp);
-	spewDivs();	
-}
 
-let everGrowingObject = ``;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-function twoMain() {
-      let slider2 = document.getElementById('output2');  
-			let str2 = JSON.stringify(makeAny(config.soonID, slider2.value	));
+
+ 			const LISTIES	 = 11;
+			let str3 = JSON.stringify(makeAny(config.soonID, LISTIES	));
 			// TODO could use <br /> instead
-			str2 = str2.replace(/{/g , '</p><p>{ ');
-			str2 = str2.replace(/}/g , '}</p><p>');
-			str2 = '<p>' + str2 + '</p>';
-			sol2.innerHTML = `
-			<div class="outpanel" style="color:orange; font-family: monospace">${str2}</div>
-			`
-}
-=======
-=======
->>>>>>> parent of c58fe3c... Implement ES6 CLASS for panel output with new, working code from classLatrelle.js
-=======
->>>>>>> parent of c58fe3c... Implement ES6 CLASS for panel output with new, working code from classLatrelle.js
-linked.button = function() {
-	console.log(`Skipper, I'm hurt.`);
-	everGrowingObject += { [new Date().toLocaleString()]:  null, freedom: 'medium' }
-	objectToHTML()
+			str3 = str3.replace(/{/g , '</p><p>{ ');
+			str3 = str3.replace(/}/g , '}</p><p>');
+			str3 = '<p>' + str3 + '</p>'
 
-}
-
-// TODO show growing array in a window.  
-// TODO randomly make a name and a phone number 
-// make object to grab folks from
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of c58fe3c... Implement ES6 CLASS for panel output with new, working code from classLatrelle.js
-=======
->>>>>>> parent of c58fe3c... Implement ES6 CLASS for panel output with new, working code from classLatrelle.js
-=======
->>>>>>> parent of c58fe3c... Implement ES6 CLASS for panel output with new, working code from classLatrelle.js
 
 /*
  _____     ____    __  __ 
@@ -226,18 +151,15 @@ linked.button = function() {
                            
 */
 
-// content for before and after button push
-let listSpewage = `<h3>null 99<br><br></h3>`;
+
 
 let sol2 = document.getElementById('solution2');
 sol2.innerHTML = `
-<<<<<<< HEAD
-=======
 <form oninput="console.log(33);">
 <h3>Add an element to a linked list:</h3>
     <button type="button" class="btn btn-danger btn-sm" onclick="linked.button()" > new</button>
 </div>
-<div class="outpanel" id="output2-outpanel" style="color:transparent">${listSpewage}</div>
+<div class="outpanel" id="output2-outpanel" style="color:orange; font-family: monospace">${str3}</div>
 <form>
 `;
 
@@ -249,10 +171,12 @@ function objectToHTML(o) {
 	// for (n in linked.list) {
 	// 	console.log(`${n} is ${linked.list[n]}`);
 	// }
->>>>>>> parent of c58fe3c... Implement ES6 CLASS for panel output with new, working code from classLatrelle.js
 
-`;
+	let nit = `<p style="color:orange;">${s} </p>`
+	listSpewage += nit;
+	linked.outEl.innerHTML = listSpewage;
 
+}
 
 
 
@@ -260,8 +184,7 @@ function objectToHTML(o) {
 let code2El = document.getElementById('code2');
 code2El.innerHTML = `
 <div>
-<p>I wrote tests that are toggled at the command line when running the CLI version of this code. The tests were important because I could not keep all the moving parts of this model in my head reliably.</p>
-	<p>I wrote a <a href='https://github.com/atom-box/codingBatJS/blob/master/classLatrelle.js'> CLI version </a> of this first and then adapted it to interact with the <a href="https://github.com/atom-box/codingBatJS/blob/master/helpers/sevens/two.js"> browser</a>.</p>
+	<p>I wrote a <a href='https://github.com/atom-box/codingBatJS/blob/master/classLatrelle.js'> CLI version </a> of this first and then adapted it to interact with the <a href="https://github.com/atom-box/codingBatJS/blob/master/helpers/sevens/two.js"> browser</a>. The former contains my personal best for systematic testing on a small code object.</p>
 	<p>A future improvement would be to implement the recursive strategy from Rober Sedgewick's Algorithms.</p>
 </div>
 `;
