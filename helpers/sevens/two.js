@@ -132,14 +132,17 @@ function makeAny(n, stop) {
                                                                
 
 
-
- 			const LISTIES	 = 11;
-			let str3 = JSON.stringify(makeAny(config.soonID, LISTIES	));
+function twoMain() {
+      let slider2 = document.getElementById('output2');  
+			let str2 = JSON.stringify(makeAny(config.soonID, slider2.value	));
 			// TODO could use <br /> instead
-			str3 = str3.replace(/{/g , '</p><p>{ ');
-			str3 = str3.replace(/}/g , '}</p><p>');
-			str3 = '<p>' + str3 + '</p>'
-
+			str2 = str2.replace(/{/g , '</p><p>{ ');
+			str2 = str2.replace(/}/g , '}</p><p>');
+			str2 = '<p>' + str2 + '</p>';
+			sol2.innerHTML = `
+			<div class="outpanel" style="color:orange; font-family: monospace">${str2}</div>
+			`
+}
 
 /*
  _____     ____    __  __ 
@@ -155,28 +158,9 @@ function makeAny(n, stop) {
 
 let sol2 = document.getElementById('solution2');
 sol2.innerHTML = `
-<form oninput="console.log(33);">
-<h3>Add an element to a linked list:</h3>
-    <button type="button" class="btn btn-danger btn-sm" onclick="linked.button()" > new</button>
-</div>
-<div class="outpanel" id="output2-outpanel" style="color:orange; font-family: monospace">${str3}</div>
-<form>
+
 `;
 
-// Create element of results
-// Accepts one object
-// Fills the ID in DOM with the keys and values
-function objectToHTML(o) {
-	// console.log(`size of linkedlist is ${linked.list.length}`)
-	// for (n in linked.list) {
-	// 	console.log(`${n} is ${linked.list[n]}`);
-	// }
-
-	let nit = `<p style="color:orange;">${s} </p>`
-	listSpewage += nit;
-	linked.outEl.innerHTML = listSpewage;
-
-}
 
 
 
