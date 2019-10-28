@@ -175,7 +175,8 @@ if (process.argv[2] !== undefined) {
 			console.log(showFiveIds());
 			break;
 		case '99': 
-			console.log( make99(config.soonID));
+			let s = JSON.stringify(make99(config.soonID));
+			console.log(s);
 			break;
 		default:
 			console.log('no optional args recognized');		
