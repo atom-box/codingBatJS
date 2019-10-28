@@ -20,6 +20,7 @@ console.log('Huey Morrison');
 const linked = {}; // namespace for all the vars in this module
 
 /* linked.list structure:
+<<<<<<< HEAD
 
 		id: {
 			first: string
@@ -27,6 +28,15 @@ const linked = {}; // namespace for all the vars in this module
 			phone: number
 		}
 
+=======
+
+		id: {
+			first: string
+			prev: number
+			phone: number
+		}
+
+>>>>>>> parent of c58fe3c... Implement ES6 CLASS for panel output with new, working code from classLatrelle.js
 				where id is a unique 
 				five digit number
 */
@@ -124,9 +134,15 @@ function Person() {
 		this.first = namer();
 		this.phone = Math.floor( 9999999999 * Math.random() )
 }; 
+<<<<<<< HEAD
 
 
 
+=======
+
+
+
+>>>>>>> parent of c58fe3c... Implement ES6 CLASS for panel output with new, working code from classLatrelle.js
  //                      _         
  //                     (_)        
  //  _ __ ___     __ _   _   _ __  
@@ -151,6 +167,7 @@ linked.main = function() {
 let everGrowingObject = ``;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function twoMain() {
       let slider2 = document.getElementById('output2');  
 			let str2 = JSON.stringify(makeAny(config.soonID, slider2.value	));
@@ -163,6 +180,8 @@ function twoMain() {
 			`
 }
 =======
+=======
+>>>>>>> parent of c58fe3c... Implement ES6 CLASS for panel output with new, working code from classLatrelle.js
 linked.button = function() {
 	console.log(`Skipper, I'm hurt.`);
 	everGrowingObject += { [new Date().toLocaleString()]:  null, freedom: 'medium' }
@@ -173,6 +192,9 @@ linked.button = function() {
 // TODO show growing array in a window.  
 // TODO randomly make a name and a phone number 
 // make object to grab folks from
+<<<<<<< HEAD
+>>>>>>> parent of c58fe3c... Implement ES6 CLASS for panel output with new, working code from classLatrelle.js
+=======
 >>>>>>> parent of c58fe3c... Implement ES6 CLASS for panel output with new, working code from classLatrelle.js
 
 /*
