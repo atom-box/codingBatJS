@@ -149,6 +149,21 @@ function make99(n) {
 	return nodeHoldingObject;
 }
 
+// Accepts the next ID number
+function makeAny(n, stop) {
+	let i = 0,
+	newNode = null,
+	nodeHoldingObject = {};
+	for (; i < stop; i++){
+		newNode = new Node(n);
+		console.log(`About to set next as ${newNode.fwd}`);
+		n = newNode.fwd;
+		nodeHoldingObject[newNode.here] = newNode
+	}
+	return nodeHoldingObject;
+}
+
+
 
  //                      _         
  //                     (_)        
@@ -159,6 +174,7 @@ function make99(n) {
                                                                
 
 // Test mode options when run as node
+
 if (process.argv[2] !== undefined) {
 	switch (process.argv[2]) {
 		case 'node': 
@@ -175,9 +191,15 @@ if (process.argv[2] !== undefined) {
 			console.log(showFiveIds());
 			break;
 		case '99': 
-			let s = JSON.stringify(make99(config.soonID));
-			console.log(s);
+			let str1 = JSON.stringify(make99(config.soonID));
+			console.log(str1);
 			break;
+		case 'number':
+			let str2 = JSON.stringify(makeAny(config.soonID, process.argv[3]));
+			console.log(str2);
+			break;
+
+
 		default:
 			console.log('no optional args recognized');		
 	}
