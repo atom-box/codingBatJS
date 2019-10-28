@@ -65,8 +65,11 @@ function insertSort(raws){
 /*----M-A-I-N------------*/
 console.log( `Started at ${( new Date()).toLocaleTimeString()}`);
 let scores =  makeArray(process.argv[2]);
+
+console.log("\nUnsorted:");
 console.log( showArrayH(scores, 14));
 scores =  insertSort(scores);
+console.log("\nSorted:");
 console.log( showArrayH(scores, 14));
 console.log(`Run in test mode: ${Boolean( process.argv[3])} `);
 console.log( `Finished at ${( new Date()).toLocaleTimeString()}`);
