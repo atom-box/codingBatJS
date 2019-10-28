@@ -211,14 +211,5 @@ if (process.argv[2] !== undefined) {
 	}
 }
 
-console.log(  phoneBestow()  );
-// let n1 = new Node(currentID, soonID);
+console.log(  'See the test switch for running options.'  );
 
-
-/* 
-0. make  class TESTER
-1. make two 
-2. put them in an object  TESTER
-2. show the object 
-0. put another
-*/
