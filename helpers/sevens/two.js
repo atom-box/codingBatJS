@@ -141,7 +141,8 @@ function twoMain(){
 	// TODO could use <br /> instead
 	str3 = str3.replace(/{/g , '</p><p>{ ');
 	str3 = str3.replace(/}/g , '}</p><p>');
-	str3 = '<p style="font-family: monospace; color: orange;">' + str3 + '</p>';
+	str3 = '<p >' + str3 + '</p>';
+	str3 = '<div  style="font-family: monospace; color: orange">' + str3    + '</div>'
 	out2El.innerHTML = str3;
 
 }
@@ -163,7 +164,7 @@ sol2.innerHTML = `
 <form oninput="console.log(33);">
 <h3>Generate a linked list:</h3>
   <div class="form-group">
-    <label for="formControlRange">Slide controller for a list of <span id="slider2digits" style="width: 7rem"></span></label>
+    <label for="formControlRange">Slide controller to create a list with <span id="slider2digits" style="width: 7rem"></span> nodes.</label>
     <input type="range" class="form-control-range" id="slider2"  onchange="twoMain()" value="7" min="3" max="500"    >
 
   </div>
@@ -196,6 +197,6 @@ let code2El = document.getElementById('code2');
 code2El.innerHTML = `
 <div>
 	<p>I wrote a <a href='https://github.com/atom-box/codingBatJS/blob/master/classLatrelle.js'> CLI version </a> of this first and then adapted it to interact with the <a href="https://github.com/atom-box/codingBatJS/blob/master/helpers/sevens/two.js"> browser</a>. The former contains my personal best for systematic testing on a small code object.</p>
-	<p>A future improvement would be to implement the recursive strategy from Rober Sedgewick's Algorithms.</p>
+	<p>The ID numbers are not randomly generated, unique, and deliberately non-consecutive.</p>
 </div>
 `;
