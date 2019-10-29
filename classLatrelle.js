@@ -194,6 +194,22 @@ if (process.argv[2] !== undefined) {
 			let str1 = JSON.stringify(make99(config.soonID));
 			console.log(str1);
 			break;
+		case 'shownodeown': 
+			let node88 = testNodeConstructor(88);
+			for (p in node88){
+				if (node88.hasOwnProperty(p)){
+				console.log(`====${p} is  ${node88[p]}====`);
+				}
+			}
+			console.log('finished');
+			break;
+		case 'shownodeall': 
+			let node77 = testNodeConstructor(77);
+			for (p in node77){
+				console.log(`====${p} is  ${node77[p]}====`);
+			}
+			console.log('finished')
+			break;
 		case 'number':
 			let str2 = JSON.stringify(makeAny(config.soonID, process.argv[3]));
 			console.log(str2);
