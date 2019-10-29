@@ -150,16 +150,22 @@ function make99(n) {
 }
 
 // Accepts the next ID number
+// Accepts the number of nodes requested
 function makeAny(n, stop) {
 	let i = 0,
 	newNode = null,
-	nodeHoldingObject = {};
+	nodeHoldingObject = {},
+	finalNextID = null;
 	for (; i < stop; i++){
 		newNode = new Node(n);
 		console.log(`About to set next as ${newNode.fwd}`);
 		n = newNode.fwd;
 		nodeHoldingObject[newNode.here] = newNode
+		finalNextID = newNode.fwd;
+		finalHereID = newNode.here;
 	}
+	nodeHoldingObject[finalHereID].fwd = null;
+	// set a null for address of final node's nextID
 	return nodeHoldingObject;
 }
 
@@ -187,6 +193,7 @@ if (process.argv[2] !== undefined) {
 		case 'id': 
 			console.log(idBestow(config.usedIDs));
 			break;
+
 		case 'showfiveids': 
 			console.log(showFiveIds());
 			break;
@@ -194,6 +201,7 @@ if (process.argv[2] !== undefined) {
 			let str1 = JSON.stringify(make99(config.soonID));
 			console.log(str1);
 			break;
+
 		case 'shownodeown': 
 			let node88 = testNodeConstructor(88);
 			for (p in node88){
@@ -203,6 +211,7 @@ if (process.argv[2] !== undefined) {
 			}
 			console.log('finished');
 			break;
+
 		case 'shownodeall': 
 			let node77 = testNodeConstructor(77);
 			for (p in node77){
@@ -210,10 +219,12 @@ if (process.argv[2] !== undefined) {
 			}
 			console.log('finished')
 			break;
+
 		case 'number':
 			let str2 = JSON.stringify(makeAny(config.soonID, process.argv[3]));
 			console.log(str2);
 			break;
+
 		case 'break':
 			let str3 = JSON.stringify(makeAny(config.soonID, process.argv[3]));
 			// TODO could use <br /> instead
