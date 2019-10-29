@@ -201,9 +201,8 @@ function objectToHTML(o) {
 let code2El = document.getElementById('code2');
 code2El.innerHTML = `
 <div>
-	<p>I wrote a <a href='https://github.com/atom-box/codingBatJS/blob/master/classLatrelle.js'> CLI version </a> of this first and then adapted it to interact with the <a href="https://github.com/atom-box/codingBatJS/blob/master/helpers/sevens/two.js"> browser</a>. The former contains my personal best for systematic testing on a small code object.</p>
 	<p>The ID numbers are randomly generated, unique, and deliberately non-consecutive. Compared to Sedgewick, my solution is very long.</p>
-	<p>I developed this seperately as a command line script and made six tests to drive the development.  Once the tests passed I moved the script into my HTML code.
+	<p>I developed this seperately as a command line script and made six tests to drive the development.  Once <a href='https://github.com/atom-box/codingBatJS/blob/master/classLatrelle.js'>the tests</a> passed I moved the script into <a href="https://github.com/atom-box/codingBatJS/blob/master/helpers/sevens/two.js"> my HTML code</a>.
 	</p>
 
 </div>
