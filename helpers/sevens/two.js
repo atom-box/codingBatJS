@@ -119,9 +119,14 @@ function makeAny(n, stop) {
 		console.log(`About to set next as ${newNode.fwd}`);
 		n = newNode.fwd;
 		nodeHoldingObject[newNode.here] = newNode
+		finalNextID = newNode.fwd;
+		finalHereID = newNode.here;
 	}
+	nodeHoldingObject[finalHereID].fwd = null;
+	// set a null for address of final node's nextID
 	return nodeHoldingObject;
 }
+
 
  //                      _         
  //                     (_)        
@@ -197,6 +202,9 @@ let code2El = document.getElementById('code2');
 code2El.innerHTML = `
 <div>
 	<p>I wrote a <a href='https://github.com/atom-box/codingBatJS/blob/master/classLatrelle.js'> CLI version </a> of this first and then adapted it to interact with the <a href="https://github.com/atom-box/codingBatJS/blob/master/helpers/sevens/two.js"> browser</a>. The former contains my personal best for systematic testing on a small code object.</p>
-	<p>The ID numbers are not randomly generated, unique, and deliberately non-consecutive.</p>
+	<p>The ID numbers are randomly generated, unique, and deliberately non-consecutive. Compared to Sedgewick, my solution is very long.</p>
+	<p>I developed this seperately as a command line script and made six tests to drive the development.  Once the tests passed I moved the script into my HTML code.
+	</p>
+
 </div>
 `;
