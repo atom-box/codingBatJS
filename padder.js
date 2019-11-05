@@ -28,13 +28,13 @@ const showThree = function() {
 /*
 ** When passed one entire tag, 
 ** returns just the fixed year as a string
-** e.g. passing '4' returns 2004
+** e.g. passing '4foo83827' returns 2004
 ** e.g. passing '99' returns 1999
 */
-const cleanYear = function(t) {
-	let reggie = /^[0-9]+/;
-	let frag = t.match(reggie)[0];
-	return frag; // todo THIS IS RETURNING RAW YEAR
+const expandYearTag = function(t) {
+	let reggie = /(^[0-9]+)(.*)/;
+	let frags = t.match(reggie);
+	return `[${frags[1]}]---[${frags[2]}]`; // todo THIS IS RETURNING RAW YEAR and leftovers
 }
 
 
@@ -64,7 +64,7 @@ if (option !== undefined){
 			console.log(`We see_______${showThree()}`);
 			break;
 		case 'cleanyear':
-			console.log(`We see_______${cleanYear(tags[0])}`);
+			console.log(`We see_______${expandYearTag(tags[0])}`);
 			break;
 
 
