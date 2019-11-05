@@ -169,7 +169,7 @@ sol2.innerHTML = `
 <form oninput="console.log(33);">
 <h3>Generate a linked list:</h3>
   <div class="form-group">
-    <label for="formControlRange">Slide controller to create a list with <span id="slider2digits" style="width: 7rem"></span> nodes.</label>
+    <label for="formControlRange">Slide the controller to create a list with <span id="slider2digits" style="width: 7rem"></span> nodes.</label>
     <input type="range" class="form-control-range" id="slider2"  onchange="twoMain()" value="7" min="3" max="500"    >
 
   </div>

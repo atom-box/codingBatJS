@@ -190,6 +190,7 @@ if (process.argv[2] !== undefined) {
 			console.log(`About to set next as ${newNode.fwd}`);
 			config.soonID = newNode.fwd;
 			break;
+			
 		case 'id': 
 			console.log(idBestow(config.usedIDs));
 			break;

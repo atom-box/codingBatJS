@@ -49,9 +49,9 @@ code1El.innerHTML = `
 `;
 
 
-
-// MAKE THE CONTENT REACT SO YOU CAN USE JSX,  KEEP IT BASIC
-// THEN SOLVE TWO CODE CHALLENGES but don't deploy, debug just as node RePL.
-// THEN CALL IT QUITS TO NATL DECISION,
-
-
+/*
+One-fourth of your learning comes from your teacher,
+One-fourth of your learning comes through your own intelligence.
+One-fourth of your learning comes from your classmates.
+Finally, the last fourth comes only through experience or only with time. 
+*/
