@@ -21,8 +21,8 @@ const fixYear = function(tag) {
 ** When passed NOARGUMENT, 
 ** this function returns the first three tags in the db
 */
-const showThree = function() {
-	return tags.slice(0,3);
+const showThirty = function() {
+	return tags.slice(0,30);
 }
 
 
@@ -54,6 +54,34 @@ const yearExpand = function(s) {
 }
 
 /*
+** When passed a number of six or less digits,  
+** returns a six digit number, with 
+** zeroes as leading padding
+** e.g. passing '4' returns '000004'
+** e.g. passing '99' returns '000099'
+*/
+const idExpand = function(s) {
+	let shortID = String(s);	
+	while(shortID.length < 6){
+		shortID = '0' + shortID;
+	}
+	return shortID;
+}
+
+/*
+** When passed one entire tag, 
+** returns just the fixed ID as a string
+** e.g. passing '4foo27' returns '4foo000027'
+*/
+const cleanseID = function(t) {
+	let reggie = /^(.*[A-z])([0-9]+)$/;
+	let frags = t.match(reggie); // array[0] is fulltag; array[1]is captured nonID portion; array[2] is trailing digits which are presumably IDs; 
+	return idExpand(frags[2]); // returns a padded iD
+}
+
+
+
+/*
 ** When passed one entire tag, 
 ** returns just the fixed year as a string
 ** e.g. passing '4foo83827' returns 2004
@@ -61,10 +89,21 @@ const yearExpand = function(s) {
 const cleanseYearTag = function(t) {
 	let reggie = /(^[0-9]+)(.*)/;
 	let frags = t.match(reggie); // array[0] is fulltag; array[1] is leading year digit; array[2]is captured post-year portion
-	return yearExpand(frags[1]); // todo THIS IS RETURNING RAW YEAR and leftovers
+	return yearExpand(frags[1]); // returns a fixed year
 }
 
 
+/*
+** When passed an array of raw tags, 
+** returns an array where all the years have been expanded to 4 digit years and
+** all of the trailing ids have been padded to be six digits long
+** e.g. passing '4foo83827' returns 2004
+*/
+const cleanseYearTag = function(t) {
+	let reggie = /(^[0-9]+)(.*)/;
+	let frags = t.match(reggie); // array[0] is fulltag; array[1] is leading year digit; array[2]is captured post-year portion
+	return yearExpand(frags[1]); // returns a fixed year
+}
 
 
  //                      _         
@@ -87,11 +126,14 @@ if (option !== undefined){
 		case 'seeyear':
 			console.log(`Tag starts with these two :::${fixYear(tags[0])}:::`)
 			break;
-		case 'showthreetags':
-			console.log(`We see_______${showThree()}`);
+		case 'showthirtytags':
+			console.log(`We see_______${showThirty()}`);
 			break;
 		case 'cleanyear':
 			console.log(`We see_______${cleanseYearTag(tags[0])}`);
+			break;
+		case 'cleanid':
+			console.log(`We see_______${cleanseID(tags[0])}`);
 			break;
 
 
