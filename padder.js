@@ -21,7 +21,7 @@ const fixYear = function(tag) {
 ** When passed NOARGUMENT, 
 ** this function returns the first three tags in the db
 */
-const showThirty = function() {
+const showThirtyRaw = function() {
 	return tags.slice(0,30);
 }
 
@@ -94,16 +94,35 @@ const cleanseYearTag = function(t) {
 
 
 /*
-** When passed an array of raw tags, 
-** returns an array where all the years have been expanded to 4 digit years and
+** When passed a single raw tag STRING, 
+** returns a tag STRING where all the years have been expanded to 4 digit years and
 ** all of the trailing ids have been padded to be six digits long
-** e.g. passing '4foo83827' returns 2004
+** e.g. passing '4foo7' returns '2004foo000007'
+** e.g. passing '90foo2345' returns '1990foo002345'
 */
-const cleanseYearTag = function(t) {
-	let reggie = /(^[0-9]+)(.*)/;
-	let frags = t.match(reggie); // array[0] is fulltag; array[1] is leading year digit; array[2]is captured post-year portion
-	return yearExpand(frags[1]); // returns a fixed year
+const cleanseOneTagCompletely = function(t) {
+	let reggie, // REGEX 
+	frags = [], // parsed pieces of the tag
+	a, // year
+	b, // alpha
+	c; // id
+	reggie = /(^[0-9]+)([A-z].*[A-z])([0-9]+)$/;
+	frags = t.match(reggie); // array[0] is fulltag; array[1] is leading year digit; array[2]is captured alphas; array[3] is captured ID number
+	a = yearExpand(frags[1]);
+	b = frags[2];
+	c = idExpand(frags[3]);
+	return a + b + c; // returns one completely fixed tag as a String
 }
+
+const cleanseOneArrayCompletely = function(rawArr) {
+	let cleanArr = [];
+	let i = 0,
+	stop = rawArr.length;
+	for (; i < stop; i += 1){
+		cleanArr.push( cleanseOneTagCompletely(rawArr[i]) )
+	}
+	return cleanArr;
+} 
 
 
  //                      _         
@@ -127,7 +146,7 @@ if (option !== undefined){
 			console.log(`Tag starts with these two :::${fixYear(tags[0])}:::`)
 			break;
 		case 'showthirtytags':
-			console.log(`We see_______${showThirty()}`);
+			console.log(`We see_______${showThirtyRaw()}`);
 			break;
 		case 'cleanyear':
 			console.log(`We see_______${cleanseYearTag(tags[0])}`);
@@ -135,10 +154,11 @@ if (option !== undefined){
 		case 'cleanid':
 			console.log(`We see_______${cleanseID(tags[0])}`);
 			break;
-
-
-
-
+		case 'holistictag':
+			console.log(`We see_______${cleanseOneTagCompletely(tags[0])}`);
+		case 'holisticarray':
+			console.log(`We see_______${cleanseOneArrayCompletely(tags)}`);
+			break;
 
 		default: 
 			console.log(`:::${option}::: not recognized.`)
