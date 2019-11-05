@@ -25,16 +25,43 @@ const showThree = function() {
 	return tags.slice(0,3);
 }
 
+
+/*
+** When passed a one or two digit number, 
+** returns that as a four digit year
+** e.g. passing '4' returns 2004
+** e.g. passing '99' returns 1999
+*/
+const yearExpand = function(s) {
+	const CURRENTYEAR = 19;
+	let shortYear = Number(s);	
+
+	if (shortYear > -1 && shortYear < 99 ){ // legit input
+		if (shortYear < 10){
+			return '200' + String(shortYear);
+		}
+		if (shortYear <= CURRENTYEAR){
+			return '20' + String(shortYear);
+		}
+		if (shortYear <= 99){
+			return '19' + String(shortYear);
+		} else { // should never see this
+			return '9998'; // returns nonlethal error
+		}
+	}	else { // bad input: not number, not in range
+		return '9999' // returns nonlethal error
+	}
+}
+
 /*
 ** When passed one entire tag, 
 ** returns just the fixed year as a string
 ** e.g. passing '4foo83827' returns 2004
-** e.g. passing '99' returns 1999
 */
-const expandYearTag = function(t) {
+const cleanseYearTag = function(t) {
 	let reggie = /(^[0-9]+)(.*)/;
-	let frags = t.match(reggie);
-	return `[${frags[1]}]---[${frags[2]}]`; // todo THIS IS RETURNING RAW YEAR and leftovers
+	let frags = t.match(reggie); // array[0] is fulltag; array[1] is leading year digit; array[2]is captured post-year portion
+	return yearExpand(frags[1]); // todo THIS IS RETURNING RAW YEAR and leftovers
 }
 
 
@@ -64,7 +91,7 @@ if (option !== undefined){
 			console.log(`We see_______${showThree()}`);
 			break;
 		case 'cleanyear':
-			console.log(`We see_______${expandYearTag(tags[0])}`);
+			console.log(`We see_______${cleanseYearTag(tags[0])}`);
 			break;
 
 
