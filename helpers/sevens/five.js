@@ -17,13 +17,10 @@ function muncher (k, s){
    recentCut = 0, // span from this to i defines substring
    lines = [];
   while (i < s.length){
-    console.log(`Line 20  *** ${i}`)
     while (s[i] !== ' ' && i > 0){
-      console.log(`i  is  ${i}`)
       i = i - 1  
     }
     let endCut = i;
-    console.log(`Now grabbing from [${recentCut}] to [${endCut}]${s.slice(recentCut, endCut ) }`)
     lines.push(s.slice(recentCut, endCut)  );
     recentCut = i;
     i = i + k;
@@ -57,10 +54,10 @@ if (process.argv[2] !== undefined) {
         console.log (ike);
         break;
       case 'length': 
-        console.log ( muncher(25, ike).length);
+        console.log ( muncher(75, ike).length);
         break;
       case 'stringtoarray': 
-        main.lines = muncher(25, ike);
+        main.lines = muncher(75, ike);
         console.log(`First line is ${main.lines[0]}`);
         console.log(`In all, made ${main.lines.length} lines`);
         break;
@@ -69,7 +66,7 @@ if (process.argv[2] !== undefined) {
         // StartingAt, ThisManyLines
         let start = Number(process.argv[3]),
         many = Number(process.argv[4]) + start;
-        main.lines = muncher(25, ike);
+        main.lines = muncher(75, ike);
         console.log(`Start Ike liners with [${start}] [${many}]:`)
         for (let i = start; i < many; i++){
           console.log(`HERE ${i}: ${main.lines[i]}`)
@@ -80,7 +77,7 @@ if (process.argv[2] !== undefined) {
         console.log ( formParagraph(["Only an alert and", "knowledgeable citizenry ", "can compel the proper meshing ", "of the huge industrial ", "and military ", "machinery of defense ", "with our peaceful ", "methods and goals"]));
         break;
       case 'breakmake': 
-        let test1 = formParagraph(muncher(25, ike))
+        let test1 = formParagraph(muncher(75, ike))
         console.log ( test1);
         break;
        default:
