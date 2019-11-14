@@ -14,16 +14,22 @@ const longString = ike;
 // Returns an array of stringlines
 function muncher (k, s){
   let i = k,  // an index pointing to the raw string
-   recentCut = 0, // span from this to i defines substring
-   lines = [];
+    rightCut = 0,
+    leftCut = 0, // span from this to i defines substring
+    lines = [];
   while (i < s.length){
-    while (s[i] !== ' ' && i > 0){
-      i = i - 1  
+    while (s[i] !== ' ' && i > leftCut){
+      i = i - 1;
+      console.log(`i: ${i} byte: [${s[i]}] looking at: ${s.slice((i - k), i)}`)
     }
-    let endCut = i;
-    lines.push(s.slice(recentCut, endCut)  );
-    recentCut = i;
-    i = i + k;
+    if (i === leftCut){  // found no space!
+      rightCut = i + k;
+    } else {
+      rightCut = i;
+    }
+    lines.push(s.slice(leftCut, rightCut)  );
+    leftCut = rightCut + 1;
+    i = rightCut + k;
   } 
   return lines;
 }
@@ -77,7 +83,8 @@ if (process.argv[2] !== undefined) {
         console.log ( formParagraph(["Only an alert and", "knowledgeable citizenry ", "can compel the proper meshing ", "of the huge industrial ", "and military ", "machinery of defense ", "with our peaceful ", "methods and goals"]));
         break;
       case 'breakmake': 
-        let test1 = formParagraph(muncher(75, ike))
+        let customWidth = Number(process.argv[3]);
+        let test1 = formParagraph(muncher(customWidth, ike));
         console.log ( test1);
         break;
        default:
