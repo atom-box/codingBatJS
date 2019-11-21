@@ -24,20 +24,24 @@
 .left-spin{
   -webkit-animation: spin 2s linear infinite;
   animation: spin 11s linear infinite;
-  opacity: 0.3;    
+  opacity: 0.3;
+  left: 45%;
+  top: 50%;
 }
 
 .right-spin{
   -webkit-animation: spin 2s linear infinite;
-  animation: spin 13s linear infinite;
+  animation: spin 23s linear infinite;
   opacity: 0.3;    
+    left: 45%;
+  top: 50%;
 }
 .top-spin{
   -webkit-animation: spin 2s linear infinite;
   animation: spin 21s linear infinite;
   opacity: 0.3;    
   left: 35%;
-  top: 60%;
+  top: 40%;
 }
 
 .bottom-spin{
@@ -47,6 +51,39 @@
   left: 65%;
   top: 20%;    
 }
+
+.red-spin{
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 8s linear infinite;
+  color: red;
+  left: 35%;
+  top: 40%;
+}
+
+.blue-spin{
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 12s linear infinite;
+  color: blue;
+  left: 35%;
+  top: 40%;
+}
+
+.green-spin{
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 16s linear infinite;
+  color: green;
+  left: 35%;
+  top: 40%;
+}
+
+.black-spin{
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 20s linear infinite;
+  color: black;
+  left: 35%;
+  top: 40%;
+}
+
 
 @-webkit-keyframes spin {
   0% { -webkit-transform: rotate(0deg); }
@@ -275,8 +312,13 @@
 
     <a href="https://www.officesupply.com/coupons">
         <span class="brand-icon">
-          <img class="universal-loader2-container left-spin" src="images/9.png"  />
-          <img class="universal-loader2-container right-spin" src="images/9.png"  />
+
+
+      <div class="universal-loader2-container left-spin">
+        <h3><span class="universal-loader2-container red-spin">E</span><span class="universal-loader2-container black-spin">S</span><span class="universal-loader2-container blue-spin">V</span><span class="universal-loader2-container green-spin">A</span></h3>
+      </div>
+
+
 
             <svg version="1.1" class="universal-loader2-container " xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve">
                 <g>
@@ -312,13 +354,11 @@
  
   </div>
   <div class="tab-pane fade" id="code6" role="tabpanel" aria-labelledby="code-tab">
-      <div class="universal-loader2-container left-spin">
-        <h3><span class="universal-loader2-container right-spin">L</span><span class="universal-loader2-container top-spin">E</span><span class="universal-loader2-container left-spin">O</span><span class="universal-loader2-container bottom-spin">V</span></h3>
-      </div>
-
-
-
+        <img src="images/9.png" class="universal-loader2-container right-spin" />
+        <img src="images/9.png" class="universal-loader2-container left-spin" />
   </div>
+
+
 </div>
 </article>
 
