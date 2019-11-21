@@ -29,11 +29,24 @@
 
 .right-spin{
   -webkit-animation: spin 2s linear infinite;
-  animation: spin 19s linear infinite;
+  animation: spin 13s linear infinite;
   opacity: 0.3;    
-
+}
+.top-spin{
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 21s linear infinite;
+  opacity: 0.3;    
+  left: 35%;
+  top: 60%;
 }
 
+.bottom-spin{
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 28s linear infinite;
+  opacity: 0.3;
+  left: 65%;
+  top: 20%;    
+}
 
 @-webkit-keyframes spin {
   0% { -webkit-transform: rotate(0deg); }
@@ -296,10 +309,15 @@
     </a>
 
 
-
+ 
   </div>
   <div class="tab-pane fade" id="code6" role="tabpanel" aria-labelledby="code-tab">
-    <p>I dug into some the www.officesupply.com page and made a mashup of their coupon SVG graphic, their loader &ltimg&gt CSS, and an image of nine LEDs</p>
+      <div class="universal-loader2-container left-spin">
+        <h3><span class="universal-loader2-container right-spin">L</span><span class="universal-loader2-container top-spin">E</span><span class="universal-loader2-container left-spin">O</span><span class="universal-loader2-container bottom-spin">V</span></h3>
+      </div>
+
+
+
   </div>
 </div>
 </article>
