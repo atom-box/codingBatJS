@@ -1,0 +1,932 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"pro",
+				"prototype"
+			],
+			[
+				"bread",
+				"breadCount"
+			],
+			[
+				"bre",
+				"breadCount"
+			],
+			[
+				"ice",
+				"icecream"
+			],
+			[
+				"brea",
+				"breadAdder"
+			],
+			[
+				"fix",
+				"fixIceCream"
+			],
+			[
+				"a",
+				"arrayOfObjects"
+			],
+			[
+				"show",
+				"showMenu"
+			],
+			[
+				"array",
+				"arrayOfObjects"
+			],
+			[
+				"no",
+				"noTeenSum"
+			],
+			[
+				"head",
+				"headerThings"
+			],
+			[
+				"font",
+				"font-family"
+			],
+			[
+				"U",
+				"URLdisplayingFunction"
+			],
+			[
+				"the",
+				"theServer"
+			],
+			[
+				"tit",
+				"title__skinny"
+			],
+			[
+				"border",
+				"border-radius\tproperty"
+			],
+			[
+				"block",
+				"block-losTigres"
+			],
+			[
+				"young",
+				"youngPitchersArrayOfObjects"
+			],
+			[
+				"max",
+				"max-width\tproperty"
+			],
+			[
+				"mod",
+				"modDiff"
+			],
+			[
+				"code",
+				"codeboard__code"
+			],
+			[
+				"starter",
+				"starterNames"
+			],
+			[
+				"st",
+				"starterNames"
+			],
+			[
+				"is",
+				"isKid"
+			],
+			[
+				"arr",
+				"array_modified"
+			],
+			[
+				"bill",
+				"billboarditize"
+			],
+			[
+				"keys",
+				"keysJoined"
+			],
+			[
+				"key",
+				"keyValsJoined"
+			],
+			[
+				"nihil",
+				"nihilWordsQuote"
+			],
+			[
+				"divulge",
+				"divulgeAsConsoleLogs"
+			],
+			[
+				"di",
+				"divulgeAsConsoleLogs"
+			],
+			[
+				"con",
+				"confirm"
+			],
+			[
+				"righ",
+				"margin-right\tproperty"
+			],
+			[
+				"tex",
+				"text-align\tproperty"
+			],
+			[
+				"margin",
+				"margin-left\tproperty"
+			],
+			[
+				"random",
+				"randomVerb"
+			],
+			[
+				"ele",
+				"appendElement"
+			],
+			[
+				"font-si",
+				"font-size\tproperty"
+			],
+			[
+				"text",
+				"text-align\tproperty"
+			],
+			[
+				"margi",
+				"margin-left\tproperty"
+			],
+			[
+				"marg",
+				"margin\tproperty"
+			],
+			[
+				"r",
+				"rgb()\tbackground-color"
+			],
+			[
+				"box-",
+				"box-shadow\tproperty"
+			],
+			[
+				"h",
+				"h1\tTag"
+			],
+			[
+				"best",
+				"bestStreak"
+			],
+			[
+				"ch",
+				"champValue"
+			],
+			[
+				"be",
+				"bestStreak"
+			],
+			[
+				"p",
+				"p\tTag"
+			],
+			[
+				"bulb",
+				"bulbGlyph"
+			],
+			[
+				"get",
+				"getElementById"
+			],
+			[
+				"threef",
+				"threefCount"
+			],
+			[
+				"gaun",
+				"gauntletWalk"
+			],
+			[
+				"numb",
+				"numberOfWalks"
+			],
+			[
+				"on",
+				"onTotal"
+			],
+			[
+				"for",
+				"for\tfor (…) {…}"
+			],
+			[
+				"starte",
+				"startedFrom"
+			],
+			[
+				"bulbs",
+				"bulbsList"
+			],
+			[
+				"started",
+				"startedFrom"
+			],
+			[
+				"top",
+				"margin-top\tproperty"
+			],
+			[
+				"bord",
+				"border-radius\tproperty"
+			],
+			[
+				"large",
+				"large-foot__description"
+			],
+			[
+				"translate",
+				"translateX()\ttransform"
+			],
+			[
+				"rg",
+				"rgba()\tbackground-color"
+			],
+			[
+				"transl",
+				"translateY()\ttransform"
+			],
+			[
+				"tr",
+				"transform\tproperty"
+			],
+			[
+				"boar",
+				"board-onionskin"
+			],
+			[
+				"style",
+				"stylesheet"
+			],
+			[
+				"which",
+				"whichBrickStr"
+			],
+			[
+				"ac",
+				"actualLay"
+			],
+			[
+				"left",
+				"leftOverSpace"
+			],
+			[
+				"gap",
+				"gap"
+			],
+			[
+				"pos",
+				"postBuildGap"
+			],
+			[
+				"c",
+				"currentGap"
+			],
+			[
+				"make",
+				"makeBricks"
+			],
+			[
+				"artis",
+				"artistsString"
+			],
+			[
+				"artists",
+				"artistsString"
+			],
+			[
+				"stirn",
+				"stringOfThing"
+			],
+			[
+				"arti",
+				"artistsString"
+			],
+			[
+				"local",
+				"localObject"
+			],
+			[
+				"str1",
+				"str1and2"
+			],
+			[
+				"burst",
+				"bursts"
+			],
+			[
+				"end",
+				"endsSame"
+			],
+			[
+				"tot",
+				"tot_1"
+			],
+			[
+				"sleep",
+				"sleepIn"
+			],
+			[
+				"dir",
+				"direction2"
+			],
+			[
+				"direction",
+				"direction1"
+			],
+			[
+				"ev",
+				"evWhite"
+			],
+			[
+				"b",
+				"introduction-elm-architecture-build-first-application"
+			],
+			[
+				"font-size",
+				"font-size-adjust\tproperty"
+			],
+			[
+				"padding",
+				"padding-left\tproperty"
+			],
+			[
+				"light",
+				"lightRock"
+			],
+			[
+				"FONT",
+				"font-style\tproperty"
+			],
+			[
+				"pond",
+				"pondOfTiles"
+			],
+			[
+				"bg",
+				"bg-image"
+			],
+			[
+				"font-s",
+				"font-size\tproperty"
+			],
+			[
+				"background",
+				"background-color\tproperty"
+			],
+			[
+				"cla",
+				"claim"
+			],
+			[
+				"mast",
+				"mastRight"
+			],
+			[
+				"nav",
+				"navStrip2"
+			],
+			[
+				"backg",
+				"background-color\tproperty"
+			],
+			[
+				"ba",
+				"barackStyle"
+			],
+			[
+				"back",
+				"background-color\tproperty"
+			],
+			[
+				"answer",
+				"answerClick"
+			],
+			[
+				"hover",
+				"hoverAlert"
+			],
+			[
+				"time",
+				"timeReturner"
+			],
+			[
+				"new",
+				"newSeries"
+			],
+			[
+				"artist",
+				"artists"
+			],
+			[
+				"crea",
+				"createArtist"
+			],
+			[
+				"stre",
+				"stretched_word"
+			],
+			[
+				"temp",
+				"tempAvg"
+			],
+			[
+				"sq",
+				"sqlite"
+			],
+			[
+				"sayNam",
+				"sayNameForAll"
+			],
+			[
+				"sayN",
+				"sayNameForAll"
+			],
+			[
+				"fun",
+				"funNoiseTrickMaker"
+			],
+			[
+				"leng",
+				"length1"
+			],
+			[
+				"Gold",
+				"createGoldMedalTable"
+			],
+			[
+				"C",
+				"Country"
+			],
+			[
+				"this",
+				"thisMin"
+			],
+			[
+				"minion",
+				"minions"
+			],
+			[
+				"delet",
+				"deleteFromDatabasebyId"
+			],
+			[
+				"mini",
+				"minionsId"
+			],
+			[
+				"num",
+				"numWeeks"
+			],
+			[
+				"we",
+				"weeklyRevenue"
+			],
+			[
+				"idea",
+				"ideasRouter"
+			],
+			[
+				"static",
+				"staticPath"
+			],
+			[
+				"fav",
+				"favicon"
+			],
+			[
+				"sta",
+				"staSer"
+			],
+			[
+				"ideas",
+				"ideas"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/Users/evan/Dropbox/code/swans/syntax/pixelConstructor.js",
+			"settings":
+			{
+				"buffer_size": 982,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "I've built several api's for classes; now I'm looking for a place where I can build all day b/c I want to learn.\nPython -- want me to take a test?  I have JS  /  Node / SQL tests.\n",
+			"file": "/Users/evan/Dropbox/jobSeeker2-wGit/zendeskphonecall.md",
+			"file_size": 0,
+			"file_write_time": 132029352465747789,
+			"settings":
+			{
+				"buffer_size": 180,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 153.0,
+		"history":
+		[
+			"Package Control: Install Package"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/evan/Dropbox/code/quanta"
+	],
+	"file_history":
+	[
+		"/Users/evan/Dropbox/code/codingBatJS/foreignMap.js",
+		"/Users/evan/Dropbox/code/codingBatJS/foodTopping.js",
+		"/Users/evan/Dropbox/code/codingBatJS/temp.csv",
+		"/Users/evan/Dropbox/jobSeeker2-wGit/coverLetter-Adobo",
+		"/Users/evan/Dropbox/jobSeeker2-wGit/sequoya-bible.md",
+		"/Users/evan/Dropbox/code/codingBatJS/readMe.md",
+		"/Users/evan/Dropbox/jobSeeker2-wGit/Top Job Search Engines for 2019.txt",
+		"/Users/evan/Dropbox/jobSeeker2-wGit/askQsToAnyMicroMentorAvailable.md",
+		"/Users/evan/Desktop/005-greatWall/scriptFree FileSync.txt",
+		"/Users/evan/Dropbox/code/codingBatJS/thisSummer.js",
+		"/Users/evan/Dropbox/code/codingBatJS/thisGetter.js",
+		"/Users/evan/Dropbox/jobSeeker2-wGit/infosecQuestions.txt",
+		"/Users/evan/Dropbox/code/codingBatJS/fewTeens.js",
+		"/Users/evan/Dropbox/code/quanta/reqSpotlightServer.js",
+		"/Users/evan/Dropbox/code/quanta/qServer.js",
+		"/Users/evan/Dropbox/code/studySwanLeap/oreilly-ethan-brown/reqSpotlightServer.js",
+		"/Users/evan/Dropbox/code/studySwanLeap/oreilly-ethan-brown/Q.html",
+		"/Users/evan/Dropbox/code/grayArrays/index.html",
+		"/Users/evan/Dropbox/code/studySwanLeap/point/tinySRV.js",
+		"/Users/evan/Dropbox/code/studySwanLeap/point/tinyCLT.js",
+		"/Users/evan/Dropbox/code/studySwanLeap/point/sub.js",
+		"/Users/evan/Dropbox/code/studySwanLeap/oreilly-ethan-brown/buttercup.css",
+		"/Users/evan/Dropbox/code/studySwanLeap/point/main.js",
+		"/Users/evan/Dropbox/code/studySwanLeap/errorStack.js",
+		"/Users/evan/Dropbox/code/studySwanLeap/ERRORS-3x-just-syntaxes.js",
+		"/Users/evan/Dropbox/code/studySwanLeap/scoopPlayground/server.js",
+		"/Users/evan/Dropbox/code/studySwanLeap/scoopPlayground/index.html",
+		"/Users/evan/Dropbox/code/studySwanLeap/oreilly-ethan-brown/quantamag.html",
+		"/Users/evan/Dropbox/code/studySwanLeap/point/tinyClient.js",
+		"/Users/evan/Dropbox/code/studySwanLeap/point/tinyServer.js",
+		"/Users/evan/Dropbox/code/studySwanLeap/scoopImitate/server.js",
+		"/Users/evan/Dropbox/code/studySwanLeap/CLONEserver.js",
+		"/Users/evan/Dropbox/code/studySwanLeap/server.js",
+		"/Users/evan/Dropbox/code/grayArrays/js/ok-2-comment",
+		"/Users/evan/Dropbox/code/grayArrays/js/bottom.js",
+		"/Users/evan/Dropbox/code/grayArrays/js/top.js",
+		"/Users/evan/Dropbox/code/html5/11Forms-McPeak/threeForms.html",
+		"/Users/evan/Dropbox/code/codingBatJS/shortestLoopEver.js",
+		"/Users/evan/Dropbox/code/codingBatJS/maxMod5.js",
+		"/Users/evan/Dropbox/code/grayArrays/js/verbs.json",
+		"/Users/evan/Dropbox/code/grayArrays/js/nouns.json",
+		"/Users/evan/Dropbox/code/grayArrays/js/verbs.js",
+		"/Users/evan/Dropbox/code/grayArrays/data/nouns.json",
+		"/Users/evan/Dropbox/code/grayArrays/data/verbs.json",
+		"/Users/evan/Dropbox/code/grayArrays/data/nounsSansSpaces.csv",
+		"/Users/evan/Dropbox/code/grayArrays/js/verbs2.js",
+		"/Users/evan/Dropbox/code/grayArrays/js/tightVerbs.js",
+		"/Users/evan/Dropbox/code/grayArrays/js/thousandVerbs.csv",
+		"/Users/evan/Dropbox/code/grayArrays/js/thousandVerbs.spaces",
+		"/Users/evan/Dropbox/code/data/thousandNouns.csv",
+		"/Users/evan/Dropbox/code/grayArrays/data/nouns.csv",
+		"/Users/evan/Dropbox/code/grayArrays/app.js",
+		"/Users/evan/Dropbox/code/grayArrays/js/arrFun.json",
+		"/Users/evan/Dropbox/code/grayArrays/data/thousandNouns.csv",
+		"/Users/evan/Dropbox/code/codingBatJS/temptemptemp.js",
+		"/Users/evan/Dropbox/code/codingBatJS/three3s.js",
+		"/Users/evan/Dropbox/code/codingBatJS/elloOrld.js",
+		"/Users/evan/Dropbox/jobSeeker2-wGit/feb2019-glassdoor-county.md",
+		"/Users/evan/Dropbox/code/data/shopko-locations.csv",
+		"/Volumes/ESD-USB/scooter-Pedagogy-MADEONAPPLE/scratch-ongoing.md",
+		"/Users/evan/Dropbox/code/grayArrays/data/2019tigersRotation.json",
+		"/Users/evan/Dropbox/code/hallOfFame/microFunction.js",
+		"/Users/evan/Dropbox/humbug caterpillar/rwanda-flyin.txt",
+		"/Users/evan/Dropbox/code/hallOfFame/brutalWayToWriteLinesToDoc.html",
+		"/Users/evan/Dropbox/code/hallOfFame/fluent-interface-LAMBDA.js",
+		"/Users/evan/Dropbox/code/grayArrays/data/arrFun.json",
+		"/Users/evan/Dropbox/code/grayArrays/js/stringMethodsServer.js",
+		"/Users/evan/Dropbox/code/pulpLavaSteel/stringSides/sevenStringMethods.js",
+		"/Users/evan/Dropbox/code/grayArrays/data/2018tigersStarters.json",
+		"/Users/evan/Dropbox/code/grayArrays/data/2019tigersStarters.json",
+		"/Users/evan/Dropbox/code/grayArrays/data/2018tigersRotation.json",
+		"/Users/evan/Dropbox/code/pulpLavaSteel/app.js",
+		"/Users/evan/Dropbox/code/pulpLavaSteel/js/update.js",
+		"/Users/evan/Dropbox/code/pulpLavaSteel/js/view.js",
+		"/Users/evan/Dropbox/code/pulpLavaSteel/js/sevenStringMethods.js",
+		"/Users/evan/Dropbox/code/cold/hahn1/mirrorServer.js",
+		"/Users/evan/Dropbox/code/pulpLavaSteel/js/stringMethods.csv",
+		"/Users/evan/Dropbox/jobSeeker2-wGit/thankYou-Sony.txt",
+		"/Users/evan/Dropbox/jobSeeker2-wGit/thankyou-scooter-2.txt",
+		"/Users/evan/Dropbox/jobSeeker2-wGit/thank-Scooter.txt",
+		"/Users/evan/Dropbox/code/pulpLavaSteel/js/tiny.js",
+		"/Users/evan/Dropbox/code/cold/zero/js/app.js",
+		"/Users/evan/Dropbox/code/pulpLavaSteel/to-do.md",
+		"/Users/evan/Dropbox/code/pulpLavaSteel/data/monolog.js",
+		"/Users/evan/Dropbox/code/pulpLavaSteel/inning.js",
+		"/Users/evan/Dropbox/code/cold/two/presetHandler.js",
+		"/Users/evan/Dropbox/code/pulpLavaSteel/js/logic.js",
+		"/Users/evan/Dropbox/code/pulpLavaSteel/view.js",
+		"/Users/evan/Dropbox/code/pulpLavaSteel/update.js",
+		"/Users/evan/Dropbox/code/pulpLavaSteel/logic.js",
+		"/Users/evan/Dropbox/jobSeeker2-wGit/sony-job-desc-2019.md",
+		"/Users/evan/Dropbox/jobSeeker2-wGit/whiteboard interview skills",
+		"/Users/evan/Dropbox/jobSeeker2-wGit/2019-interviewQuestionsIWillAsk.md",
+		"/Users/evan/Dropbox/code/swiss-regex/index.html",
+		"/Users/evan/Dropbox/code/swiss-regex/app.js",
+		"/Users/evan/Dropbox/code/tutorials-computers/js-modules.md",
+		"/Users/evan/Dropbox/code/tutorials-computers/js greenbook.md",
+		"/Users/evan/Dropbox/code/p-buttercupPortfolioClean/src/html/index.html",
+		"/Users/evan/Dropbox/code/tutorials-computers/SQL-codecad.md",
+		"/Users/evan/Dropbox/code/olympics/gold_medals.sqlite",
+		"/Users/evan/Dropbox/code/codingBatJS/arrayFront9.js",
+		"/Users/evan/Dropbox/humbug caterpillar/rwanda-professor-email.txt",
+		"/Users/evan/Dropbox/cinnamon/bank.h",
+		"/Users/evan/Dropbox/cinnamon/bank.a",
+		"/Users/evan/Dropbox/code/codingBatJS/index.html",
+		"/Users/evan/Dropbox/code/codingBatJS/do.js",
+		"/Users/evan/Dropbox/code/codingBatJS/do2.js",
+		"/Users/evan/Dropbox/code/p-many-dishes/js/npm.js",
+		"/Users/evan/Dropbox/code/data/out.js",
+		"/Users/evan/Dropbox/code/data/nouns.js",
+		"/Users/evan/Dropbox/jobSeeker2-wGit/2019-interviewQuestionsIWillAsk",
+		"/Users/evan/Dropbox/code/syntax-examples-js/js/thousandVerbs.spaces",
+		"/Users/evan/Dropbox/code/syntax-examples-js/js/thousandVerbsData.js",
+		"/Users/evan/Dropbox/code/codingBatJS/aliceServer/index-ironchef.html",
+		"/Users/evan/Dropbox/code/codingBatJS/aliceServer/js/extras.js",
+		"/Users/evan/Dropbox/code/codingBatJS/aliceServer/readMe.md",
+		"/Users/evan/Dropbox/code/codingBatJS/aliceServer/js/front.js",
+		"/Users/evan/Dropbox/scooterish-transients/text-lineendings-Mac.txt",
+		"/Users/evan/Dropbox/code/codingBatJS/aliceServer/js/ww",
+		"/Users/evan/Dropbox/code/data/thousandVerbs.csv",
+		"/Users/evan/Dropbox/code/codingBatJS/aliceServer/front.js",
+		"/Users/evan/Dropbox/code/fiddle/commaBreaker.sh",
+		"/Users/evan/Dropbox/code/fiddle/showCode.sh",
+		"/Users/evan/Dropbox/code/p-buttercupPortfolioClean/src/html/styles/buttercup.css",
+		"/Users/evan/Dropbox/code/html5/inputs/index.html",
+		"/Users/evan/Dropbox/code/html5/inputs/stir.css",
+		"/Users/evan/Dropbox/code/zaydek/src/index.html",
+		"/Users/evan/Dropbox/code/zaydek/readMe.md"
+	],
+	"find":
+	{
+		"height": 39.0
+	},
+	"find_in_files":
+	{
+		"height": 133.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"BREADCOUNT",
+			"breadCount",
+			"arrayOfObjects",
+			"last",
+			"{'",
+			"[{'",
+			"':",
+			"[{'",
+			"adder",
+			"breadAdder",
+			"BREADADDER",
+			"breadAdder",
+			"breadCount",
+			"(`---",
+			"---",
+			"AFTER",
+			"BEFO",
+			"//",
+			"obj",
+			"[]",
+			"topping",
+			"topping1",
+			"1",
+			"(topping1",
+			"\""
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/Users/evan/Dropbox/code/swans/syntax/pixelConstructor.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 982,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								800,
+								800
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 195.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/evan/Dropbox/jobSeeker2-wGit/zendeskphonecall.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 180,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								180,
+								180
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 45.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.elm_format":
+	{
+		"height": 132.0
+	},
+	"output.elm_type":
+	{
+		"height": 132.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 144.0
+	},
+	"pinned_build_system": "",
+	"project": "may2019.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/Dropbox/code/virtual-UDA-env/fullstack-nanodegree-vm/vagrant/forum/forumdb.py"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 234.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

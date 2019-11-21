@@ -1,0 +1,8 @@
+==i=n===N=O=D=E=========
+1.  Make an object of WORD, LENGTH, LANGUAGE, id
+2.  Make something that, given an array of lengths, will print words.
+3.  Make something that, given a words string, can create an array of lengths.
+4. Make a stripper that parses away the non alpha border characters.
+5.  Make a digester that can take a 
+
+=================
