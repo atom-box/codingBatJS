@@ -8,7 +8,43 @@
   <link rel="icon" type="image/png" href="images/dryer.png" />
   <link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">
   <style type="text/css">
-  	
+
+
+/* A variation on CSS I found in the https://www.officesupply.com homepage */
+.universal-loader2-container  {
+  position: absolute;
+  left: 45%;
+  top: 50%;
+  border: 16px solid transparent;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+}
+
+.left-spin{
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 11s linear infinite;
+  opacity: 0.3;    
+}
+
+.right-spin{
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 19s linear infinite;
+  opacity: 0.3;    
+
+}
+
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
   		.propped {
   			min-height: 16rem;
 
@@ -66,6 +102,7 @@
   <p class="lead">Three solutions to web development challenges.</p>
   <hr class="my-4">
 </div>
+
 
 <div class="container">
 
@@ -196,13 +233,81 @@
   <p>Implement word wrap.<br><br> Given a long text as a single string, break the text into lines of any requested length.</p>
   </div>
   <div class="tab-pane cinch fade" id="solution5" role="tabpanel" aria-labelledby="solution-tab">code image</div>
-  <div class="tab-pane fade" id="code4" role="tabpanel" aria-labelledby="code-tab">codetttttttty</div>
+  <div class="tab-pane fade" id="code5" role="tabpanel" aria-labelledby="code-tab">codetttttttty</div>
 </div>
 </article>
 
 
 <article class="card text-center">
-  <h3 class="text-left inverse" >Three more, coming soon!</h3>
+  <h3 class="text-left inverse" >Rotation CSS</h3>
+
+<ul class="nav nav-tabs" id="tab6" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="challenge-tab" data-toggle="tab" href="#challenge6" role="tab" aria-controls="challenge" aria-selected="true">challenge</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="solution-tab" data-toggle="tab" href="#solution6" role="tab" aria-controls="solution" aria-selected="false">solution</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="code-tab" data-toggle="tab" href="#code6" role="tab" aria-controls="code" aria-selected="false">code</a>
+  </li>
+</ul>
+<!-- ----------------666------------------------------------- -->
+<div class="tab-content propped d-flex  align-items-center justify-content-around" id="tab6Content">
+  <div class="tab-pane cinch fade show cinch active" id="challenge6" role="tabpanel" aria-labelledby="challenge-tab">
+
+  <p>Draw a stable SVG image and then spin two backgrounds behind it.  Slightly nauseating result.</p>
+  </div>
+  <div class="tab-pane cinch fade" id="solution6" role="tabpanel" aria-labelledby="solution-tab">
+
+    <a href="https://www.officesupply.com/coupons">
+        <span class="brand-icon">
+          <img class="universal-loader2-container left-spin" src="images/9.png"  />
+          <img class="universal-loader2-container right-spin" src="images/9.png"  />
+
+            <svg version="1.1" class="universal-loader2-container " xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve">
+                <g>
+                    <polygon class="st0" points="54,54 52,54 52,56 56,56 56,50 54,50" />
+                    <rect x="41" y="54" class="st0" width="8" height="2" />
+                    <rect x="30" y="54" class="st0" width="8" height="2" />
+                    <polygon class="st0" points="24,50 22,50 22,56 27,56 27,54 24,54" />
+                    <rect x="22" y="39" class="st0" width="2" height="7" />
+                    <rect x="41" y="20" class="st0" width="8" height="2" />
+                    <polygon class="st0" points="52,20 52,22 54,22 54,25 56,25 56,20" />
+                    <rect x="54" y="39" class="st0" width="2" height="7" />
+                    <rect x="54" y="28" class="st0" width="2" height="8" />
+                    <path class="st0" d="M43.8,7.4C43.6,7.2,43.2,7,43,7c-0.5-0.1-1-0.2-1.4-0.2c-0.7-0.1-1.4-0.1-2.1-0.1
+        c-0.8,0.1-1.5,0.2-2.2,0.5C36.1,7.6,35,8.3,34,9c-2.6,1.8-5,3.9-7.2,6c-1.2,1.2-2.4,2.4-3.6,3.7c-2.7,3-4.5,5.5-4.8,5.9
+        c-0.6,0.7-0.6,0.7-0.6,0.7c-0.5,0.1-1.3,0.1-1.8-0.1c0,0-1-0.4-2.2-0.4c-3.7,0-6.7,3-6.7,6.7c0,3.7,3.3,6.7,7,6.7
+        c1.8,0,3.5-0.7,4.8-1.9c1-1,1.9-2.3,2.1-3.7c0.1-0.4,0.1-0.9-0.1-1.3c-0.1-0.5-0.4-0.9-0.4-1.4c0-0.6,0.5-1,0.9-1.4
+        c1.1-1.2,22-19.6,22-19.6C43.8,8.5,44,7.8,43.8,7.4z M13.9,35.4c-2.2,0-3.9-1.8-3.9-3.9c0-2.2,1.8-3.9,3.9-3.9
+        c2.2,0,3.9,1.8,3.9,3.9C17.8,33.7,16,35.4,13.9,35.4z M23.6,23.9c-0.8,0-1.4-0.6-1.4-1.4c0-0.8,0.6-1.4,1.4-1.4
+        c0.8,0,1.4,0.6,1.4,1.4C25,23.2,24.4,23.9,23.6,23.9z" />
+                    <path class="st0" d="M13.8,19.3c1.1,0,2.1-0.4,2.1-0.4c0.5-0.2,1.3-0.2,1.7-0.1c0,0,0.8,0.9,1,1.1s0.8,0.3,1.2-0.1
+        c0,0,1.1-1.3,2.1-2.5c0.1-0.1,0.1-0.1,0.1-0.1c0.1-0.2,0.1-0.4,0-0.6c0,0,0,0-0.1-0.1c-1-1.2-1.8-2.2-1.8-2.2c0.1-0.7,0-1.5,0-2.2
+        c-0.1-0.6-0.2-1.1-0.4-1.7c-0.4-1.1-1-2-1.9-2.7c-1.2-1-2.7-1.5-4.2-1.5c-3.6,0-6.5,2.9-6.5,6.6C7.2,16.3,10.2,19.3,13.8,19.3z
+         M13.8,8.9c2.1,0,3.8,1.7,3.8,3.8s-1.7,3.8-3.8,3.8s-3.8-1.7-3.8-3.8S11.7,8.9,13.8,8.9z" />
+                    <path class="st0" d="M43.1,36.4c0.2-0.4,0-1.1-0.3-1.4L30.1,23.8c-0.4-0.4-1.1-0.4-1.5,0l-3.1,2.8
+        c-0.4,0.4-0.4,1,0,1.3c1,1,2.1,1.9,3.2,2.8c2,1.7,4.1,3.4,6.4,4.8c1,0.6,2,1.3,3.2,1.5c0.9,0.2,1.8,0.2,2.8,0.1
+        C41.6,37,42.8,37,43.1,36.4z" />
+                </g>
+            </svg>
+        </span>
+    </a>
+
+
+
+  </div>
+  <div class="tab-pane fade" id="code6" role="tabpanel" aria-labelledby="code-tab">
+    <p>I dug into some the www.officesupply.com page and made a mashup of their coupon SVG graphic, their loader &ltimg&gt CSS, and an image of nine LEDs</p>
+  </div>
+</div>
+</article>
+
+
+
+<article class="card text-center">
+  <h3 class="text-left inverse" >More, coming soon!</h3> 
 </article>
 </div><!-- end container -->
 
