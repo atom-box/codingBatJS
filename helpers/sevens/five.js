@@ -1,5 +1,5 @@
 "use strict;"
-import ike from './eisenhower.js';
+// UNCOMMENT THIS LINE TO RUN AS NODE import ike from './eisenhower.js';
 // gotta run as node -r esm five.js to get import to work
 const longString = ike;
 
@@ -50,8 +50,13 @@ function formParagraph( arr){
  // | | | | | | | (_| | | | | | | |
  // |_| |_| |_|  \__,_| |_| |_| |_|
                                                                
+
+
+
 // This EVAN.JS is meant to load into .hmtl but to test it, run from NODE!
 // CLI Syntax: node -r esm five.js and one of the switch args below
+
+/*  UNCOMMENT TO RUN AS TEST MODE WITH NODE.JS CLI
 if (process.argv[2] !== undefined) {
     const main = {}; // namespace
 
@@ -91,5 +96,6 @@ if (process.argv[2] !== undefined) {
         console.log('no optional args recognized');     
     }
 }
+*/
 console.log('Testing finished.')
 
