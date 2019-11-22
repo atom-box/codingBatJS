@@ -31,7 +31,7 @@ function muncher(k, s){
     }
     console.log(`LINE32 i, leftCut, rightCut ${i}, ${leftCut}, ${rightCut}`);
     lines.push(s.slice(leftCut, rightCut)  );
-    leftCut = rightCut + 1;
+    leftCut = rightCut;
     console.log(`i k rightCut ARE instances of ${typeof i} & ${typeof k} & ${typeof rightCut}`);
     i = rightCut + k;
     console.log(`LINE36 i, leftCut, rightCut ${i}, ${leftCut}, ${rightCut}`);
@@ -70,19 +70,8 @@ function fiveMain(){
   // out5El.innerHTML = str3;
 
   let arr = muncher(reqCharsPerLine, longString);
-  console.log(`Made an array with ${arr.length} ines.`);
-  console.log(`third line is ${arr[2]}.`);
-  console.log(`tenth line is ${arr[9]}.`);
-  console.log(madeParagraph);
-  console.log("...is the paragraph at 77.")
   madeParagraph = arr.join('\n');
-    console.log(madeParagraph);
-  console.log("...is the paragraphat 80.")
-  console.log(`Arr has ${arr.length} Paragraph has ${madeParagraph.length}`)
-
   out5El.innerHTML =  madeParagraph;
-  console.log(madeParagraph);
-  console.log("...is the paragraph at 84.")
 }
 
 
@@ -151,7 +140,7 @@ sol5.innerHTML = `
 <h3>Break the lines at a requested length:</h3>
   <div class="form-group">
     <label for="formControlRange">Requested line length: <span id="slider5digits" style="width: 7rem"> (?) </span> characters.</label>
-    <input type="range" class="form-control-range" id="slider5"  onchange="fiveMain()" value="27" min="8" max="99"    >
+    <input type="range" class="form-control-range cinch" id="slider5"  onchange="fiveMain()" value="27" min="8" max="99"    >
 
   </div>
   <pre class="outpanel-wide" id="output5">nothing here yet</pre>
