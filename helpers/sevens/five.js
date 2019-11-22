@@ -1,5 +1,5 @@
 "use strict;"
-// UNCOMMENT THIS LINE TO RUN AS NODE import ike from './eisenhower.js';
+// UNCOMMENT THIS LINE TO RUN AS NODE import ike from './eisenhower.js' in which case,
 // gotta run as node -r esm five.js to get import to work
 const longString = ike;
 console.log(ike.length);
@@ -58,25 +58,11 @@ function fiveMain(){
   let slider5digitsEl = document.getElementById('slider5digits');
   slider5digitsEl.innerHTML = slider5.value;
 
-  // /////////let str3 = JSON.stringify(makeAny(config.soonID, listies  ));
-  // TODO could use <br /> instead
-  // str3 = 
-
-
-
-  // str3 = str3.replace(/}/g , '}</p><p>');
-  // str3 = '<p >' + str3 + '</p>';
-  // str3 = '<div  style="font-family: monospace; color: orange">' + str3    + '</div>'
-  // out5El.innerHTML = str3;
-
   let arr = muncher(reqCharsPerLine, longString);
   madeParagraph = arr.join('\n');
   out5El.innerHTML =  madeParagraph;
 }
 
-
-// This EVAN.JS is meant to load into .hmtl but to test it, run from NODE!
-// CLI Syntax: node -r esm five.js and one of the switch args below
 
 /*  UNCOMMENT TO RUN AS TEST MODE WITH NODE.JS CLI
 if (process.argv[2] !== undefined) {
@@ -138,9 +124,9 @@ let sol5 = document.getElementById('solution5');
 sol5.innerHTML = `
 <form oninput="console.log("section5");">
 <h3>Break the lines at a requested length:</h3>
-  <div class="form-group">
+  <div class="form-row align-items-center">
     <label for="formControlRange">Requested line length: <span id="slider5digits" style="width: 7rem"> (?) </span> characters.</label>
-    <input type="range" class="form-control-range cinch" id="slider5"  onchange="fiveMain()" value="27" min="8" max="99"    >
+    <input type="range" class="form-control-range  cinch" id="slider5"  onchange="fiveMain()" value="27" min="8" max="99"    >
 
   </div>
   <pre class="outpanel-wide" id="output5">nothing here yet</pre>
