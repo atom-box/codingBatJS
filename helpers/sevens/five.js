@@ -13,8 +13,32 @@ let madeParagraph ='';
  // |_|    \__,_| |_| |_|  \___| |___/
                                    
 function muncher(k, s){
-  return `Muncher(k, s) received ${k} and ${s}...`
+  console.log( `Muncher(k, s) received ${k} and ${s}...`);
+  let i = k,  // an index pointing to the raw string
+    rightCut = 0,
+    leftCut = 0, // span from this to i defines substring
+    lines = [];
+  while (i < s.length){
+    while (s[i] !== ' ' && i > leftCut){
+      i = i - 1;
+      console.log(`The char at: ${i} is [${s[i]}] Slice pondered: ${s.slice(leftCut, i)}`)
+    }
+    console.log(`LINE 26 i, leftCut, rightCut ${i}, ${leftCut}, ${rightCut}`);
+    if (i === leftCut){  // found no space!
+      rightCut = i + k;
+    } else {
+      rightCut = i;
+    }
+    console.log(`LINE32 i, leftCut, rightCut ${i}, ${leftCut}, ${rightCut}`);
+    lines.push(s.slice(leftCut, rightCut)  );
+    leftCut = rightCut + 1;
+    console.log(`i k rightCut ARE instances of ${typeof i} & ${typeof k} & ${typeof rightCut}`);
+    i = rightCut + k;
+    console.log(`LINE36 i, leftCut, rightCut ${i}, ${leftCut}, ${rightCut}`);
+  } 
+  return lines.length;
 }
+
 
 
 
@@ -28,7 +52,7 @@ function muncher(k, s){
 
 function fiveMain(){
   let slider5El = document.getElementById('slider5');
-  let reqCharsPerLine = slider5.value;
+  let reqCharsPerLine = Number(slider5.value);
   let out5El = document.getElementById('output5');
 
   let slider5digitsEl = document.getElementById('slider5digits');
@@ -45,7 +69,7 @@ function fiveMain(){
   // str3 = '<div  style="font-family: monospace; color: orange">' + str3    + '</div>'
   // out5El.innerHTML = str3;
 
-  out5El.innerHTML = muncher(reqCharsPerLine, longString.slice(0, reqCharsPerLine));
+  out5El.innerHTML = muncher(reqCharsPerLine, longString);
 }
 
 
