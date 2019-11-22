@@ -12,7 +12,9 @@ let madeParagraph ='';
  // | |   | |_| | | | | | | (__  \__ \
  // |_|    \__,_| |_| |_|  \___| |___/
                                    
-
+function muncher(k, s){
+  return `Muncher(k, s) received ${k} and ${s}...`
+}
 
 
 
@@ -42,6 +44,8 @@ function fiveMain(){
   // str3 = '<p >' + str3 + '</p>';
   // str3 = '<div  style="font-family: monospace; color: orange">' + str3    + '</div>'
   // out5El.innerHTML = str3;
+
+  out5El.innerHTML = muncher(reqCharsPerLine, longString.slice(0, reqCharsPerLine));
 }
 
 
@@ -109,7 +113,7 @@ sol5.innerHTML = `
 <form oninput="console.log("section5");">
 <h3>Break the lines at a requested length:</h3>
   <div class="form-group">
-    <label for="formControlRange">Requested line length: <span id="slider5digits" style="width: 7rem"> 0 </span> characters.</label>
+    <label for="formControlRange">Requested line length: <span id="slider5digits" style="width: 7rem"> (?) </span> characters.</label>
     <input type="range" class="form-control-range" id="slider5"  onchange="fiveMain()" value="27" min="13" max="220"    >
 
   </div>
