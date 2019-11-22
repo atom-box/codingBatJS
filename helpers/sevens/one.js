@@ -25,7 +25,7 @@ dice.show7 = function() {
 
 let sol1 = document.getElementById('solution1');
 sol1.innerHTML = `
-<h3>Roll a dice with sides of</h3>
+<h3>Notice the distribution of results as you repeatedly roll a dice with sides of</h3>
 <div class="btn-group">
     <button type="button" class="btn btn-primary btn-sm" onclick="dice.show5()" > five</button>
     <button type="button" class="btn btn-danger btn-sm" onclick="dice.show7()" > seven</button>
