@@ -12,42 +12,7 @@ let madeParagraph ='';
  // | |   | |_| | | | | | | (__  \__ \
  // |_|    \__,_| |_| |_|  \___| |___/
                                    
-// Accepts requestedlinelength as k, jumbostring as s
-// Returns an array of stringlines
-function muncher (k, s){
-  s = ["tt", "yy", "uu"]
-  console.log(`${s} line 18 !!`);
-  return  s;
-  let i = k,  // an index pointing to the raw string
-    rightCut = 0,
-    leftCut = 0, // span from this to i defines substring
-    lines = [];
-  while (i < s.length){
-    while (s[i] !== ' ' && i > leftCut){
-      i = i - 1;
-      console.log(`i: ${i} byte: [${s[i]}] looking at: ${s.slice((i - k), i)}`)
-    }
-    if (i === leftCut){  // found no space!
-      rightCut = i + k;
-    } else {
-      rightCut = i;
-    }
-    lines.push(s.slice(leftCut, rightCut)  );
-    leftCut = rightCut + 1;
-    i = rightCut + k;
-  } 
-  return lines;
-}
 
-// Accepts: an array of stringlines
-// Returns: array of paragraphs, each as a newlineformatted string
-function putParagraph(){
-  let out5El = document.getElementById('solution5'); 
-  let requestedlinelength = document.getElementById('slider5').value;
-  let arr = muncher()
-  madeParagraph = arr.join('\n');
-  out5El.innerHTML = madeParagraph;
-}
 
 
 
@@ -58,6 +23,26 @@ function putParagraph(){
  // | | | | | | | (_| | | | | | | |
  // |_| |_| |_|  \__,_| |_| |_| |_|
                                                                
+
+function fiveMain(){
+  let slider5El = document.getElementById('slider5');
+  let reqCharsPerLine = slider5.value;
+  let out5El = document.getElementById('output5');
+
+  let slider5digitsEl = document.getElementById('slider5digits');
+  slider5digitsEl.innerHTML = slider5.value;
+
+  // /////////let str3 = JSON.stringify(makeAny(config.soonID, listies  ));
+  // TODO could use <br /> instead
+  // str3 = 
+
+
+
+  // str3 = str3.replace(/}/g , '}</p><p>');
+  // str3 = '<p >' + str3 + '</p>';
+  // str3 = '<div  style="font-family: monospace; color: orange">' + str3    + '</div>'
+  // out5El.innerHTML = str3;
+}
 
 
 // This EVAN.JS is meant to load into .hmtl but to test it, run from NODE!
@@ -121,20 +106,16 @@ console.log('Testing finished.')
 
 let sol5 = document.getElementById('solution5');
 sol5.innerHTML = `
-<form oninput="console.log(33);">
-<h3>Set characters per line:</h3>
+<form oninput="console.log("section5");">
+<h3>Break the lines at a requested length:</h3>
   <div class="form-group">
-    <label for="formCharWidth">Slide the controller to create a list with <span id="slider5digits" style="width: 7rem"></span> nodes.</label>
-    <input type="range" class="form-control-range" id="slider5"  
-    onchange="putParagraph()" 
-    value="27" min="13" max="180"    >
+    <label for="formControlRange">Requested line length: <span id="slider5digits" style="width: 7rem"> 0 </span> characters.</label>
+    <input type="range" class="form-control-range" id="slider5"  onchange="fiveMain()" value="27" min="13" max="220"    >
 
   </div>
   <output class="outpanel" id="output5"></output>
 <form>
-`;
-
-
+`
 
 
 // 5th tab
