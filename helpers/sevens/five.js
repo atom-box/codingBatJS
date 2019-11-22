@@ -4,7 +4,7 @@
 const longString = ike;
 console.log(ike.length);
 let madeParagraph ='';
-
+let todoParagraph = "Now this conjunction \nof an immense \nmilitary \nestablishment and a large arms industry is\n new in the American experi\nence. The total infl\nuence -- economic, \npolitical, even spiri\ntual -- is felt in ever\ny city, evvery Statehouse, every office \nof the Fede"
  //   __                              
  //  / _|                             
  // | |_   _   _   _ __     ___   ___ 
@@ -73,10 +73,16 @@ function fiveMain(){
   console.log(`Made an array with ${arr.length} ines.`);
   console.log(`third line is ${arr[2]}.`);
   console.log(`tenth line is ${arr[9]}.`);
-
+  console.log(madeParagraph);
+  console.log("...is the paragraph at 77.")
   madeParagraph = arr.join('\n');
+    console.log(madeParagraph);
+  console.log("...is the paragraphat 80.")
   console.log(`Arr has ${arr.length} Paragraph has ${madeParagraph.length}`)
-  out5El.innerHTML =  arr[11] ;
+
+  out5El.innerHTML =  madeParagraph;
+  console.log(madeParagraph);
+  console.log("...is the paragraph at 84.")
 }
 
 
@@ -148,7 +154,7 @@ sol5.innerHTML = `
     <input type="range" class="form-control-range" id="slider5"  onchange="fiveMain()" value="27" min="8" max="99"    >
 
   </div>
-  <output class="outpanel-wide" id="output5"></output>
+  <pre class="outpanel-wide" id="output5">nothing here yet</pre>
 <form>
 `
 
