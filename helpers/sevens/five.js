@@ -75,7 +75,8 @@ function fiveMain(){
   console.log(`tenth line is ${arr[9]}.`);
 
   madeParagraph = arr.join('\n');
-  out5El.innerHTML =  "-- heeyyyy  --" ;
+  console.log(`Arr has ${arr.length} Paragraph has ${madeParagraph.length}`)
+  out5El.innerHTML =  arr[11] ;
 }
 
 
@@ -144,10 +145,10 @@ sol5.innerHTML = `
 <h3>Break the lines at a requested length:</h3>
   <div class="form-group">
     <label for="formControlRange">Requested line length: <span id="slider5digits" style="width: 7rem"> (?) </span> characters.</label>
-    <input type="range" class="form-control-range" id="slider5"  onchange="fiveMain()" value="27" min="13" max="220"    >
+    <input type="range" class="form-control-range" id="slider5"  onchange="fiveMain()" value="27" min="8" max="99"    >
 
   </div>
-  <output class="outpanel" id="output5"></output>
+  <output class="outpanel-wide" id="output5"></output>
 <form>
 `
 
