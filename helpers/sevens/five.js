@@ -36,7 +36,7 @@ function muncher(k, s){
     i = rightCut + k;
     console.log(`LINE36 i, leftCut, rightCut ${i}, ${leftCut}, ${rightCut}`);
   } 
-  return lines.length;
+  return lines;
 }
 
 
@@ -69,7 +69,13 @@ function fiveMain(){
   // str3 = '<div  style="font-family: monospace; color: orange">' + str3    + '</div>'
   // out5El.innerHTML = str3;
 
-  out5El.innerHTML = muncher(reqCharsPerLine, longString);
+  let arr = muncher(reqCharsPerLine, longString);
+  console.log(`Made an array with ${arr.length} ines.`);
+  console.log(`third line is ${arr[2]}.`);
+  console.log(`tenth line is ${arr[9]}.`);
+
+  madeParagraph = arr.join('\n');
+  out5El.innerHTML =  "-- heeyyyy  --" ;
 }
 
 
