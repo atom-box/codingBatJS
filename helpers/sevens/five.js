@@ -50,7 +50,8 @@ function formParagraph( arr){
  // | | | | | | | (_| | | | | | | |
  // |_| |_| |_|  \__,_| |_| |_| |_|
                                                                
-
+let requestLength = 29;
+const madeParagraph = formParagraph(muncher(customWidth, ike));
 
 
 // This EVAN.JS is meant to load into .hmtl but to test it, run from NODE!
@@ -99,3 +100,42 @@ if (process.argv[2] !== undefined) {
 */
 console.log('Testing finished.')
 
+
+/*
+ _____     ____    __  __ 
+ |  __ \   / __ \  |  \/  |
+ | |  | | | |  | | | \  / |
+ | |  | | | |  | | | |\/| |
+ | |__| | | |__| | | |  | |
+ |_____/   \____/  |_|  |_|
+                           
+*/
+
+
+
+
+
+let sol5 = document.getElementById('solution5');
+sol5.innerHTML = `
+<form oninput="console.log(33);">
+<h3>Set characters per line:</h3>
+  <div class="form-group">
+    <label for="formControlRange">Slide the controller to create a list with <span id="slider2digits" style="width: 7rem"></span> nodes.</label>
+    <input type="range" class="form-control-range" id="slider2"  onchange="twoMain()" value="27" min="13" max="180"    >
+
+  </div>
+  <output class="outpanel" id="output5"></output>
+<form>
+`;
+
+
+
+
+// 5th tab
+let code5El = document.getElementById('code5');
+code5El.innerHTML = `
+<div>
+<p>Created at the DEV-Together Meetup with Davi, at Bendyworks.</p>
+  <p>My <a href="https://github.com/atom-box/codingBatJS/blob/master/helpers/sevens/five.js"> solution</a> in javascript</p>
+</div>
+`;
