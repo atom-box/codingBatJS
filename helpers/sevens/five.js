@@ -2,6 +2,8 @@
 // UNCOMMENT THIS LINE TO RUN AS NODE import ike from './eisenhower.js';
 // gotta run as node -r esm five.js to get import to work
 const longString = ike;
+console.log(ike.length);
+let madeParagraph ='';
 
  //   __                              
  //  / _|                             
@@ -13,6 +15,9 @@ const longString = ike;
 // Accepts requestedlinelength as k, jumbostring as s
 // Returns an array of stringlines
 function muncher (k, s){
+  s = ["tt", "yy", "uu"]
+  console.log(`${s} line 18 !!`);
+  return  s;
   let i = k,  // an index pointing to the raw string
     rightCut = 0,
     leftCut = 0, // span from this to i defines substring
@@ -36,10 +41,13 @@ function muncher (k, s){
 
 // Accepts: an array of stringlines
 // Returns: array of paragraphs, each as a newlineformatted string
-function formParagraph( arr){
-  return arr.join('\n')
+function putParagraph(){
+  let out5El = document.getElementById('solution5'); 
+  let requestedlinelength = document.getElementById('slider5').value;
+  let arr = muncher()
+  madeParagraph = arr.join('\n');
+  out5El.innerHTML = madeParagraph;
 }
-
 
 
 
@@ -50,8 +58,6 @@ function formParagraph( arr){
  // | | | | | | | (_| | | | | | | |
  // |_| |_| |_|  \__,_| |_| |_| |_|
                                                                
-let requestLength = 29;
-const madeParagraph = formParagraph(muncher(customWidth, ike));
 
 
 // This EVAN.JS is meant to load into .hmtl but to test it, run from NODE!
@@ -86,11 +92,11 @@ if (process.argv[2] !== undefined) {
         console.log('...end Ike liners.')
         break;
       case 'davi': 
-        console.log ( formParagraph(["Only an alert and", "knowledgeable citizenry ", "can compel the proper meshing ", "of the huge industrial ", "and military ", "machinery of defense ", "with our peaceful ", "methods and goals"]));
+        console.log ( putParagraph(["Only an alert and", "knowledgeable citizenry ", "can compel the proper meshing ", "of the huge industrial ", "and military ", "machinery of defense ", "with our peaceful ", "methods and goals"]));
         break;
       case 'breakmake': 
         let customWidth = Number(process.argv[3]);
-        let test1 = formParagraph(muncher(customWidth, ike));
+        let test1 = putParagraph(muncher(customWidth, ike));
         console.log ( test1);
         break;
        default:
@@ -113,15 +119,15 @@ console.log('Testing finished.')
 
 
 
-
-
 let sol5 = document.getElementById('solution5');
 sol5.innerHTML = `
 <form oninput="console.log(33);">
 <h3>Set characters per line:</h3>
   <div class="form-group">
-    <label for="formControlRange">Slide the controller to create a list with <span id="slider2digits" style="width: 7rem"></span> nodes.</label>
-    <input type="range" class="form-control-range" id="slider2"  onchange="twoMain()" value="27" min="13" max="180"    >
+    <label for="formCharWidth">Slide the controller to create a list with <span id="slider5digits" style="width: 7rem"></span> nodes.</label>
+    <input type="range" class="form-control-range" id="slider5"  
+    onchange="putParagraph()" 
+    value="27" min="13" max="180"    >
 
   </div>
   <output class="outpanel" id="output5"></output>
