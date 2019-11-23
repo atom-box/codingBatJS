@@ -4,7 +4,6 @@
 const longString = ike;
 console.log(ike.length);
 let madeParagraph ='';
-let todoParagraph = "Now this conjunction \nof an immense \nmilitary \nestablishment and a large arms industry is\n new in the American experi\nence. The total infl\nuence -- economic, \npolitical, even spiri\ntual -- is felt in ever\ny city, evvery Statehouse, every office \nof the Fede"
  //   __                              
  //  / _|                             
  // | |_   _   _   _ __     ___   ___ 
@@ -36,10 +35,12 @@ function muncher(k, s){
     i = rightCut + k;
     console.log(`LINE36 i, leftCut, rightCut ${i}, ${leftCut}, ${rightCut}`);
   } 
+  // Now push on the few, leftover chars.
+  leftCut = rightCut; 
+  rightCut = s.length;
+  lines.push(s.slice(leftCut, rightCut)  );
   return lines;
 }
-
-
 
 
  //                      _         
@@ -63,6 +64,13 @@ function fiveMain(){
   out5El.innerHTML =  madeParagraph;
 }
 
+/*
+  _____   ___   ___   _____   ___ 
+ |_   _| | __| / __| |_   _| / __|
+   | |   | _|  \__ \   | |   \__ \
+   |_|   |___| |___/   |_|   |___/
+                                  
+*/
 
 /*  UNCOMMENT TO RUN AS TEST MODE WITH NODE.JS CLI
 if (process.argv[2] !== undefined) {
