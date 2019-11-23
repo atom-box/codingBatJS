@@ -120,7 +120,7 @@ function grub(s) {
 let sol3 = document.getElementById('solution3');
 sol3.innerHTML = `
 <form  oninput="out1.value = uniq(str1.value)">
-
+	<p>Try entering words such as <i>broomball</i>, <i>Menominee</i>, or <i>spoonerism</i>.</p>
   <label for="usr">If the text is:</label>
     <input type="text" class="form-control" placeholder="type here" name="str1">
   <p ><br/>Then the longest unique streak of characters is:</p>
