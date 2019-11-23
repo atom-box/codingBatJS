@@ -17,8 +17,10 @@ console.log('Huey Morrison');
  // | | | | | | | | | |_  \__ \
  // |_| |_| |_| |_|  \__| |___/
 
-// Lowest node must be findable, so 
-// make its ID 000001
+// First node must be findable, so 
+// make its ID null.
+// Similarly, final node is identified
+// by having NEXT be null
 
 let config = {};
 config.nodes = {};
@@ -174,6 +176,7 @@ sol2.innerHTML = `
 
   </div>
   <output class="outpanel" id="output2"></output>
+  <p>This was solved using ES6 classes.  The JSON node list is null-terminated at beginning and end.</p>
 <form>
 
 
