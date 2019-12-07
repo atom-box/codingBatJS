@@ -29,11 +29,17 @@ console.log("Length of now.constructor " + now.constructor.length);
 for (p in now.constructor) {
 	console.log("P is " + p + " and is " + now.constructor[p]);
 }
+console.log(now.constructor)
+console.log(now.length)
+console.log(now.name)
+console.log(now.prototype)
+
 
 console.log("Length of drawl.constructor " + drawl.constructor.length);
 for (p in drawl.constructor) {
 	console.log("P is " + p + " and is " + drawl.constructor[p]);
 }
+console.log(Object.keys(drawl.constructor))
 
 
 // Just show OWN PROPERTIES of the funciton
