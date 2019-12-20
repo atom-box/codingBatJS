@@ -63,7 +63,7 @@ const find = {
   lines(){return fileContents.match(/\ /g).length;},
   alphaChars(){return fileContents.match(/[A-z]/g).length;},
   digitChars(){return fileContents.match(/[0-9]/g).length;},
-  spaces(){return fileContents.match(/ /g).length;}
+  spaces(){return fileContents.match(/\ /g).length;}
 }
 
 
