@@ -6,8 +6,11 @@
 
 const fs = require('fs');
 // check for inputted file at CLI
+const pathname = process.argv[2];
+let fileContents = '';
 try {
-  const contents = fs.readFileSync('./data/abec.txt', 'utf8');
+  fileContents = fs.readFileSync(pathname, 'utf8');
+
 }
 catch(err) {
   if (err.code === 'ENOENT') {
@@ -15,15 +18,15 @@ catch(err) {
     console.log(`Please be sure you are running at CLI as NODE CHARCOUNTER.JS FILENAME.TXT.\n`);
     process.exit(1);
   } else {
-    console.log(13);
+    console.log('999: unknown error...');
   }
-} 
+}
 
 
 // initialize an object to hold results
 const result = {
   rawText: '',
-  filename: process.argv[2],
+  filename: pathname,
   lines: 0,
   allWords: 0,
   chars: {
@@ -57,22 +60,24 @@ const result = {
 
 // define the methods
 const find = {
-  nonSpaces(){return 13;},
-  alphaChars(){return 32;},
-  digitChars(){return 42;}
+  lines(){return fileContents.match(/\ /g).length;},
+  alphaChars(){return fileContents.match(/[A-z]/g).length;},
+  digitChars(){return fileContents.match(/[0-9]/g).length;},
+  spaces(){return fileContents.match(/ /g).length;}
 }
 
 
 // call the methods
-result.rawText = contents;
-result.chars.all = contents.length;
-result.chars.alphas = contents.match(/[A-z]/g).length;
-// result.chars.spaces = contents.match(/\ /g).length;
-result.chars.digits = contents.match(/[0-9]/g).length;
+result.rawText = fileContents;
+result.chars.all = fileContents.length;
+result.chars.alphas = find.alphaChars();
+result.chars.spaces = find.spaces();
+result.chars.digits = find.digitChars();
 
 
 // print the results
-console.log(`Number of lines: ${result.lines}`);
+console.log(`Filename: ${result.filename}`);
+console.log(`Number of spaces: ${result.chars.spaces}`);
 console.log(`Number of characters (total): ${result.chars.all + result.chars.spaces}`);
 console.log(`Number of letters: ${result.chars.alphas}`);
 console.log(`Number of figures: ${result.chars.digits}`);
