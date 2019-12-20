@@ -75,7 +75,10 @@ const find = {
   lines(){return fileContents.match(/\n/g).length;},
   alphaChars(){return fileContents.match(/[A-z]/g).length;},
   digitChars(){return fileContents.match(/[0-9]/g).length;},
-  spaces(){return fileContents.match(/\ /g).length;}
+  spaces(){return fileContents.match(/\ /g).length;},
+
+  // SYMBOLS uses functions reduntantly, so it won't break if the data object gets changed someday
+  symbols(){return fileContents.length - this.alphaChars() - this.digitChars() - this.spaces() }
 }
 
 
@@ -85,16 +88,18 @@ result.chars.all = fileContents.length;
 result.chars.alphas = find.alphaChars();
 result.chars.spaces = find.spaces();
 result.chars.digits = find.digitChars();
-result.lines = find.lines;
-
+result.lines = find.lines() + 1; 
+result.spaces = find.spaces();
+result.symbols = find.symbols();
 
 // print the results
 console.log(`Filename: ${result.filename}`);
-console.log(`Number of spaces: ${result.chars.spaces}`);
+console.log(`Number of lines: ${result.lines}`);
+// console.log(`Number of spaces: ${result.chars.spaces}`);
 console.log(`Number of characters (total): ${result.chars.all + result.chars.spaces}`);
 console.log(`Number of letters: ${result.chars.alphas}`);
 console.log(`Number of figures: ${result.chars.digits}`);
-console.log(`Number of other characters: ${result.chars.symbols}`);
+console.log(`Number of other characters: ${result.symbols}`);
 console.log(`Number of words: ${result.allWords}`);
 
 
