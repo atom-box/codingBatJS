@@ -5,13 +5,25 @@
  */
 
 const fs = require('fs');
-const contents = fs.readFileSync('./data/abc.txt', 'utf8');
-console.log('modernity and');
-console.log('its discontents');
+// check for inputted file at CLI
+try {
+  const contents = fs.readFileSync('./data/abec.txt', 'utf8');
+}
+catch(err) {
+  if (err.code === 'ENOENT') {
+    console.log(`Your file was not found: [${process.argv[2]}]`);
+    console.log(`Please be sure you are running at CLI as NODE CHARCOUNTER.JS FILENAME.TXT.\n`);
+    process.exit(1);
+  } else {
+    console.log(13);
+  }
+} 
+
 
 // initialize an object to hold results
 const result = {
   rawText: '',
+  filename: process.argv[2],
   lines: 0,
   allWords: 0,
   chars: {
@@ -50,11 +62,12 @@ const find = {
   digitChars(){return 42;}
 }
 
+
 // call the methods
 result.rawText = contents;
 result.chars.all = contents.length;
 result.chars.alphas = contents.match(/[A-z]/g).length;
-result.chars.spaces = contents.match(/\ /g).length;
+// result.chars.spaces = contents.match(/\ /g).length;
 result.chars.digits = contents.match(/[0-9]/g).length;
 
 
