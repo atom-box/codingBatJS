@@ -8,14 +8,26 @@ const fs = require('fs');
 // check for inputted file at CLI
 const pathname = process.argv[2];
 let fileContents = '';
+
+// open file. confirm correct pathname was requested
+
+function showUserError(){
+    console.log(`Your file was not found: [${process.argv[2]}]`);
+    console.log(`Please be sure you are running at CLI as NODE CHARCOUNTER.JS FILENAME.TXT.\n`);
+}
+
+if (!process.argv[2]){
+  showUserError();
+  process.exit(1); // no filename requested at all
+}
+
 try {
   fileContents = fs.readFileSync(pathname, 'utf8');
 
 }
 catch(err) {
   if (err.code === 'ENOENT') {
-    console.log(`Your file was not found: [${process.argv[2]}]`);
-    console.log(`Please be sure you are running at CLI as NODE CHARCOUNTER.JS FILENAME.TXT.\n`);
+    showUserError();
     process.exit(1);
   } else {
     console.log('999: unknown error...');
@@ -60,19 +72,20 @@ const result = {
 
 // define the methods
 const find = {
-  lines(){return fileContents.match(/\ /g).length;},
+  lines(){return fileContents.match(/\n/g).length;},
   alphaChars(){return fileContents.match(/[A-z]/g).length;},
   digitChars(){return fileContents.match(/[0-9]/g).length;},
   spaces(){return fileContents.match(/\ /g).length;}
 }
 
 
-// call the methods
+// call the methods in FIND object, store in RESULT object
 result.rawText = fileContents;
 result.chars.all = fileContents.length;
 result.chars.alphas = find.alphaChars();
 result.chars.spaces = find.spaces();
 result.chars.digits = find.digitChars();
+result.lines = find.lines;
 
 
 // print the results
