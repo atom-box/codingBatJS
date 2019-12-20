@@ -82,6 +82,59 @@ const find = {
 }
 
 
+
+function stringToWords(s){
+// accept the raw string, tokenize, clean the boundaries of each word, return an array of words
+// this method does not remove a symbol or digit if it is trapped within a word
+  let results = [];
+  // s = s.replace('\n', ' ');
+  results = s.split(/\s/); 
+  results = results.map( (item)=>{return leftNibbler(item)}  );
+  results = results.map( (item)=>{return rightNibbler(item)}  );
+  let accumulator = [];
+  results = results.reduce((total, word) => {
+    if (word.length > 0){ total.push(word)}
+    return total;
+  }, []);
+
+  // results = results.reduce( (total, item)=>{if (item.length > 0) { return total.push(item)} });
+  return results;
+}
+
+
+function leftNibbler(w){
+// accept a word, remove non alpha chars from left, return the clean word
+while (w.length > 0){
+  if (w[0].match(/[A-Za-z]/)) {
+    console.log('good looking char: ' + w[0]);
+    return w;
+  } else {
+    console.log('bad looking char: ' + w[0]);
+    w = w.substr(1);
+  }
+} 
+return '';
+}
+
+function rightNibbler(w){
+// accept a word, remove non alpha chars from left, return the clean word
+while (w.length > 0){
+  console.log('right nibbler about to check ' + w[w.length -1]);
+  if (w[w.length-1].match(/[A-Za-z]/)) {
+    console.log('good looking char: ' + w[w.length -1]);
+    return w;
+  } else {
+    console.log('bad looking char: ' + w[0]);
+    let lengthToKeep = w.length -1;
+    w = w.substr(0, lengthToKeep);
+  }
+} 
+return '';
+}
+
+
+
+
 // call the methods in FIND object, store in RESULT object
 result.rawText = fileContents;
 result.chars.all = fileContents.length;
@@ -102,8 +155,7 @@ console.log(`Number of figures: ${result.chars.digits}`);
 console.log(`Number of other characters: ${result.symbols}`);
 console.log(`Number of words: ${result.allWords}`);
 
-
-
 console.log(`Note: words are assumed to be any combination of chars bounded by a space, terminus, or the following symbols [.,?!"].  This definition of "word" will affect both the defition of word length as well as total number of words.`);
 
+console.log(stringToWords(fileContents));
 // Keep track of coding time: 5pm to 630, 1015 to 1056
