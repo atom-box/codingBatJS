@@ -39,6 +39,7 @@ catch(err) {
 const result = {
   rawText: '',
   filename: pathname,
+  wordsArray: [],
   lines: 0,
   allWords: 0,
   chars: {
@@ -78,11 +79,25 @@ const find = {
   spaces(){return fileContents.match(/\ /g).length;},
 
   // SYMBOLS uses functions reduntantly, so it won't break if the data object gets changed someday
-  symbols(){return fileContents.length - this.alphaChars() - this.digitChars() - this.spaces() }
+  symbols(){return fileContents.length - this.alphaChars() - this.digitChars() - this.spaces() },
+  // accept array of words,return a tally of words size n
+  size(words, size){
+    return words.reduce((total, item)=>{console.log('item size in reduce is ' + item.length + ' looking for size ' + size); if (item.length === Number(size)){total = (total || 0) + 1}; return total  }, 0 );
+  }
 }
 
 
 
+/*
+ _____  ____   _  _   ___   _  _    ___   ____   ___  
+)__ __(/ __ \ ) |) / ) __( ) \/ (  )_ _( )___ ( ) __( 
+  | |  ))__(( | ( (  | _)  |  \ |  _| |_   / /_ | _)  
+  )_(  \____/ )_|)_\ )___( )_()_( )_____( )____()___( 
+*/
+//  The next 50 lines are all for tokenizing!
+
+
+// BREAK RAW STRING INTO ARRAY OF WORDS
 function stringToWords(s){
 // accept the raw string, tokenize, clean the boundaries of each word, return an array of words
 // this method does not remove a symbol or digit if it is trapped within a word
@@ -101,7 +116,7 @@ function stringToWords(s){
   return results;
 }
 
-
+// REMOVE LEADING SYMBOLS
 function leftNibbler(w){
 // accept a word, remove non alpha chars from left, return the clean word
 while (w.length > 0){
@@ -116,6 +131,7 @@ while (w.length > 0){
 return '';
 }
 
+// REMOVE TRAILING SYMBOLS
 function rightNibbler(w){
 // accept a word, remove non alpha chars from left, return the clean word
 while (w.length > 0){
@@ -131,6 +147,10 @@ while (w.length > 0){
 } 
 return '';
 }
+// END TOKENIZING
+
+
+
 
 
 
@@ -144,6 +164,12 @@ result.chars.digits = find.digitChars();
 result.lines = find.lines() + 1; 
 result.spaces = find.spaces();
 result.symbols = find.symbols();
+result.wordsArray = stringToWords(fileContents);
+result.allWords = result.wordsArray.length;
+for(let i = 1; i < 17; i++){
+  result[i] = find.size(result.wordsArray, i);
+  console.log(`yay ${i}! Found: ${result[i]}, looked at ${result.wordsArray.length} words;`);
+}
 
 // print the results
 console.log(`Filename: ${result.filename}`);
@@ -154,8 +180,11 @@ console.log(`Number of letters: ${result.chars.alphas}`);
 console.log(`Number of figures: ${result.chars.digits}`);
 console.log(`Number of other characters: ${result.symbols}`);
 console.log(`Number of words: ${result.allWords}`);
+console.log(`Length one words: ` + result[1]);
+console.log(`Length two words: ` + result[2]);
+console.log(`Length three words: ` + result[3]);
 
 console.log(`Note: words are assumed to be any combination of chars bounded by a space, terminus, or the following symbols [.,?!"].  This definition of "word" will affect both the defition of word length as well as total number of words.`);
 
-console.log(stringToWords(fileContents));
-// Keep track of coding time: 5pm to 630, 1015 to 1056
+// console.log(stringToWords(fileContents));
+// Keep track of coding time: 5pm to 630, 1015 to 1056 630 to 930 am
