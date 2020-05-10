@@ -11,12 +11,43 @@ Identify relevant data within the newly provided data.
 
 console.log('feed.js is running');
 
-function myFunction(){
-  document.getElementById('sku-a4').innerHTML = 'this is the stuff of dreams';
+// function myFunction(){
+//   document.getElementById('sku-a4').innerHTML = 'this is the stuff of dreams';
+// }
+
+// function otherFunction(){
+//   document.getElementById('sku-a3').innerHTML = 'won\'t work if script at top';
+// }
+
+function stormwater(){
+  return 'pea soup';
 }
 
-function otherFunction(){
-  document.getElementById('sku-a3').innerHTML = 'won\'t work if script at top';
+
+function sloganLoader(n){
+  console.log(`Hello slogan loader, choice ${n}`);
+  let r = false;
+  n = Number(n);
+  switch(n){
+    case 1:
+      r = 'Green Power, Green Jobs!';
+      break;
+    case 2:
+      r = 'Many plans!';
+      break;
+    case 3:
+      r = 'Look for the Union label';
+      break;
+    case 4:
+      r = 'Moon Man or Spotted Cow?';
+      break;
+    case 5:
+      r = 'cup of Joe?';
+      break;
+    default:
+      r = 'reached default';
+  }
+  return r;
 }
 
-document.onload = otherFunction();
+// document.onload = otherFunction();

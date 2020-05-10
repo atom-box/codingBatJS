@@ -5,21 +5,51 @@
 <meta charset="UTF-8"><meta>
 <link rel="icon" href="./images/dryer.png" type="image/png">
 <link rel="stylesheet" type="text/css" href="styles/feed.css">
+<link rel="stylesheet" type="text/css" href="styles/jamesnowland.css">
+<script src="./feedImporter.js"></script>
+
+<!-- <button onclick="myFunction()"><p>Try it</p></button>   -->
+<script type="text/javascript">
+  let grub = (s)=>{ 
+
+    console.log(`Grub changed the ${s} to: ${s*3}`);
+    return s;
+  } 
+</script>
 </head>
 
 
 
 <body>
 
-
-
-
-
 <div class="monde">
+<div >
+                              <!-- ///////////// -->
+<!--       <form  oninput="out1.value = sloganLoader(str1.value)">
+        <input class="core" type="textarea" name="str1" /><br>
+        <div class="core stripe"><output  name="out1" for="str1">void</output></div>
+      </form> -->
+                              <!-- ///////////// -->
+
+
+
+
+<form oninput="payday.value = sloganLoader(clark.value)" >
+  <select name=clark >
+    <!-- normal options -->
+    <option value="1">Senator Ocasio-Cortez</option>
+    <option value="2">Senator Warren</option>
+    <option value="3">Working Families Party</option>
+    <option value="4">Mark Pocan</option>
+    <option value="5">Joe Biden</option>
+  </select>
+  <div><output name="payday"></output></div>
+</form>
+</div>
+
   <div class="square-large">
     <h1>Knock Down</h1>
     <p>All stickers are available in birch bark or flax-based vinyl</p>
-    <button onclick="myFunction()"><p>Try it</p></button>
     <div class="square-small" id ="sku-a1">Decarcerate</div>
     <div class="square-small" id ="sku-a2">Decarbonize</div>
     <div class="square-small" id ="sku-a3">Housing</div>
