@@ -148,14 +148,17 @@
         <div class="col-md-9 outblock block elShadow" id="explanation">
           <h2>Notes on the method</h2>
             <p>I was given the following challenge: <br><span><code> Write a program that takes as inputs two file paths and uses a metric to determine how similar they are.  Documents that are exactly the same should get a score of 1, and documents that don’t have any words in common should get a score of 0.</code></span></p>
-            <p>For the solution I avoided libraries or known algorithms and made a naive back of the envelope solution.  I reviewed the main strategy I learned at Hunter College for DNA testing, the <a href="https://binf.snipcademy.com/lessons/pairwise-alignment/global-needleman-wunsch">Needleman-Wunsch</a> algorithm, mostly because I couldn't quickly figure out how to implement it.  So my naive strategy is this:</p>
+            <p>View my solution code<a href="https://github.com/atom-box/codingBatJS/blob/master/helpers/textSimilarity.js"> here</a>.</p>  
+          
+            
+            <p>For the solution I avoided libraries or known algorithms and made a brute force answer.  I reviewed the main strategy I learned at Hunter College for DNA testing, the <a href="https://binf.snipcademy.com/lessons/pairwise-alignment/global-needleman-wunsch">Needleman-Wunsch</a> algorithm, mostly because I couldn't quickly figure out how to implement it.  So my naive strategy is this:</p>
             <ol>
                 <li>Take the two input strings, remove punctuation, spaces, and any non alpha chars, to create a pair of word arrays</li>
                 <li>Tally any members of List 1 that do not occur in list 2.</li>
                 <li>Repeat the orphan tally but in the reverse direction, tallying any members of List 1 that do not occur in list 2.</li>
                 <li>Return a similiarity score: take the inverse of the average of orphans/allwords. So on a scale of 0 to 1, 1 represents utter disimilarity and 0 represents complete identity.</li>
             </ol>
-            <p>To see my solution in detail, check out <a href="https://github.com/atom-box/codingBatJS/blob/master/helpers/textSimilarity.js"> its repository</a>.  To see the code running with comments, open the console of your browser, and then reload this page.</p>
+            <p>I did not implement a form page for a user to enter text live. The grey boxes below are populated by hard coded data as this page loads.</p>
         </div>
     </section>
 
