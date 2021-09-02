@@ -10,14 +10,14 @@ I am uncomfortable with having an IDBestow function inside the Class constructor
 
 console.log('Huey Morrison');
 
- //  _           _   _         
- // (_)         (_) | |        
- //  _   _ __    _  | |_   ___ 
+ //  _           _   _
+ // (_)         (_) | |
+ //  _   _ __    _  | |_   ___
  // | | | '_ \  | | | __| / __|
  // | | | | | | | | | |_  \__ \
  // |_| |_| |_| |_|  \__| |___/
 
-// First node must be findable, so 
+// First node must be findable, so
 // make its ID null.
 // Similarly, final node is identified
 // by having NEXT be null
@@ -28,17 +28,15 @@ config.currentID = 1,
 config.soonID = null,
 config.usedIDs = []; // stores to ensure unique new IDs
 
-
-/*_                   _        
- | |                 (_)       
- | |   ___     __ _   _    ___ 
+/*_                   _
+ | |                 (_)
+ | |   ___     __ _   _    ___
  | |  / _ \   / _` | | |  / __|
- | | | (_) | | (_| | | | | (__ 
+ | | | (_) | | (_| | | | | (__
  |_|  \___/   \__, | |_|  \___|
-               __/ |           
-              |___/            
+               __/ |
+              |___/
 */
-
 
 /*
 ** The two inputs in this process:
@@ -47,7 +45,6 @@ config.usedIDs = []; // stores to ensure unique new IDs
 **
 ** TODO Currently requires global: config.usedIDs; that seems sketchy.  Maybe make that internal/private.
 */
-
 
 /*
 ** Just takes a nextid
@@ -62,7 +59,7 @@ class Node {
 		this.here = nextID;
 	}
 
-	/* This method is a getter to use immediately after 
+	/* This method is a getter to use immediately after
 	 	a new node is made, to update the config.SOONID in the globals
 	*/
 	getNextID() {
@@ -94,7 +91,7 @@ function idBestow(arr) {
 	while (notUnique) {
 		fiveDigit = Math.floor(Math.random() * 10000);
 		if (arr !== undefined ){
-			// array exists.  check it.  if result comes back 
+			// array exists.  check it.  if result comes back
 			// TRUE, you've already used this number
 			notUnique = arr.some( (item)=> (item === fiveDigit)? true : false   )
 		} else {
@@ -109,7 +106,6 @@ function idBestow(arr) {
 	return fiveDigit;
 	// todo For some reason this works great but also returns a superluous UNDEFINED at end, which is not a problem but is mysterious.
 }
-
 
 // Accepts the next ID number
 function makeAny(n, stop) {
@@ -129,14 +125,12 @@ function makeAny(n, stop) {
 	return nodeHoldingObject;
 }
 
-
- //                      _         
- //                     (_)        
- //  _ __ ___     __ _   _   _ __  
- // | '_ ` _ \   / _` | | | | '_ \ 
+ //                      _
+ //                     (_)
+ //  _ __ ___     __ _   _   _ __
+ // | '_ ` _ \   / _` | | | | '_ \
  // | | | | | | | (_| | | | | | | |
  // |_| |_| |_|  \__,_| |_| |_| |_|
-                                                               
 
 function twoMain(){
 	let slider2El = document.getElementById('slider2');
@@ -151,20 +145,17 @@ function twoMain(){
 	str3 = '<p >' + str3 + '</p>';
 	str3 = '<div  style="font-family: monospace; color: orange">' + str3    + '</div>'
 	out2El.innerHTML = str3;
-
 }
 
 /*
- _____     ____    __  __ 
+ _____     ____    __  __
  |  __ \   / __ \  |  \/  |
  | |  | | | |  | | | \  / |
  | |  | | | |  | | | |\/| |
  | |__| | | |__| | | |  | |
  |_____/   \____/  |_|  |_|
-                           
+
 */
-
-
 
 let sol2 = document.getElementById('solution2');
 sol2.innerHTML = `
@@ -178,9 +169,6 @@ sol2.innerHTML = `
   <output class="outpanel" id="output2"></output>
   <p>This was solved using ES6 classes.  The JSON node list is null-terminated at beginning and end.</p>
 <form>
-
-
-
 `;
 
 // Create element of results
@@ -198,13 +186,11 @@ function objectToHTML(o) {
 
 }
 
-
-
 // 3rd tab
 let code2El = document.getElementById('code2');
 code2El.innerHTML = `
 <div>
-	<p>The ID numbers are randomly generated, unique, and deliberately non-consecutive. Compared to Sedgewick, my solution is very long.</p>
+	<p>The ID numbers are randomly generated, unique, and deliberately non-consecutive. Compared to <a href="https://www.goodreads.com/book/show/10803540-algorithms">Sedgewick</a>, my solution is very long.</p>
 	<p>I developed this seperately as a command line script and made six tests to drive the development.  Once <a href='https://github.com/atom-box/codingBatJS/blob/master/classLatrelle.js'>the tests</a> passed I moved the script into <a href="https://github.com/atom-box/codingBatJS/blob/master/helpers/sevens/two.js"> my HTML code</a>.
 	</p>
 

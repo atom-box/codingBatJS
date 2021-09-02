@@ -4,13 +4,13 @@
 const longString = ike;
 console.log(ike.length);
 let madeParagraph ='';
- //   __                              
- //  / _|                             
- // | |_   _   _   _ __     ___   ___ 
+ //   __
+ //  / _|
+ // | |_   _   _   _ __     ___   ___
  // |  _| | | | | | '_ \   / __| / __|
  // | |   | |_| | | | | | | (__  \__ \
  // |_|    \__,_| |_| |_|  \___| |___/
-                                   
+
 function muncher(k, s){
   console.log( `Muncher(k, s) received ${k} and ${s}...`);
   let i = k,  // an index pointing to the raw string
@@ -34,22 +34,22 @@ function muncher(k, s){
     console.log(`i k rightCut ARE instances of ${typeof i} & ${typeof k} & ${typeof rightCut}`);
     i = rightCut + k;
     console.log(`LINE36 i, leftCut, rightCut ${i}, ${leftCut}, ${rightCut}`);
-  } 
+  }
   // Now push on the few, leftover chars.
-  leftCut = rightCut; 
+  leftCut = rightCut;
   rightCut = s.length;
   lines.push(s.slice(leftCut, rightCut)  );
   return lines;
 }
 
 
- //                      _         
- //                     (_)        
- //  _ __ ___     __ _   _   _ __  
- // | '_ ` _ \   / _` | | | | '_ \ 
+ //                      _
+ //                     (_)
+ //  _ __ ___     __ _   _   _ __
+ // | '_ ` _ \   / _` | | | | '_ \
  // | | | | | | | (_| | | | | | | |
  // |_| |_| |_|  \__,_| |_| |_| |_|
-                                                               
+
 
 function fiveMain(){
   let slider5El = document.getElementById('slider5');
@@ -65,11 +65,11 @@ function fiveMain(){
 }
 
 /*
-  _____   ___   ___   _____   ___ 
+  _____   ___   ___   _____   ___
  |_   _| | __| / __| |_   _| / __|
    | |   | _|  \__ \   | |   \__ \
    |_|   |___| |___/   |_|   |___/
-                                  
+
 */
 
 /*  UNCOMMENT TO RUN AS TEST MODE WITH NODE.JS CLI
@@ -77,18 +77,18 @@ if (process.argv[2] !== undefined) {
     const main = {}; // namespace
 
     switch (process.argv[2]) {
-      case 'longstring': 
+      case 'longstring':
         console.log (ike);
         break;
-      case 'length': 
+      case 'length':
         console.log ( muncher(75, ike).length);
         break;
-      case 'stringtoarray': 
+      case 'stringtoarray':
         main.lines = muncher(75, ike);
         console.log(`First line is ${main.lines[0]}`);
         console.log(`In all, made ${main.lines.length} lines`);
         break;
-      case 'ike': 
+      case 'ike':
         // Takes two CLI ints:
         // StartingAt, ThisManyLines
         let start = Number(process.argv[3]),
@@ -100,16 +100,16 @@ if (process.argv[2] !== undefined) {
         }
         console.log('...end Ike liners.')
         break;
-      case 'davi': 
+      case 'davi':
         console.log ( putParagraph(["Only an alert and", "knowledgeable citizenry ", "can compel the proper meshing ", "of the huge industrial ", "and military ", "machinery of defense ", "with our peaceful ", "methods and goals"]));
         break;
-      case 'breakmake': 
+      case 'breakmake':
         let customWidth = Number(process.argv[3]);
         let test1 = putParagraph(muncher(customWidth, ike));
         console.log ( test1);
         break;
        default:
-        console.log('no optional args recognized');     
+        console.log('no optional args recognized');
     }
 }
 */
@@ -117,13 +117,13 @@ console.log('Testing finished.')
 
 
 /*
- _____     ____    __  __ 
+ _____     ____    __  __
  |  __ \   / __ \  |  \/  |
  | |  | | | |  | | | \  / |
  | |  | | | |  | | | |\/| |
  | |__| | | |__| | | |  | |
  |_____/   \____/  |_|  |_|
-                           
+
 */
 
 
@@ -137,7 +137,7 @@ sol5.innerHTML = `
     <input type="range" class="form-control-range  cinch" id="slider5"  onchange="fiveMain()" value="27" min="8" max="99"    >
 
   </div>
-  <pre class="outpanel-wide" id="output5">nothing here yet</pre>
+  <pre class="outpanel-wide" id="output5">Slide the input to begin wrapping</pre>
 <form>
 `
 

@@ -1,31 +1,27 @@
 console.log(`Script 3 succesfully loaded at ${new Date()}.`)
 
-
-/*_                   _        
- | |                 (_)       
- | |   ___     __ _   _    ___ 
+/*_                   _
+ | |                 (_)
+ | |   ___     __ _   _    ___
  | |  / _ \   / _` | | |  / __|
- | | | (_) | | (_| | | | | (__ 
+ | | | (_) | | (_| | | | | (__
  |_|  \___/   \__, | |_|  \___|
-               __/ |           
-              |___/            
+               __/ |
+              |___/
 */
-
 // Function to find first result where string of non repeaters is longest.
 // Accepts a string
 // Returns longest span as a string (first  only)
 function uniq(s){
-
-	// reject or clean up funky input
-	let reggie1 = /[^A-z]/g; 
+	let reggie1 = /[^A-z]/g;
 	if ( s.match(reggie1) ) {
 		return "No spaces, no punctuation."
 	}
 	s = s.toLowerCase();
 
-	const streak = {}; // namespace 
+	const streak = {}; // namespace
 	streak.bigString = s; // the string which will get judged
-	// below, spannity, is length of best uniqs streak, excluding the capping twin repeat char positions e.g. 'roarrrrrrrr' spannity would be 2, aabbcc spannity would be 0 
+	// below, spannity, is length of best uniqs streak, excluding the capping twin repeat char positions e.g. 'roarrrrrrrr' spannity would be 2, aabbcc spannity would be 0
 	streak.smallString ='';
 	streak.spannity =  0; // int for local max, after J
 	streak.bestSpan = 0; // int for final max, after I
@@ -34,11 +30,10 @@ function uniq(s){
 	streak.last = 0; // last index of char that got repeated
 	streak.finalJ = 0;
 	streak.wordy = '';
-	let i, 
+	let i,
 	stop;
 
 	let app = {testing: false};
-
 
 	for (i = 0, stop = streak.bigString.length; i < stop; i++){
 			for (let j = i; j < stop; j++ ){
@@ -81,10 +76,9 @@ function uniq(s){
 	return streak.smallString;
 }
 
-
-// return WARNING if non-alpha chars, including spaces 
+// return WARNING if non-alpha chars, including spaces
 function charFixer(s) {
-	let reggie1 = /[^A-z]/g; 
+	let reggie1 = /[^A-z]/g;
 	if ( s.match(reggie1) ) {
 		return "Please type a single word, with no punctuation characters."
 	}
@@ -92,30 +86,20 @@ function charFixer(s) {
 	return s;
 }
 
-
-
 // unused; just for testing during development
 function grub(s) {
 	return s + '_' + s;
 }
 
-
-
-
-
 /*
- _____     ____    __  __ 
+ _____     ____    __  __
  |  __ \   / __ \  |  \/  |
  | |  | | | |  | | | \  / |
  | |  | | | |  | | | |\/| |
  | |__| | | |__| | | |  | |
  |_____/   \____/  |_|  |_|
-                           
+
 */
-
-
-
-
 
 let sol3 = document.getElementById('solution3');
 sol3.innerHTML = `
@@ -129,9 +113,6 @@ sol3.innerHTML = `
   </output></div>
 </form>
 `;
-
-
-
 
 // 3rd tab
 let code3El = document.getElementById('code3');
