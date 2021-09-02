@@ -1,35 +1,83 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Mayan Calendar</title>
-	<meta charset="utf-8">
-	<!-- stumbled upon this at http://w3schools.sinsixx.com/js/js_image_maps.asp.htm -->
-<link rel="shortcut icon" href="images/dryer2.png" type="image/x-icon">
-<link rel="icon" href="images/dryer2.png" type="image/x-icon">
+    <title>Mayan Calendar</title>
+    <meta charset="utf-8">
+    <!--
+        Stumbled upon this image mapping syntax at https://www.w3schools.com/tags/att_area_coords.asp
+        From history of the Internet I know mapped images were a big deal circa Batman Site, during Internet 1.0. Would score a zero for accessibility nowadays.
+    -->
+
+    <link rel="shortcut icon" href="images/dryer2.png" type="image/x-icon">
+    <link rel="icon" href="images/dryer2.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles/sideline.css">
+    <style type="text/css">
+        body {
+            /* height: 100%;
+            width: 100%; */
+            margin: 0px;
+            padding: 0px;
+            text-align: center;
+            background-color: #aaa;
+            font-family: "Helvetica Neue", sans-serif;
+
+        }
+    </style>
 </head>
+
 <body>
 
+    <section class="section">
+        <div class="container">
+            <div class="tiny-text-holder">
+                <div class="lined tiny-text">
+                    <p>Use your mouse to find glyphs for The Sun (easy), and The Knife (more difficult) </p>
+                </div>
+            </div>
+            <div class="cleared"></div>
+        </div>
+    </section>
+
+    <div id="roundcalendar">
+        <img src="images/maya.jpg" width="528" height="704" alt="Planets" usemap="#planetmap"
+        />
 
 
-<img src ="images/maya.jpg"
-width ="528" height ="704"
-alt="Planets"
-usemap ="#planetmap" />
+        <map id="planetmap" name="planetmap">
+
+            <area shape="circle" title="sun glyph!" coords="240,200,39" href="sun.htm" target="_blank" onmouseover="alert('You found it; this is the Sun Glyph!')" alt="Knife glyph"/>
+
+            <area shape="circle" coords="299,152,9"   onmouseover="alert('You found it; this is the Knife Glyph!')" alt="Knife glyph" />
+        </map>
+    </div>
+
+    <section class="section">
+        <div class="container">
+            <div class="tiny-text-holder">
+                <div class="lined tiny-text">
+                    <p>See more versions of a Mayan <br/><a
+                            href="https://duckduckgo.com/?q=maya+sun&kp=1&t=ffsb&iar=images&iax=images&ia=images">Sun Glyph</a>
+                        <br><a href="https://duckduckgo.com/?t=ffsb&q=maya+tecpatl&iax=images&ia=images">
+                            Knife Glyph</a>
+                </div>
+            </div>
+            <div class="cleared"></div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <p>This large calendar stone was discovered in CDMX <a href="https://en.wikipedia.org/wiki/Templo_Mayor">
+                    Templo Mayor</a> in 1978</p>
+            <p>Made by Evan at <a href="https://littlefurnace">Little Furnace</a></p>
+        </div>
+    </section>
 
 
-<map id ="planetmap"
-name="planetmap">
-
-<area shape ="rect" coords ="0,0,400,400"
-  href ="sun.htm" target ="_blank" onMouseOver=alert('The Sun and the gas giant planets like Jupiter are by far the largest objects in our Solar System.')
-  alt="Sun" />
-
-<area shape ="circle" coords ="90,58,3"
-  href ="mercur.htm" target ="_blank"
-  alt="Mercury" />
-<area shape ="circle" coords ="124,58,8"
-  href ="venus.htm" target ="_blank"
-  alt="Venus" />
-</map> 
 </body>
+<!--
+    Attribution: Image of Evan Genest with stone, taken at Museo Nacional de Antropologia in CDMX by Meg Domroese
+ -->
+
 </html>
