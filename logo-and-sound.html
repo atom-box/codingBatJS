@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<!--
+   I am at https://littlefurnace.com
+   ___  __   ____ _ _ __
+  / _ \ \ \ / / _` | '_ \
+ |  __/  \ V / (_| | | | |
+  \___| __\_/_\__,_|_|_|_|_     _
+       |  ____|     |  ____|   | |
+   __ _| |__   _ __ | |__   ___| |_
+  / _` |  __| | '_ \|  __| / __| __|
+ | (_| | |____| | | | |____\__ \ |_
+  \__, |______|_| |_|______|___/\__|
+   __/ |
+  |___/
+
+  This is a placeholder page.
+  It displays in image
+  that can be clicked to make a sound effect.
+  Could adapt this to a 404 page or something.
+ -->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Fly Aeromex to CDMX</title>
+        <meta name="description" content="Aeromex logo and mp3 soundfile">
+        <style type="text/css">
+            html, body, table {
+                height: 100%;
+                width: 100%;
+                margin: 0px;
+                padding: 0px;
+                text-align: center;
+            }
+            audio {
+                display: none;
+                position: fixed;
+                margin-left: 1000000px;
+            }
+            img {
+                cursor: pointer;
+            }
+        </style>
+        <script type="text/javascript">
+            var playCount = 0
+            function init() {
+                var aeromex=document.getElementById("aeromex");
+            }
+            function playSound() {
+                aeromex.load();
+                aeromex.play();
+                playCount++
+            }
+
+        </script>
+    </head>
+    <body onload="init();">
+        <table>
+            <tr>
+                <td>
+                    <img onclick="playSound();" id="foo" src="images/aeromexico.svg" alt="Aero Mexico" height="100px">
+                    <audio controls="controls" id='aeromex'>
+                        <source src="images/punch_or_whack_-Vladimir-403040765.mp3" type="audio/mp3">
+                    </audio>
+                </td>
+            </tr>
+        </table>
+                    <div id="iframeHolder"></div>
+    </body>
+    <!--
+        Free source attributions:
+        SOUNDBIBLE for the free sound effect, by "Vladimir" at
+        https://soundbible.com/tags-short.html
+        SIMPLE ICONS
+        https://simpleicons.org/icons/aeromexico.svg
+     -->
+</html>
