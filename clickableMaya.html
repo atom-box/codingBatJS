@@ -21,8 +21,28 @@
             text-align: center;
             background-color: #aaa;
             font-family: "Helvetica Neue", sans-serif;
-
         }
+
+
+        /** Code for hover info **/
+        /* Hover style by Ty Strong https://codepen.io/tystrong/pen/rVJNrQ */
+
+
+        span#tool {
+            border: blue dashed 2px;
+        }
+
+        span#tool:hover {
+            border: white solid 2px;
+        }
+
+        /** Code for hovering over the mapped area of the image **/
+
+        div map area {
+            cursor:  progress;
+        }
+
+
     </style>
 </head>
 
@@ -30,9 +50,12 @@
 
     <section class="section">
         <div class="container">
+            <h1>Glyph Seeker</h1>
             <div class="tiny-text-holder">
                 <div class="lined tiny-text">
-                    <p>Use your mouse to find glyphs for The Sun (easy), and The Knife (more difficult) </p>
+                    <p>Look closely at the carvings. Try to touch your <a id="tool"
+                            data-info="Lorem ipsum dolor sit amet, perspiciatis consectetur dolor.">mouse</a> to the
+                        glyphs for The Sun (easy), and The Knife (more difficult) </p>
                 </div>
             </div>
             <div class="cleared"></div>
@@ -40,40 +63,36 @@
     </section>
 
     <div id="roundcalendar">
-        <img src="images/maya.jpg" width="528" height="704" alt="Planets" usemap="#planetmap"
-        />
-
+        <img src="images/maya.jpg" width="528" height="704" alt="Planets" usemap="#planetmap" />
 
         <map id="planetmap" name="planetmap">
-
-            <area shape="circle" title="sun glyph!" coords="240,200,39" href="sun.htm" target="_blank" onmouseover="alert('You found it; this is the Sun Glyph!')" alt="Knife glyph"/>
-
-            <area shape="circle" coords="299,152,9"   onmouseover="alert('You found it; this is the Knife Glyph!')" alt="Knife glyph" />
+            <area shape="circle" title="sun glyph!" coords="240,200,39" alt="Sun Glyph" />
+            <area shape="circle" title="knife glyph!" coords="299,152,9" alt="Knife glyph" />
         </map>
     </div>
 
     <section class="section">
         <div class="container">
-            <div class="tiny-text-holder">
-                <div class="lined tiny-text">
-                    <p>See more versions of a Mayan <br/><a
-                            href="https://duckduckgo.com/?q=maya+sun&kp=1&t=ffsb&iar=images&iax=images&ia=images">Sun Glyph</a>
-                        <br><a href="https://duckduckgo.com/?t=ffsb&q=maya+tecpatl&iax=images&ia=images">
-                            Knife Glyph</a>
-                </div>
-            </div>
-            <div class="cleared"></div>
+            <p>See more Mayan glyphs for <a
+                    href="https://duckduckgo.com/?q=maya+sun&kp=1&t=ffsb&iar=images&iax=images&ia=images"
+                    target="_blank">The Sun</a> and <a
+                    href="https://duckduckgo.com/?t=ffsb&q=maya+tecpatl&iax=images&ia=images" target="_blank">The
+                    Knife</a> </p>
         </div>
     </section>
 
     <section class="section">
         <div class="container">
-            <p>This large calendar stone was discovered in CDMX <a href="https://en.wikipedia.org/wiki/Templo_Mayor">
-                    Templo Mayor</a> in 1978</p>
-            <p>Made by Evan at <a href="https://littlefurnace">Little Furnace</a></p>
+            <p>This large calendar stone was discovered in CDMX by the <dfn
+                    data-info=" The site of Templo Mayor is near the northeast corner of what is now the Zócalo, or main plaza, of Mexico City. Templo Mayor measures approximately 328 by 262 ft at its base. Construction began sometime after 1325, and it was rebuilt six times. The temple was destroyed by the Spanish in 1521 to make way for the new cathedral. (Wikipedia)">Templo
+                    Mayor</dfn> excavation in 1978.</p>
         </div>
     </section>
-
+    <footer class="section">
+        <div class="container">
+            <p>Made by Evan at <a href="https://littlefurnace.com">Little Furnace</a></p>
+        </div>
+    </footer>
 
 </body>
 <!--
