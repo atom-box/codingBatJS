@@ -7,7 +7,7 @@
   <script src="https://kit.fontawesome.com/c0497ccda4.js"></script>
   <link rel="icon" type="image/png" href="images/dryer.png" />
 
-
+  <link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">
 <style type="text/css">
 
 @font-face {
@@ -20,13 +20,38 @@
   --main-color: #F45B69;
 }
 
-header {
+header, footer {
   font-family: Deibi, 'Courier New', Courier, monospace, "Helvetica Neue";
+  font-weight: 700;
 }
 
 #articlesAnchor {
     background-color: yellow;
 }
+
+article.card.text-center {
+            margin-bottom: 1rem;
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            /* Black see-through */
+            width: 100%;
+            font-size: 20px;
+            padding: 8px;
+            color: white;
+        }
+
+        div.overlay address h2 span a {
+            color: yellow;
+        }
+
+        div.overlay address h2 span a:hover {
+            background-color: red;
+        }
+
 
 a:link {
   color: white;
@@ -67,6 +92,24 @@ a:visited {
     <p id="articlesAnchor">lou</p>
 </article>
 
+<footer class="card">
+    <img class="card-img-top" src="images/navajo_1193x238.png" />
+    <div class="overlay">
+        <address>
+            <h2 class="text-right ">Making things in Madison, Wisconsin: <span class="text-info"><a
+                        href="http://littlefurnace.com"> Evan Genest </a> </span> </h2>
+        </address>
+    </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 </body>
 </html>
