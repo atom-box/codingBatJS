@@ -3,7 +3,7 @@ console.log('start quiltdata.');
 let articles = [
 {
     backgroundColor: '#493',
-    textColor: '#55b',
+    textColor: '#ddf',
     question: 'How do you grab a div?',
     strategy: 'GetElementById()!',
     form: '<form><h1>Placeholder</h1><button>click</button></form>',
@@ -14,7 +14,7 @@ let articles = [
 },
 {
     backgroundColor: '#256',
-    textColor: '#5b5',
+    textColor: '#db5',
     question: 'Given an array of ints length 3, figure out which is larger, the first or last element in the array, and set all the other elements to be that value. Return the changed array.',
     strategy: 'GetElementById()!',
     form: '<form><h1>Placeholder</h1><button>click</button></form>',

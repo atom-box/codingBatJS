@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Solving: Quilt</title>
     <meta charset="utf-8">
@@ -12,11 +13,27 @@
         /* CSS POSITIONING INCLUDING FONT*/
         /* CSS POSITIONING INCLUDING FONT*/
 
-        header {
-            text-align: center;
+
+        @media only screen and (min-width: 600px) {
+
+            /* For tablets: */
+            .gutters {
+            padding-left: 9rem;
+            padding-right: 9rem;
+            }
         }
 
+        @media only screen and (min-width: 1000px) {
+            .gutters {
+            padding-left: 19rem;
+            padding-right: 19rem;
+            }
+        }
 
+        header {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
 
         /* CSS  FONT-DIRECTED no COLOR no POSITIONING */
         /* CSS  FONT-DIRECTED no COLOR no POSITIONING */
@@ -45,12 +62,15 @@
             --main-color: #F45B69;
         }
 
-        #articlesAnchor {
-            background-color: yellow;
+        header {
+            width: 100%;
+            padding: 8px;
+            color: white;
+            background-color: #999;
         }
 
-        article.card.text-center {
-            margin-bottom: 1rem;
+        #articlesAnchor {
+            background-color: yellow;
         }
 
         .overlay {
@@ -102,8 +122,8 @@
     <header class="header">
         <div class="container">
             <h1>Let's Go:</h1>
-            <div class="tiny-text-holder">
-                <div class="lined tiny-text">
+            <div>
+                <div>
                     <p>Write Javascript!<br>Sharpen the edge!<br>Timebox these activities!</p>
                 </div>
             </div>
@@ -119,7 +139,7 @@
         <img class="card-img-top" src="images/navajo_1193x238.png" />
         <div class="overlay">
             <address>
-                <h2 class="text-right ">Making things in Madison, Wisconsin: <span class="text-info"><a
+                <h2 class="text-right gutters">Making things in Madison, Wisconsin: <span class="text-info"><a
                             href="http://littlefurnace.com"> Evan Genest </a> </span> </h2>
             </address>
         </div>
