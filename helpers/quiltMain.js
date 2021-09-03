@@ -4,13 +4,31 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 
 console.log('start quiltmain.');
-console.log(articles.color);
+console.log(articles[1].backgroundColor);
 console.log('Done.');
 
 let divs = '';
-divs += articles.testElement;
+singleDiv = '';
+
+articles.forEach(element => {
+
+    singleDiv = `<article style="background-color:${element.backgroundColor}; color: ${element.textColor}">
+    <h2>How\'s this?</h2>
+    <p>The background-color is: ${element.backgroundColor}</p>
+    `;
+    singleDiv += `
+    </article>
+    `;
+
+    divs += singleDiv;
+
+
+
+
+
+});
 // divs = 'frogness'
-document.getElementById('articlesAnchor').innerHTML = 'glow';
+// document.getElementById('articlesAnchor').innerHTML = 'glow';
 document.getElementById('articlesAnchor').outerHTML = divs;
 
 });

@@ -1,35 +1,55 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <title>Solving | Quilt</title>
-  <meta charset="utf-8">
-  <script src="https://kit.fontawesome.com/c0497ccda4.js"></script>
-  <link rel="icon" type="image/png" href="images/dryer.png" />
+    <title>Solving: Quilt</title>
+    <meta charset="utf-8">
+    <script src="https://kit.fontawesome.com/c0497ccda4.js"></script>
+    <link rel="icon" type="image/png" href="images/dryer.png" />
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">
 
-  <link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">
-<style type="text/css">
+    <style type="text/css">
+        /* CSS POSITIONING INCLUDING FONT*/
+        /* CSS POSITIONING INCLUDING FONT*/
+        /* CSS POSITIONING INCLUDING FONT*/
 
-@font-face {
-  font-family: Deibi;
-  src: url(./fonts/deibi.otf);
+        header {
+            text-align: center;
+        }
 
-}
 
-:root{
-  --main-color: #F45B69;
-}
 
-header, footer {
-  font-family: Deibi, 'Courier New', Courier, monospace, "Helvetica Neue";
-  font-weight: 700;
-}
+        /* CSS  FONT-DIRECTED no COLOR no POSITIONING */
+        /* CSS  FONT-DIRECTED no COLOR no POSITIONING */
+        /* CSS  FONT-DIRECTED no COLOR no POSITIONING */
 
-#articlesAnchor {
-    background-color: yellow;
-}
+        @font-face {
+            font-family: Deibi;
+            src: url(./fonts/deibi.otf);
+        }
 
-article.card.text-center {
+        header,
+        footer {
+            font-family: Deibi, 'Courier New', Courier, monospace, "Helvetica Neue";
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: 3rem;
+        }
+
+        /* CSS COLOR, INCLUDING FONT AND HOVER */
+        /* CSS COLOR, INCLUDING FONT AND HOVER */
+        /* CSS COLOR, INCLUDING FONT AND HOVER */
+
+        :root {
+            --main-color: #F45B69;
+        }
+
+        #articlesAnchor {
+            background-color: yellow;
+        }
+
+        article.card.text-center {
             margin-bottom: 1rem;
         }
 
@@ -50,66 +70,70 @@ article.card.text-center {
 
         div.overlay address h2 span a:hover {
             background-color: red;
+
         }
 
+        a:link {
+            color: white;
+        }
 
-a:link {
-  color: white;
-}
-a:hover {
-  color: yellow;
-}
-a:visited {
-  color: white;
-}
+        a:hover {
+            color: yellow;
+        }
 
-.blueBackground {
-    background-color: blue;
-    color: white;
-}
+        a:visited {
+            color: white;
+        }
 
-</style>
+        .blueBackground {
+            background-color: blue;
+            color: white;
+        }
+    </style>
 
 
-<script  src="./data/quiltData.mjs"></script>
-<script  src="./helpers/quiltMain.js"></script>
+    <script src="./data/quiltData.mjs"></script>
+    <script src="./helpers/quiltMain.js"></script>
 
 </head>
 
 
 <body>
-<header class="header" >
-  <div class="container">
-    <h1>Very Tiny</h1>
-    <div class="tiny-text-holder" >
-    <div class="lined tiny-text"><p>Solving JS<br>To sharpen the edge. <br>Timebox these activities.</p></div>
-    </div>
-    <div class="cleared"></div>
-  </div>
-</header>
+    <header class="header">
+        <div class="container">
+            <h1>Let's Go:</h1>
+            <div class="tiny-text-holder">
+                <div class="lined tiny-text">
+                    <p>Write Javascript!<br>Sharpen the edge!<br>Timebox these activities!</p>
+                </div>
+            </div>
+            <div class="cleared"></div>
+        </div>
+    </header>
 
-<article>
-    <p id="articlesAnchor">lou</p>
-</article>
+    <article>
+        <p id="articlesAnchor">lou</p>
+    </article>
 
-<footer class="card">
-    <img class="card-img-top" src="images/navajo_1193x238.png" />
-    <div class="overlay">
-        <address>
-            <h2 class="text-right ">Making things in Madison, Wisconsin: <span class="text-info"><a
-                        href="http://littlefurnace.com"> Evan Genest </a> </span> </h2>
-        </address>
-    </div>
-</footer>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-crossorigin="anonymous"></script>
+    <footer class="card">
+        <img class="card-img-top" src="images/navajo_1193x238.png" />
+        <div class="overlay">
+            <address>
+                <h2 class="text-right ">Making things in Madison, Wisconsin: <span class="text-info"><a
+                            href="http://littlefurnace.com"> Evan Genest </a> </span> </h2>
+            </address>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 </body>
+
 </html>
