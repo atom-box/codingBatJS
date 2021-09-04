@@ -18,15 +18,15 @@
 
             /* For tablets: */
             .gutters {
-            padding-left: 9rem;
-            padding-right: 9rem;
+                padding-left: 9rem;
+                padding-right: 9rem;
             }
         }
 
         @media only screen and (min-width: 1000px) {
             .gutters {
-            padding-left: 19rem;
-            padding-right: 19rem;
+                padding-left: 19rem;
+                padding-right: 19rem;
             }
         }
 
@@ -111,10 +111,17 @@
         }
     </style>
 
+<script>
+    let dice = {};
+    dice.roll5 = function() {
+    return Math.ceil(5 * Math.random());
+}
 
-    <script src="./data/quiltData.mjs"></script>
-    <script src="./helpers/quiltMain.js"></script>
-
+dice.show5 = function() {
+    // dice.el = document.getElementById('diceout');
+    console.log( dice.roll5());
+}
+</script>
 </head>
 
 
@@ -127,12 +134,11 @@
                     <p>Write Javascript!<br>Sharpen the edge!<br>Timebox these activities!</p>
                 </div>
             </div>
-            <div class="cleared"></div>
         </div>
     </header>
 
     <article>
-        <p id="articlesAnchor">lou</p>
+        <p id="articlesAnchor">Install Javascript for proper display.</p>
     </article>
 
     <footer class="card">
@@ -153,6 +159,11 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="./data/quiltData.mjs"></script>
+    <script src="./helpers/quiltMain.js"></script>
+    <script src="./helpers/quilt/maxEnd3.mjs"></script>
+    <script src="./helpers/quilt/maxEnd3Div.mjs"></script>
+
 
 </body>
 

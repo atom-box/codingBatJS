@@ -13,9 +13,12 @@ singleDiv = '';
 articles.forEach(element => {
 
     singleDiv = `<article style="background-color:${element.backgroundColor}; color: ${element.textColor};"><div class='gutters';>
-    <h2 >How\'s this?</h2>
-    <p>The background-color is: ${element.backgroundColor}</p></div>
+    <h2 >${element.title}</h2>
+    <p>Challenge description: ${element.question}</p></div>
     `;
+
+    singleDiv += `<div id="${element.title}">`;
+
     singleDiv += `
     </article>
     `;
