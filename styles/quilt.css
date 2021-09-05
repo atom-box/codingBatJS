@@ -1,0 +1,117 @@
+/* CSS POSITIONING INCLUDING FONT*/
+/* CSS POSITIONING INCLUDING FONT*/
+/* CSS POSITIONING INCLUDING FONT*/
+
+
+
+/*
+
+
+  _____  ______ _____  _____  ______ _____       _______ ______ _____
+ |  __ \|  ____|  __ \|  __ \|  ____/ ____|   /\|__   __|  ____|  __ \
+ | |  | | |__  | |__) | |__) | |__ | |       /  \  | |  | |__  | |  | |
+ | |  | |  __| |  ___/|  _  /|  __|| |      / /\ \ | |  |  __| | |  | |
+ | |__| | |____| |    | | \ \| |___| |____ / ____ \| |  | |____| |__| |
+ |_____/|______|_|    |_|  \_\______\_____/_/    \_\_|  |______|_____/
+*/
+
+
+
+
+
+
+@media only screen and (min-width: 600px) {
+
+    /* For tablets: */
+    .gutters {
+        padding-left: 9rem;
+        padding-right: 9rem;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .gutters {
+        padding-left: 19rem;
+        padding-right: 19rem;
+    }
+}
+
+header {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* CSS  FONT-DIRECTED no COLOR no POSITIONING */
+/* CSS  FONT-DIRECTED no COLOR no POSITIONING */
+/* CSS  FONT-DIRECTED no COLOR no POSITIONING */
+
+@font-face {
+    font-family: Deibi;
+    src: url(./fonts/deibi.otf);
+}
+
+header,
+footer {
+    font-family: Deibi, 'Courier New', Courier, monospace, "Helvetica Neue";
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+/* CSS COLOR, INCLUDING FONT AND HOVER */
+/* CSS COLOR, INCLUDING FONT AND HOVER */
+/* CSS COLOR, INCLUDING FONT AND HOVER */
+
+:root {
+    --main-color: #F45B69;
+}
+
+header {
+    width: 100%;
+    padding: 8px;
+    color: white;
+    background-color: #999;
+}
+
+#articlesAnchor {
+    background-color: yellow;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    /* Black see-through */
+    width: 100%;
+    font-size: 20px;
+    padding: 8px;
+    color: white;
+}
+
+div.overlay address h2 span a {
+    color: yellow;
+}
+
+div.overlay address h2 span a:hover {
+    background-color: red;
+
+}
+
+a:link {
+    color: white;
+}
+
+a:hover {
+    color: yellow;
+}
+
+a:visited {
+    color: white;
+}
+
+.blueBackground {
+    background-color: blue;
+    color: white;
+}
