@@ -38,9 +38,10 @@ let articles = [
     answerHtml: `
     <div class="square-small">
     <!-- /*==============================*/ -->
-    <form oninput="out1.value = grub(str1.value)">
-        <input class="core" type="textarea" name="str1" /><br>
-        <div class="core stripe"><output name="out1" for="str1">void</output></div>
+    <form oninput="out1.value = maxEnd3(str1.value)">
+        <label>Input</label>
+        <input class="core" type="textarea" name="str1" placeholder="comma separated numbers"/><br>
+        <div class="stripe"><output name="out1" for="str1" class="gutters stripe">void</output></div>
     </form>
     <!-- /*==============================*/ -->
 </div>
