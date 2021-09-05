@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>STAGING ONLY</title>
     <meta charset="utf-8">
@@ -16,6 +17,36 @@
             text-align: center;
         }
 
+/* todo: these were imported for the form, may need finessing */
+        .square-small {
+            border-radius: 3rem;
+            border: solid var(--dark1) 0.8rem;
+            margin: auto 5rem;
+            height: 15rem;
+            min-width: 12rem;
+            display: flex;
+            /*(1)VERT*/
+            flex-direction: row;
+            /*(1)VERT*/
+            align-items: center;
+            /*(1)VERT*/
+            justify-content: center;
+            /*(2)HORIZ*/
+            text-align: center;
+        }
+
+        .core {
+            text-align: center;
+            margin: 1rem auto;
+            overflow-wrap: break-word;
+        }
+
+        .stripe {
+            height: 8rem;
+            width: 15rem;
+            background-color: var(--dark1);
+            overflow: scroll;
+        }
 
 
         /* CSS  FONT-DIRECTED no COLOR no POSITIONING */
@@ -107,17 +138,36 @@
 
     <!-- ///////////////////////////////////////// -->
 
-<article style="background-color: yellow">
-<h2>How's this?</h2>
-<p>something special</p>
+    <article style="background-color: yellow">
+        <h2>How's this?</h2>
+        <p>something special</p>
 
 
+        <form id="wf-form-rebrand-link-form" name="wf-form-rebrand-link-form" data-name="rebrand-link-form"
+            action="./quilt.js">
+            <label for="url" class="text-indent">Destination</label>
+            <input type="text" class="form-link-creation-input w-input" maxLength="256" name="url" data-name="Url"
+                placeholder="Enter link here" id="url" value="" autoComplete="off" autoCorrect="off"
+                autoCapitalize="none" />
+            <input type="submit" value="Shorten URL" class="btn-primary-3 w-button" />
+            <div class="g-recaptcha">
+                <div></div>
+            </div>
+        </form>
+
+        <!-- // todo style? -->
+        <div class="square-small">
+            <!-- /*==============================*/ -->
+            <form oninput="out1.value = grub(str1.value)">
+                <input class="core" type="textarea" name="str1" /><br>
+                <div class="core stripe"><output name="out1" for="str1">void</output></div>
+            </form>
+            <!-- /*==============================*/ -->
+        </div>
 
 
-
-
-    <!-- ///////////////////////////////////////// -->
-</article>
+        <!-- ///////////////////////////////////////// -->
+    </article>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
