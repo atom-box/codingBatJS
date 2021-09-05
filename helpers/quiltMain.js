@@ -1,14 +1,15 @@
-document.addEventListener('DOMContentLoaded', (event) => {
+console.log('quiltmain Line 1.');
+
+window.addEventListener('load', (event) => {
     console.log('DOM fully loaded and parsed');
 
 
 
-console.log('start quiltmain.');
-console.log(articles[1].backgroundColor);
-console.log('Done.');
+console.log('quiltmain Line 8.');
 
 let divs = '';
-singleDiv = '';
+let singleDiv = '';
+let answerHtml = '';
 
 articles.forEach(element => {
 
@@ -18,6 +19,7 @@ articles.forEach(element => {
     `;
 
     singleDiv += `<div id="${element.title}">`;
+    singleDiv += element.answerHtml;
 
     singleDiv += `
     </article>

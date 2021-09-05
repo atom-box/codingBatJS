@@ -20,6 +20,8 @@ let articles = [
     testElement: '<p class="blueBackground">dogfish - dogfish - dogfish - dogfish </p>',
     inputs: [],
     predictedOutputs: [],
+    answerHtml:
+    `<button type="button" class="btn btn-primary btn-sm" onclick="dice.show5()" > five</button>`,
 },
 {
     backgroundColor: '#256',
@@ -33,9 +35,19 @@ let articles = [
     inputs: [[1, 2, 3], [11, 5, 9], [2, 11, 3]],
     predictedOutputs: [[3, 3, 3],  [11, 11, 11], [3, 3, 3]],
     challengeSource: 'https://codingbat.com/prob/p146256',
-
+    answerHtml: `
+    <div class="square-small">
+    <!-- /*==============================*/ -->
+    <form oninput="out1.value = grub(str1.value)">
+        <input class="core" type="textarea" name="str1" /><br>
+        <div class="core stripe"><output name="out1" for="str1">void</output></div>
+    </form>
+    <!-- /*==============================*/ -->
+</div>
+    `
 },
 
 ]
 
 
+console.log('end quiltdata.');
