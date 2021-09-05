@@ -1,5 +1,10 @@
+// deprecated
+// deprecated
+// deprecated
+// deprecated
+todo should stop here
 document.addEventListener('DOMContentLoaded', (event) => {
-
+    console.log('This should load pretty much last: maxEnd3Div.mjs')
     let anchor = document.getElementById('maxEnd3');
     let webform = `
         <h3>Notice the distribution of results as you repeatedly roll a dice with sides of</h3>
@@ -12,3 +17,5 @@ document.addEventListener('DOMContentLoaded', (event) => {
         `;
     anchor.innerHTML = webform;
 });
+
+// THIS AWAITS FULL LOAD; THE OTHER JS DOES NOT NEED TO
