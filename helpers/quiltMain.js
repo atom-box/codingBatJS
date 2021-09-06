@@ -19,8 +19,8 @@ articles.forEach(element => {
     <p>Challenge:</p><div class="white-box"><p>${element.question}</p></div>
     `;
     singleDiv += `<p>Solution:</p>`;
-    singleDiv += `<div class="white-box" id="${element.title}">`;
-    singleDiv += `<div>`;
+    // singleDiv += `<div class="white-box" id="${element.title}">`;
+    // singleDiv += `<div>`;
     singleDiv += element.answerHtml;
     singleDiv += `</div>`;
 

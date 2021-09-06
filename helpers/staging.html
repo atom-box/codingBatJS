@@ -13,41 +13,40 @@
         /* CSS POSITIONING INCLUDING FONT*/
         /* CSS POSITIONING INCLUDING FONT*/
 
+
+        @media only screen and (min-width: 600px) {
+
+            /* For tablets: */
+            .gutters {
+                padding-left: 9rem;
+                padding-right: 9rem;
+            }
+        }
+
+        @media only screen and (min-width: 1000px) {
+            .gutters {
+                padding-left: 19rem;
+                padding-right: 19rem;
+            }
+        }
+
         header {
             text-align: center;
-        }
-
-/* todo: these were imported for the form, may need finessing */
-        .square-small {
-            border-radius: 3rem;
-            border: solid var(--dark1) 0.8rem;
-            margin: auto 5rem;
-            height: 15rem;
-            min-width: 12rem;
-            display: flex;
-            /*(1)VERT*/
-            flex-direction: row;
-            /*(1)VERT*/
-            align-items: center;
-            /*(1)VERT*/
-            justify-content: center;
-            /*(2)HORIZ*/
-            text-align: center;
-        }
-
-        .core {
-            text-align: center;
-            margin: 1rem auto;
-            overflow-wrap: break-word;
+            margin-bottom: 1rem;
         }
 
         .stripe {
-            height: 8rem;
-            width: 15rem;
-            background-color: var(--dark1);
-            overflow: scroll;
+            text-align: center;
         }
 
+        .top-bottom-space {
+            padding-top: 3.4rem;
+            padding-bottom: 3.4rem;
+        }
+
+        .white-box {
+            padding: 3rem;
+        }
 
         /* CSS  FONT-DIRECTED no COLOR no POSITIONING */
         /* CSS  FONT-DIRECTED no COLOR no POSITIONING */
@@ -76,19 +75,15 @@
             --main-color: #F45B69;
         }
 
-        #articlesAnchor {
-            background-color: yellow;
-        }
-
-        article.card.text-center {
-            xxxmargin-bottom: 1rem;
-        }
-
         header {
             width: 100%;
             padding: 8px;
             color: white;
             background-color: #999;
+        }
+
+        #articlesAnchor {
+            background-color: yellow;
         }
 
         .overlay {
@@ -123,13 +118,19 @@
             color: white;
         }
 
-        .blueBackground {
-            background-color: blue;
-            color: white;
+        .white-box {
+            border: #ccc solid 0.08rem;
+        }
+
+        S.stripe {
+            color: #ccf;
+            background-color: #000;
+            border: grey solid 0.2rem;
+            border-radius: 0.2rem;
         }
     </style>
 
-    <script src="../data/quiltData.mjs"></script>
+    <script src="../data/quiltContent.mjs"></script>
     <script src="./quiltMain.js"></script>
 
 </head>

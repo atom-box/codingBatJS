@@ -10,18 +10,23 @@ For example, if the title is maxEnd3, the file is maxEnd3.mjs and the div will b
 ******/
 let articles = [
 {
-    backgroundColor: '#493',
-    textColor: '#ddf',
-    title: 'Hotdogging',
-    question: 'How do you grab a div?',
-    strategy: 'GetElementById()!',
+    backgroundColor: '#930',
+    textColor: '#ffa',
+    title: 'Team Pitching',
+    question: 'Statistics from <a href="https://www.baseball-reference.com/leagues/majors/2021-standard-pitching.shtml">Baseball Reference</a>',
+    strategy: 'null',
     form: '<form><h1>Placeholder</h1><button>click</button></form>',
     linkToCodeRepo: 'https://github.com/atom-box/codingBatJS/blob/master/textSimilarity.html',
     testElement: '<p class="blueBackground">dogfish - dogfish - dogfish - dogfish </p>',
     inputs: [],
     predictedOutputs: [],
     answerHtml:
-    `<button type="button" class="btn btn-primary btn-sm" onclick="dice.show5()" > five</button>`,
+    `
+    <button type="button" class="btn btn-primary btn-sm" onclick="teamPitching()" > five</button>
+    `,
+
+    // <p>${teamPitching()} all day, every day</p>
+
 },
 {
     backgroundColor: '#256',
@@ -46,6 +51,20 @@ let articles = [
     <!-- /*==============================*/ -->
 </div>
     `
+},
+{
+    backgroundColor: '#493',
+    textColor: '#ddf',
+    title: 'Unused',
+    question: 'Statistics from <a href="https://www.baseball-reference.com/leagues/majors/2021-standard-pitching.shtml">Baseball Reference</a>',
+    strategy: 'null',
+    form: '<form><h1>Placeholder</h1><button>click</button></form>',
+    linkToCodeRepo: 'https://github.com/atom-box/codingBatJS/blob/master/textSimilarity.html',
+    testElement: '<p class="blueBackground">dogfish - dogfish - dogfish - dogfish </p>',
+    inputs: [],
+    predictedOutputs: [],
+    answerHtml:
+    `<button type="button" class="btn btn-primary btn-sm" onclick="dice.show5()" > five</button>`,
 },
 
 ]
