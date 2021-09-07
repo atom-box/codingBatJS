@@ -19,7 +19,7 @@ let articles = [
     backgroundColor: '#256',
     textColor: '#db5',
     title: 'Max End 3',
-    question: 'Given an array of ints length 3, figure out which is larger, the first or last element in the array, and set all the other elements to be that value. Return the changed array.',
+    question: 'Given an array of ints figure out which is larger, the first or last element in the array, and set all the other elements to be that value.',
     strategy: 'GetElementById()!',
     form: '<form><h1>Placeholder</h1><button>click</button></form>',
     linkToCodeRepo: 'https://github.com/atom-box/codingBatJS/blob/master/textSimilarity.html',
@@ -60,16 +60,13 @@ let articles = [
     <button type="button" class="btn btn-secondary" onclick="wordChecker.random(huckleberryisms, 10)" > retrieve 10 words </button>
     </div>
     `,
-
-    // <p>${teamPitching()} all day, every day</p>
-
 },
 
 {
     backgroundColor: '#493',
     textColor: '#ddf',
-    title: 'Unused',
-    question: 'Statistics from <a href="https://www.baseball-reference.com/leagues/majors/2021-standard-pitching.shtml">Baseball Reference</a>',
+    title: 'API',
+    question: 'Get info from a live external A.P.I. <a href="https://rapidapi.com/apilayernet/api/rest-countries-v1"> hub</a>',
     strategy: 'null',
     form: '<form><h1>Placeholder</h1><button>click</button></form>',
     linkToCodeRepo: 'https://github.com/atom-box/codingBatJS/blob/master/textSimilarity.html',

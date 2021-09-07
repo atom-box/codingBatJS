@@ -16,12 +16,14 @@ articles.forEach(element => {
     singleDiv = `<article style="background-color:${element.backgroundColor}; color: ${element.textColor};"><div class='gutters';>
     <div class="top-bottom-space"><div>
     <h2 >${element.title}</h2>
-    <p>Challenge:</p><div class="white-box"><p>${element.question}</p></div>
+    <div class="white-box">
+    <p>Challenge:</p>
+    <p>${element.question}</p></div>
     `;
-    singleDiv += `<p>Solution:</p>`;
-    // singleDiv += `<div class="white-box" id="${element.title}">`;
-    // singleDiv += `<div>`;
+    singleDiv += `<div class="white-box" id="${element.title}">`;
+    singleDiv += `<p>Try it out:</p>`;
     singleDiv += element.answerHtml;
+    singleDiv += `<div>`;
     singleDiv += `</div>`;
 
     singleDiv += `
