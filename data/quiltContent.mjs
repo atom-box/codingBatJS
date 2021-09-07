@@ -54,7 +54,11 @@ let articles = [
     predictedOutputs: [],
     answerHtml:
     `
-    <button type="button" class="btn btn-secondary" onclick="wordChecker()" > Go </button>
+    <div id="word-checker-count">
+    <button type="button" class="btn btn-secondary" onclick="wordChecker.count(huckleberryisms)" > Word count </button>
+    <div id="word-checker-random">
+    <button type="button" class="btn btn-secondary" onclick="wordChecker.random(huckleberryisms, 10)" > retrieve 10 words </button>
+    </div>
     `,
 
     // <p>${teamPitching()} all day, every day</p>
