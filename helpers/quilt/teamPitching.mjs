@@ -1,5 +1,6 @@
 console.log('loaded TEAMPITCHING FUNCTIONFILE');
-let teamPitching = function(){
+let teamPitching = function(teamName){
+
     console.log(staffPitchingSummary[1][1]);
     return staffPitchingSummary[1][1];
 }
