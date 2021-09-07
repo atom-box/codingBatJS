@@ -5,7 +5,13 @@ wordChecker.date = () => {
     return new Date();
 };
 
+// A guard so that repeatedly pushing the button does not append redundant divs
 let countWasClicked = false;
+/**
+ *
+ * @param {An array} words
+ * @returns number of items in the array
+ */
 wordChecker.count = (words) => {
     if (countWasClicked){return}
     countWasClicked = true;
@@ -15,6 +21,12 @@ wordChecker.count = (words) => {
     existing.appendChild(newChild);
 }
 
+/**
+ *
+ * @param {An array of words} words
+ * @param {How many words to return} n
+ * Returns n randomly chosen words, as a string
+ */
 wordChecker.random = (words, n) => {
     console.log(new Date());
     let existing = document.getElementById('word-checker-random');
