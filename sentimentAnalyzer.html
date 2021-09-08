@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+    I DID NOT WRITE ANY OF THIS FILE. IT IS STRAIGHT FROM rapidAPI
+    https://rapidapi.com/blog/how-to-use-an-api-with-javascript/
+ -->
+
+
+<head>
+  <meta charset="UTF-8">
+  <title>sentiment analyzer</title>
+
+  <link rel="stylesheet" href="styles/rapidapi.css">
+</head>
+<body>
+  <div class="main">
+      <h2 class="main-header">Comment text analysis</h2>
+      <section class="main-input-comment">
+          <label for="comment">Write your comment here:</label>
+          <textarea
+                  name="comment"
+                  id="comment"
+                  class="input-output-field"
+                  placeholder="Your comment..."
+          >
+          </textarea>
+          <button class="main-analyze-button" onclick="onAnalyzeButtonClick()">Analyze...</button>
+      </section>
+      <section class="main-result">
+          <p id="main-result-block" class="main-result-block invisible">
+              <span>Result:</span>
+              <span id="result" class="input-output-field dark"></span>
+          </p>
+      </section>
+  </div>
+
+  <!-- Import axios library -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <!-- Querystring library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.7.0/qs.min.js"></script>
+  <!-- Import our javascript file -->
+  <script src="helpers/sentimentAnalyzer.mjs"></script>
+</body>
+
+
+<!--
+    https://rapidapi.com/blog/how-to-use-an-api-with-javascript/
+ -->
