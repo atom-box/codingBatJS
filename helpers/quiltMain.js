@@ -41,4 +41,14 @@ articles.forEach(element => {
 // document.getElementById('articlesAnchor').innerHTML = 'glow';
 document.getElementById('articlesAnchor').outerHTML = divs;
 
+
+// repeatFront.js
+const price = document.querySelector('#price');
+const output = document.querySelector('.price-output');
+
+output.textContent = price.value;
+
+price.addEventListener('input', function() {
+  output.textContent = price.value;
+});
 });

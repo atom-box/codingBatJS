@@ -65,17 +65,31 @@ let articles = [
 {
     backgroundColor: '#493',
     textColor: '#ddf',
-    title: 'API',
-    question: 'Get info from a live external A.P.I. <a href="https://rapidapi.com/apilayernet/api/rest-countries-v1"> hub</a>',
+    title: 'Repeat Front',
+    question: 'Given a string and an int n, return a string made of the first n characters of the string, followed by the first n-1 characters of the string, and so on. You may assume that n is between 0 and the length of the string, inclusive (i.e. n >= 0 and n <= str.length()). <br/> Source:  <a href="https://rapidapi.com/apilayernet/api/rest-countries-v1"> Stanford CodingBat</a>',
     strategy: 'null',
     form: '<form><h1>Placeholder</h1><button>click</button></form>',
-    linkToCodeRepo: 'https://github.com/atom-box/codingBatJS/blob/master/textSimilarity.html',
+    linkToCodeRepo: 'https://codingbat.com/prob/p128796',
     testElement: '<p class="blueBackground">dogfish - dogfish - dogfish - dogfish </p>',
     inputs: [],
     predictedOutputs: [],
     answerHtml:
     `
-   <p>Coming soon...</p>
+    <div class="square-small">
+      <form oninput="x.value = repeatFront(word.value, many.value)">
+        Letters in first bite:<br>1
+        <input type="range" name="word" label="word" value="2" min="1" max="6"/>6
+
+        <br>Enter 7 or more letters:
+        <input type="textarea" value="couterie" label="many" name="many"/>
+<!-- /*==============================*/ -->
+
+<!-- /*==============================*/ -->
+        <br>Total Seeds:<br>
+        <output name="x"></output>
+      </form>
+    </div>
+
     `,
 },
 
