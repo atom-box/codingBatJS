@@ -1,6 +1,3 @@
-console.log('start quiltdata.');
-
-
 /*****
 To add a section:
 1. After testing html in staging.html, paste it into an object below, here, as answerHTML.
@@ -77,15 +74,17 @@ let articles = [
     `
     <div class="square-small">
       <form oninput="x.value = repeatFront(word.value, many.value)">
-        Letters in first bite:<br>1
-        <input type="range" name="word" label="word" value="2" min="1" max="6"/>6
+      Enter a word:
+      <input type="textarea" value="NOT WORKING YET" label="nonsense" name="many"/>
+      <br>
+      How many letters to grab?<br>1
+      <input type="range" name="word" label="nonsense" value="3" min="1" max="6"/>6
 
-        <br>Enter 7 or more letters:
-        <input type="textarea" value="couterie" label="many" name="many"/>
+
 <!-- /*==============================*/ -->
 
 <!-- /*==============================*/ -->
-        <br>Total Seeds:<br>
+        <br>Result:<br>
         <output name="x"></output>
       </form>
     </div>
@@ -119,6 +118,3 @@ let articles = [
 
 
 ]
-
-
-console.log('end quiltdata.');
