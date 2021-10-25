@@ -24,7 +24,7 @@ let invent = function(arr1) {
 	while (arr2.length > 0){
 		randomGrabPosition =  Math.floor( arr2.length * Math.random() );
 		originalItem = arr3.shift();
-		translator[originalItem] = arr2.splice(randomGrabPosition, 1);
+		translator[originalItem] = arr2.splice(randomGrabPosition, 1)[0];
 	}
 	return translator;
 }
