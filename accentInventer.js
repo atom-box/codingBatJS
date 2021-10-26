@@ -11,23 +11,11 @@ ww.test1 = "Go tell it on the mountain, over the water and through the sea.";
 ** Accepts an array 
 ** Returns an object; keys are the original array vals, values are randomly chosen elements from the original array
 */
-let altVowelScheme = function(arr1) {
+let createShifties = function(arr1) {
 	// make 2 destroyable copies of the passed-in array
 	let arr2 = arr1.map( (item)=> {return item} ),
+    // This third array is needed because the second array will get popped down to emptiness
 	arr3 = arr1.map( (item)=> {return item} );
-    //####
-    //####
-    //####
-    arr2.push('z');
-    arr3.push('y');
-    console.log("length of array 1 is " + arr1.length);
-    console.log("length of array 2 is " + arr2.length);
-    console.log("length of array 3 is " + arr3.length);
-    return;
-
-    //////
-    //////
-    //////
 	let translator = {},
 	randomGrabPosition = 0,
 	originalItem = null;
@@ -38,17 +26,33 @@ let altVowelScheme = function(arr1) {
 		originalItem = arr3.shift();
 		translator[originalItem] = arr2.splice(randomGrabPosition, 1)[0];
 	}
-    // refactor to make an array-show function that can show any of the three arrays
-    const getter = (function(whichArray){
-        // todo For now,hardcode in a single array, ignore the parameter passed
-        return function(){return arr2};
-    })()
+	return translator;
+}
 
-	return getter;
+// FunctionSignature
+// Given shifting instructions (object) and original text (string)
+// Returns altered string
+const accentify = function(shiftInstructions, originalText){
+// MAKE ARRAY OF THE KEYS
+// LOOP IT AS WHILE(KEYSEXIST)
+//      DO TRANSLATION FOR ONE OF THE VOWELS
+//      POP THE ARRAY
+    originalVowels = Object.keys(shiftInstructions);
+    while(0 < originalVowels.length){
+        originalVowel = originalVowels.pop();
+        console.log(originalVowels.length);
+        accentedText = originalText.replace(originalVowel, shiftInstructions[originalVowel]);
+    }
+    return accentedText;
 }
 
 
-let a = altVowelScheme(['a', 'e', 'i', 'o', 'u']);
-// console.log(a());
-// console.log("type of a is " + typeof a);
 
+
+
+
+let newVowelScheme = createShifties(['a', 'e', 'i', 'o', 'u']);
+console.log(newVowelScheme);
+accent1 = newVowelScheme;
+// ww.testA = ww.test1.replace('a','.');
+console.log(accentify(accent1, ww.test1));
